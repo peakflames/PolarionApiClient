@@ -4,10 +4,10 @@ using PolarionApiClient.Core.Generated;
 using PolarionApiClient.Core.Models;
 
 var config = new PolarionClientConfiguration(){
-    ServerUrl = "https://polarion.int.archer.com/",
-    Username = "archer_api_access",
-    Password = "linear-Vietnam-FLIP-212824",
-    ProjectId = "Midnight",
+    ServerUrl = "https://polarion-url/",
+    Username = "my-username",
+    Password = "my-password",
+    ProjectId = "my-project-id",
     TimeoutSeconds = 60,
 };
 
@@ -18,7 +18,13 @@ try
 
     var workItemId = "MD-81294";
 
-    IPolarionClient client = PolarionClient.Create(config);
+    var client = await PolarionClient.CreateAsync(config);
+    if (client is null)
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.Error.WriteLine("Failed to create Polarion client");
+        return;
+    }
 
     var workItemResult = await client.GetWorkItemByIdAsync(workItemId);
     if(workItemResult.IsFailed)
@@ -67,5 +73,4 @@ catch (Exception ex)
     Console.ForegroundColor = currentColor;
 }
 
-Console.WriteLine("\nPress any key to exit...");
-Console.ReadKey();
+

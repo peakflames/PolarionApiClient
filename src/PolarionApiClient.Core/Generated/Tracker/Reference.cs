@@ -7,956 +7,956 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PolarionApiClient.Core.Generated
+namespace PolarionApiClient.Core.Generated.Tracker
 {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://ws.polarion.com/TrackerWebService", ConfigurationName="PolarionApiClient.Core.Generated.TrackerWebService")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://ws.polarion.com/TrackerWebService", ConfigurationName="PolarionApiClient.Core.Generated.Tracker.TrackerWebService")]
     public interface TrackerWebService
     {
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.addApproveeResponse> addApproveeAsync(PolarionApiClient.Core.Generated.addApproveeRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.addApproveeResponse> addApproveeAsync(PolarionApiClient.Core.Generated.Tracker.addApproveeRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.addAssigneeResponse> addAssigneeAsync(PolarionApiClient.Core.Generated.addAssigneeRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.addAssigneeResponse> addAssigneeAsync(PolarionApiClient.Core.Generated.Tracker.addAssigneeRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.addCategoryResponse> addCategoryAsync(PolarionApiClient.Core.Generated.addCategoryRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.addCategoryResponse> addCategoryAsync(PolarionApiClient.Core.Generated.Tracker.addCategoryRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.addCommentResponse> addCommentAsync(PolarionApiClient.Core.Generated.addCommentRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.addCommentResponse> addCommentAsync(PolarionApiClient.Core.Generated.Tracker.addCommentRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.addCommentToActivityResponse> addCommentToActivityAsync(PolarionApiClient.Core.Generated.addCommentToActivityRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.addCommentToActivityResponse> addCommentToActivityAsync(PolarionApiClient.Core.Generated.Tracker.addCommentToActivityRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.addExternalLinkedRevisionResponse> addExternalLinkedRevisionAsync(PolarionApiClient.Core.Generated.addExternalLinkedRevisionRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.addExternalLinkedRevisionResponse> addExternalLinkedRevisionAsync(PolarionApiClient.Core.Generated.Tracker.addExternalLinkedRevisionRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.addExternallyLinkedItemResponse> addExternallyLinkedItemAsync(PolarionApiClient.Core.Generated.addExternallyLinkedItemRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.addExternallyLinkedItemResponse> addExternallyLinkedItemAsync(PolarionApiClient.Core.Generated.Tracker.addExternallyLinkedItemRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.addHyperlinkResponse> addHyperlinkAsync(PolarionApiClient.Core.Generated.addHyperlinkRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.addHyperlinkResponse> addHyperlinkAsync(PolarionApiClient.Core.Generated.Tracker.addHyperlinkRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.addLinkedItemResponse> addLinkedItemAsync(PolarionApiClient.Core.Generated.addLinkedItemRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.addLinkedItemResponse> addLinkedItemAsync(PolarionApiClient.Core.Generated.Tracker.addLinkedItemRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.addLinkedItemWithRevResponse> addLinkedItemWithRevAsync(PolarionApiClient.Core.Generated.addLinkedItemWithRevRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.addLinkedItemWithRevResponse> addLinkedItemWithRevAsync(PolarionApiClient.Core.Generated.Tracker.addLinkedItemWithRevRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.addLinkedOslcItemResponse> addLinkedOslcItemAsync(PolarionApiClient.Core.Generated.addLinkedOslcItemRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.addLinkedOslcItemResponse> addLinkedOslcItemAsync(PolarionApiClient.Core.Generated.Tracker.addLinkedOslcItemRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.addLinkedRevisionResponse> addLinkedRevisionAsync(PolarionApiClient.Core.Generated.addLinkedRevisionRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.addLinkedRevisionResponse> addLinkedRevisionAsync(PolarionApiClient.Core.Generated.Tracker.addLinkedRevisionRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.addPlaningContraintResponse> addPlaningContraintAsync(PolarionApiClient.Core.Generated.addPlaningContraintRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.addPlaningContraintResponse> addPlaningContraintAsync(PolarionApiClient.Core.Generated.Tracker.addPlaningContraintRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.canCommentActivityResponse> canCommentActivityAsync(PolarionApiClient.Core.Generated.canCommentActivityRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.canCommentActivityResponse> canCommentActivityAsync(PolarionApiClient.Core.Generated.Tracker.canCommentActivityRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.canCurrentUserAddCommentToActivityResponse> canCurrentUserAddCommentToActivityAsync(PolarionApiClient.Core.Generated.canCurrentUserAddCommentToActivityRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.canCurrentUserAddCommentToActivityResponse> canCurrentUserAddCommentToActivityAsync(PolarionApiClient.Core.Generated.Tracker.canCurrentUserAddCommentToActivityRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.createAttachmentResponse> createAttachmentAsync(PolarionApiClient.Core.Generated.createAttachmentRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.createAttachmentResponse> createAttachmentAsync(PolarionApiClient.Core.Generated.Tracker.createAttachmentRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.createBaselineResponse> createBaselineAsync(PolarionApiClient.Core.Generated.createBaselineRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.createBaselineResponse> createBaselineAsync(PolarionApiClient.Core.Generated.Tracker.createBaselineRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.createCommentResponse> createCommentAsync(PolarionApiClient.Core.Generated.createCommentRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.createCommentResponse> createCommentAsync(PolarionApiClient.Core.Generated.Tracker.createCommentRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.createCommentNewResponse> createCommentNewAsync(PolarionApiClient.Core.Generated.createCommentNewRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.createCommentNewResponse> createCommentNewAsync(PolarionApiClient.Core.Generated.Tracker.createCommentNewRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.createDocumentResponse> createDocumentAsync(PolarionApiClient.Core.Generated.createDocumentRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.createDocumentResponse> createDocumentAsync(PolarionApiClient.Core.Generated.Tracker.createDocumentRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.createDocumentCommentResponse> createDocumentCommentAsync(PolarionApiClient.Core.Generated.createDocumentCommentRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.createDocumentCommentResponse> createDocumentCommentAsync(PolarionApiClient.Core.Generated.Tracker.createDocumentCommentRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.createDocumentCommentReferringWIResponse> createDocumentCommentReferringWIAsync(PolarionApiClient.Core.Generated.createDocumentCommentReferringWIRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.createDocumentCommentReferringWIResponse> createDocumentCommentReferringWIAsync(PolarionApiClient.Core.Generated.Tracker.createDocumentCommentReferringWIRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.createDocumentCommentReplyResponse> createDocumentCommentReplyAsync(PolarionApiClient.Core.Generated.createDocumentCommentReplyRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.createDocumentCommentReplyResponse> createDocumentCommentReplyAsync(PolarionApiClient.Core.Generated.Tracker.createDocumentCommentReplyRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.createFolderResponse> createFolderAsync(PolarionApiClient.Core.Generated.createFolderRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.createFolderResponse> createFolderAsync(PolarionApiClient.Core.Generated.Tracker.createFolderRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.createModuleResponse> createModuleAsync(PolarionApiClient.Core.Generated.createModuleRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.createModuleResponse> createModuleAsync(PolarionApiClient.Core.Generated.Tracker.createModuleRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.createWorkItemResponse> createWorkItemAsync(PolarionApiClient.Core.Generated.createWorkItemRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.createWorkItemResponse> createWorkItemAsync(PolarionApiClient.Core.Generated.Tracker.createWorkItemRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.createWorkItemInModuleResponse> createWorkItemInModuleAsync(PolarionApiClient.Core.Generated.createWorkItemInModuleRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.createWorkItemInModuleResponse> createWorkItemInModuleAsync(PolarionApiClient.Core.Generated.Tracker.createWorkItemInModuleRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.createWorkRecordResponse> createWorkRecordAsync(PolarionApiClient.Core.Generated.createWorkRecordRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.createWorkRecordResponse> createWorkRecordAsync(PolarionApiClient.Core.Generated.Tracker.createWorkRecordRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.createWorkRecordWithTypeAndCommentResponse> createWorkRecordWithTypeAndCommentAsync(PolarionApiClient.Core.Generated.createWorkRecordWithTypeAndCommentRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.createWorkRecordWithTypeAndCommentResponse> createWorkRecordWithTypeAndCommentAsync(PolarionApiClient.Core.Generated.Tracker.createWorkRecordWithTypeAndCommentRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.deleteAttachmentResponse> deleteAttachmentAsync(PolarionApiClient.Core.Generated.deleteAttachmentRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.deleteAttachmentResponse> deleteAttachmentAsync(PolarionApiClient.Core.Generated.Tracker.deleteAttachmentRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.deleteBaselineResponse> deleteBaselineAsync(PolarionApiClient.Core.Generated.deleteBaselineRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.deleteBaselineResponse> deleteBaselineAsync(PolarionApiClient.Core.Generated.Tracker.deleteBaselineRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.deleteModuleResponse> deleteModuleAsync(PolarionApiClient.Core.Generated.deleteModuleRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.deleteModuleResponse> deleteModuleAsync(PolarionApiClient.Core.Generated.Tracker.deleteModuleRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.deleteWorkItemResponse> deleteWorkItemAsync(PolarionApiClient.Core.Generated.deleteWorkItemRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.deleteWorkItemResponse> deleteWorkItemAsync(PolarionApiClient.Core.Generated.Tracker.deleteWorkItemRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.deleteWorkRecordResponse> deleteWorkRecordAsync(PolarionApiClient.Core.Generated.deleteWorkRecordRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.deleteWorkRecordResponse> deleteWorkRecordAsync(PolarionApiClient.Core.Generated.Tracker.deleteWorkRecordRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.doAutoSuspectResponse> doAutoSuspectAsync(PolarionApiClient.Core.Generated.doAutoSuspectRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.doAutoSuspectResponse> doAutoSuspectAsync(PolarionApiClient.Core.Generated.Tracker.doAutoSuspectRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.doAutoassignResponse> doAutoassignAsync(PolarionApiClient.Core.Generated.doAutoassignRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.doAutoassignResponse> doAutoassignAsync(PolarionApiClient.Core.Generated.Tracker.doAutoassignRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.editApprovalResponse> editApprovalAsync(PolarionApiClient.Core.Generated.editApprovalRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.editApprovalResponse> editApprovalAsync(PolarionApiClient.Core.Generated.Tracker.editApprovalRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.exportDocumentToPDFResponse> exportDocumentToPDFAsync(PolarionApiClient.Core.Generated.exportDocumentToPDFRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.exportDocumentToPDFResponse> exportDocumentToPDFAsync(PolarionApiClient.Core.Generated.Tracker.exportDocumentToPDFRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.generateHistoryResponse> generateHistoryAsync(PolarionApiClient.Core.Generated.generateHistoryRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.generateHistoryResponse> generateHistoryAsync(PolarionApiClient.Core.Generated.Tracker.generateHistoryRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getActivityByGlobalIdResponse> getActivityByGlobalIdAsync(PolarionApiClient.Core.Generated.getActivityByGlobalIdRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getActivityByGlobalIdResponse> getActivityByGlobalIdAsync(PolarionApiClient.Core.Generated.Tracker.getActivityByGlobalIdRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getAllEnumOptionIdsForIdResponse> getAllEnumOptionIdsForIdAsync(PolarionApiClient.Core.Generated.getAllEnumOptionIdsForIdRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getAllEnumOptionIdsForIdResponse> getAllEnumOptionIdsForIdAsync(PolarionApiClient.Core.Generated.Tracker.getAllEnumOptionIdsForIdRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getAllEnumOptionIdsForKeyResponse> getAllEnumOptionIdsForKeyAsync(PolarionApiClient.Core.Generated.getAllEnumOptionIdsForKeyRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getAllEnumOptionIdsForKeyResponse> getAllEnumOptionIdsForKeyAsync(PolarionApiClient.Core.Generated.Tracker.getAllEnumOptionIdsForKeyRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getAllEnumOptionsForIdResponse> getAllEnumOptionsForIdAsync(PolarionApiClient.Core.Generated.getAllEnumOptionsForIdRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getAllEnumOptionsForIdResponse> getAllEnumOptionsForIdAsync(PolarionApiClient.Core.Generated.Tracker.getAllEnumOptionsForIdRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getAllEnumOptionsForKeyResponse> getAllEnumOptionsForKeyAsync(PolarionApiClient.Core.Generated.getAllEnumOptionsForKeyRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getAllEnumOptionsForKeyResponse> getAllEnumOptionsForKeyAsync(PolarionApiClient.Core.Generated.Tracker.getAllEnumOptionsForKeyRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getAllowedApproversResponse> getAllowedApproversAsync(PolarionApiClient.Core.Generated.getAllowedApproversRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getAllowedApproversResponse> getAllowedApproversAsync(PolarionApiClient.Core.Generated.Tracker.getAllowedApproversRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getAllowedAssigneesResponse> getAllowedAssigneesAsync(PolarionApiClient.Core.Generated.getAllowedAssigneesRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getAllowedAssigneesResponse> getAllowedAssigneesAsync(PolarionApiClient.Core.Generated.Tracker.getAllowedAssigneesRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getAttachmentResponse> getAttachmentAsync(PolarionApiClient.Core.Generated.getAttachmentRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getAttachmentResponse> getAttachmentAsync(PolarionApiClient.Core.Generated.Tracker.getAttachmentRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getAvailableActionsResponse> getAvailableActionsAsync(PolarionApiClient.Core.Generated.getAvailableActionsRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getAvailableActionsResponse> getAvailableActionsAsync(PolarionApiClient.Core.Generated.Tracker.getAvailableActionsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getAvailableEnumOptionIdsForIdResponse> getAvailableEnumOptionIdsForIdAsync(PolarionApiClient.Core.Generated.getAvailableEnumOptionIdsForIdRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getAvailableEnumOptionIdsForIdResponse> getAvailableEnumOptionIdsForIdAsync(PolarionApiClient.Core.Generated.Tracker.getAvailableEnumOptionIdsForIdRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getAvailableEnumOptionIdsForKeyResponse> getAvailableEnumOptionIdsForKeyAsync(PolarionApiClient.Core.Generated.getAvailableEnumOptionIdsForKeyRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getAvailableEnumOptionIdsForKeyResponse> getAvailableEnumOptionIdsForKeyAsync(PolarionApiClient.Core.Generated.Tracker.getAvailableEnumOptionIdsForKeyRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getBackLinkedWorkitemsResponse> getBackLinkedWorkitemsAsync(PolarionApiClient.Core.Generated.getBackLinkedWorkitemsRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getBackLinkedWorkitemsResponse> getBackLinkedWorkitemsAsync(PolarionApiClient.Core.Generated.Tracker.getBackLinkedWorkitemsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getCategoriesResponse> getCategoriesAsync(PolarionApiClient.Core.Generated.getCategoriesRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getCategoriesResponse> getCategoriesAsync(PolarionApiClient.Core.Generated.Tracker.getCategoriesRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getChildFoldersResponse> getChildFoldersAsync(PolarionApiClient.Core.Generated.getChildFoldersRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getChildFoldersResponse> getChildFoldersAsync(PolarionApiClient.Core.Generated.Tracker.getChildFoldersRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getCustomFieldResponse> getCustomFieldAsync(PolarionApiClient.Core.Generated.getCustomFieldRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getCustomFieldResponse> getCustomFieldAsync(PolarionApiClient.Core.Generated.Tracker.getCustomFieldRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getCustomFieldKeysResponse> getCustomFieldKeysAsync(PolarionApiClient.Core.Generated.getCustomFieldKeysRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getCustomFieldKeysResponse> getCustomFieldKeysAsync(PolarionApiClient.Core.Generated.Tracker.getCustomFieldKeysRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getCustomFieldTypeResponse> getCustomFieldTypeAsync(PolarionApiClient.Core.Generated.getCustomFieldTypeRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getCustomFieldTypeResponse> getCustomFieldTypeAsync(PolarionApiClient.Core.Generated.Tracker.getCustomFieldTypeRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getCustomFieldTypesResponse> getCustomFieldTypesAsync(PolarionApiClient.Core.Generated.getCustomFieldTypesRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getCustomFieldTypesResponse> getCustomFieldTypesAsync(PolarionApiClient.Core.Generated.Tracker.getCustomFieldTypesRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getDefaultLanguageDefinitionResponse> getDefaultLanguageDefinitionAsync(PolarionApiClient.Core.Generated.getDefaultLanguageDefinitionRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getDefaultLanguageDefinitionResponse> getDefaultLanguageDefinitionAsync(PolarionApiClient.Core.Generated.Tracker.getDefaultLanguageDefinitionRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getDefinedCustomFieldKeysResponse> getDefinedCustomFieldKeysAsync(PolarionApiClient.Core.Generated.getDefinedCustomFieldKeysRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getDefinedCustomFieldKeysResponse> getDefinedCustomFieldKeysAsync(PolarionApiClient.Core.Generated.Tracker.getDefinedCustomFieldKeysRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getDefinedCustomFieldTypeResponse> getDefinedCustomFieldTypeAsync(PolarionApiClient.Core.Generated.getDefinedCustomFieldTypeRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getDefinedCustomFieldTypeResponse> getDefinedCustomFieldTypeAsync(PolarionApiClient.Core.Generated.Tracker.getDefinedCustomFieldTypeRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getDefinedCustomFieldTypesResponse> getDefinedCustomFieldTypesAsync(PolarionApiClient.Core.Generated.getDefinedCustomFieldTypesRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getDefinedCustomFieldTypesResponse> getDefinedCustomFieldTypesAsync(PolarionApiClient.Core.Generated.Tracker.getDefinedCustomFieldTypesRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getDocumentLocationsResponse> getDocumentLocationsAsync(PolarionApiClient.Core.Generated.getDocumentLocationsRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getDocumentLocationsResponse> getDocumentLocationsAsync(PolarionApiClient.Core.Generated.Tracker.getDocumentLocationsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getDocumentSpacesResponse> getDocumentSpacesAsync(PolarionApiClient.Core.Generated.getDocumentSpacesRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getDocumentSpacesResponse> getDocumentSpacesAsync(PolarionApiClient.Core.Generated.Tracker.getDocumentSpacesRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getDurationHoursResponse> getDurationHoursAsync(PolarionApiClient.Core.Generated.getDurationHoursRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getDurationHoursResponse> getDurationHoursAsync(PolarionApiClient.Core.Generated.Tracker.getDurationHoursRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getEnumControlKeyForIdResponse> getEnumControlKeyForIdAsync(PolarionApiClient.Core.Generated.getEnumControlKeyForIdRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getEnumControlKeyForIdResponse> getEnumControlKeyForIdAsync(PolarionApiClient.Core.Generated.Tracker.getEnumControlKeyForIdRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getEnumControlKeyForKeyResponse> getEnumControlKeyForKeyAsync(PolarionApiClient.Core.Generated.getEnumControlKeyForKeyRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getEnumControlKeyForKeyResponse> getEnumControlKeyForKeyAsync(PolarionApiClient.Core.Generated.Tracker.getEnumControlKeyForKeyRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getEnumOptionFromObjectUriForIdResponse> getEnumOptionFromObjectUriForIdAsync(PolarionApiClient.Core.Generated.getEnumOptionFromObjectUriForIdRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getEnumOptionFromObjectUriForIdResponse> getEnumOptionFromObjectUriForIdAsync(PolarionApiClient.Core.Generated.Tracker.getEnumOptionFromObjectUriForIdRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getEnumOptionFromObjectUriForKeyResponse> getEnumOptionFromObjectUriForKeyAsync(PolarionApiClient.Core.Generated.getEnumOptionFromObjectUriForKeyRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getEnumOptionFromObjectUriForKeyResponse> getEnumOptionFromObjectUriForKeyAsync(PolarionApiClient.Core.Generated.Tracker.getEnumOptionFromObjectUriForKeyRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getEnumOptionWithEnumIdResponse> getEnumOptionWithEnumIdAsync(PolarionApiClient.Core.Generated.getEnumOptionWithEnumIdRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getEnumOptionWithEnumIdResponse> getEnumOptionWithEnumIdAsync(PolarionApiClient.Core.Generated.Tracker.getEnumOptionWithEnumIdRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getEnumOptionWithKeyResponse> getEnumOptionWithKeyAsync(PolarionApiClient.Core.Generated.getEnumOptionWithKeyRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getEnumOptionWithKeyResponse> getEnumOptionWithKeyAsync(PolarionApiClient.Core.Generated.Tracker.getEnumOptionWithKeyRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getEnumOptionsForIdResponse> getEnumOptionsForIdAsync(PolarionApiClient.Core.Generated.getEnumOptionsForIdRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getEnumOptionsForIdResponse> getEnumOptionsForIdAsync(PolarionApiClient.Core.Generated.Tracker.getEnumOptionsForIdRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getEnumOptionsForIdWithControlResponse> getEnumOptionsForIdWithControlAsync(PolarionApiClient.Core.Generated.getEnumOptionsForIdWithControlRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getEnumOptionsForIdWithControlResponse> getEnumOptionsForIdWithControlAsync(PolarionApiClient.Core.Generated.Tracker.getEnumOptionsForIdWithControlRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getEnumOptionsForKeyResponse> getEnumOptionsForKeyAsync(PolarionApiClient.Core.Generated.getEnumOptionsForKeyRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getEnumOptionsForKeyResponse> getEnumOptionsForKeyAsync(PolarionApiClient.Core.Generated.Tracker.getEnumOptionsForKeyRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getEnumOptionsForKeyWithControlResponse> getEnumOptionsForKeyWithControlAsync(PolarionApiClient.Core.Generated.getEnumOptionsForKeyWithControlRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getEnumOptionsForKeyWithControlResponse> getEnumOptionsForKeyWithControlAsync(PolarionApiClient.Core.Generated.Tracker.getEnumOptionsForKeyWithControlRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getFilteredEnumOptionsForKeyResponse> getFilteredEnumOptionsForKeyAsync(PolarionApiClient.Core.Generated.getFilteredEnumOptionsForKeyRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getFilteredEnumOptionsForKeyResponse> getFilteredEnumOptionsForKeyAsync(PolarionApiClient.Core.Generated.Tracker.getFilteredEnumOptionsForKeyRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getFolderResponse> getFolderAsync(PolarionApiClient.Core.Generated.getFolderRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getFolderResponse> getFolderAsync(PolarionApiClient.Core.Generated.Tracker.getFolderRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getFolderForURIResponse> getFolderForURIAsync(PolarionApiClient.Core.Generated.getFolderForURIRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getFolderForURIResponse> getFolderForURIAsync(PolarionApiClient.Core.Generated.Tracker.getFolderForURIRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getFoldersResponse> getFoldersAsync(PolarionApiClient.Core.Generated.getFoldersRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getFoldersResponse> getFoldersAsync(PolarionApiClient.Core.Generated.Tracker.getFoldersRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getInitialWorkflowActionResponse> getInitialWorkflowActionAsync(PolarionApiClient.Core.Generated.getInitialWorkflowActionRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getInitialWorkflowActionResponse> getInitialWorkflowActionAsync(PolarionApiClient.Core.Generated.Tracker.getInitialWorkflowActionRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getInitialWorkflowActionForProjectAndTypeResponse> getInitialWorkflowActionForProjectAndTypeAsync(PolarionApiClient.Core.Generated.getInitialWorkflowActionForProjectAndTypeRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getInitialWorkflowActionForProjectAndTypeResponse> getInitialWorkflowActionForProjectAndTypeAsync(PolarionApiClient.Core.Generated.Tracker.getInitialWorkflowActionForProjectAndTypeRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getLanguageDefinitionResponse> getLanguageDefinitionAsync(PolarionApiClient.Core.Generated.getLanguageDefinitionRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getLanguageDefinitionResponse> getLanguageDefinitionAsync(PolarionApiClient.Core.Generated.Tracker.getLanguageDefinitionRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getLanguageDefinitionsResponse> getLanguageDefinitionsAsync(PolarionApiClient.Core.Generated.getLanguageDefinitionsRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getLanguageDefinitionsResponse> getLanguageDefinitionsAsync(PolarionApiClient.Core.Generated.Tracker.getLanguageDefinitionsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getLinkedResourcesResponse> getLinkedResourcesAsync(PolarionApiClient.Core.Generated.getLinkedResourcesRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getLinkedResourcesResponse> getLinkedResourcesAsync(PolarionApiClient.Core.Generated.Tracker.getLinkedResourcesRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getLocalizedWorkItemDescriptionResponse> getLocalizedWorkItemDescriptionAsync(PolarionApiClient.Core.Generated.getLocalizedWorkItemDescriptionRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getLocalizedWorkItemDescriptionResponse> getLocalizedWorkItemDescriptionAsync(PolarionApiClient.Core.Generated.Tracker.getLocalizedWorkItemDescriptionRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getLocalizedWorkItemDescriptionFieldResponse> getLocalizedWorkItemDescriptionFieldAsync(PolarionApiClient.Core.Generated.getLocalizedWorkItemDescriptionFieldRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getLocalizedWorkItemDescriptionFieldResponse> getLocalizedWorkItemDescriptionFieldAsync(PolarionApiClient.Core.Generated.Tracker.getLocalizedWorkItemDescriptionFieldRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getLocalizedWorkItemTitleResponse> getLocalizedWorkItemTitleAsync(PolarionApiClient.Core.Generated.getLocalizedWorkItemTitleRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getLocalizedWorkItemTitleResponse> getLocalizedWorkItemTitleAsync(PolarionApiClient.Core.Generated.Tracker.getLocalizedWorkItemTitleRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getLocalizedWorkItemTitleFieldResponse> getLocalizedWorkItemTitleFieldAsync(PolarionApiClient.Core.Generated.getLocalizedWorkItemTitleFieldRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getLocalizedWorkItemTitleFieldResponse> getLocalizedWorkItemTitleFieldAsync(PolarionApiClient.Core.Generated.Tracker.getLocalizedWorkItemTitleFieldRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getModuleByLocationResponse> getModuleByLocationAsync(PolarionApiClient.Core.Generated.getModuleByLocationRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getModuleByLocationResponse> getModuleByLocationAsync(PolarionApiClient.Core.Generated.Tracker.getModuleByLocationRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getModuleByLocationWithFieldsResponse> getModuleByLocationWithFieldsAsync(PolarionApiClient.Core.Generated.getModuleByLocationWithFieldsRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getModuleByLocationWithFieldsResponse> getModuleByLocationWithFieldsAsync(PolarionApiClient.Core.Generated.Tracker.getModuleByLocationWithFieldsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getModuleByUriResponse> getModuleByUriAsync(PolarionApiClient.Core.Generated.getModuleByUriRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getModuleByUriResponse> getModuleByUriAsync(PolarionApiClient.Core.Generated.Tracker.getModuleByUriRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getModuleByUriWithFieldsResponse> getModuleByUriWithFieldsAsync(PolarionApiClient.Core.Generated.getModuleByUriWithFieldsRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getModuleByUriWithFieldsResponse> getModuleByUriWithFieldsAsync(PolarionApiClient.Core.Generated.Tracker.getModuleByUriWithFieldsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getModuleUrisResponse> getModuleUrisAsync(PolarionApiClient.Core.Generated.getModuleUrisRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getModuleUrisResponse> getModuleUrisAsync(PolarionApiClient.Core.Generated.Tracker.getModuleUrisRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getModuleWorkItemUrisResponse> getModuleWorkItemUrisAsync(PolarionApiClient.Core.Generated.getModuleWorkItemUrisRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getModuleWorkItemUrisResponse> getModuleWorkItemUrisAsync(PolarionApiClient.Core.Generated.Tracker.getModuleWorkItemUrisRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getModuleWorkItemsResponse> getModuleWorkItemsAsync(PolarionApiClient.Core.Generated.getModuleWorkItemsRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getModuleWorkItemsResponse> getModuleWorkItemsAsync(PolarionApiClient.Core.Generated.Tracker.getModuleWorkItemsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getModulesResponse> getModulesAsync(PolarionApiClient.Core.Generated.getModulesRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getModulesResponse> getModulesAsync(PolarionApiClient.Core.Generated.Tracker.getModulesRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getModulesSubFoldersResponse> getModulesSubFoldersAsync(PolarionApiClient.Core.Generated.getModulesSubFoldersRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getModulesSubFoldersResponse> getModulesSubFoldersAsync(PolarionApiClient.Core.Generated.Tracker.getModulesSubFoldersRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getModulesWithFieldsResponse> getModulesWithFieldsAsync(PolarionApiClient.Core.Generated.getModulesWithFieldsRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getModulesWithFieldsResponse> getModulesWithFieldsAsync(PolarionApiClient.Core.Generated.Tracker.getModulesWithFieldsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getOneDayLengthResponse> getOneDayLengthAsync(PolarionApiClient.Core.Generated.getOneDayLengthRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getOneDayLengthResponse> getOneDayLengthAsync(PolarionApiClient.Core.Generated.Tracker.getOneDayLengthRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getRevisionResponse> getRevisionAsync(PolarionApiClient.Core.Generated.getRevisionRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getRevisionResponse> getRevisionAsync(PolarionApiClient.Core.Generated.Tracker.getRevisionRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getRevisionByUriResponse> getRevisionByUriAsync(PolarionApiClient.Core.Generated.getRevisionByUriRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getRevisionByUriResponse> getRevisionByUriAsync(PolarionApiClient.Core.Generated.Tracker.getRevisionByUriRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getRevisionsResponse> getRevisionsAsync(PolarionApiClient.Core.Generated.getRevisionsRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getRevisionsResponse> getRevisionsAsync(PolarionApiClient.Core.Generated.Tracker.getRevisionsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getRootFoldersResponse> getRootFoldersAsync(PolarionApiClient.Core.Generated.getRootFoldersRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getRootFoldersResponse> getRootFoldersAsync(PolarionApiClient.Core.Generated.Tracker.getRootFoldersRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getTimepointsResponse> getTimepointsAsync(PolarionApiClient.Core.Generated.getTimepointsRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getTimepointsResponse> getTimepointsAsync(PolarionApiClient.Core.Generated.Tracker.getTimepointsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getUnavailableActionsResponse> getUnavailableActionsAsync(PolarionApiClient.Core.Generated.getUnavailableActionsRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getUnavailableActionsResponse> getUnavailableActionsAsync(PolarionApiClient.Core.Generated.Tracker.getUnavailableActionsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getWikiPageByUriResponse> getWikiPageByUriAsync(PolarionApiClient.Core.Generated.getWikiPageByUriRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getWikiPageByUriResponse> getWikiPageByUriAsync(PolarionApiClient.Core.Generated.Tracker.getWikiPageByUriRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getWikiPageByUriWithFieldsResponse> getWikiPageByUriWithFieldsAsync(PolarionApiClient.Core.Generated.getWikiPageByUriWithFieldsRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getWikiPageByUriWithFieldsResponse> getWikiPageByUriWithFieldsAsync(PolarionApiClient.Core.Generated.Tracker.getWikiPageByUriWithFieldsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getWikiPageUrisResponse> getWikiPageUrisAsync(PolarionApiClient.Core.Generated.getWikiPageUrisRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getWikiPageUrisResponse> getWikiPageUrisAsync(PolarionApiClient.Core.Generated.Tracker.getWikiPageUrisRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getWikiPagesResponse> getWikiPagesAsync(PolarionApiClient.Core.Generated.getWikiPagesRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getWikiPagesResponse> getWikiPagesAsync(PolarionApiClient.Core.Generated.Tracker.getWikiPagesRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getWikiPagesWithFieldsResponse> getWikiPagesWithFieldsAsync(PolarionApiClient.Core.Generated.getWikiPagesWithFieldsRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getWikiPagesWithFieldsResponse> getWikiPagesWithFieldsAsync(PolarionApiClient.Core.Generated.Tracker.getWikiPagesWithFieldsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getWikiSpacesResponse> getWikiSpacesAsync(PolarionApiClient.Core.Generated.getWikiSpacesRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getWikiSpacesResponse> getWikiSpacesAsync(PolarionApiClient.Core.Generated.Tracker.getWikiSpacesRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getWorkItemByIdResponse> getWorkItemByIdAsync(PolarionApiClient.Core.Generated.getWorkItemByIdRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getWorkItemByIdResponse> getWorkItemByIdAsync(PolarionApiClient.Core.Generated.Tracker.getWorkItemByIdRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getWorkItemByIdsWithFieldsResponse> getWorkItemByIdsWithFieldsAsync(PolarionApiClient.Core.Generated.getWorkItemByIdsWithFieldsRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getWorkItemByIdsWithFieldsResponse> getWorkItemByIdsWithFieldsAsync(PolarionApiClient.Core.Generated.Tracker.getWorkItemByIdsWithFieldsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getWorkItemByUriResponse> getWorkItemByUriAsync(PolarionApiClient.Core.Generated.getWorkItemByUriRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getWorkItemByUriResponse> getWorkItemByUriAsync(PolarionApiClient.Core.Generated.Tracker.getWorkItemByUriRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getWorkItemByUriInRevisionResponse> getWorkItemByUriInRevisionAsync(PolarionApiClient.Core.Generated.getWorkItemByUriInRevisionRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getWorkItemByUriInRevisionResponse> getWorkItemByUriInRevisionAsync(PolarionApiClient.Core.Generated.Tracker.getWorkItemByUriInRevisionRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getWorkItemByUriInRevisionWithFieldsResponse> getWorkItemByUriInRevisionWithFieldsAsync(PolarionApiClient.Core.Generated.getWorkItemByUriInRevisionWithFieldsRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getWorkItemByUriInRevisionWithFieldsResponse> getWorkItemByUriInRevisionWithFieldsAsync(PolarionApiClient.Core.Generated.Tracker.getWorkItemByUriInRevisionWithFieldsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getWorkItemByUriWithFieldsResponse> getWorkItemByUriWithFieldsAsync(PolarionApiClient.Core.Generated.getWorkItemByUriWithFieldsRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getWorkItemByUriWithFieldsResponse> getWorkItemByUriWithFieldsAsync(PolarionApiClient.Core.Generated.Tracker.getWorkItemByUriWithFieldsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getWorkItemsCountResponse> getWorkItemsCountAsync(PolarionApiClient.Core.Generated.getWorkItemsCountRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getWorkItemsCountResponse> getWorkItemsCountAsync(PolarionApiClient.Core.Generated.Tracker.getWorkItemsCountRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getWorkItemsLinkedToRevisionResponse> getWorkItemsLinkedToRevisionAsync(PolarionApiClient.Core.Generated.getWorkItemsLinkedToRevisionRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getWorkItemsLinkedToRevisionResponse> getWorkItemsLinkedToRevisionAsync(PolarionApiClient.Core.Generated.Tracker.getWorkItemsLinkedToRevisionRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getWorkItemsLinkedToRevisionWithFieldsResponse> getWorkItemsLinkedToRevisionWithFieldsAsync(PolarionApiClient.Core.Generated.getWorkItemsLinkedToRevisionWithFieldsRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getWorkItemsLinkedToRevisionWithFieldsResponse> getWorkItemsLinkedToRevisionWithFieldsAsync(PolarionApiClient.Core.Generated.Tracker.getWorkItemsLinkedToRevisionWithFieldsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.isHistoryAvailableResponse> isHistoryAvailableAsync(PolarionApiClient.Core.Generated.isHistoryAvailableRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.isHistoryAvailableResponse> isHistoryAvailableAsync(PolarionApiClient.Core.Generated.Tracker.isHistoryAvailableRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.isResolvedCommentResponse> isResolvedCommentAsync(PolarionApiClient.Core.Generated.isResolvedCommentRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.isResolvedCommentResponse> isResolvedCommentAsync(PolarionApiClient.Core.Generated.Tracker.isResolvedCommentRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.listActivitySourcesResponse> listActivitySourcesAsync(PolarionApiClient.Core.Generated.listActivitySourcesRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.listActivitySourcesResponse> listActivitySourcesAsync(PolarionApiClient.Core.Generated.Tracker.listActivitySourcesRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.listAllActivitiesResponse> listAllActivitiesAsync(PolarionApiClient.Core.Generated.listAllActivitiesRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.listAllActivitiesResponse> listAllActivitiesAsync(PolarionApiClient.Core.Generated.Tracker.listAllActivitiesRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.listAllActivitiesGlobalIdsResponse> listAllActivitiesGlobalIdsAsync(PolarionApiClient.Core.Generated.listAllActivitiesGlobalIdsRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.listAllActivitiesGlobalIdsResponse> listAllActivitiesGlobalIdsAsync(PolarionApiClient.Core.Generated.Tracker.listAllActivitiesGlobalIdsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.listGroupActivitiesResponse> listGroupActivitiesAsync(PolarionApiClient.Core.Generated.listGroupActivitiesRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.listGroupActivitiesResponse> listGroupActivitiesAsync(PolarionApiClient.Core.Generated.Tracker.listGroupActivitiesRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.listGroupActivitiesGlobalIdsResponse> listGroupActivitiesGlobalIdsAsync(PolarionApiClient.Core.Generated.listGroupActivitiesGlobalIdsRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.listGroupActivitiesGlobalIdsResponse> listGroupActivitiesGlobalIdsAsync(PolarionApiClient.Core.Generated.Tracker.listGroupActivitiesGlobalIdsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.listProjectActivitiesResponse> listProjectActivitiesAsync(PolarionApiClient.Core.Generated.listProjectActivitiesRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.listProjectActivitiesResponse> listProjectActivitiesAsync(PolarionApiClient.Core.Generated.Tracker.listProjectActivitiesRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.listProjectActivitiesGlobalIdsResponse> listProjectActivitiesGlobalIdsAsync(PolarionApiClient.Core.Generated.listProjectActivitiesGlobalIdsRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.listProjectActivitiesGlobalIdsResponse> listProjectActivitiesGlobalIdsAsync(PolarionApiClient.Core.Generated.Tracker.listProjectActivitiesGlobalIdsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.moveWorkItemToDocumentResponse> moveWorkItemToDocumentAsync(PolarionApiClient.Core.Generated.moveWorkItemToDocumentRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.moveWorkItemToDocumentResponse> moveWorkItemToDocumentAsync(PolarionApiClient.Core.Generated.Tracker.moveWorkItemToDocumentRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.moveWorkItemToModuleResponse> moveWorkItemToModuleAsync(PolarionApiClient.Core.Generated.moveWorkItemToModuleRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.moveWorkItemToModuleResponse> moveWorkItemToModuleAsync(PolarionApiClient.Core.Generated.Tracker.moveWorkItemToModuleRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.performWorkflowActionResponse> performWorkflowActionAsync(PolarionApiClient.Core.Generated.performWorkflowActionRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.performWorkflowActionResponse> performWorkflowActionAsync(PolarionApiClient.Core.Generated.Tracker.performWorkflowActionRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryBaselinesResponse> queryBaselinesAsync(PolarionApiClient.Core.Generated.queryBaselinesRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryBaselinesResponse> queryBaselinesAsync(PolarionApiClient.Core.Generated.Tracker.queryBaselinesRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryModuleUrisResponse> queryModuleUrisAsync(PolarionApiClient.Core.Generated.queryModuleUrisRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryModuleUrisResponse> queryModuleUrisAsync(PolarionApiClient.Core.Generated.Tracker.queryModuleUrisRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryModuleUrisBySQLResponse> queryModuleUrisBySQLAsync(PolarionApiClient.Core.Generated.queryModuleUrisBySQLRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryModuleUrisBySQLResponse> queryModuleUrisBySQLAsync(PolarionApiClient.Core.Generated.Tracker.queryModuleUrisBySQLRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryModuleUrisInBaselineResponse> queryModuleUrisInBaselineAsync(PolarionApiClient.Core.Generated.queryModuleUrisInBaselineRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryModuleUrisInBaselineResponse> queryModuleUrisInBaselineAsync(PolarionApiClient.Core.Generated.Tracker.queryModuleUrisInBaselineRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryModuleUrisInBaselineBySQLResponse> queryModuleUrisInBaselineBySQLAsync(PolarionApiClient.Core.Generated.queryModuleUrisInBaselineBySQLRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryModuleUrisInBaselineBySQLResponse> queryModuleUrisInBaselineBySQLAsync(PolarionApiClient.Core.Generated.Tracker.queryModuleUrisInBaselineBySQLRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryModulesResponse> queryModulesAsync(PolarionApiClient.Core.Generated.queryModulesRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryModulesResponse> queryModulesAsync(PolarionApiClient.Core.Generated.Tracker.queryModulesRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryModulesBySQLResponse> queryModulesBySQLAsync(PolarionApiClient.Core.Generated.queryModulesBySQLRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryModulesBySQLResponse> queryModulesBySQLAsync(PolarionApiClient.Core.Generated.Tracker.queryModulesBySQLRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryModulesInBaselineResponse> queryModulesInBaselineAsync(PolarionApiClient.Core.Generated.queryModulesInBaselineRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryModulesInBaselineResponse> queryModulesInBaselineAsync(PolarionApiClient.Core.Generated.Tracker.queryModulesInBaselineRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryModulesInBaselineBySQLResponse> queryModulesInBaselineBySQLAsync(PolarionApiClient.Core.Generated.queryModulesInBaselineBySQLRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryModulesInBaselineBySQLResponse> queryModulesInBaselineBySQLAsync(PolarionApiClient.Core.Generated.Tracker.queryModulesInBaselineBySQLRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryRevisionUrisResponse> queryRevisionUrisAsync(PolarionApiClient.Core.Generated.queryRevisionUrisRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryRevisionUrisResponse> queryRevisionUrisAsync(PolarionApiClient.Core.Generated.Tracker.queryRevisionUrisRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryRevisionsResponse> queryRevisionsAsync(PolarionApiClient.Core.Generated.queryRevisionsRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryRevisionsResponse> queryRevisionsAsync(PolarionApiClient.Core.Generated.Tracker.queryRevisionsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWikiPageUrisResponse> queryWikiPageUrisAsync(PolarionApiClient.Core.Generated.queryWikiPageUrisRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWikiPageUrisResponse> queryWikiPageUrisAsync(PolarionApiClient.Core.Generated.Tracker.queryWikiPageUrisRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWikiPageUrisBySQLResponse> queryWikiPageUrisBySQLAsync(PolarionApiClient.Core.Generated.queryWikiPageUrisBySQLRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWikiPageUrisBySQLResponse> queryWikiPageUrisBySQLAsync(PolarionApiClient.Core.Generated.Tracker.queryWikiPageUrisBySQLRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWikiPageUrisInBaselineResponse> queryWikiPageUrisInBaselineAsync(PolarionApiClient.Core.Generated.queryWikiPageUrisInBaselineRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWikiPageUrisInBaselineResponse> queryWikiPageUrisInBaselineAsync(PolarionApiClient.Core.Generated.Tracker.queryWikiPageUrisInBaselineRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWikiPageUrisInBaselineBySQLResponse> queryWikiPageUrisInBaselineBySQLAsync(PolarionApiClient.Core.Generated.queryWikiPageUrisInBaselineBySQLRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWikiPageUrisInBaselineBySQLResponse> queryWikiPageUrisInBaselineBySQLAsync(PolarionApiClient.Core.Generated.Tracker.queryWikiPageUrisInBaselineBySQLRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWikiPagesResponse> queryWikiPagesAsync(PolarionApiClient.Core.Generated.queryWikiPagesRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWikiPagesResponse> queryWikiPagesAsync(PolarionApiClient.Core.Generated.Tracker.queryWikiPagesRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWikiPagesBySQLResponse> queryWikiPagesBySQLAsync(PolarionApiClient.Core.Generated.queryWikiPagesBySQLRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWikiPagesBySQLResponse> queryWikiPagesBySQLAsync(PolarionApiClient.Core.Generated.Tracker.queryWikiPagesBySQLRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWikiPagesInBaselineResponse> queryWikiPagesInBaselineAsync(PolarionApiClient.Core.Generated.queryWikiPagesInBaselineRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWikiPagesInBaselineResponse> queryWikiPagesInBaselineAsync(PolarionApiClient.Core.Generated.Tracker.queryWikiPagesInBaselineRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWikiPagesInBaselineBySQLResponse> queryWikiPagesInBaselineBySQLAsync(PolarionApiClient.Core.Generated.queryWikiPagesInBaselineBySQLRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWikiPagesInBaselineBySQLResponse> queryWikiPagesInBaselineBySQLAsync(PolarionApiClient.Core.Generated.Tracker.queryWikiPagesInBaselineBySQLRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWorkItemUrisResponse> queryWorkItemUrisAsync(PolarionApiClient.Core.Generated.queryWorkItemUrisRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWorkItemUrisResponse> queryWorkItemUrisAsync(PolarionApiClient.Core.Generated.Tracker.queryWorkItemUrisRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWorkItemUrisBySQLResponse> queryWorkItemUrisBySQLAsync(PolarionApiClient.Core.Generated.queryWorkItemUrisBySQLRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWorkItemUrisBySQLResponse> queryWorkItemUrisBySQLAsync(PolarionApiClient.Core.Generated.Tracker.queryWorkItemUrisBySQLRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWorkItemUrisInBaselineResponse> queryWorkItemUrisInBaselineAsync(PolarionApiClient.Core.Generated.queryWorkItemUrisInBaselineRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWorkItemUrisInBaselineResponse> queryWorkItemUrisInBaselineAsync(PolarionApiClient.Core.Generated.Tracker.queryWorkItemUrisInBaselineRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWorkItemUrisInBaselineBySQLResponse> queryWorkItemUrisInBaselineBySQLAsync(PolarionApiClient.Core.Generated.queryWorkItemUrisInBaselineBySQLRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWorkItemUrisInBaselineBySQLResponse> queryWorkItemUrisInBaselineBySQLAsync(PolarionApiClient.Core.Generated.Tracker.queryWorkItemUrisInBaselineBySQLRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWorkItemUrisInBaselineLimitedResponse> queryWorkItemUrisInBaselineLimitedAsync(PolarionApiClient.Core.Generated.queryWorkItemUrisInBaselineLimitedRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWorkItemUrisInBaselineLimitedResponse> queryWorkItemUrisInBaselineLimitedAsync(PolarionApiClient.Core.Generated.Tracker.queryWorkItemUrisInBaselineLimitedRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWorkItemUrisLimitedResponse> queryWorkItemUrisLimitedAsync(PolarionApiClient.Core.Generated.queryWorkItemUrisLimitedRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWorkItemUrisLimitedResponse> queryWorkItemUrisLimitedAsync(PolarionApiClient.Core.Generated.Tracker.queryWorkItemUrisLimitedRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWorkItemsResponse> queryWorkItemsAsync(PolarionApiClient.Core.Generated.queryWorkItemsRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWorkItemsResponse> queryWorkItemsAsync(PolarionApiClient.Core.Generated.Tracker.queryWorkItemsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWorkItemsBySQLResponse> queryWorkItemsBySQLAsync(PolarionApiClient.Core.Generated.queryWorkItemsBySQLRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWorkItemsBySQLResponse> queryWorkItemsBySQLAsync(PolarionApiClient.Core.Generated.Tracker.queryWorkItemsBySQLRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWorkItemsInBaselineResponse> queryWorkItemsInBaselineAsync(PolarionApiClient.Core.Generated.queryWorkItemsInBaselineRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWorkItemsInBaselineResponse> queryWorkItemsInBaselineAsync(PolarionApiClient.Core.Generated.Tracker.queryWorkItemsInBaselineRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWorkItemsInBaselineBySQLResponse> queryWorkItemsInBaselineBySQLAsync(PolarionApiClient.Core.Generated.queryWorkItemsInBaselineBySQLRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWorkItemsInBaselineBySQLResponse> queryWorkItemsInBaselineBySQLAsync(PolarionApiClient.Core.Generated.Tracker.queryWorkItemsInBaselineBySQLRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWorkItemsInBaselineLimitedResponse> queryWorkItemsInBaselineLimitedAsync(PolarionApiClient.Core.Generated.queryWorkItemsInBaselineLimitedRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWorkItemsInBaselineLimitedResponse> queryWorkItemsInBaselineLimitedAsync(PolarionApiClient.Core.Generated.Tracker.queryWorkItemsInBaselineLimitedRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWorkItemsInRevisionResponse> queryWorkItemsInRevisionAsync(PolarionApiClient.Core.Generated.queryWorkItemsInRevisionRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWorkItemsInRevisionResponse> queryWorkItemsInRevisionAsync(PolarionApiClient.Core.Generated.Tracker.queryWorkItemsInRevisionRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWorkItemsInRevisionLimitedResponse> queryWorkItemsInRevisionLimitedAsync(PolarionApiClient.Core.Generated.queryWorkItemsInRevisionLimitedRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWorkItemsInRevisionLimitedResponse> queryWorkItemsInRevisionLimitedAsync(PolarionApiClient.Core.Generated.Tracker.queryWorkItemsInRevisionLimitedRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWorkItemsLimitedResponse> queryWorkItemsLimitedAsync(PolarionApiClient.Core.Generated.queryWorkItemsLimitedRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWorkItemsLimitedResponse> queryWorkItemsLimitedAsync(PolarionApiClient.Core.Generated.Tracker.queryWorkItemsLimitedRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.removeApproveeResponse> removeApproveeAsync(PolarionApiClient.Core.Generated.removeApproveeRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.removeApproveeResponse> removeApproveeAsync(PolarionApiClient.Core.Generated.Tracker.removeApproveeRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.removeAssigneeResponse> removeAssigneeAsync(PolarionApiClient.Core.Generated.removeAssigneeRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.removeAssigneeResponse> removeAssigneeAsync(PolarionApiClient.Core.Generated.Tracker.removeAssigneeRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.removeCategoryResponse> removeCategoryAsync(PolarionApiClient.Core.Generated.removeCategoryRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.removeCategoryResponse> removeCategoryAsync(PolarionApiClient.Core.Generated.Tracker.removeCategoryRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.removeExternalLinkedRevisionResponse> removeExternalLinkedRevisionAsync(PolarionApiClient.Core.Generated.removeExternalLinkedRevisionRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.removeExternalLinkedRevisionResponse> removeExternalLinkedRevisionAsync(PolarionApiClient.Core.Generated.Tracker.removeExternalLinkedRevisionRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.removeExternallyLinkedItemResponse> removeExternallyLinkedItemAsync(PolarionApiClient.Core.Generated.removeExternallyLinkedItemRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.removeExternallyLinkedItemResponse> removeExternallyLinkedItemAsync(PolarionApiClient.Core.Generated.Tracker.removeExternallyLinkedItemRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.removeHyperlinkResponse> removeHyperlinkAsync(PolarionApiClient.Core.Generated.removeHyperlinkRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.removeHyperlinkResponse> removeHyperlinkAsync(PolarionApiClient.Core.Generated.Tracker.removeHyperlinkRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.removeLinkedItemResponse> removeLinkedItemAsync(PolarionApiClient.Core.Generated.removeLinkedItemRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.removeLinkedItemResponse> removeLinkedItemAsync(PolarionApiClient.Core.Generated.Tracker.removeLinkedItemRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.removeLinkedRevisionResponse> removeLinkedRevisionAsync(PolarionApiClient.Core.Generated.removeLinkedRevisionRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.removeLinkedRevisionResponse> removeLinkedRevisionAsync(PolarionApiClient.Core.Generated.Tracker.removeLinkedRevisionRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.removePlaningConstraintResponse> removePlaningConstraintAsync(PolarionApiClient.Core.Generated.removePlaningConstraintRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.removePlaningConstraintResponse> removePlaningConstraintAsync(PolarionApiClient.Core.Generated.Tracker.removePlaningConstraintRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.resetWorkflowResponse> resetWorkflowAsync(PolarionApiClient.Core.Generated.resetWorkflowRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.resetWorkflowResponse> resetWorkflowAsync(PolarionApiClient.Core.Generated.Tracker.resetWorkflowRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.reuseDocumentResponse> reuseDocumentAsync(PolarionApiClient.Core.Generated.reuseDocumentRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.reuseDocumentResponse> reuseDocumentAsync(PolarionApiClient.Core.Generated.Tracker.reuseDocumentRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.reuseModuleResponse> reuseModuleAsync(PolarionApiClient.Core.Generated.reuseModuleRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.reuseModuleResponse> reuseModuleAsync(PolarionApiClient.Core.Generated.Tracker.reuseModuleRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.setCommentTagsResponse> setCommentTagsAsync(PolarionApiClient.Core.Generated.setCommentTagsRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.setCommentTagsResponse> setCommentTagsAsync(PolarionApiClient.Core.Generated.Tracker.setCommentTagsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.setCustomFieldResponse> setCustomFieldAsync(PolarionApiClient.Core.Generated.setCustomFieldRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.setCustomFieldResponse> setCustomFieldAsync(PolarionApiClient.Core.Generated.Tracker.setCustomFieldRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.setFieldsNullResponse> setFieldsNullAsync(PolarionApiClient.Core.Generated.setFieldsNullRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.setFieldsNullResponse> setFieldsNullAsync(PolarionApiClient.Core.Generated.Tracker.setFieldsNullRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.setLocalizedWorkItemDescriptionResponse> setLocalizedWorkItemDescriptionAsync(PolarionApiClient.Core.Generated.setLocalizedWorkItemDescriptionRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.setLocalizedWorkItemDescriptionResponse> setLocalizedWorkItemDescriptionAsync(PolarionApiClient.Core.Generated.Tracker.setLocalizedWorkItemDescriptionRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.setLocalizedWorkItemTitleResponse> setLocalizedWorkItemTitleAsync(PolarionApiClient.Core.Generated.setLocalizedWorkItemTitleRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.setLocalizedWorkItemTitleResponse> setLocalizedWorkItemTitleAsync(PolarionApiClient.Core.Generated.Tracker.setLocalizedWorkItemTitleRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.setResolvedCommentResponse> setResolvedCommentAsync(PolarionApiClient.Core.Generated.setResolvedCommentRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.setResolvedCommentResponse> setResolvedCommentAsync(PolarionApiClient.Core.Generated.Tracker.setResolvedCommentRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.updateAttachmentResponse> updateAttachmentAsync(PolarionApiClient.Core.Generated.updateAttachmentRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.updateAttachmentResponse> updateAttachmentAsync(PolarionApiClient.Core.Generated.Tracker.updateAttachmentRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.updateBaselineResponse> updateBaselineAsync(PolarionApiClient.Core.Generated.updateBaselineRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.updateBaselineResponse> updateBaselineAsync(PolarionApiClient.Core.Generated.Tracker.updateBaselineRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.updateDerivedDocumentResponse> updateDerivedDocumentAsync(PolarionApiClient.Core.Generated.updateDerivedDocumentRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.updateDerivedDocumentResponse> updateDerivedDocumentAsync(PolarionApiClient.Core.Generated.Tracker.updateDerivedDocumentRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.updateDerivedModuleResponse> updateDerivedModuleAsync(PolarionApiClient.Core.Generated.updateDerivedModuleRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.updateDerivedModuleResponse> updateDerivedModuleAsync(PolarionApiClient.Core.Generated.Tracker.updateDerivedModuleRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.updateModuleResponse> updateModuleAsync(PolarionApiClient.Core.Generated.updateModuleRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.updateModuleResponse> updateModuleAsync(PolarionApiClient.Core.Generated.Tracker.updateModuleRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.updateTitleHeadingInDocumentResponse> updateTitleHeadingInDocumentAsync(PolarionApiClient.Core.Generated.updateTitleHeadingInDocumentRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.updateTitleHeadingInDocumentResponse> updateTitleHeadingInDocumentAsync(PolarionApiClient.Core.Generated.Tracker.updateTitleHeadingInDocumentRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PriorityOptionId[]))]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.updateWorkItemResponse> updateWorkItemAsync(PolarionApiClient.Core.Generated.updateWorkItemRequest request);
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.updateWorkItemResponse> updateWorkItemAsync(PolarionApiClient.Core.Generated.Tracker.updateWorkItemRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -7215,13 +7215,13 @@ namespace PolarionApiClient.Core.Generated
         public string title;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=2)]
-        public PolarionApiClient.Core.Generated.Text content;
+        public PolarionApiClient.Core.Generated.Tracker.Text content;
         
         public addCommentRequest()
         {
         }
         
-        public addCommentRequest(string parentObjectUri, string title, PolarionApiClient.Core.Generated.Text content)
+        public addCommentRequest(string parentObjectUri, string title, PolarionApiClient.Core.Generated.Tracker.Text content)
         {
             this.parentObjectUri = parentObjectUri;
             this.title = title;
@@ -7260,13 +7260,13 @@ namespace PolarionApiClient.Core.Generated
         public string activityGlobalId;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=1)]
-        public PolarionApiClient.Core.Generated.Text commentText;
+        public PolarionApiClient.Core.Generated.Tracker.Text commentText;
         
         public addCommentToActivityRequest()
         {
         }
         
-        public addCommentToActivityRequest(string activityGlobalId, PolarionApiClient.Core.Generated.Text commentText)
+        public addCommentToActivityRequest(string activityGlobalId, PolarionApiClient.Core.Generated.Tracker.Text commentText)
         {
             this.activityGlobalId = activityGlobalId;
             this.commentText = commentText;
@@ -7347,13 +7347,13 @@ namespace PolarionApiClient.Core.Generated
         public string linkedExternalWorkitemURI;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=2)]
-        public PolarionApiClient.Core.Generated.EnumOptionId role;
+        public PolarionApiClient.Core.Generated.Tracker.EnumOptionId role;
         
         public addExternallyLinkedItemRequest()
         {
         }
         
-        public addExternallyLinkedItemRequest(string workitemURI, string linkedExternalWorkitemURI, PolarionApiClient.Core.Generated.EnumOptionId role)
+        public addExternallyLinkedItemRequest(string workitemURI, string linkedExternalWorkitemURI, PolarionApiClient.Core.Generated.Tracker.EnumOptionId role)
         {
             this.workitemURI = workitemURI;
             this.linkedExternalWorkitemURI = linkedExternalWorkitemURI;
@@ -7395,13 +7395,13 @@ namespace PolarionApiClient.Core.Generated
         public string url;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=2)]
-        public PolarionApiClient.Core.Generated.EnumOptionId role;
+        public PolarionApiClient.Core.Generated.Tracker.EnumOptionId role;
         
         public addHyperlinkRequest()
         {
         }
         
-        public addHyperlinkRequest(string workitemURI, string url, PolarionApiClient.Core.Generated.EnumOptionId role)
+        public addHyperlinkRequest(string workitemURI, string url, PolarionApiClient.Core.Generated.Tracker.EnumOptionId role)
         {
             this.workitemURI = workitemURI;
             this.url = url;
@@ -7443,13 +7443,13 @@ namespace PolarionApiClient.Core.Generated
         public string linkedWorkitemURI;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=2)]
-        public PolarionApiClient.Core.Generated.EnumOptionId role;
+        public PolarionApiClient.Core.Generated.Tracker.EnumOptionId role;
         
         public addLinkedItemRequest()
         {
         }
         
-        public addLinkedItemRequest(string workitemURI, string linkedWorkitemURI, PolarionApiClient.Core.Generated.EnumOptionId role)
+        public addLinkedItemRequest(string workitemURI, string linkedWorkitemURI, PolarionApiClient.Core.Generated.Tracker.EnumOptionId role)
         {
             this.workitemURI = workitemURI;
             this.linkedWorkitemURI = linkedWorkitemURI;
@@ -7491,7 +7491,7 @@ namespace PolarionApiClient.Core.Generated
         public string in1;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=2)]
-        public PolarionApiClient.Core.Generated.EnumOptionId in2;
+        public PolarionApiClient.Core.Generated.Tracker.EnumOptionId in2;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=3)]
         public string in3;
@@ -7503,7 +7503,7 @@ namespace PolarionApiClient.Core.Generated
         {
         }
         
-        public addLinkedItemWithRevRequest(string in0, string in1, PolarionApiClient.Core.Generated.EnumOptionId in2, string in3, bool in4)
+        public addLinkedItemWithRevRequest(string in0, string in1, PolarionApiClient.Core.Generated.Tracker.EnumOptionId in2, string in3, bool in4)
         {
             this.in0 = in0;
             this.in1 = in1;
@@ -7547,7 +7547,7 @@ namespace PolarionApiClient.Core.Generated
         public string linkedOslcItemURI;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=2)]
-        public PolarionApiClient.Core.Generated.EnumOptionId role;
+        public PolarionApiClient.Core.Generated.Tracker.EnumOptionId role;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=3)]
         public string label;
@@ -7556,7 +7556,7 @@ namespace PolarionApiClient.Core.Generated
         {
         }
         
-        public addLinkedOslcItemRequest(string workitemURI, string linkedOslcItemURI, PolarionApiClient.Core.Generated.EnumOptionId role, string label)
+        public addLinkedOslcItemRequest(string workitemURI, string linkedOslcItemURI, PolarionApiClient.Core.Generated.Tracker.EnumOptionId role, string label)
         {
             this.workitemURI = workitemURI;
             this.linkedOslcItemURI = linkedOslcItemURI;
@@ -7643,13 +7643,13 @@ namespace PolarionApiClient.Core.Generated
         public System.DateTime date;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=2)]
-        public PolarionApiClient.Core.Generated.EnumOptionId constraint;
+        public PolarionApiClient.Core.Generated.Tracker.EnumOptionId constraint;
         
         public addPlaningContraintRequest()
         {
         }
         
-        public addPlaningContraintRequest(string workitemURI, System.DateTime date, PolarionApiClient.Core.Generated.EnumOptionId constraint)
+        public addPlaningContraintRequest(string workitemURI, System.DateTime date, PolarionApiClient.Core.Generated.Tracker.EnumOptionId constraint)
         {
             this.workitemURI = workitemURI;
             this.date = date;
@@ -7842,13 +7842,13 @@ namespace PolarionApiClient.Core.Generated
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
-        public PolarionApiClient.Core.Generated.Baseline createBaselineReturn;
+        public PolarionApiClient.Core.Generated.Tracker.Baseline createBaselineReturn;
         
         public createBaselineResponse()
         {
         }
         
-        public createBaselineResponse(PolarionApiClient.Core.Generated.Baseline createBaselineReturn)
+        public createBaselineResponse(PolarionApiClient.Core.Generated.Tracker.Baseline createBaselineReturn)
         {
             this.createBaselineReturn = createBaselineReturn;
         }
@@ -7865,13 +7865,13 @@ namespace PolarionApiClient.Core.Generated
         public string workitemURI;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=1)]
-        public PolarionApiClient.Core.Generated.Text content;
+        public PolarionApiClient.Core.Generated.Tracker.Text content;
         
         public createCommentRequest()
         {
         }
         
-        public createCommentRequest(string workitemURI, PolarionApiClient.Core.Generated.Text content)
+        public createCommentRequest(string workitemURI, PolarionApiClient.Core.Generated.Tracker.Text content)
         {
             this.workitemURI = workitemURI;
             this.content = content;
@@ -7904,7 +7904,7 @@ namespace PolarionApiClient.Core.Generated
         public string title;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=2)]
-        public PolarionApiClient.Core.Generated.Text content;
+        public PolarionApiClient.Core.Generated.Tracker.Text content;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=3)]
         [System.Xml.Serialization.XmlElementAttribute("visibleTo")]
@@ -7914,7 +7914,7 @@ namespace PolarionApiClient.Core.Generated
         {
         }
         
-        public createCommentNewRequest(string parentURI, string title, PolarionApiClient.Core.Generated.Text content, string[] visibleTo)
+        public createCommentNewRequest(string parentURI, string title, PolarionApiClient.Core.Generated.Tracker.Text content, string[] visibleTo)
         {
             this.parentURI = parentURI;
             this.title = title;
@@ -7964,10 +7964,10 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=4)]
         [System.Xml.Serialization.XmlElementAttribute("allowedWITypes")]
-        public PolarionApiClient.Core.Generated.EnumOptionId[] allowedWITypes;
+        public PolarionApiClient.Core.Generated.Tracker.EnumOptionId[] allowedWITypes;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=5)]
-        public PolarionApiClient.Core.Generated.EnumOptionId structureLinkRole;
+        public PolarionApiClient.Core.Generated.Tracker.EnumOptionId structureLinkRole;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=6)]
         public string homePageContent;
@@ -7976,7 +7976,7 @@ namespace PolarionApiClient.Core.Generated
         {
         }
         
-        public createDocumentRequest(string projectId, string location, string documentName, string documentTitle, PolarionApiClient.Core.Generated.EnumOptionId[] allowedWITypes, PolarionApiClient.Core.Generated.EnumOptionId structureLinkRole, string homePageContent)
+        public createDocumentRequest(string projectId, string location, string documentName, string documentTitle, PolarionApiClient.Core.Generated.Tracker.EnumOptionId[] allowedWITypes, PolarionApiClient.Core.Generated.Tracker.EnumOptionId structureLinkRole, string homePageContent)
         {
             this.projectId = projectId;
             this.location = location;
@@ -8019,13 +8019,13 @@ namespace PolarionApiClient.Core.Generated
         public string documentURI;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=1)]
-        public PolarionApiClient.Core.Generated.Text text;
+        public PolarionApiClient.Core.Generated.Tracker.Text text;
         
         public createDocumentCommentRequest()
         {
         }
         
-        public createDocumentCommentRequest(string documentURI, PolarionApiClient.Core.Generated.Text text)
+        public createDocumentCommentRequest(string documentURI, PolarionApiClient.Core.Generated.Tracker.Text text)
         {
             this.documentURI = documentURI;
             this.text = text;
@@ -8066,13 +8066,13 @@ namespace PolarionApiClient.Core.Generated
         public string workItemURI;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=2)]
-        public PolarionApiClient.Core.Generated.Text text;
+        public PolarionApiClient.Core.Generated.Tracker.Text text;
         
         public createDocumentCommentReferringWIRequest()
         {
         }
         
-        public createDocumentCommentReferringWIRequest(string documentURI, string workItemURI, PolarionApiClient.Core.Generated.Text text)
+        public createDocumentCommentReferringWIRequest(string documentURI, string workItemURI, PolarionApiClient.Core.Generated.Tracker.Text text)
         {
             this.documentURI = documentURI;
             this.workItemURI = workItemURI;
@@ -8111,13 +8111,13 @@ namespace PolarionApiClient.Core.Generated
         public string parentURI;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=1)]
-        public PolarionApiClient.Core.Generated.Text text;
+        public PolarionApiClient.Core.Generated.Tracker.Text text;
         
         public createDocumentCommentReplyRequest()
         {
         }
         
-        public createDocumentCommentReplyRequest(string parentURI, PolarionApiClient.Core.Generated.Text text)
+        public createDocumentCommentReplyRequest(string parentURI, PolarionApiClient.Core.Generated.Tracker.Text text)
         {
             this.parentURI = parentURI;
             this.text = text;
@@ -8184,13 +8184,13 @@ namespace PolarionApiClient.Core.Generated
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
-        public PolarionApiClient.Core.Generated.Folder createFolderReturn;
+        public PolarionApiClient.Core.Generated.Tracker.Folder createFolderReturn;
         
         public createFolderResponse()
         {
         }
         
-        public createFolderResponse(PolarionApiClient.Core.Generated.Folder createFolderReturn)
+        public createFolderResponse(PolarionApiClient.Core.Generated.Tracker.Folder createFolderReturn)
         {
             this.createFolderReturn = createFolderReturn;
         }
@@ -8214,10 +8214,10 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=3)]
         [System.Xml.Serialization.XmlElementAttribute("allowedWITypes")]
-        public PolarionApiClient.Core.Generated.EnumOptionId[] allowedWITypes;
+        public PolarionApiClient.Core.Generated.Tracker.EnumOptionId[] allowedWITypes;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=4)]
-        public PolarionApiClient.Core.Generated.EnumOptionId structureLinkRole;
+        public PolarionApiClient.Core.Generated.Tracker.EnumOptionId structureLinkRole;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=5)]
         public bool parentToChild;
@@ -8229,7 +8229,7 @@ namespace PolarionApiClient.Core.Generated
         {
         }
         
-        public createModuleRequest(string projectId, string location, string moduleName, PolarionApiClient.Core.Generated.EnumOptionId[] allowedWITypes, PolarionApiClient.Core.Generated.EnumOptionId structureLinkRole, bool parentToChild, string homePageContent)
+        public createModuleRequest(string projectId, string location, string moduleName, PolarionApiClient.Core.Generated.Tracker.EnumOptionId[] allowedWITypes, PolarionApiClient.Core.Generated.Tracker.EnumOptionId structureLinkRole, bool parentToChild, string homePageContent)
         {
             this.projectId = projectId;
             this.location = location;
@@ -8269,13 +8269,13 @@ namespace PolarionApiClient.Core.Generated
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
-        public PolarionApiClient.Core.Generated.WorkItem content;
+        public PolarionApiClient.Core.Generated.Tracker.WorkItem content;
         
         public createWorkItemRequest()
         {
         }
         
-        public createWorkItemRequest(PolarionApiClient.Core.Generated.WorkItem content)
+        public createWorkItemRequest(PolarionApiClient.Core.Generated.Tracker.WorkItem content)
         {
             this.content = content;
         }
@@ -8315,13 +8315,13 @@ namespace PolarionApiClient.Core.Generated
         public string parentWorkItemURI;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=2)]
-        public PolarionApiClient.Core.Generated.WorkItem workItem;
+        public PolarionApiClient.Core.Generated.Tracker.WorkItem workItem;
         
         public createWorkItemInModuleRequest()
         {
         }
         
-        public createWorkItemInModuleRequest(string moduleURI, string parentWorkItemURI, PolarionApiClient.Core.Generated.WorkItem workItem)
+        public createWorkItemInModuleRequest(string moduleURI, string parentWorkItemURI, PolarionApiClient.Core.Generated.Tracker.WorkItem workItem)
         {
             this.moduleURI = moduleURI;
             this.parentWorkItemURI = parentWorkItemURI;
@@ -8360,7 +8360,7 @@ namespace PolarionApiClient.Core.Generated
         public string workitemURI;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=1)]
-        public PolarionApiClient.Core.Generated.User user;
+        public PolarionApiClient.Core.Generated.Tracker.User user;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=2)]
         [System.Xml.Serialization.XmlElementAttribute(DataType="date")]
@@ -8373,7 +8373,7 @@ namespace PolarionApiClient.Core.Generated
         {
         }
         
-        public createWorkRecordRequest(string workitemURI, PolarionApiClient.Core.Generated.User user, System.DateTime date, string timeSpent)
+        public createWorkRecordRequest(string workitemURI, PolarionApiClient.Core.Generated.Tracker.User user, System.DateTime date, string timeSpent)
         {
             this.workitemURI = workitemURI;
             this.user = user;
@@ -8405,14 +8405,14 @@ namespace PolarionApiClient.Core.Generated
         public string workitemURI;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=1)]
-        public PolarionApiClient.Core.Generated.User user;
+        public PolarionApiClient.Core.Generated.Tracker.User user;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=2)]
         [System.Xml.Serialization.XmlElementAttribute(DataType="date")]
         public System.DateTime date;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=3)]
-        public PolarionApiClient.Core.Generated.EnumOptionId type;
+        public PolarionApiClient.Core.Generated.Tracker.EnumOptionId type;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=4)]
         public string timeSpent;
@@ -8424,7 +8424,7 @@ namespace PolarionApiClient.Core.Generated
         {
         }
         
-        public createWorkRecordWithTypeAndCommentRequest(string workitemURI, PolarionApiClient.Core.Generated.User user, System.DateTime date, PolarionApiClient.Core.Generated.EnumOptionId type, string timeSpent, string comment)
+        public createWorkRecordWithTypeAndCommentRequest(string workitemURI, PolarionApiClient.Core.Generated.Tracker.User user, System.DateTime date, PolarionApiClient.Core.Generated.Tracker.EnumOptionId type, string timeSpent, string comment)
         {
             this.workitemURI = workitemURI;
             this.user = user;
@@ -8693,13 +8693,13 @@ namespace PolarionApiClient.Core.Generated
         public string approveeId;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=2)]
-        public PolarionApiClient.Core.Generated.EnumOptionId status;
+        public PolarionApiClient.Core.Generated.Tracker.EnumOptionId status;
         
         public editApprovalRequest()
         {
         }
         
-        public editApprovalRequest(string workitemURI, string approveeId, PolarionApiClient.Core.Generated.EnumOptionId status)
+        public editApprovalRequest(string workitemURI, string approveeId, PolarionApiClient.Core.Generated.Tracker.EnumOptionId status)
         {
             this.workitemURI = workitemURI;
             this.approveeId = approveeId;
@@ -8730,13 +8730,13 @@ namespace PolarionApiClient.Core.Generated
         public string uri;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=1)]
-        public PolarionApiClient.Core.Generated.PdfProperties exportPdfProperties;
+        public PolarionApiClient.Core.Generated.Tracker.PdfProperties exportPdfProperties;
         
         public exportDocumentToPDFRequest()
         {
         }
         
-        public exportDocumentToPDFRequest(string uri, PolarionApiClient.Core.Generated.PdfProperties exportPdfProperties)
+        public exportDocumentToPDFRequest(string uri, PolarionApiClient.Core.Generated.Tracker.PdfProperties exportPdfProperties)
         {
             this.uri = uri;
             this.exportPdfProperties = exportPdfProperties;
@@ -8803,13 +8803,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("generateHistoryReturn")]
-        public PolarionApiClient.Core.Generated.Change[] generateHistoryReturn;
+        public PolarionApiClient.Core.Generated.Tracker.Change[] generateHistoryReturn;
         
         public generateHistoryResponse()
         {
         }
         
-        public generateHistoryResponse(PolarionApiClient.Core.Generated.Change[] generateHistoryReturn)
+        public generateHistoryResponse(PolarionApiClient.Core.Generated.Tracker.Change[] generateHistoryReturn)
         {
             this.generateHistoryReturn = generateHistoryReturn;
         }
@@ -8843,13 +8843,13 @@ namespace PolarionApiClient.Core.Generated
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
-        public PolarionApiClient.Core.Generated.Activity getActivityByGlobalIdReturn;
+        public PolarionApiClient.Core.Generated.Tracker.Activity getActivityByGlobalIdReturn;
         
         public getActivityByGlobalIdResponse()
         {
         }
         
-        public getActivityByGlobalIdResponse(PolarionApiClient.Core.Generated.Activity getActivityByGlobalIdReturn)
+        public getActivityByGlobalIdResponse(PolarionApiClient.Core.Generated.Tracker.Activity getActivityByGlobalIdReturn)
         {
             this.getActivityByGlobalIdReturn = getActivityByGlobalIdReturn;
         }
@@ -8888,13 +8888,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("getAllEnumOptionIdsForIdReturn")]
-        public PolarionApiClient.Core.Generated.EnumOptionId[] getAllEnumOptionIdsForIdReturn;
+        public PolarionApiClient.Core.Generated.Tracker.EnumOptionId[] getAllEnumOptionIdsForIdReturn;
         
         public getAllEnumOptionIdsForIdResponse()
         {
         }
         
-        public getAllEnumOptionIdsForIdResponse(PolarionApiClient.Core.Generated.EnumOptionId[] getAllEnumOptionIdsForIdReturn)
+        public getAllEnumOptionIdsForIdResponse(PolarionApiClient.Core.Generated.Tracker.EnumOptionId[] getAllEnumOptionIdsForIdReturn)
         {
             this.getAllEnumOptionIdsForIdReturn = getAllEnumOptionIdsForIdReturn;
         }
@@ -8933,13 +8933,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("getAllEnumOptionIdsForKeyReturn")]
-        public PolarionApiClient.Core.Generated.EnumOptionId[] getAllEnumOptionIdsForKeyReturn;
+        public PolarionApiClient.Core.Generated.Tracker.EnumOptionId[] getAllEnumOptionIdsForKeyReturn;
         
         public getAllEnumOptionIdsForKeyResponse()
         {
         }
         
-        public getAllEnumOptionIdsForKeyResponse(PolarionApiClient.Core.Generated.EnumOptionId[] getAllEnumOptionIdsForKeyReturn)
+        public getAllEnumOptionIdsForKeyResponse(PolarionApiClient.Core.Generated.Tracker.EnumOptionId[] getAllEnumOptionIdsForKeyReturn)
         {
             this.getAllEnumOptionIdsForKeyReturn = getAllEnumOptionIdsForKeyReturn;
         }
@@ -8978,13 +8978,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("getAllEnumOptionsForIdReturn")]
-        public PolarionApiClient.Core.Generated.EnumOption[] getAllEnumOptionsForIdReturn;
+        public PolarionApiClient.Core.Generated.Tracker.EnumOption[] getAllEnumOptionsForIdReturn;
         
         public getAllEnumOptionsForIdResponse()
         {
         }
         
-        public getAllEnumOptionsForIdResponse(PolarionApiClient.Core.Generated.EnumOption[] getAllEnumOptionsForIdReturn)
+        public getAllEnumOptionsForIdResponse(PolarionApiClient.Core.Generated.Tracker.EnumOption[] getAllEnumOptionsForIdReturn)
         {
             this.getAllEnumOptionsForIdReturn = getAllEnumOptionsForIdReturn;
         }
@@ -9023,13 +9023,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("getAllEnumOptionsForKeyReturn")]
-        public PolarionApiClient.Core.Generated.EnumOption[] getAllEnumOptionsForKeyReturn;
+        public PolarionApiClient.Core.Generated.Tracker.EnumOption[] getAllEnumOptionsForKeyReturn;
         
         public getAllEnumOptionsForKeyResponse()
         {
         }
         
-        public getAllEnumOptionsForKeyResponse(PolarionApiClient.Core.Generated.EnumOption[] getAllEnumOptionsForKeyReturn)
+        public getAllEnumOptionsForKeyResponse(PolarionApiClient.Core.Generated.Tracker.EnumOption[] getAllEnumOptionsForKeyReturn)
         {
             this.getAllEnumOptionsForKeyReturn = getAllEnumOptionsForKeyReturn;
         }
@@ -9064,13 +9064,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("getAllowedApproversReturn")]
-        public PolarionApiClient.Core.Generated.User[] getAllowedApproversReturn;
+        public PolarionApiClient.Core.Generated.Tracker.User[] getAllowedApproversReturn;
         
         public getAllowedApproversResponse()
         {
         }
         
-        public getAllowedApproversResponse(PolarionApiClient.Core.Generated.User[] getAllowedApproversReturn)
+        public getAllowedApproversResponse(PolarionApiClient.Core.Generated.Tracker.User[] getAllowedApproversReturn)
         {
             this.getAllowedApproversReturn = getAllowedApproversReturn;
         }
@@ -9105,13 +9105,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("getAllowedAssigneesReturn")]
-        public PolarionApiClient.Core.Generated.User[] getAllowedAssigneesReturn;
+        public PolarionApiClient.Core.Generated.Tracker.User[] getAllowedAssigneesReturn;
         
         public getAllowedAssigneesResponse()
         {
         }
         
-        public getAllowedAssigneesResponse(PolarionApiClient.Core.Generated.User[] getAllowedAssigneesReturn)
+        public getAllowedAssigneesResponse(PolarionApiClient.Core.Generated.Tracker.User[] getAllowedAssigneesReturn)
         {
             this.getAllowedAssigneesReturn = getAllowedAssigneesReturn;
         }
@@ -9191,13 +9191,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("getAvailableActionsReturn")]
-        public PolarionApiClient.Core.Generated.WorkflowAction[] getAvailableActionsReturn;
+        public PolarionApiClient.Core.Generated.Tracker.WorkflowAction[] getAvailableActionsReturn;
         
         public getAvailableActionsResponse()
         {
         }
         
-        public getAvailableActionsResponse(PolarionApiClient.Core.Generated.WorkflowAction[] getAvailableActionsReturn)
+        public getAvailableActionsResponse(PolarionApiClient.Core.Generated.Tracker.WorkflowAction[] getAvailableActionsReturn)
         {
             this.getAvailableActionsReturn = getAvailableActionsReturn;
         }
@@ -9236,13 +9236,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("getAvailableEnumOptionIdsForIdReturn")]
-        public PolarionApiClient.Core.Generated.EnumOptionId[] getAvailableEnumOptionIdsForIdReturn;
+        public PolarionApiClient.Core.Generated.Tracker.EnumOptionId[] getAvailableEnumOptionIdsForIdReturn;
         
         public getAvailableEnumOptionIdsForIdResponse()
         {
         }
         
-        public getAvailableEnumOptionIdsForIdResponse(PolarionApiClient.Core.Generated.EnumOptionId[] getAvailableEnumOptionIdsForIdReturn)
+        public getAvailableEnumOptionIdsForIdResponse(PolarionApiClient.Core.Generated.Tracker.EnumOptionId[] getAvailableEnumOptionIdsForIdReturn)
         {
             this.getAvailableEnumOptionIdsForIdReturn = getAvailableEnumOptionIdsForIdReturn;
         }
@@ -9281,13 +9281,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("getAvailableEnumOptionIdsForKeyReturn")]
-        public PolarionApiClient.Core.Generated.EnumOptionId[] getAvailableEnumOptionIdsForKeyReturn;
+        public PolarionApiClient.Core.Generated.Tracker.EnumOptionId[] getAvailableEnumOptionIdsForKeyReturn;
         
         public getAvailableEnumOptionIdsForKeyResponse()
         {
         }
         
-        public getAvailableEnumOptionIdsForKeyResponse(PolarionApiClient.Core.Generated.EnumOptionId[] getAvailableEnumOptionIdsForKeyReturn)
+        public getAvailableEnumOptionIdsForKeyResponse(PolarionApiClient.Core.Generated.Tracker.EnumOptionId[] getAvailableEnumOptionIdsForKeyReturn)
         {
             this.getAvailableEnumOptionIdsForKeyReturn = getAvailableEnumOptionIdsForKeyReturn;
         }
@@ -9322,13 +9322,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("getBackLinkedWorkitemsReturn")]
-        public PolarionApiClient.Core.Generated.LinkedWorkItem[] getBackLinkedWorkitemsReturn;
+        public PolarionApiClient.Core.Generated.Tracker.LinkedWorkItem[] getBackLinkedWorkitemsReturn;
         
         public getBackLinkedWorkitemsResponse()
         {
         }
         
-        public getBackLinkedWorkitemsResponse(PolarionApiClient.Core.Generated.LinkedWorkItem[] getBackLinkedWorkitemsReturn)
+        public getBackLinkedWorkitemsResponse(PolarionApiClient.Core.Generated.Tracker.LinkedWorkItem[] getBackLinkedWorkitemsReturn)
         {
             this.getBackLinkedWorkitemsReturn = getBackLinkedWorkitemsReturn;
         }
@@ -9363,13 +9363,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("getCategoriesReturn")]
-        public PolarionApiClient.Core.Generated.Category[] getCategoriesReturn;
+        public PolarionApiClient.Core.Generated.Tracker.Category[] getCategoriesReturn;
         
         public getCategoriesResponse()
         {
         }
         
-        public getCategoriesResponse(PolarionApiClient.Core.Generated.Category[] getCategoriesReturn)
+        public getCategoriesResponse(PolarionApiClient.Core.Generated.Tracker.Category[] getCategoriesReturn)
         {
             this.getCategoriesReturn = getCategoriesReturn;
         }
@@ -9408,13 +9408,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("getChildFoldersReturn")]
-        public PolarionApiClient.Core.Generated.Folder[] getChildFoldersReturn;
+        public PolarionApiClient.Core.Generated.Tracker.Folder[] getChildFoldersReturn;
         
         public getChildFoldersResponse()
         {
         }
         
-        public getChildFoldersResponse(PolarionApiClient.Core.Generated.Folder[] getChildFoldersReturn)
+        public getChildFoldersResponse(PolarionApiClient.Core.Generated.Tracker.Folder[] getChildFoldersReturn)
         {
             this.getChildFoldersReturn = getChildFoldersReturn;
         }
@@ -9452,13 +9452,13 @@ namespace PolarionApiClient.Core.Generated
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
-        public PolarionApiClient.Core.Generated.CustomField getCustomFieldReturn;
+        public PolarionApiClient.Core.Generated.Tracker.CustomField getCustomFieldReturn;
         
         public getCustomFieldResponse()
         {
         }
         
-        public getCustomFieldResponse(PolarionApiClient.Core.Generated.CustomField getCustomFieldReturn)
+        public getCustomFieldResponse(PolarionApiClient.Core.Generated.Tracker.CustomField getCustomFieldReturn)
         {
             this.getCustomFieldReturn = getCustomFieldReturn;
         }
@@ -9537,13 +9537,13 @@ namespace PolarionApiClient.Core.Generated
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
-        public PolarionApiClient.Core.Generated.CustomFieldType getCustomFieldTypeReturn;
+        public PolarionApiClient.Core.Generated.Tracker.CustomFieldType getCustomFieldTypeReturn;
         
         public getCustomFieldTypeResponse()
         {
         }
         
-        public getCustomFieldTypeResponse(PolarionApiClient.Core.Generated.CustomFieldType getCustomFieldTypeReturn)
+        public getCustomFieldTypeResponse(PolarionApiClient.Core.Generated.Tracker.CustomFieldType getCustomFieldTypeReturn)
         {
             this.getCustomFieldTypeReturn = getCustomFieldTypeReturn;
         }
@@ -9578,13 +9578,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("getCustomFieldTypesReturn")]
-        public PolarionApiClient.Core.Generated.CustomFieldType[] getCustomFieldTypesReturn;
+        public PolarionApiClient.Core.Generated.Tracker.CustomFieldType[] getCustomFieldTypesReturn;
         
         public getCustomFieldTypesResponse()
         {
         }
         
-        public getCustomFieldTypesResponse(PolarionApiClient.Core.Generated.CustomFieldType[] getCustomFieldTypesReturn)
+        public getCustomFieldTypesResponse(PolarionApiClient.Core.Generated.Tracker.CustomFieldType[] getCustomFieldTypesReturn)
         {
             this.getCustomFieldTypesReturn = getCustomFieldTypesReturn;
         }
@@ -9618,13 +9618,13 @@ namespace PolarionApiClient.Core.Generated
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
-        public PolarionApiClient.Core.Generated.LanguageDefinition getDefaultLanguageDefinitionReturn;
+        public PolarionApiClient.Core.Generated.Tracker.LanguageDefinition getDefaultLanguageDefinitionReturn;
         
         public getDefaultLanguageDefinitionResponse()
         {
         }
         
-        public getDefaultLanguageDefinitionResponse(PolarionApiClient.Core.Generated.LanguageDefinition getDefaultLanguageDefinitionReturn)
+        public getDefaultLanguageDefinitionResponse(PolarionApiClient.Core.Generated.Tracker.LanguageDefinition getDefaultLanguageDefinitionReturn)
         {
             this.getDefaultLanguageDefinitionReturn = getDefaultLanguageDefinitionReturn;
         }
@@ -9711,13 +9711,13 @@ namespace PolarionApiClient.Core.Generated
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
-        public PolarionApiClient.Core.Generated.CustomFieldType getDefinedCustomFieldTypeReturn;
+        public PolarionApiClient.Core.Generated.Tracker.CustomFieldType getDefinedCustomFieldTypeReturn;
         
         public getDefinedCustomFieldTypeResponse()
         {
         }
         
-        public getDefinedCustomFieldTypeResponse(PolarionApiClient.Core.Generated.CustomFieldType getDefinedCustomFieldTypeReturn)
+        public getDefinedCustomFieldTypeResponse(PolarionApiClient.Core.Generated.Tracker.CustomFieldType getDefinedCustomFieldTypeReturn)
         {
             this.getDefinedCustomFieldTypeReturn = getDefinedCustomFieldTypeReturn;
         }
@@ -9756,13 +9756,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("getDefinedCustomFieldTypesReturn")]
-        public PolarionApiClient.Core.Generated.CustomFieldType[] getDefinedCustomFieldTypesReturn;
+        public PolarionApiClient.Core.Generated.Tracker.CustomFieldType[] getDefinedCustomFieldTypesReturn;
         
         public getDefinedCustomFieldTypesResponse()
         {
         }
         
-        public getDefinedCustomFieldTypesResponse(PolarionApiClient.Core.Generated.CustomFieldType[] getDefinedCustomFieldTypesReturn)
+        public getDefinedCustomFieldTypesResponse(PolarionApiClient.Core.Generated.Tracker.CustomFieldType[] getDefinedCustomFieldTypesReturn)
         {
             this.getDefinedCustomFieldTypesReturn = getDefinedCustomFieldTypesReturn;
         }
@@ -10010,13 +10010,13 @@ namespace PolarionApiClient.Core.Generated
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
-        public PolarionApiClient.Core.Generated.EnumOption getEnumOptionFromObjectUriForIdReturn;
+        public PolarionApiClient.Core.Generated.Tracker.EnumOption getEnumOptionFromObjectUriForIdReturn;
         
         public getEnumOptionFromObjectUriForIdResponse()
         {
         }
         
-        public getEnumOptionFromObjectUriForIdResponse(PolarionApiClient.Core.Generated.EnumOption getEnumOptionFromObjectUriForIdReturn)
+        public getEnumOptionFromObjectUriForIdResponse(PolarionApiClient.Core.Generated.Tracker.EnumOption getEnumOptionFromObjectUriForIdReturn)
         {
             this.getEnumOptionFromObjectUriForIdReturn = getEnumOptionFromObjectUriForIdReturn;
         }
@@ -10058,13 +10058,13 @@ namespace PolarionApiClient.Core.Generated
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
-        public PolarionApiClient.Core.Generated.EnumOption getEnumOptionFromObjectUriForKeyReturn;
+        public PolarionApiClient.Core.Generated.Tracker.EnumOption getEnumOptionFromObjectUriForKeyReturn;
         
         public getEnumOptionFromObjectUriForKeyResponse()
         {
         }
         
-        public getEnumOptionFromObjectUriForKeyResponse(PolarionApiClient.Core.Generated.EnumOption getEnumOptionFromObjectUriForKeyReturn)
+        public getEnumOptionFromObjectUriForKeyResponse(PolarionApiClient.Core.Generated.Tracker.EnumOption getEnumOptionFromObjectUriForKeyReturn)
         {
             this.getEnumOptionFromObjectUriForKeyReturn = getEnumOptionFromObjectUriForKeyReturn;
         }
@@ -10084,13 +10084,13 @@ namespace PolarionApiClient.Core.Generated
         public string enumID;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=2)]
-        public PolarionApiClient.Core.Generated.EnumOptionId id;
+        public PolarionApiClient.Core.Generated.Tracker.EnumOptionId id;
         
         public getEnumOptionWithEnumIdRequest()
         {
         }
         
-        public getEnumOptionWithEnumIdRequest(string workitemURI, string enumID, PolarionApiClient.Core.Generated.EnumOptionId id)
+        public getEnumOptionWithEnumIdRequest(string workitemURI, string enumID, PolarionApiClient.Core.Generated.Tracker.EnumOptionId id)
         {
             this.workitemURI = workitemURI;
             this.enumID = enumID;
@@ -10106,13 +10106,13 @@ namespace PolarionApiClient.Core.Generated
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
-        public PolarionApiClient.Core.Generated.EnumOption getEnumOptionWithEnumIdReturn;
+        public PolarionApiClient.Core.Generated.Tracker.EnumOption getEnumOptionWithEnumIdReturn;
         
         public getEnumOptionWithEnumIdResponse()
         {
         }
         
-        public getEnumOptionWithEnumIdResponse(PolarionApiClient.Core.Generated.EnumOption getEnumOptionWithEnumIdReturn)
+        public getEnumOptionWithEnumIdResponse(PolarionApiClient.Core.Generated.Tracker.EnumOption getEnumOptionWithEnumIdReturn)
         {
             this.getEnumOptionWithEnumIdReturn = getEnumOptionWithEnumIdReturn;
         }
@@ -10132,13 +10132,13 @@ namespace PolarionApiClient.Core.Generated
         public string key;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=2)]
-        public PolarionApiClient.Core.Generated.EnumOptionId id;
+        public PolarionApiClient.Core.Generated.Tracker.EnumOptionId id;
         
         public getEnumOptionWithKeyRequest()
         {
         }
         
-        public getEnumOptionWithKeyRequest(string workitemURI, string key, PolarionApiClient.Core.Generated.EnumOptionId id)
+        public getEnumOptionWithKeyRequest(string workitemURI, string key, PolarionApiClient.Core.Generated.Tracker.EnumOptionId id)
         {
             this.workitemURI = workitemURI;
             this.key = key;
@@ -10154,13 +10154,13 @@ namespace PolarionApiClient.Core.Generated
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
-        public PolarionApiClient.Core.Generated.EnumOption getEnumOptionWithKeyReturn;
+        public PolarionApiClient.Core.Generated.Tracker.EnumOption getEnumOptionWithKeyReturn;
         
         public getEnumOptionWithKeyResponse()
         {
         }
         
-        public getEnumOptionWithKeyResponse(PolarionApiClient.Core.Generated.EnumOption getEnumOptionWithKeyReturn)
+        public getEnumOptionWithKeyResponse(PolarionApiClient.Core.Generated.Tracker.EnumOption getEnumOptionWithKeyReturn)
         {
             this.getEnumOptionWithKeyReturn = getEnumOptionWithKeyReturn;
         }
@@ -10199,13 +10199,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("getEnumOptionsForIdReturn")]
-        public PolarionApiClient.Core.Generated.EnumOption[] getEnumOptionsForIdReturn;
+        public PolarionApiClient.Core.Generated.Tracker.EnumOption[] getEnumOptionsForIdReturn;
         
         public getEnumOptionsForIdResponse()
         {
         }
         
-        public getEnumOptionsForIdResponse(PolarionApiClient.Core.Generated.EnumOption[] getEnumOptionsForIdReturn)
+        public getEnumOptionsForIdResponse(PolarionApiClient.Core.Generated.Tracker.EnumOption[] getEnumOptionsForIdReturn)
         {
             this.getEnumOptionsForIdReturn = getEnumOptionsForIdReturn;
         }
@@ -10248,13 +10248,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("getEnumOptionsForIdWithControlReturn")]
-        public PolarionApiClient.Core.Generated.EnumOption[] getEnumOptionsForIdWithControlReturn;
+        public PolarionApiClient.Core.Generated.Tracker.EnumOption[] getEnumOptionsForIdWithControlReturn;
         
         public getEnumOptionsForIdWithControlResponse()
         {
         }
         
-        public getEnumOptionsForIdWithControlResponse(PolarionApiClient.Core.Generated.EnumOption[] getEnumOptionsForIdWithControlReturn)
+        public getEnumOptionsForIdWithControlResponse(PolarionApiClient.Core.Generated.Tracker.EnumOption[] getEnumOptionsForIdWithControlReturn)
         {
             this.getEnumOptionsForIdWithControlReturn = getEnumOptionsForIdWithControlReturn;
         }
@@ -10293,13 +10293,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("getEnumOptionsForKeyReturn")]
-        public PolarionApiClient.Core.Generated.EnumOption[] getEnumOptionsForKeyReturn;
+        public PolarionApiClient.Core.Generated.Tracker.EnumOption[] getEnumOptionsForKeyReturn;
         
         public getEnumOptionsForKeyResponse()
         {
         }
         
-        public getEnumOptionsForKeyResponse(PolarionApiClient.Core.Generated.EnumOption[] getEnumOptionsForKeyReturn)
+        public getEnumOptionsForKeyResponse(PolarionApiClient.Core.Generated.Tracker.EnumOption[] getEnumOptionsForKeyReturn)
         {
             this.getEnumOptionsForKeyReturn = getEnumOptionsForKeyReturn;
         }
@@ -10342,13 +10342,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("getEnumOptionsForKeyWithControlReturn")]
-        public PolarionApiClient.Core.Generated.EnumOption[] getEnumOptionsForKeyWithControlReturn;
+        public PolarionApiClient.Core.Generated.Tracker.EnumOption[] getEnumOptionsForKeyWithControlReturn;
         
         public getEnumOptionsForKeyWithControlResponse()
         {
         }
         
-        public getEnumOptionsForKeyWithControlResponse(PolarionApiClient.Core.Generated.EnumOption[] getEnumOptionsForKeyWithControlReturn)
+        public getEnumOptionsForKeyWithControlResponse(PolarionApiClient.Core.Generated.Tracker.EnumOption[] getEnumOptionsForKeyWithControlReturn)
         {
             this.getEnumOptionsForKeyWithControlReturn = getEnumOptionsForKeyWithControlReturn;
         }
@@ -10391,13 +10391,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("getFilteredEnumOptionsForKeyReturn")]
-        public PolarionApiClient.Core.Generated.EnumOption[] getFilteredEnumOptionsForKeyReturn;
+        public PolarionApiClient.Core.Generated.Tracker.EnumOption[] getFilteredEnumOptionsForKeyReturn;
         
         public getFilteredEnumOptionsForKeyResponse()
         {
         }
         
-        public getFilteredEnumOptionsForKeyResponse(PolarionApiClient.Core.Generated.EnumOption[] getFilteredEnumOptionsForKeyReturn)
+        public getFilteredEnumOptionsForKeyResponse(PolarionApiClient.Core.Generated.Tracker.EnumOption[] getFilteredEnumOptionsForKeyReturn)
         {
             this.getFilteredEnumOptionsForKeyReturn = getFilteredEnumOptionsForKeyReturn;
         }
@@ -10435,13 +10435,13 @@ namespace PolarionApiClient.Core.Generated
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
-        public PolarionApiClient.Core.Generated.Folder getFolderReturn;
+        public PolarionApiClient.Core.Generated.Tracker.Folder getFolderReturn;
         
         public getFolderResponse()
         {
         }
         
-        public getFolderResponse(PolarionApiClient.Core.Generated.Folder getFolderReturn)
+        public getFolderResponse(PolarionApiClient.Core.Generated.Tracker.Folder getFolderReturn)
         {
             this.getFolderReturn = getFolderReturn;
         }
@@ -10475,13 +10475,13 @@ namespace PolarionApiClient.Core.Generated
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
-        public PolarionApiClient.Core.Generated.Folder getFolderForURIReturn;
+        public PolarionApiClient.Core.Generated.Tracker.Folder getFolderForURIReturn;
         
         public getFolderForURIResponse()
         {
         }
         
-        public getFolderForURIResponse(PolarionApiClient.Core.Generated.Folder getFolderForURIReturn)
+        public getFolderForURIResponse(PolarionApiClient.Core.Generated.Tracker.Folder getFolderForURIReturn)
         {
             this.getFolderForURIReturn = getFolderForURIReturn;
         }
@@ -10516,13 +10516,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("getFoldersReturn")]
-        public PolarionApiClient.Core.Generated.Folder[] getFoldersReturn;
+        public PolarionApiClient.Core.Generated.Tracker.Folder[] getFoldersReturn;
         
         public getFoldersResponse()
         {
         }
         
-        public getFoldersResponse(PolarionApiClient.Core.Generated.Folder[] getFoldersReturn)
+        public getFoldersResponse(PolarionApiClient.Core.Generated.Tracker.Folder[] getFoldersReturn)
         {
             this.getFoldersReturn = getFoldersReturn;
         }
@@ -10556,13 +10556,13 @@ namespace PolarionApiClient.Core.Generated
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
-        public PolarionApiClient.Core.Generated.WorkflowAction getInitialWorkflowActionReturn;
+        public PolarionApiClient.Core.Generated.Tracker.WorkflowAction getInitialWorkflowActionReturn;
         
         public getInitialWorkflowActionResponse()
         {
         }
         
-        public getInitialWorkflowActionResponse(PolarionApiClient.Core.Generated.WorkflowAction getInitialWorkflowActionReturn)
+        public getInitialWorkflowActionResponse(PolarionApiClient.Core.Generated.Tracker.WorkflowAction getInitialWorkflowActionReturn)
         {
             this.getInitialWorkflowActionReturn = getInitialWorkflowActionReturn;
         }
@@ -10579,13 +10579,13 @@ namespace PolarionApiClient.Core.Generated
         public string projectId;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=1)]
-        public PolarionApiClient.Core.Generated.EnumOptionId wiType;
+        public PolarionApiClient.Core.Generated.Tracker.EnumOptionId wiType;
         
         public getInitialWorkflowActionForProjectAndTypeRequest()
         {
         }
         
-        public getInitialWorkflowActionForProjectAndTypeRequest(string projectId, PolarionApiClient.Core.Generated.EnumOptionId wiType)
+        public getInitialWorkflowActionForProjectAndTypeRequest(string projectId, PolarionApiClient.Core.Generated.Tracker.EnumOptionId wiType)
         {
             this.projectId = projectId;
             this.wiType = wiType;
@@ -10600,13 +10600,13 @@ namespace PolarionApiClient.Core.Generated
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
-        public PolarionApiClient.Core.Generated.WorkflowAction getInitialWorkflowActionForProjectAndTypeReturn;
+        public PolarionApiClient.Core.Generated.Tracker.WorkflowAction getInitialWorkflowActionForProjectAndTypeReturn;
         
         public getInitialWorkflowActionForProjectAndTypeResponse()
         {
         }
         
-        public getInitialWorkflowActionForProjectAndTypeResponse(PolarionApiClient.Core.Generated.WorkflowAction getInitialWorkflowActionForProjectAndTypeReturn)
+        public getInitialWorkflowActionForProjectAndTypeResponse(PolarionApiClient.Core.Generated.Tracker.WorkflowAction getInitialWorkflowActionForProjectAndTypeReturn)
         {
             this.getInitialWorkflowActionForProjectAndTypeReturn = getInitialWorkflowActionForProjectAndTypeReturn;
         }
@@ -10644,13 +10644,13 @@ namespace PolarionApiClient.Core.Generated
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
-        public PolarionApiClient.Core.Generated.LanguageDefinition getLanguageDefinitionReturn;
+        public PolarionApiClient.Core.Generated.Tracker.LanguageDefinition getLanguageDefinitionReturn;
         
         public getLanguageDefinitionResponse()
         {
         }
         
-        public getLanguageDefinitionResponse(PolarionApiClient.Core.Generated.LanguageDefinition getLanguageDefinitionReturn)
+        public getLanguageDefinitionResponse(PolarionApiClient.Core.Generated.Tracker.LanguageDefinition getLanguageDefinitionReturn)
         {
             this.getLanguageDefinitionReturn = getLanguageDefinitionReturn;
         }
@@ -10685,13 +10685,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("getLanguageDefinitionsReturn")]
-        public PolarionApiClient.Core.Generated.LanguageDefinition[] getLanguageDefinitionsReturn;
+        public PolarionApiClient.Core.Generated.Tracker.LanguageDefinition[] getLanguageDefinitionsReturn;
         
         public getLanguageDefinitionsResponse()
         {
         }
         
-        public getLanguageDefinitionsResponse(PolarionApiClient.Core.Generated.LanguageDefinition[] getLanguageDefinitionsReturn)
+        public getLanguageDefinitionsResponse(PolarionApiClient.Core.Generated.Tracker.LanguageDefinition[] getLanguageDefinitionsReturn)
         {
             this.getLanguageDefinitionsReturn = getLanguageDefinitionsReturn;
         }
@@ -10726,13 +10726,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("getLinkedResourcesReturn")]
-        public PolarionApiClient.Core.Generated.LinkedResource[] getLinkedResourcesReturn;
+        public PolarionApiClient.Core.Generated.Tracker.LinkedResource[] getLinkedResourcesReturn;
         
         public getLinkedResourcesResponse()
         {
         }
         
-        public getLinkedResourcesResponse(PolarionApiClient.Core.Generated.LinkedResource[] getLinkedResourcesReturn)
+        public getLinkedResourcesResponse(PolarionApiClient.Core.Generated.Tracker.LinkedResource[] getLinkedResourcesReturn)
         {
             this.getLinkedResourcesReturn = getLinkedResourcesReturn;
         }
@@ -10770,13 +10770,13 @@ namespace PolarionApiClient.Core.Generated
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
-        public PolarionApiClient.Core.Generated.Text getLocalizedWorkItemDescriptionReturn;
+        public PolarionApiClient.Core.Generated.Tracker.Text getLocalizedWorkItemDescriptionReturn;
         
         public getLocalizedWorkItemDescriptionResponse()
         {
         }
         
-        public getLocalizedWorkItemDescriptionResponse(PolarionApiClient.Core.Generated.Text getLocalizedWorkItemDescriptionReturn)
+        public getLocalizedWorkItemDescriptionResponse(PolarionApiClient.Core.Generated.Tracker.Text getLocalizedWorkItemDescriptionReturn)
         {
             this.getLocalizedWorkItemDescriptionReturn = getLocalizedWorkItemDescriptionReturn;
         }
@@ -10796,13 +10796,13 @@ namespace PolarionApiClient.Core.Generated
         public string language;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=2)]
-        public PolarionApiClient.Core.Generated.EnumOptionId type;
+        public PolarionApiClient.Core.Generated.Tracker.EnumOptionId type;
         
         public getLocalizedWorkItemDescriptionFieldRequest()
         {
         }
         
-        public getLocalizedWorkItemDescriptionFieldRequest(string projectId, string language, PolarionApiClient.Core.Generated.EnumOptionId type)
+        public getLocalizedWorkItemDescriptionFieldRequest(string projectId, string language, PolarionApiClient.Core.Generated.Tracker.EnumOptionId type)
         {
             this.projectId = projectId;
             this.language = language;
@@ -10888,13 +10888,13 @@ namespace PolarionApiClient.Core.Generated
         public string language;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=2)]
-        public PolarionApiClient.Core.Generated.EnumOptionId type;
+        public PolarionApiClient.Core.Generated.Tracker.EnumOptionId type;
         
         public getLocalizedWorkItemTitleFieldRequest()
         {
         }
         
-        public getLocalizedWorkItemTitleFieldRequest(string projectId, string language, PolarionApiClient.Core.Generated.EnumOptionId type)
+        public getLocalizedWorkItemTitleFieldRequest(string projectId, string language, PolarionApiClient.Core.Generated.Tracker.EnumOptionId type)
         {
             this.projectId = projectId;
             this.language = language;
@@ -10954,13 +10954,13 @@ namespace PolarionApiClient.Core.Generated
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
-        public PolarionApiClient.Core.Generated.Module getModuleByLocationReturn;
+        public PolarionApiClient.Core.Generated.Tracker.Module getModuleByLocationReturn;
         
         public getModuleByLocationResponse()
         {
         }
         
-        public getModuleByLocationResponse(PolarionApiClient.Core.Generated.Module getModuleByLocationReturn)
+        public getModuleByLocationResponse(PolarionApiClient.Core.Generated.Tracker.Module getModuleByLocationReturn)
         {
             this.getModuleByLocationReturn = getModuleByLocationReturn;
         }
@@ -11003,13 +11003,13 @@ namespace PolarionApiClient.Core.Generated
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
-        public PolarionApiClient.Core.Generated.Module getModuleByLocationWithFieldsReturn;
+        public PolarionApiClient.Core.Generated.Tracker.Module getModuleByLocationWithFieldsReturn;
         
         public getModuleByLocationWithFieldsResponse()
         {
         }
         
-        public getModuleByLocationWithFieldsResponse(PolarionApiClient.Core.Generated.Module getModuleByLocationWithFieldsReturn)
+        public getModuleByLocationWithFieldsResponse(PolarionApiClient.Core.Generated.Tracker.Module getModuleByLocationWithFieldsReturn)
         {
             this.getModuleByLocationWithFieldsReturn = getModuleByLocationWithFieldsReturn;
         }
@@ -11043,13 +11043,13 @@ namespace PolarionApiClient.Core.Generated
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
-        public PolarionApiClient.Core.Generated.Module getModuleByUriReturn;
+        public PolarionApiClient.Core.Generated.Tracker.Module getModuleByUriReturn;
         
         public getModuleByUriResponse()
         {
         }
         
-        public getModuleByUriResponse(PolarionApiClient.Core.Generated.Module getModuleByUriReturn)
+        public getModuleByUriResponse(PolarionApiClient.Core.Generated.Tracker.Module getModuleByUriReturn)
         {
             this.getModuleByUriReturn = getModuleByUriReturn;
         }
@@ -11088,13 +11088,13 @@ namespace PolarionApiClient.Core.Generated
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
-        public PolarionApiClient.Core.Generated.Module getModuleByUriWithFieldsReturn;
+        public PolarionApiClient.Core.Generated.Tracker.Module getModuleByUriWithFieldsReturn;
         
         public getModuleByUriWithFieldsResponse()
         {
         }
         
-        public getModuleByUriWithFieldsResponse(PolarionApiClient.Core.Generated.Module getModuleByUriWithFieldsReturn)
+        public getModuleByUriWithFieldsResponse(PolarionApiClient.Core.Generated.Tracker.Module getModuleByUriWithFieldsReturn)
         {
             this.getModuleByUriWithFieldsReturn = getModuleByUriWithFieldsReturn;
         }
@@ -11236,13 +11236,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("getModuleWorkItemsReturn")]
-        public PolarionApiClient.Core.Generated.WorkItem[] getModuleWorkItemsReturn;
+        public PolarionApiClient.Core.Generated.Tracker.WorkItem[] getModuleWorkItemsReturn;
         
         public getModuleWorkItemsResponse()
         {
         }
         
-        public getModuleWorkItemsResponse(PolarionApiClient.Core.Generated.WorkItem[] getModuleWorkItemsReturn)
+        public getModuleWorkItemsResponse(PolarionApiClient.Core.Generated.Tracker.WorkItem[] getModuleWorkItemsReturn)
         {
             this.getModuleWorkItemsReturn = getModuleWorkItemsReturn;
         }
@@ -11281,13 +11281,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("getModulesReturn")]
-        public PolarionApiClient.Core.Generated.Module[] getModulesReturn;
+        public PolarionApiClient.Core.Generated.Tracker.Module[] getModulesReturn;
         
         public getModulesResponse()
         {
         }
         
-        public getModulesResponse(PolarionApiClient.Core.Generated.Module[] getModulesReturn)
+        public getModulesResponse(PolarionApiClient.Core.Generated.Tracker.Module[] getModulesReturn)
         {
             this.getModulesReturn = getModulesReturn;
         }
@@ -11376,13 +11376,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("getModulesWithFieldsReturn")]
-        public PolarionApiClient.Core.Generated.Module[] getModulesWithFieldsReturn;
+        public PolarionApiClient.Core.Generated.Tracker.Module[] getModulesWithFieldsReturn;
         
         public getModulesWithFieldsResponse()
         {
         }
         
-        public getModulesWithFieldsResponse(PolarionApiClient.Core.Generated.Module[] getModulesWithFieldsReturn)
+        public getModulesWithFieldsResponse(PolarionApiClient.Core.Generated.Tracker.Module[] getModulesWithFieldsReturn)
         {
             this.getModulesWithFieldsReturn = getModulesWithFieldsReturn;
         }
@@ -11452,13 +11452,13 @@ namespace PolarionApiClient.Core.Generated
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
-        public PolarionApiClient.Core.Generated.Revision getRevisionReturn;
+        public PolarionApiClient.Core.Generated.Tracker.Revision getRevisionReturn;
         
         public getRevisionResponse()
         {
         }
         
-        public getRevisionResponse(PolarionApiClient.Core.Generated.Revision getRevisionReturn)
+        public getRevisionResponse(PolarionApiClient.Core.Generated.Tracker.Revision getRevisionReturn)
         {
             this.getRevisionReturn = getRevisionReturn;
         }
@@ -11492,13 +11492,13 @@ namespace PolarionApiClient.Core.Generated
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
-        public PolarionApiClient.Core.Generated.Revision getRevisionByUriReturn;
+        public PolarionApiClient.Core.Generated.Tracker.Revision getRevisionByUriReturn;
         
         public getRevisionByUriResponse()
         {
         }
         
-        public getRevisionByUriResponse(PolarionApiClient.Core.Generated.Revision getRevisionByUriReturn)
+        public getRevisionByUriResponse(PolarionApiClient.Core.Generated.Tracker.Revision getRevisionByUriReturn)
         {
             this.getRevisionByUriReturn = getRevisionByUriReturn;
         }
@@ -11574,13 +11574,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("getRootFoldersReturn")]
-        public PolarionApiClient.Core.Generated.Folder[] getRootFoldersReturn;
+        public PolarionApiClient.Core.Generated.Tracker.Folder[] getRootFoldersReturn;
         
         public getRootFoldersResponse()
         {
         }
         
-        public getRootFoldersResponse(PolarionApiClient.Core.Generated.Folder[] getRootFoldersReturn)
+        public getRootFoldersResponse(PolarionApiClient.Core.Generated.Tracker.Folder[] getRootFoldersReturn)
         {
             this.getRootFoldersReturn = getRootFoldersReturn;
         }
@@ -11615,13 +11615,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("getTimepointsReturn")]
-        public PolarionApiClient.Core.Generated.TimePoint[] getTimepointsReturn;
+        public PolarionApiClient.Core.Generated.Tracker.TimePoint[] getTimepointsReturn;
         
         public getTimepointsResponse()
         {
         }
         
-        public getTimepointsResponse(PolarionApiClient.Core.Generated.TimePoint[] getTimepointsReturn)
+        public getTimepointsResponse(PolarionApiClient.Core.Generated.Tracker.TimePoint[] getTimepointsReturn)
         {
             this.getTimepointsReturn = getTimepointsReturn;
         }
@@ -11656,13 +11656,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("getUnavailableActionsReturn")]
-        public PolarionApiClient.Core.Generated.WorkflowAction[] getUnavailableActionsReturn;
+        public PolarionApiClient.Core.Generated.Tracker.WorkflowAction[] getUnavailableActionsReturn;
         
         public getUnavailableActionsResponse()
         {
         }
         
-        public getUnavailableActionsResponse(PolarionApiClient.Core.Generated.WorkflowAction[] getUnavailableActionsReturn)
+        public getUnavailableActionsResponse(PolarionApiClient.Core.Generated.Tracker.WorkflowAction[] getUnavailableActionsReturn)
         {
             this.getUnavailableActionsReturn = getUnavailableActionsReturn;
         }
@@ -11696,13 +11696,13 @@ namespace PolarionApiClient.Core.Generated
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
-        public PolarionApiClient.Core.Generated.WikiPage getWikiPageByUriReturn;
+        public PolarionApiClient.Core.Generated.Tracker.WikiPage getWikiPageByUriReturn;
         
         public getWikiPageByUriResponse()
         {
         }
         
-        public getWikiPageByUriResponse(PolarionApiClient.Core.Generated.WikiPage getWikiPageByUriReturn)
+        public getWikiPageByUriResponse(PolarionApiClient.Core.Generated.Tracker.WikiPage getWikiPageByUriReturn)
         {
             this.getWikiPageByUriReturn = getWikiPageByUriReturn;
         }
@@ -11741,13 +11741,13 @@ namespace PolarionApiClient.Core.Generated
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
-        public PolarionApiClient.Core.Generated.WikiPage getWikiPageByUriWithFieldsReturn;
+        public PolarionApiClient.Core.Generated.Tracker.WikiPage getWikiPageByUriWithFieldsReturn;
         
         public getWikiPageByUriWithFieldsResponse()
         {
         }
         
-        public getWikiPageByUriWithFieldsResponse(PolarionApiClient.Core.Generated.WikiPage getWikiPageByUriWithFieldsReturn)
+        public getWikiPageByUriWithFieldsResponse(PolarionApiClient.Core.Generated.Tracker.WikiPage getWikiPageByUriWithFieldsReturn)
         {
             this.getWikiPageByUriWithFieldsReturn = getWikiPageByUriWithFieldsReturn;
         }
@@ -11831,13 +11831,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("getWikiPagesReturn")]
-        public PolarionApiClient.Core.Generated.WikiPage[] getWikiPagesReturn;
+        public PolarionApiClient.Core.Generated.Tracker.WikiPage[] getWikiPagesReturn;
         
         public getWikiPagesResponse()
         {
         }
         
-        public getWikiPagesResponse(PolarionApiClient.Core.Generated.WikiPage[] getWikiPagesReturn)
+        public getWikiPagesResponse(PolarionApiClient.Core.Generated.Tracker.WikiPage[] getWikiPagesReturn)
         {
             this.getWikiPagesReturn = getWikiPagesReturn;
         }
@@ -11881,13 +11881,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("getWikiPagesWithFieldsReturn")]
-        public PolarionApiClient.Core.Generated.WikiPage[] getWikiPagesWithFieldsReturn;
+        public PolarionApiClient.Core.Generated.Tracker.WikiPage[] getWikiPagesWithFieldsReturn;
         
         public getWikiPagesWithFieldsResponse()
         {
         }
         
-        public getWikiPagesWithFieldsResponse(PolarionApiClient.Core.Generated.WikiPage[] getWikiPagesWithFieldsReturn)
+        public getWikiPagesWithFieldsResponse(PolarionApiClient.Core.Generated.Tracker.WikiPage[] getWikiPagesWithFieldsReturn)
         {
             this.getWikiPagesWithFieldsReturn = getWikiPagesWithFieldsReturn;
         }
@@ -11966,13 +11966,13 @@ namespace PolarionApiClient.Core.Generated
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
-        public PolarionApiClient.Core.Generated.WorkItem getWorkItemByIdReturn;
+        public PolarionApiClient.Core.Generated.Tracker.WorkItem getWorkItemByIdReturn;
         
         public getWorkItemByIdResponse()
         {
         }
         
-        public getWorkItemByIdResponse(PolarionApiClient.Core.Generated.WorkItem getWorkItemByIdReturn)
+        public getWorkItemByIdResponse(PolarionApiClient.Core.Generated.Tracker.WorkItem getWorkItemByIdReturn)
         {
             this.getWorkItemByIdReturn = getWorkItemByIdReturn;
         }
@@ -12015,13 +12015,13 @@ namespace PolarionApiClient.Core.Generated
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
-        public PolarionApiClient.Core.Generated.WorkItem getWorkItemByIdsWithFieldsReturn;
+        public PolarionApiClient.Core.Generated.Tracker.WorkItem getWorkItemByIdsWithFieldsReturn;
         
         public getWorkItemByIdsWithFieldsResponse()
         {
         }
         
-        public getWorkItemByIdsWithFieldsResponse(PolarionApiClient.Core.Generated.WorkItem getWorkItemByIdsWithFieldsReturn)
+        public getWorkItemByIdsWithFieldsResponse(PolarionApiClient.Core.Generated.Tracker.WorkItem getWorkItemByIdsWithFieldsReturn)
         {
             this.getWorkItemByIdsWithFieldsReturn = getWorkItemByIdsWithFieldsReturn;
         }
@@ -12055,13 +12055,13 @@ namespace PolarionApiClient.Core.Generated
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
-        public PolarionApiClient.Core.Generated.WorkItem getWorkItemByUriReturn;
+        public PolarionApiClient.Core.Generated.Tracker.WorkItem getWorkItemByUriReturn;
         
         public getWorkItemByUriResponse()
         {
         }
         
-        public getWorkItemByUriResponse(PolarionApiClient.Core.Generated.WorkItem getWorkItemByUriReturn)
+        public getWorkItemByUriResponse(PolarionApiClient.Core.Generated.Tracker.WorkItem getWorkItemByUriReturn)
         {
             this.getWorkItemByUriReturn = getWorkItemByUriReturn;
         }
@@ -12099,13 +12099,13 @@ namespace PolarionApiClient.Core.Generated
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
-        public PolarionApiClient.Core.Generated.WorkItem getWorkItemByUriInRevisionReturn;
+        public PolarionApiClient.Core.Generated.Tracker.WorkItem getWorkItemByUriInRevisionReturn;
         
         public getWorkItemByUriInRevisionResponse()
         {
         }
         
-        public getWorkItemByUriInRevisionResponse(PolarionApiClient.Core.Generated.WorkItem getWorkItemByUriInRevisionReturn)
+        public getWorkItemByUriInRevisionResponse(PolarionApiClient.Core.Generated.Tracker.WorkItem getWorkItemByUriInRevisionReturn)
         {
             this.getWorkItemByUriInRevisionReturn = getWorkItemByUriInRevisionReturn;
         }
@@ -12148,13 +12148,13 @@ namespace PolarionApiClient.Core.Generated
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
-        public PolarionApiClient.Core.Generated.WorkItem getWorkItemByUriInRevisionWithFieldsReturn;
+        public PolarionApiClient.Core.Generated.Tracker.WorkItem getWorkItemByUriInRevisionWithFieldsReturn;
         
         public getWorkItemByUriInRevisionWithFieldsResponse()
         {
         }
         
-        public getWorkItemByUriInRevisionWithFieldsResponse(PolarionApiClient.Core.Generated.WorkItem getWorkItemByUriInRevisionWithFieldsReturn)
+        public getWorkItemByUriInRevisionWithFieldsResponse(PolarionApiClient.Core.Generated.Tracker.WorkItem getWorkItemByUriInRevisionWithFieldsReturn)
         {
             this.getWorkItemByUriInRevisionWithFieldsReturn = getWorkItemByUriInRevisionWithFieldsReturn;
         }
@@ -12193,13 +12193,13 @@ namespace PolarionApiClient.Core.Generated
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
-        public PolarionApiClient.Core.Generated.WorkItem getWorkItemByUriWithFieldsReturn;
+        public PolarionApiClient.Core.Generated.Tracker.WorkItem getWorkItemByUriWithFieldsReturn;
         
         public getWorkItemByUriWithFieldsResponse()
         {
         }
         
-        public getWorkItemByUriWithFieldsResponse(PolarionApiClient.Core.Generated.WorkItem getWorkItemByUriWithFieldsReturn)
+        public getWorkItemByUriWithFieldsResponse(PolarionApiClient.Core.Generated.Tracker.WorkItem getWorkItemByUriWithFieldsReturn)
         {
             this.getWorkItemByUriWithFieldsReturn = getWorkItemByUriWithFieldsReturn;
         }
@@ -12274,13 +12274,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("getWorkItemsLinkedToRevisionReturn")]
-        public PolarionApiClient.Core.Generated.WorkItem[] getWorkItemsLinkedToRevisionReturn;
+        public PolarionApiClient.Core.Generated.Tracker.WorkItem[] getWorkItemsLinkedToRevisionReturn;
         
         public getWorkItemsLinkedToRevisionResponse()
         {
         }
         
-        public getWorkItemsLinkedToRevisionResponse(PolarionApiClient.Core.Generated.WorkItem[] getWorkItemsLinkedToRevisionReturn)
+        public getWorkItemsLinkedToRevisionResponse(PolarionApiClient.Core.Generated.Tracker.WorkItem[] getWorkItemsLinkedToRevisionReturn)
         {
             this.getWorkItemsLinkedToRevisionReturn = getWorkItemsLinkedToRevisionReturn;
         }
@@ -12320,13 +12320,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("getWorkItemsLinkedToRevisionWithFieldsReturn")]
-        public PolarionApiClient.Core.Generated.WorkItem[] getWorkItemsLinkedToRevisionWithFieldsReturn;
+        public PolarionApiClient.Core.Generated.Tracker.WorkItem[] getWorkItemsLinkedToRevisionWithFieldsReturn;
         
         public getWorkItemsLinkedToRevisionWithFieldsResponse()
         {
         }
         
-        public getWorkItemsLinkedToRevisionWithFieldsResponse(PolarionApiClient.Core.Generated.WorkItem[] getWorkItemsLinkedToRevisionWithFieldsReturn)
+        public getWorkItemsLinkedToRevisionWithFieldsResponse(PolarionApiClient.Core.Generated.Tracker.WorkItem[] getWorkItemsLinkedToRevisionWithFieldsReturn)
         {
             this.getWorkItemsLinkedToRevisionWithFieldsReturn = getWorkItemsLinkedToRevisionWithFieldsReturn;
         }
@@ -12425,13 +12425,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("listActivitySourcesReturn")]
-        public PolarionApiClient.Core.Generated.ActivitySource[] listActivitySourcesReturn;
+        public PolarionApiClient.Core.Generated.Tracker.ActivitySource[] listActivitySourcesReturn;
         
         public listActivitySourcesResponse()
         {
         }
         
-        public listActivitySourcesResponse(PolarionApiClient.Core.Generated.ActivitySource[] listActivitySourcesReturn)
+        public listActivitySourcesResponse(PolarionApiClient.Core.Generated.Tracker.ActivitySource[] listActivitySourcesReturn)
         {
             this.listActivitySourcesReturn = listActivitySourcesReturn;
         }
@@ -12470,13 +12470,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("listAllActivitiesReturn")]
-        public PolarionApiClient.Core.Generated.Activity[] listAllActivitiesReturn;
+        public PolarionApiClient.Core.Generated.Tracker.Activity[] listAllActivitiesReturn;
         
         public listAllActivitiesResponse()
         {
         }
         
-        public listAllActivitiesResponse(PolarionApiClient.Core.Generated.Activity[] listAllActivitiesReturn)
+        public listAllActivitiesResponse(PolarionApiClient.Core.Generated.Tracker.Activity[] listAllActivitiesReturn)
         {
             this.listAllActivitiesReturn = listAllActivitiesReturn;
         }
@@ -12564,13 +12564,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("listGroupActivitiesReturn")]
-        public PolarionApiClient.Core.Generated.Activity[] listGroupActivitiesReturn;
+        public PolarionApiClient.Core.Generated.Tracker.Activity[] listGroupActivitiesReturn;
         
         public listGroupActivitiesResponse()
         {
         }
         
-        public listGroupActivitiesResponse(PolarionApiClient.Core.Generated.Activity[] listGroupActivitiesReturn)
+        public listGroupActivitiesResponse(PolarionApiClient.Core.Generated.Tracker.Activity[] listGroupActivitiesReturn)
         {
             this.listGroupActivitiesReturn = listGroupActivitiesReturn;
         }
@@ -12662,13 +12662,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("listProjectActivitiesReturn")]
-        public PolarionApiClient.Core.Generated.Activity[] listProjectActivitiesReturn;
+        public PolarionApiClient.Core.Generated.Tracker.Activity[] listProjectActivitiesReturn;
         
         public listProjectActivitiesResponse()
         {
         }
         
-        public listProjectActivitiesResponse(PolarionApiClient.Core.Generated.Activity[] listProjectActivitiesReturn)
+        public listProjectActivitiesResponse(PolarionApiClient.Core.Generated.Tracker.Activity[] listProjectActivitiesReturn)
         {
             this.listProjectActivitiesReturn = listProjectActivitiesReturn;
         }
@@ -12884,13 +12884,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("queryBaselinesReturn")]
-        public PolarionApiClient.Core.Generated.Baseline[] queryBaselinesReturn;
+        public PolarionApiClient.Core.Generated.Tracker.Baseline[] queryBaselinesReturn;
         
         public queryBaselinesResponse()
         {
         }
         
-        public queryBaselinesResponse(PolarionApiClient.Core.Generated.Baseline[] queryBaselinesReturn)
+        public queryBaselinesResponse(PolarionApiClient.Core.Generated.Tracker.Baseline[] queryBaselinesReturn)
         {
             this.queryBaselinesReturn = queryBaselinesReturn;
         }
@@ -13126,13 +13126,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("queryModulesReturn")]
-        public PolarionApiClient.Core.Generated.Module[] queryModulesReturn;
+        public PolarionApiClient.Core.Generated.Tracker.Module[] queryModulesReturn;
         
         public queryModulesResponse()
         {
         }
         
-        public queryModulesResponse(PolarionApiClient.Core.Generated.Module[] queryModulesReturn)
+        public queryModulesResponse(PolarionApiClient.Core.Generated.Tracker.Module[] queryModulesReturn)
         {
             this.queryModulesReturn = queryModulesReturn;
         }
@@ -13172,13 +13172,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("queryModulesBySQLReturn")]
-        public PolarionApiClient.Core.Generated.Module[] queryModulesBySQLReturn;
+        public PolarionApiClient.Core.Generated.Tracker.Module[] queryModulesBySQLReturn;
         
         public queryModulesBySQLResponse()
         {
         }
         
-        public queryModulesBySQLResponse(PolarionApiClient.Core.Generated.Module[] queryModulesBySQLReturn)
+        public queryModulesBySQLResponse(PolarionApiClient.Core.Generated.Tracker.Module[] queryModulesBySQLReturn)
         {
             this.queryModulesBySQLReturn = queryModulesBySQLReturn;
         }
@@ -13230,13 +13230,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("queryModulesInBaselineReturn")]
-        public PolarionApiClient.Core.Generated.Module[] queryModulesInBaselineReturn;
+        public PolarionApiClient.Core.Generated.Tracker.Module[] queryModulesInBaselineReturn;
         
         public queryModulesInBaselineResponse()
         {
         }
         
-        public queryModulesInBaselineResponse(PolarionApiClient.Core.Generated.Module[] queryModulesInBaselineReturn)
+        public queryModulesInBaselineResponse(PolarionApiClient.Core.Generated.Tracker.Module[] queryModulesInBaselineReturn)
         {
             this.queryModulesInBaselineReturn = queryModulesInBaselineReturn;
         }
@@ -13280,13 +13280,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("queryModulesInBaselineBySQLReturn")]
-        public PolarionApiClient.Core.Generated.Module[] queryModulesInBaselineBySQLReturn;
+        public PolarionApiClient.Core.Generated.Tracker.Module[] queryModulesInBaselineBySQLReturn;
         
         public queryModulesInBaselineBySQLResponse()
         {
         }
         
-        public queryModulesInBaselineBySQLResponse(PolarionApiClient.Core.Generated.Module[] queryModulesInBaselineBySQLReturn)
+        public queryModulesInBaselineBySQLResponse(PolarionApiClient.Core.Generated.Tracker.Module[] queryModulesInBaselineBySQLReturn)
         {
             this.queryModulesInBaselineBySQLReturn = queryModulesInBaselineBySQLReturn;
         }
@@ -13379,13 +13379,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("queryRevisionsReturn")]
-        public PolarionApiClient.Core.Generated.Revision[] queryRevisionsReturn;
+        public PolarionApiClient.Core.Generated.Tracker.Revision[] queryRevisionsReturn;
         
         public queryRevisionsResponse()
         {
         }
         
-        public queryRevisionsResponse(PolarionApiClient.Core.Generated.Revision[] queryRevisionsReturn)
+        public queryRevisionsResponse(PolarionApiClient.Core.Generated.Tracker.Revision[] queryRevisionsReturn)
         {
             this.queryRevisionsReturn = queryRevisionsReturn;
         }
@@ -13621,13 +13621,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("queryWikiPagesReturn")]
-        public PolarionApiClient.Core.Generated.WikiPage[] queryWikiPagesReturn;
+        public PolarionApiClient.Core.Generated.Tracker.WikiPage[] queryWikiPagesReturn;
         
         public queryWikiPagesResponse()
         {
         }
         
-        public queryWikiPagesResponse(PolarionApiClient.Core.Generated.WikiPage[] queryWikiPagesReturn)
+        public queryWikiPagesResponse(PolarionApiClient.Core.Generated.Tracker.WikiPage[] queryWikiPagesReturn)
         {
             this.queryWikiPagesReturn = queryWikiPagesReturn;
         }
@@ -13667,13 +13667,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("queryWikiPagesBySQLReturn")]
-        public PolarionApiClient.Core.Generated.WikiPage[] queryWikiPagesBySQLReturn;
+        public PolarionApiClient.Core.Generated.Tracker.WikiPage[] queryWikiPagesBySQLReturn;
         
         public queryWikiPagesBySQLResponse()
         {
         }
         
-        public queryWikiPagesBySQLResponse(PolarionApiClient.Core.Generated.WikiPage[] queryWikiPagesBySQLReturn)
+        public queryWikiPagesBySQLResponse(PolarionApiClient.Core.Generated.Tracker.WikiPage[] queryWikiPagesBySQLReturn)
         {
             this.queryWikiPagesBySQLReturn = queryWikiPagesBySQLReturn;
         }
@@ -13725,13 +13725,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("queryWikiPagesInBaselineReturn")]
-        public PolarionApiClient.Core.Generated.WikiPage[] queryWikiPagesInBaselineReturn;
+        public PolarionApiClient.Core.Generated.Tracker.WikiPage[] queryWikiPagesInBaselineReturn;
         
         public queryWikiPagesInBaselineResponse()
         {
         }
         
-        public queryWikiPagesInBaselineResponse(PolarionApiClient.Core.Generated.WikiPage[] queryWikiPagesInBaselineReturn)
+        public queryWikiPagesInBaselineResponse(PolarionApiClient.Core.Generated.Tracker.WikiPage[] queryWikiPagesInBaselineReturn)
         {
             this.queryWikiPagesInBaselineReturn = queryWikiPagesInBaselineReturn;
         }
@@ -13775,13 +13775,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("queryWikiPagesInBaselineBySQLReturn")]
-        public PolarionApiClient.Core.Generated.WikiPage[] queryWikiPagesInBaselineBySQLReturn;
+        public PolarionApiClient.Core.Generated.Tracker.WikiPage[] queryWikiPagesInBaselineBySQLReturn;
         
         public queryWikiPagesInBaselineBySQLResponse()
         {
         }
         
-        public queryWikiPagesInBaselineBySQLResponse(PolarionApiClient.Core.Generated.WikiPage[] queryWikiPagesInBaselineBySQLReturn)
+        public queryWikiPagesInBaselineBySQLResponse(PolarionApiClient.Core.Generated.Tracker.WikiPage[] queryWikiPagesInBaselineBySQLReturn)
         {
             this.queryWikiPagesInBaselineBySQLReturn = queryWikiPagesInBaselineBySQLReturn;
         }
@@ -14107,13 +14107,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("queryWorkItemsReturn")]
-        public PolarionApiClient.Core.Generated.WorkItem[] queryWorkItemsReturn;
+        public PolarionApiClient.Core.Generated.Tracker.WorkItem[] queryWorkItemsReturn;
         
         public queryWorkItemsResponse()
         {
         }
         
-        public queryWorkItemsResponse(PolarionApiClient.Core.Generated.WorkItem[] queryWorkItemsReturn)
+        public queryWorkItemsResponse(PolarionApiClient.Core.Generated.Tracker.WorkItem[] queryWorkItemsReturn)
         {
             this.queryWorkItemsReturn = queryWorkItemsReturn;
         }
@@ -14153,13 +14153,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("queryWorkItemsBySQLReturn")]
-        public PolarionApiClient.Core.Generated.WorkItem[] queryWorkItemsBySQLReturn;
+        public PolarionApiClient.Core.Generated.Tracker.WorkItem[] queryWorkItemsBySQLReturn;
         
         public queryWorkItemsBySQLResponse()
         {
         }
         
-        public queryWorkItemsBySQLResponse(PolarionApiClient.Core.Generated.WorkItem[] queryWorkItemsBySQLReturn)
+        public queryWorkItemsBySQLResponse(PolarionApiClient.Core.Generated.Tracker.WorkItem[] queryWorkItemsBySQLReturn)
         {
             this.queryWorkItemsBySQLReturn = queryWorkItemsBySQLReturn;
         }
@@ -14207,13 +14207,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("queryWorkItemsInBaselineReturn")]
-        public PolarionApiClient.Core.Generated.WorkItem[] queryWorkItemsInBaselineReturn;
+        public PolarionApiClient.Core.Generated.Tracker.WorkItem[] queryWorkItemsInBaselineReturn;
         
         public queryWorkItemsInBaselineResponse()
         {
         }
         
-        public queryWorkItemsInBaselineResponse(PolarionApiClient.Core.Generated.WorkItem[] queryWorkItemsInBaselineReturn)
+        public queryWorkItemsInBaselineResponse(PolarionApiClient.Core.Generated.Tracker.WorkItem[] queryWorkItemsInBaselineReturn)
         {
             this.queryWorkItemsInBaselineReturn = queryWorkItemsInBaselineReturn;
         }
@@ -14257,13 +14257,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("queryWorkItemsInBaselineBySQLReturn")]
-        public PolarionApiClient.Core.Generated.WorkItem[] queryWorkItemsInBaselineBySQLReturn;
+        public PolarionApiClient.Core.Generated.Tracker.WorkItem[] queryWorkItemsInBaselineBySQLReturn;
         
         public queryWorkItemsInBaselineBySQLResponse()
         {
         }
         
-        public queryWorkItemsInBaselineBySQLResponse(PolarionApiClient.Core.Generated.WorkItem[] queryWorkItemsInBaselineBySQLReturn)
+        public queryWorkItemsInBaselineBySQLResponse(PolarionApiClient.Core.Generated.Tracker.WorkItem[] queryWorkItemsInBaselineBySQLReturn)
         {
             this.queryWorkItemsInBaselineBySQLReturn = queryWorkItemsInBaselineBySQLReturn;
         }
@@ -14315,13 +14315,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("queryWorkItemsInBaselineLimitedReturn")]
-        public PolarionApiClient.Core.Generated.WorkItem[] queryWorkItemsInBaselineLimitedReturn;
+        public PolarionApiClient.Core.Generated.Tracker.WorkItem[] queryWorkItemsInBaselineLimitedReturn;
         
         public queryWorkItemsInBaselineLimitedResponse()
         {
         }
         
-        public queryWorkItemsInBaselineLimitedResponse(PolarionApiClient.Core.Generated.WorkItem[] queryWorkItemsInBaselineLimitedReturn)
+        public queryWorkItemsInBaselineLimitedResponse(PolarionApiClient.Core.Generated.Tracker.WorkItem[] queryWorkItemsInBaselineLimitedReturn)
         {
             this.queryWorkItemsInBaselineLimitedReturn = queryWorkItemsInBaselineLimitedReturn;
         }
@@ -14369,13 +14369,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("queryWorkItemsInRevisionReturn")]
-        public PolarionApiClient.Core.Generated.WorkItem[] queryWorkItemsInRevisionReturn;
+        public PolarionApiClient.Core.Generated.Tracker.WorkItem[] queryWorkItemsInRevisionReturn;
         
         public queryWorkItemsInRevisionResponse()
         {
         }
         
-        public queryWorkItemsInRevisionResponse(PolarionApiClient.Core.Generated.WorkItem[] queryWorkItemsInRevisionReturn)
+        public queryWorkItemsInRevisionResponse(PolarionApiClient.Core.Generated.Tracker.WorkItem[] queryWorkItemsInRevisionReturn)
         {
             this.queryWorkItemsInRevisionReturn = queryWorkItemsInRevisionReturn;
         }
@@ -14427,13 +14427,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("queryWorkItemsInRevisionLimitedReturn")]
-        public PolarionApiClient.Core.Generated.WorkItem[] queryWorkItemsInRevisionLimitedReturn;
+        public PolarionApiClient.Core.Generated.Tracker.WorkItem[] queryWorkItemsInRevisionLimitedReturn;
         
         public queryWorkItemsInRevisionLimitedResponse()
         {
         }
         
-        public queryWorkItemsInRevisionLimitedResponse(PolarionApiClient.Core.Generated.WorkItem[] queryWorkItemsInRevisionLimitedReturn)
+        public queryWorkItemsInRevisionLimitedResponse(PolarionApiClient.Core.Generated.Tracker.WorkItem[] queryWorkItemsInRevisionLimitedReturn)
         {
             this.queryWorkItemsInRevisionLimitedReturn = queryWorkItemsInRevisionLimitedReturn;
         }
@@ -14481,13 +14481,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("queryWorkItemsLimitedReturn")]
-        public PolarionApiClient.Core.Generated.WorkItem[] queryWorkItemsLimitedReturn;
+        public PolarionApiClient.Core.Generated.Tracker.WorkItem[] queryWorkItemsLimitedReturn;
         
         public queryWorkItemsLimitedResponse()
         {
         }
         
-        public queryWorkItemsLimitedResponse(PolarionApiClient.Core.Generated.WorkItem[] queryWorkItemsLimitedReturn)
+        public queryWorkItemsLimitedResponse(PolarionApiClient.Core.Generated.Tracker.WorkItem[] queryWorkItemsLimitedReturn)
         {
             this.queryWorkItemsLimitedReturn = queryWorkItemsLimitedReturn;
         }
@@ -14679,13 +14679,13 @@ namespace PolarionApiClient.Core.Generated
         public string linkedExternalWorkitemURI;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=2)]
-        public PolarionApiClient.Core.Generated.EnumOptionId role;
+        public PolarionApiClient.Core.Generated.Tracker.EnumOptionId role;
         
         public removeExternallyLinkedItemRequest()
         {
         }
         
-        public removeExternallyLinkedItemRequest(string workitemURI, string linkedExternalWorkitemURI, PolarionApiClient.Core.Generated.EnumOptionId role)
+        public removeExternallyLinkedItemRequest(string workitemURI, string linkedExternalWorkitemURI, PolarionApiClient.Core.Generated.Tracker.EnumOptionId role)
         {
             this.workitemURI = workitemURI;
             this.linkedExternalWorkitemURI = linkedExternalWorkitemURI;
@@ -14771,13 +14771,13 @@ namespace PolarionApiClient.Core.Generated
         public string linkedItemURI;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=2)]
-        public PolarionApiClient.Core.Generated.EnumOptionId role;
+        public PolarionApiClient.Core.Generated.Tracker.EnumOptionId role;
         
         public removeLinkedItemRequest()
         {
         }
         
-        public removeLinkedItemRequest(string workitemURI, string linkedItemURI, PolarionApiClient.Core.Generated.EnumOptionId role)
+        public removeLinkedItemRequest(string workitemURI, string linkedItemURI, PolarionApiClient.Core.Generated.Tracker.EnumOptionId role)
         {
             this.workitemURI = workitemURI;
             this.linkedItemURI = linkedItemURI;
@@ -14863,13 +14863,13 @@ namespace PolarionApiClient.Core.Generated
         public System.DateTime date;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=2)]
-        public PolarionApiClient.Core.Generated.EnumOptionId constraint;
+        public PolarionApiClient.Core.Generated.Tracker.EnumOptionId constraint;
         
         public removePlaningConstraintRequest()
         {
         }
         
-        public removePlaningConstraintRequest(string workitemURI, System.DateTime date, PolarionApiClient.Core.Generated.EnumOptionId constraint)
+        public removePlaningConstraintRequest(string workitemURI, System.DateTime date, PolarionApiClient.Core.Generated.Tracker.EnumOptionId constraint)
         {
             this.workitemURI = workitemURI;
             this.date = date;
@@ -14955,7 +14955,7 @@ namespace PolarionApiClient.Core.Generated
         public bool updateTitleInDocument;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=6)]
-        public PolarionApiClient.Core.Generated.EnumOptionId linkRole;
+        public PolarionApiClient.Core.Generated.Tracker.EnumOptionId linkRole;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=7)]
         [System.Xml.Serialization.XmlElementAttribute("derivedFields")]
@@ -14965,7 +14965,7 @@ namespace PolarionApiClient.Core.Generated
         {
         }
         
-        public reuseDocumentRequest(string sourceURI, string targetProjectId, string targetLocation, string targetName, string targetTitle, bool updateTitleInDocument, PolarionApiClient.Core.Generated.EnumOptionId linkRole, string[] derivedFields)
+        public reuseDocumentRequest(string sourceURI, string targetProjectId, string targetLocation, string targetName, string targetTitle, bool updateTitleInDocument, PolarionApiClient.Core.Generated.Tracker.EnumOptionId linkRole, string[] derivedFields)
         {
             this.sourceURI = sourceURI;
             this.targetProjectId = targetProjectId;
@@ -15018,7 +15018,7 @@ namespace PolarionApiClient.Core.Generated
         public string targetName;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=4)]
-        public PolarionApiClient.Core.Generated.EnumOptionId linkRole;
+        public PolarionApiClient.Core.Generated.Tracker.EnumOptionId linkRole;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=5)]
         [System.Xml.Serialization.XmlElementAttribute("fields")]
@@ -15036,7 +15036,7 @@ namespace PolarionApiClient.Core.Generated
         {
         }
         
-        public reuseModuleRequest(string sourceURI, string targetProjectId, string targetLocation, string targetName, PolarionApiClient.Core.Generated.EnumOptionId linkRole, string[] fields, string[] exceptFields, string[] derivedFields)
+        public reuseModuleRequest(string sourceURI, string targetProjectId, string targetLocation, string targetName, PolarionApiClient.Core.Generated.Tracker.EnumOptionId linkRole, string[] fields, string[] exceptFields, string[] derivedFields)
         {
             this.sourceURI = sourceURI;
             this.targetProjectId = targetProjectId;
@@ -15081,13 +15081,13 @@ namespace PolarionApiClient.Core.Generated
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=1)]
         [System.Xml.Serialization.XmlElementAttribute("tags")]
-        public PolarionApiClient.Core.Generated.EnumOptionId[] tags;
+        public PolarionApiClient.Core.Generated.Tracker.EnumOptionId[] tags;
         
         public setCommentTagsRequest()
         {
         }
         
-        public setCommentTagsRequest(string commentURI, PolarionApiClient.Core.Generated.EnumOptionId[] tags)
+        public setCommentTagsRequest(string commentURI, PolarionApiClient.Core.Generated.Tracker.EnumOptionId[] tags)
         {
             this.commentURI = commentURI;
             this.tags = tags;
@@ -15114,13 +15114,13 @@ namespace PolarionApiClient.Core.Generated
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
-        public PolarionApiClient.Core.Generated.CustomField customField;
+        public PolarionApiClient.Core.Generated.Tracker.CustomField customField;
         
         public setCustomFieldRequest()
         {
         }
         
-        public setCustomFieldRequest(PolarionApiClient.Core.Generated.CustomField customField)
+        public setCustomFieldRequest(PolarionApiClient.Core.Generated.Tracker.CustomField customField)
         {
             this.customField = customField;
         }
@@ -15189,13 +15189,13 @@ namespace PolarionApiClient.Core.Generated
         public string language;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=2)]
-        public PolarionApiClient.Core.Generated.Text description;
+        public PolarionApiClient.Core.Generated.Tracker.Text description;
         
         public setLocalizedWorkItemDescriptionRequest()
         {
         }
         
-        public setLocalizedWorkItemDescriptionRequest(string uri, string language, PolarionApiClient.Core.Generated.Text description)
+        public setLocalizedWorkItemDescriptionRequest(string uri, string language, PolarionApiClient.Core.Generated.Tracker.Text description)
         {
             this.uri = uri;
             this.language = language;
@@ -15348,13 +15348,13 @@ namespace PolarionApiClient.Core.Generated
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
-        public PolarionApiClient.Core.Generated.Baseline baseline;
+        public PolarionApiClient.Core.Generated.Tracker.Baseline baseline;
         
         public updateBaselineRequest()
         {
         }
         
-        public updateBaselineRequest(PolarionApiClient.Core.Generated.Baseline baseline)
+        public updateBaselineRequest(PolarionApiClient.Core.Generated.Tracker.Baseline baseline)
         {
             this.baseline = baseline;
         }
@@ -15456,13 +15456,13 @@ namespace PolarionApiClient.Core.Generated
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
-        public PolarionApiClient.Core.Generated.Module module;
+        public PolarionApiClient.Core.Generated.Tracker.Module module;
         
         public updateModuleRequest()
         {
         }
         
-        public updateModuleRequest(PolarionApiClient.Core.Generated.Module module)
+        public updateModuleRequest(PolarionApiClient.Core.Generated.Tracker.Module module)
         {
             this.module = module;
         }
@@ -15532,13 +15532,13 @@ namespace PolarionApiClient.Core.Generated
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=0)]
-        public PolarionApiClient.Core.Generated.WorkItem content;
+        public PolarionApiClient.Core.Generated.Tracker.WorkItem content;
         
         public updateWorkItemRequest()
         {
         }
         
-        public updateWorkItemRequest(PolarionApiClient.Core.Generated.WorkItem content)
+        public updateWorkItemRequest(PolarionApiClient.Core.Generated.Tracker.WorkItem content)
         {
             this.content = content;
         }
@@ -15557,13 +15557,13 @@ namespace PolarionApiClient.Core.Generated
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
-    public interface TrackerWebServiceChannel : PolarionApiClient.Core.Generated.TrackerWebService, System.ServiceModel.IClientChannel
+    public interface TrackerWebServiceChannel : PolarionApiClient.Core.Generated.Tracker.TrackerWebService, System.ServiceModel.IClientChannel
     {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
-    public partial class TrackerWebServiceClient : System.ServiceModel.ClientBase<PolarionApiClient.Core.Generated.TrackerWebService>, PolarionApiClient.Core.Generated.TrackerWebService
+    public partial class TrackerWebServiceClient : System.ServiceModel.ClientBase<PolarionApiClient.Core.Generated.Tracker.TrackerWebService>, PolarionApiClient.Core.Generated.Tracker.TrackerWebService
     {
         
         /// <summary>
@@ -15573,17 +15573,10 @@ namespace PolarionApiClient.Core.Generated
         /// <param name="clientCredentials">The client credentials</param>
         static partial void ConfigureEndpoint(System.ServiceModel.Description.ServiceEndpoint serviceEndpoint, System.ServiceModel.Description.ClientCredentials clientCredentials);
         
-        public TrackerWebServiceClient() : 
-                base(TrackerWebServiceClient.GetDefaultBinding(), TrackerWebServiceClient.GetDefaultEndpointAddress())
+        public TrackerWebServiceClient(string remoteAddress) : 
+                base(TrackerWebServiceClient.GetDefaultBinding(), TrackerWebServiceClient.GetDefaultEndpointAddress(remoteAddress))
         {
             this.Endpoint.Name = EndpointConfiguration.TrackerWebService.ToString();
-            ConfigureEndpoint(this.Endpoint, this.ClientCredentials);
-        }
-        
-        public TrackerWebServiceClient(EndpointConfiguration endpointConfiguration) : 
-                base(TrackerWebServiceClient.GetBindingForEndpoint(endpointConfiguration), TrackerWebServiceClient.GetEndpointAddress(endpointConfiguration))
-        {
-            this.Endpoint.Name = endpointConfiguration.ToString();
             ConfigureEndpoint(this.Endpoint, this.ClientCredentials);
         }
         
@@ -15607,295 +15600,295 @@ namespace PolarionApiClient.Core.Generated
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.addApproveeResponse> PolarionApiClient.Core.Generated.TrackerWebService.addApproveeAsync(PolarionApiClient.Core.Generated.addApproveeRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.addApproveeResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.addApproveeAsync(PolarionApiClient.Core.Generated.Tracker.addApproveeRequest request)
         {
             return base.Channel.addApproveeAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.addApproveeResponse> addApproveeAsync(string workitemURI, string approveeId)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.addApproveeResponse> addApproveeAsync(string workitemURI, string approveeId)
         {
-            PolarionApiClient.Core.Generated.addApproveeRequest inValue = new PolarionApiClient.Core.Generated.addApproveeRequest();
+            PolarionApiClient.Core.Generated.Tracker.addApproveeRequest inValue = new PolarionApiClient.Core.Generated.Tracker.addApproveeRequest();
             inValue.workitemURI = workitemURI;
             inValue.approveeId = approveeId;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).addApproveeAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).addApproveeAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.addAssigneeResponse> PolarionApiClient.Core.Generated.TrackerWebService.addAssigneeAsync(PolarionApiClient.Core.Generated.addAssigneeRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.addAssigneeResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.addAssigneeAsync(PolarionApiClient.Core.Generated.Tracker.addAssigneeRequest request)
         {
             return base.Channel.addAssigneeAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.addAssigneeResponse> addAssigneeAsync(string workitemURI, string assigneeId)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.addAssigneeResponse> addAssigneeAsync(string workitemURI, string assigneeId)
         {
-            PolarionApiClient.Core.Generated.addAssigneeRequest inValue = new PolarionApiClient.Core.Generated.addAssigneeRequest();
+            PolarionApiClient.Core.Generated.Tracker.addAssigneeRequest inValue = new PolarionApiClient.Core.Generated.Tracker.addAssigneeRequest();
             inValue.workitemURI = workitemURI;
             inValue.assigneeId = assigneeId;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).addAssigneeAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).addAssigneeAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.addCategoryResponse> PolarionApiClient.Core.Generated.TrackerWebService.addCategoryAsync(PolarionApiClient.Core.Generated.addCategoryRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.addCategoryResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.addCategoryAsync(PolarionApiClient.Core.Generated.Tracker.addCategoryRequest request)
         {
             return base.Channel.addCategoryAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.addCategoryResponse> addCategoryAsync(string workitemURI, string categoryId)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.addCategoryResponse> addCategoryAsync(string workitemURI, string categoryId)
         {
-            PolarionApiClient.Core.Generated.addCategoryRequest inValue = new PolarionApiClient.Core.Generated.addCategoryRequest();
+            PolarionApiClient.Core.Generated.Tracker.addCategoryRequest inValue = new PolarionApiClient.Core.Generated.Tracker.addCategoryRequest();
             inValue.workitemURI = workitemURI;
             inValue.categoryId = categoryId;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).addCategoryAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).addCategoryAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.addCommentResponse> PolarionApiClient.Core.Generated.TrackerWebService.addCommentAsync(PolarionApiClient.Core.Generated.addCommentRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.addCommentResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.addCommentAsync(PolarionApiClient.Core.Generated.Tracker.addCommentRequest request)
         {
             return base.Channel.addCommentAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.addCommentResponse> addCommentAsync(string parentObjectUri, string title, PolarionApiClient.Core.Generated.Text content)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.addCommentResponse> addCommentAsync(string parentObjectUri, string title, PolarionApiClient.Core.Generated.Tracker.Text content)
         {
-            PolarionApiClient.Core.Generated.addCommentRequest inValue = new PolarionApiClient.Core.Generated.addCommentRequest();
+            PolarionApiClient.Core.Generated.Tracker.addCommentRequest inValue = new PolarionApiClient.Core.Generated.Tracker.addCommentRequest();
             inValue.parentObjectUri = parentObjectUri;
             inValue.title = title;
             inValue.content = content;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).addCommentAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).addCommentAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.addCommentToActivityResponse> PolarionApiClient.Core.Generated.TrackerWebService.addCommentToActivityAsync(PolarionApiClient.Core.Generated.addCommentToActivityRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.addCommentToActivityResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.addCommentToActivityAsync(PolarionApiClient.Core.Generated.Tracker.addCommentToActivityRequest request)
         {
             return base.Channel.addCommentToActivityAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.addCommentToActivityResponse> addCommentToActivityAsync(string activityGlobalId, PolarionApiClient.Core.Generated.Text commentText)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.addCommentToActivityResponse> addCommentToActivityAsync(string activityGlobalId, PolarionApiClient.Core.Generated.Tracker.Text commentText)
         {
-            PolarionApiClient.Core.Generated.addCommentToActivityRequest inValue = new PolarionApiClient.Core.Generated.addCommentToActivityRequest();
+            PolarionApiClient.Core.Generated.Tracker.addCommentToActivityRequest inValue = new PolarionApiClient.Core.Generated.Tracker.addCommentToActivityRequest();
             inValue.activityGlobalId = activityGlobalId;
             inValue.commentText = commentText;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).addCommentToActivityAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).addCommentToActivityAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.addExternalLinkedRevisionResponse> PolarionApiClient.Core.Generated.TrackerWebService.addExternalLinkedRevisionAsync(PolarionApiClient.Core.Generated.addExternalLinkedRevisionRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.addExternalLinkedRevisionResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.addExternalLinkedRevisionAsync(PolarionApiClient.Core.Generated.Tracker.addExternalLinkedRevisionRequest request)
         {
             return base.Channel.addExternalLinkedRevisionAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.addExternalLinkedRevisionResponse> addExternalLinkedRevisionAsync(string workitemURI, string repositoryName, string revisionId)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.addExternalLinkedRevisionResponse> addExternalLinkedRevisionAsync(string workitemURI, string repositoryName, string revisionId)
         {
-            PolarionApiClient.Core.Generated.addExternalLinkedRevisionRequest inValue = new PolarionApiClient.Core.Generated.addExternalLinkedRevisionRequest();
+            PolarionApiClient.Core.Generated.Tracker.addExternalLinkedRevisionRequest inValue = new PolarionApiClient.Core.Generated.Tracker.addExternalLinkedRevisionRequest();
             inValue.workitemURI = workitemURI;
             inValue.repositoryName = repositoryName;
             inValue.revisionId = revisionId;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).addExternalLinkedRevisionAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).addExternalLinkedRevisionAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.addExternallyLinkedItemResponse> PolarionApiClient.Core.Generated.TrackerWebService.addExternallyLinkedItemAsync(PolarionApiClient.Core.Generated.addExternallyLinkedItemRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.addExternallyLinkedItemResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.addExternallyLinkedItemAsync(PolarionApiClient.Core.Generated.Tracker.addExternallyLinkedItemRequest request)
         {
             return base.Channel.addExternallyLinkedItemAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.addExternallyLinkedItemResponse> addExternallyLinkedItemAsync(string workitemURI, string linkedExternalWorkitemURI, PolarionApiClient.Core.Generated.EnumOptionId role)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.addExternallyLinkedItemResponse> addExternallyLinkedItemAsync(string workitemURI, string linkedExternalWorkitemURI, PolarionApiClient.Core.Generated.Tracker.EnumOptionId role)
         {
-            PolarionApiClient.Core.Generated.addExternallyLinkedItemRequest inValue = new PolarionApiClient.Core.Generated.addExternallyLinkedItemRequest();
+            PolarionApiClient.Core.Generated.Tracker.addExternallyLinkedItemRequest inValue = new PolarionApiClient.Core.Generated.Tracker.addExternallyLinkedItemRequest();
             inValue.workitemURI = workitemURI;
             inValue.linkedExternalWorkitemURI = linkedExternalWorkitemURI;
             inValue.role = role;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).addExternallyLinkedItemAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).addExternallyLinkedItemAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.addHyperlinkResponse> PolarionApiClient.Core.Generated.TrackerWebService.addHyperlinkAsync(PolarionApiClient.Core.Generated.addHyperlinkRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.addHyperlinkResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.addHyperlinkAsync(PolarionApiClient.Core.Generated.Tracker.addHyperlinkRequest request)
         {
             return base.Channel.addHyperlinkAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.addHyperlinkResponse> addHyperlinkAsync(string workitemURI, string url, PolarionApiClient.Core.Generated.EnumOptionId role)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.addHyperlinkResponse> addHyperlinkAsync(string workitemURI, string url, PolarionApiClient.Core.Generated.Tracker.EnumOptionId role)
         {
-            PolarionApiClient.Core.Generated.addHyperlinkRequest inValue = new PolarionApiClient.Core.Generated.addHyperlinkRequest();
+            PolarionApiClient.Core.Generated.Tracker.addHyperlinkRequest inValue = new PolarionApiClient.Core.Generated.Tracker.addHyperlinkRequest();
             inValue.workitemURI = workitemURI;
             inValue.url = url;
             inValue.role = role;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).addHyperlinkAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).addHyperlinkAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.addLinkedItemResponse> PolarionApiClient.Core.Generated.TrackerWebService.addLinkedItemAsync(PolarionApiClient.Core.Generated.addLinkedItemRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.addLinkedItemResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.addLinkedItemAsync(PolarionApiClient.Core.Generated.Tracker.addLinkedItemRequest request)
         {
             return base.Channel.addLinkedItemAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.addLinkedItemResponse> addLinkedItemAsync(string workitemURI, string linkedWorkitemURI, PolarionApiClient.Core.Generated.EnumOptionId role)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.addLinkedItemResponse> addLinkedItemAsync(string workitemURI, string linkedWorkitemURI, PolarionApiClient.Core.Generated.Tracker.EnumOptionId role)
         {
-            PolarionApiClient.Core.Generated.addLinkedItemRequest inValue = new PolarionApiClient.Core.Generated.addLinkedItemRequest();
+            PolarionApiClient.Core.Generated.Tracker.addLinkedItemRequest inValue = new PolarionApiClient.Core.Generated.Tracker.addLinkedItemRequest();
             inValue.workitemURI = workitemURI;
             inValue.linkedWorkitemURI = linkedWorkitemURI;
             inValue.role = role;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).addLinkedItemAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).addLinkedItemAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.addLinkedItemWithRevResponse> PolarionApiClient.Core.Generated.TrackerWebService.addLinkedItemWithRevAsync(PolarionApiClient.Core.Generated.addLinkedItemWithRevRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.addLinkedItemWithRevResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.addLinkedItemWithRevAsync(PolarionApiClient.Core.Generated.Tracker.addLinkedItemWithRevRequest request)
         {
             return base.Channel.addLinkedItemWithRevAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.addLinkedItemWithRevResponse> addLinkedItemWithRevAsync(string in0, string in1, PolarionApiClient.Core.Generated.EnumOptionId in2, string in3, bool in4)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.addLinkedItemWithRevResponse> addLinkedItemWithRevAsync(string in0, string in1, PolarionApiClient.Core.Generated.Tracker.EnumOptionId in2, string in3, bool in4)
         {
-            PolarionApiClient.Core.Generated.addLinkedItemWithRevRequest inValue = new PolarionApiClient.Core.Generated.addLinkedItemWithRevRequest();
+            PolarionApiClient.Core.Generated.Tracker.addLinkedItemWithRevRequest inValue = new PolarionApiClient.Core.Generated.Tracker.addLinkedItemWithRevRequest();
             inValue.in0 = in0;
             inValue.in1 = in1;
             inValue.in2 = in2;
             inValue.in3 = in3;
             inValue.in4 = in4;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).addLinkedItemWithRevAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).addLinkedItemWithRevAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.addLinkedOslcItemResponse> PolarionApiClient.Core.Generated.TrackerWebService.addLinkedOslcItemAsync(PolarionApiClient.Core.Generated.addLinkedOslcItemRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.addLinkedOslcItemResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.addLinkedOslcItemAsync(PolarionApiClient.Core.Generated.Tracker.addLinkedOslcItemRequest request)
         {
             return base.Channel.addLinkedOslcItemAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.addLinkedOslcItemResponse> addLinkedOslcItemAsync(string workitemURI, string linkedOslcItemURI, PolarionApiClient.Core.Generated.EnumOptionId role, string label)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.addLinkedOslcItemResponse> addLinkedOslcItemAsync(string workitemURI, string linkedOslcItemURI, PolarionApiClient.Core.Generated.Tracker.EnumOptionId role, string label)
         {
-            PolarionApiClient.Core.Generated.addLinkedOslcItemRequest inValue = new PolarionApiClient.Core.Generated.addLinkedOslcItemRequest();
+            PolarionApiClient.Core.Generated.Tracker.addLinkedOslcItemRequest inValue = new PolarionApiClient.Core.Generated.Tracker.addLinkedOslcItemRequest();
             inValue.workitemURI = workitemURI;
             inValue.linkedOslcItemURI = linkedOslcItemURI;
             inValue.role = role;
             inValue.label = label;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).addLinkedOslcItemAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).addLinkedOslcItemAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.addLinkedRevisionResponse> PolarionApiClient.Core.Generated.TrackerWebService.addLinkedRevisionAsync(PolarionApiClient.Core.Generated.addLinkedRevisionRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.addLinkedRevisionResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.addLinkedRevisionAsync(PolarionApiClient.Core.Generated.Tracker.addLinkedRevisionRequest request)
         {
             return base.Channel.addLinkedRevisionAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.addLinkedRevisionResponse> addLinkedRevisionAsync(string workitemURI, string revisionId)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.addLinkedRevisionResponse> addLinkedRevisionAsync(string workitemURI, string revisionId)
         {
-            PolarionApiClient.Core.Generated.addLinkedRevisionRequest inValue = new PolarionApiClient.Core.Generated.addLinkedRevisionRequest();
+            PolarionApiClient.Core.Generated.Tracker.addLinkedRevisionRequest inValue = new PolarionApiClient.Core.Generated.Tracker.addLinkedRevisionRequest();
             inValue.workitemURI = workitemURI;
             inValue.revisionId = revisionId;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).addLinkedRevisionAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).addLinkedRevisionAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.addPlaningContraintResponse> PolarionApiClient.Core.Generated.TrackerWebService.addPlaningContraintAsync(PolarionApiClient.Core.Generated.addPlaningContraintRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.addPlaningContraintResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.addPlaningContraintAsync(PolarionApiClient.Core.Generated.Tracker.addPlaningContraintRequest request)
         {
             return base.Channel.addPlaningContraintAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.addPlaningContraintResponse> addPlaningContraintAsync(string workitemURI, System.DateTime date, PolarionApiClient.Core.Generated.EnumOptionId constraint)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.addPlaningContraintResponse> addPlaningContraintAsync(string workitemURI, System.DateTime date, PolarionApiClient.Core.Generated.Tracker.EnumOptionId constraint)
         {
-            PolarionApiClient.Core.Generated.addPlaningContraintRequest inValue = new PolarionApiClient.Core.Generated.addPlaningContraintRequest();
+            PolarionApiClient.Core.Generated.Tracker.addPlaningContraintRequest inValue = new PolarionApiClient.Core.Generated.Tracker.addPlaningContraintRequest();
             inValue.workitemURI = workitemURI;
             inValue.date = date;
             inValue.constraint = constraint;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).addPlaningContraintAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).addPlaningContraintAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.canCommentActivityResponse> PolarionApiClient.Core.Generated.TrackerWebService.canCommentActivityAsync(PolarionApiClient.Core.Generated.canCommentActivityRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.canCommentActivityResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.canCommentActivityAsync(PolarionApiClient.Core.Generated.Tracker.canCommentActivityRequest request)
         {
             return base.Channel.canCommentActivityAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.canCommentActivityResponse> canCommentActivityAsync(string activityGlobalId)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.canCommentActivityResponse> canCommentActivityAsync(string activityGlobalId)
         {
-            PolarionApiClient.Core.Generated.canCommentActivityRequest inValue = new PolarionApiClient.Core.Generated.canCommentActivityRequest();
+            PolarionApiClient.Core.Generated.Tracker.canCommentActivityRequest inValue = new PolarionApiClient.Core.Generated.Tracker.canCommentActivityRequest();
             inValue.activityGlobalId = activityGlobalId;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).canCommentActivityAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).canCommentActivityAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.canCurrentUserAddCommentToActivityResponse> PolarionApiClient.Core.Generated.TrackerWebService.canCurrentUserAddCommentToActivityAsync(PolarionApiClient.Core.Generated.canCurrentUserAddCommentToActivityRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.canCurrentUserAddCommentToActivityResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.canCurrentUserAddCommentToActivityAsync(PolarionApiClient.Core.Generated.Tracker.canCurrentUserAddCommentToActivityRequest request)
         {
             return base.Channel.canCurrentUserAddCommentToActivityAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.canCurrentUserAddCommentToActivityResponse> canCurrentUserAddCommentToActivityAsync(string activityGlobalId)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.canCurrentUserAddCommentToActivityResponse> canCurrentUserAddCommentToActivityAsync(string activityGlobalId)
         {
-            PolarionApiClient.Core.Generated.canCurrentUserAddCommentToActivityRequest inValue = new PolarionApiClient.Core.Generated.canCurrentUserAddCommentToActivityRequest();
+            PolarionApiClient.Core.Generated.Tracker.canCurrentUserAddCommentToActivityRequest inValue = new PolarionApiClient.Core.Generated.Tracker.canCurrentUserAddCommentToActivityRequest();
             inValue.activityGlobalId = activityGlobalId;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).canCurrentUserAddCommentToActivityAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).canCurrentUserAddCommentToActivityAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.createAttachmentResponse> PolarionApiClient.Core.Generated.TrackerWebService.createAttachmentAsync(PolarionApiClient.Core.Generated.createAttachmentRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.createAttachmentResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.createAttachmentAsync(PolarionApiClient.Core.Generated.Tracker.createAttachmentRequest request)
         {
             return base.Channel.createAttachmentAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.createAttachmentResponse> createAttachmentAsync(string workitemURI, string fileName, string title, byte[] data)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.createAttachmentResponse> createAttachmentAsync(string workitemURI, string fileName, string title, byte[] data)
         {
-            PolarionApiClient.Core.Generated.createAttachmentRequest inValue = new PolarionApiClient.Core.Generated.createAttachmentRequest();
+            PolarionApiClient.Core.Generated.Tracker.createAttachmentRequest inValue = new PolarionApiClient.Core.Generated.Tracker.createAttachmentRequest();
             inValue.workitemURI = workitemURI;
             inValue.fileName = fileName;
             inValue.title = title;
             inValue.data = data;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).createAttachmentAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).createAttachmentAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.createBaselineResponse> PolarionApiClient.Core.Generated.TrackerWebService.createBaselineAsync(PolarionApiClient.Core.Generated.createBaselineRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.createBaselineResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.createBaselineAsync(PolarionApiClient.Core.Generated.Tracker.createBaselineRequest request)
         {
             return base.Channel.createBaselineAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.createBaselineResponse> createBaselineAsync(string projectId, string name, string description, string revision)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.createBaselineResponse> createBaselineAsync(string projectId, string name, string description, string revision)
         {
-            PolarionApiClient.Core.Generated.createBaselineRequest inValue = new PolarionApiClient.Core.Generated.createBaselineRequest();
+            PolarionApiClient.Core.Generated.Tracker.createBaselineRequest inValue = new PolarionApiClient.Core.Generated.Tracker.createBaselineRequest();
             inValue.projectId = projectId;
             inValue.name = name;
             inValue.description = description;
             inValue.revision = revision;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).createBaselineAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).createBaselineAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.createCommentResponse> PolarionApiClient.Core.Generated.TrackerWebService.createCommentAsync(PolarionApiClient.Core.Generated.createCommentRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.createCommentResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.createCommentAsync(PolarionApiClient.Core.Generated.Tracker.createCommentRequest request)
         {
             return base.Channel.createCommentAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.createCommentResponse> createCommentAsync(string workitemURI, PolarionApiClient.Core.Generated.Text content)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.createCommentResponse> createCommentAsync(string workitemURI, PolarionApiClient.Core.Generated.Tracker.Text content)
         {
-            PolarionApiClient.Core.Generated.createCommentRequest inValue = new PolarionApiClient.Core.Generated.createCommentRequest();
+            PolarionApiClient.Core.Generated.Tracker.createCommentRequest inValue = new PolarionApiClient.Core.Generated.Tracker.createCommentRequest();
             inValue.workitemURI = workitemURI;
             inValue.content = content;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).createCommentAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).createCommentAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.createCommentNewResponse> PolarionApiClient.Core.Generated.TrackerWebService.createCommentNewAsync(PolarionApiClient.Core.Generated.createCommentNewRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.createCommentNewResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.createCommentNewAsync(PolarionApiClient.Core.Generated.Tracker.createCommentNewRequest request)
         {
             return base.Channel.createCommentNewAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.createCommentNewResponse> createCommentNewAsync(string parentURI, string title, PolarionApiClient.Core.Generated.Text content, string[] visibleTo)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.createCommentNewResponse> createCommentNewAsync(string parentURI, string title, PolarionApiClient.Core.Generated.Tracker.Text content, string[] visibleTo)
         {
-            PolarionApiClient.Core.Generated.createCommentNewRequest inValue = new PolarionApiClient.Core.Generated.createCommentNewRequest();
+            PolarionApiClient.Core.Generated.Tracker.createCommentNewRequest inValue = new PolarionApiClient.Core.Generated.Tracker.createCommentNewRequest();
             inValue.parentURI = parentURI;
             inValue.title = title;
             inValue.content = content;
             inValue.visibleTo = visibleTo;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).createCommentNewAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).createCommentNewAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.createDocumentResponse> PolarionApiClient.Core.Generated.TrackerWebService.createDocumentAsync(PolarionApiClient.Core.Generated.createDocumentRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.createDocumentResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.createDocumentAsync(PolarionApiClient.Core.Generated.Tracker.createDocumentRequest request)
         {
             return base.Channel.createDocumentAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.createDocumentResponse> createDocumentAsync(string projectId, string location, string documentName, string documentTitle, PolarionApiClient.Core.Generated.EnumOptionId[] allowedWITypes, PolarionApiClient.Core.Generated.EnumOptionId structureLinkRole, string homePageContent)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.createDocumentResponse> createDocumentAsync(string projectId, string location, string documentName, string documentTitle, PolarionApiClient.Core.Generated.Tracker.EnumOptionId[] allowedWITypes, PolarionApiClient.Core.Generated.Tracker.EnumOptionId structureLinkRole, string homePageContent)
         {
-            PolarionApiClient.Core.Generated.createDocumentRequest inValue = new PolarionApiClient.Core.Generated.createDocumentRequest();
+            PolarionApiClient.Core.Generated.Tracker.createDocumentRequest inValue = new PolarionApiClient.Core.Generated.Tracker.createDocumentRequest();
             inValue.projectId = projectId;
             inValue.location = location;
             inValue.documentName = documentName;
@@ -15903,77 +15896,77 @@ namespace PolarionApiClient.Core.Generated
             inValue.allowedWITypes = allowedWITypes;
             inValue.structureLinkRole = structureLinkRole;
             inValue.homePageContent = homePageContent;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).createDocumentAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).createDocumentAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.createDocumentCommentResponse> PolarionApiClient.Core.Generated.TrackerWebService.createDocumentCommentAsync(PolarionApiClient.Core.Generated.createDocumentCommentRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.createDocumentCommentResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.createDocumentCommentAsync(PolarionApiClient.Core.Generated.Tracker.createDocumentCommentRequest request)
         {
             return base.Channel.createDocumentCommentAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.createDocumentCommentResponse> createDocumentCommentAsync(string documentURI, PolarionApiClient.Core.Generated.Text text)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.createDocumentCommentResponse> createDocumentCommentAsync(string documentURI, PolarionApiClient.Core.Generated.Tracker.Text text)
         {
-            PolarionApiClient.Core.Generated.createDocumentCommentRequest inValue = new PolarionApiClient.Core.Generated.createDocumentCommentRequest();
+            PolarionApiClient.Core.Generated.Tracker.createDocumentCommentRequest inValue = new PolarionApiClient.Core.Generated.Tracker.createDocumentCommentRequest();
             inValue.documentURI = documentURI;
             inValue.text = text;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).createDocumentCommentAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).createDocumentCommentAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.createDocumentCommentReferringWIResponse> PolarionApiClient.Core.Generated.TrackerWebService.createDocumentCommentReferringWIAsync(PolarionApiClient.Core.Generated.createDocumentCommentReferringWIRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.createDocumentCommentReferringWIResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.createDocumentCommentReferringWIAsync(PolarionApiClient.Core.Generated.Tracker.createDocumentCommentReferringWIRequest request)
         {
             return base.Channel.createDocumentCommentReferringWIAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.createDocumentCommentReferringWIResponse> createDocumentCommentReferringWIAsync(string documentURI, string workItemURI, PolarionApiClient.Core.Generated.Text text)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.createDocumentCommentReferringWIResponse> createDocumentCommentReferringWIAsync(string documentURI, string workItemURI, PolarionApiClient.Core.Generated.Tracker.Text text)
         {
-            PolarionApiClient.Core.Generated.createDocumentCommentReferringWIRequest inValue = new PolarionApiClient.Core.Generated.createDocumentCommentReferringWIRequest();
+            PolarionApiClient.Core.Generated.Tracker.createDocumentCommentReferringWIRequest inValue = new PolarionApiClient.Core.Generated.Tracker.createDocumentCommentReferringWIRequest();
             inValue.documentURI = documentURI;
             inValue.workItemURI = workItemURI;
             inValue.text = text;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).createDocumentCommentReferringWIAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).createDocumentCommentReferringWIAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.createDocumentCommentReplyResponse> PolarionApiClient.Core.Generated.TrackerWebService.createDocumentCommentReplyAsync(PolarionApiClient.Core.Generated.createDocumentCommentReplyRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.createDocumentCommentReplyResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.createDocumentCommentReplyAsync(PolarionApiClient.Core.Generated.Tracker.createDocumentCommentReplyRequest request)
         {
             return base.Channel.createDocumentCommentReplyAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.createDocumentCommentReplyResponse> createDocumentCommentReplyAsync(string parentURI, PolarionApiClient.Core.Generated.Text text)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.createDocumentCommentReplyResponse> createDocumentCommentReplyAsync(string parentURI, PolarionApiClient.Core.Generated.Tracker.Text text)
         {
-            PolarionApiClient.Core.Generated.createDocumentCommentReplyRequest inValue = new PolarionApiClient.Core.Generated.createDocumentCommentReplyRequest();
+            PolarionApiClient.Core.Generated.Tracker.createDocumentCommentReplyRequest inValue = new PolarionApiClient.Core.Generated.Tracker.createDocumentCommentReplyRequest();
             inValue.parentURI = parentURI;
             inValue.text = text;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).createDocumentCommentReplyAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).createDocumentCommentReplyAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.createFolderResponse> PolarionApiClient.Core.Generated.TrackerWebService.createFolderAsync(PolarionApiClient.Core.Generated.createFolderRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.createFolderResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.createFolderAsync(PolarionApiClient.Core.Generated.Tracker.createFolderRequest request)
         {
             return base.Channel.createFolderAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.createFolderResponse> createFolderAsync(string projectId, string parentName, string name, string title)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.createFolderResponse> createFolderAsync(string projectId, string parentName, string name, string title)
         {
-            PolarionApiClient.Core.Generated.createFolderRequest inValue = new PolarionApiClient.Core.Generated.createFolderRequest();
+            PolarionApiClient.Core.Generated.Tracker.createFolderRequest inValue = new PolarionApiClient.Core.Generated.Tracker.createFolderRequest();
             inValue.projectId = projectId;
             inValue.parentName = parentName;
             inValue.name = name;
             inValue.title = title;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).createFolderAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).createFolderAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.createModuleResponse> PolarionApiClient.Core.Generated.TrackerWebService.createModuleAsync(PolarionApiClient.Core.Generated.createModuleRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.createModuleResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.createModuleAsync(PolarionApiClient.Core.Generated.Tracker.createModuleRequest request)
         {
             return base.Channel.createModuleAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.createModuleResponse> createModuleAsync(string projectId, string location, string moduleName, PolarionApiClient.Core.Generated.EnumOptionId[] allowedWITypes, PolarionApiClient.Core.Generated.EnumOptionId structureLinkRole, bool parentToChild, string homePageContent)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.createModuleResponse> createModuleAsync(string projectId, string location, string moduleName, PolarionApiClient.Core.Generated.Tracker.EnumOptionId[] allowedWITypes, PolarionApiClient.Core.Generated.Tracker.EnumOptionId structureLinkRole, bool parentToChild, string homePageContent)
         {
-            PolarionApiClient.Core.Generated.createModuleRequest inValue = new PolarionApiClient.Core.Generated.createModuleRequest();
+            PolarionApiClient.Core.Generated.Tracker.createModuleRequest inValue = new PolarionApiClient.Core.Generated.Tracker.createModuleRequest();
             inValue.projectId = projectId;
             inValue.location = location;
             inValue.moduleName = moduleName;
@@ -15981,2136 +15974,2136 @@ namespace PolarionApiClient.Core.Generated
             inValue.structureLinkRole = structureLinkRole;
             inValue.parentToChild = parentToChild;
             inValue.homePageContent = homePageContent;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).createModuleAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).createModuleAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.createWorkItemResponse> PolarionApiClient.Core.Generated.TrackerWebService.createWorkItemAsync(PolarionApiClient.Core.Generated.createWorkItemRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.createWorkItemResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.createWorkItemAsync(PolarionApiClient.Core.Generated.Tracker.createWorkItemRequest request)
         {
             return base.Channel.createWorkItemAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.createWorkItemResponse> createWorkItemAsync(PolarionApiClient.Core.Generated.WorkItem content)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.createWorkItemResponse> createWorkItemAsync(PolarionApiClient.Core.Generated.Tracker.WorkItem content)
         {
-            PolarionApiClient.Core.Generated.createWorkItemRequest inValue = new PolarionApiClient.Core.Generated.createWorkItemRequest();
+            PolarionApiClient.Core.Generated.Tracker.createWorkItemRequest inValue = new PolarionApiClient.Core.Generated.Tracker.createWorkItemRequest();
             inValue.content = content;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).createWorkItemAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).createWorkItemAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.createWorkItemInModuleResponse> PolarionApiClient.Core.Generated.TrackerWebService.createWorkItemInModuleAsync(PolarionApiClient.Core.Generated.createWorkItemInModuleRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.createWorkItemInModuleResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.createWorkItemInModuleAsync(PolarionApiClient.Core.Generated.Tracker.createWorkItemInModuleRequest request)
         {
             return base.Channel.createWorkItemInModuleAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.createWorkItemInModuleResponse> createWorkItemInModuleAsync(string moduleURI, string parentWorkItemURI, PolarionApiClient.Core.Generated.WorkItem workItem)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.createWorkItemInModuleResponse> createWorkItemInModuleAsync(string moduleURI, string parentWorkItemURI, PolarionApiClient.Core.Generated.Tracker.WorkItem workItem)
         {
-            PolarionApiClient.Core.Generated.createWorkItemInModuleRequest inValue = new PolarionApiClient.Core.Generated.createWorkItemInModuleRequest();
+            PolarionApiClient.Core.Generated.Tracker.createWorkItemInModuleRequest inValue = new PolarionApiClient.Core.Generated.Tracker.createWorkItemInModuleRequest();
             inValue.moduleURI = moduleURI;
             inValue.parentWorkItemURI = parentWorkItemURI;
             inValue.workItem = workItem;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).createWorkItemInModuleAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).createWorkItemInModuleAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.createWorkRecordResponse> PolarionApiClient.Core.Generated.TrackerWebService.createWorkRecordAsync(PolarionApiClient.Core.Generated.createWorkRecordRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.createWorkRecordResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.createWorkRecordAsync(PolarionApiClient.Core.Generated.Tracker.createWorkRecordRequest request)
         {
             return base.Channel.createWorkRecordAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.createWorkRecordResponse> createWorkRecordAsync(string workitemURI, PolarionApiClient.Core.Generated.User user, System.DateTime date, string timeSpent)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.createWorkRecordResponse> createWorkRecordAsync(string workitemURI, PolarionApiClient.Core.Generated.Tracker.User user, System.DateTime date, string timeSpent)
         {
-            PolarionApiClient.Core.Generated.createWorkRecordRequest inValue = new PolarionApiClient.Core.Generated.createWorkRecordRequest();
+            PolarionApiClient.Core.Generated.Tracker.createWorkRecordRequest inValue = new PolarionApiClient.Core.Generated.Tracker.createWorkRecordRequest();
             inValue.workitemURI = workitemURI;
             inValue.user = user;
             inValue.date = date;
             inValue.timeSpent = timeSpent;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).createWorkRecordAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).createWorkRecordAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.createWorkRecordWithTypeAndCommentResponse> PolarionApiClient.Core.Generated.TrackerWebService.createWorkRecordWithTypeAndCommentAsync(PolarionApiClient.Core.Generated.createWorkRecordWithTypeAndCommentRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.createWorkRecordWithTypeAndCommentResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.createWorkRecordWithTypeAndCommentAsync(PolarionApiClient.Core.Generated.Tracker.createWorkRecordWithTypeAndCommentRequest request)
         {
             return base.Channel.createWorkRecordWithTypeAndCommentAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.createWorkRecordWithTypeAndCommentResponse> createWorkRecordWithTypeAndCommentAsync(string workitemURI, PolarionApiClient.Core.Generated.User user, System.DateTime date, PolarionApiClient.Core.Generated.EnumOptionId type, string timeSpent, string comment)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.createWorkRecordWithTypeAndCommentResponse> createWorkRecordWithTypeAndCommentAsync(string workitemURI, PolarionApiClient.Core.Generated.Tracker.User user, System.DateTime date, PolarionApiClient.Core.Generated.Tracker.EnumOptionId type, string timeSpent, string comment)
         {
-            PolarionApiClient.Core.Generated.createWorkRecordWithTypeAndCommentRequest inValue = new PolarionApiClient.Core.Generated.createWorkRecordWithTypeAndCommentRequest();
+            PolarionApiClient.Core.Generated.Tracker.createWorkRecordWithTypeAndCommentRequest inValue = new PolarionApiClient.Core.Generated.Tracker.createWorkRecordWithTypeAndCommentRequest();
             inValue.workitemURI = workitemURI;
             inValue.user = user;
             inValue.date = date;
             inValue.type = type;
             inValue.timeSpent = timeSpent;
             inValue.comment = comment;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).createWorkRecordWithTypeAndCommentAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).createWorkRecordWithTypeAndCommentAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.deleteAttachmentResponse> PolarionApiClient.Core.Generated.TrackerWebService.deleteAttachmentAsync(PolarionApiClient.Core.Generated.deleteAttachmentRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.deleteAttachmentResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.deleteAttachmentAsync(PolarionApiClient.Core.Generated.Tracker.deleteAttachmentRequest request)
         {
             return base.Channel.deleteAttachmentAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.deleteAttachmentResponse> deleteAttachmentAsync(string workitemURI, string id)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.deleteAttachmentResponse> deleteAttachmentAsync(string workitemURI, string id)
         {
-            PolarionApiClient.Core.Generated.deleteAttachmentRequest inValue = new PolarionApiClient.Core.Generated.deleteAttachmentRequest();
+            PolarionApiClient.Core.Generated.Tracker.deleteAttachmentRequest inValue = new PolarionApiClient.Core.Generated.Tracker.deleteAttachmentRequest();
             inValue.workitemURI = workitemURI;
             inValue.id = id;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).deleteAttachmentAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).deleteAttachmentAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.deleteBaselineResponse> PolarionApiClient.Core.Generated.TrackerWebService.deleteBaselineAsync(PolarionApiClient.Core.Generated.deleteBaselineRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.deleteBaselineResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.deleteBaselineAsync(PolarionApiClient.Core.Generated.Tracker.deleteBaselineRequest request)
         {
             return base.Channel.deleteBaselineAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.deleteBaselineResponse> deleteBaselineAsync(string baselineURI)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.deleteBaselineResponse> deleteBaselineAsync(string baselineURI)
         {
-            PolarionApiClient.Core.Generated.deleteBaselineRequest inValue = new PolarionApiClient.Core.Generated.deleteBaselineRequest();
+            PolarionApiClient.Core.Generated.Tracker.deleteBaselineRequest inValue = new PolarionApiClient.Core.Generated.Tracker.deleteBaselineRequest();
             inValue.baselineURI = baselineURI;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).deleteBaselineAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).deleteBaselineAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.deleteModuleResponse> PolarionApiClient.Core.Generated.TrackerWebService.deleteModuleAsync(PolarionApiClient.Core.Generated.deleteModuleRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.deleteModuleResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.deleteModuleAsync(PolarionApiClient.Core.Generated.Tracker.deleteModuleRequest request)
         {
             return base.Channel.deleteModuleAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.deleteModuleResponse> deleteModuleAsync(string moduleURI)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.deleteModuleResponse> deleteModuleAsync(string moduleURI)
         {
-            PolarionApiClient.Core.Generated.deleteModuleRequest inValue = new PolarionApiClient.Core.Generated.deleteModuleRequest();
+            PolarionApiClient.Core.Generated.Tracker.deleteModuleRequest inValue = new PolarionApiClient.Core.Generated.Tracker.deleteModuleRequest();
             inValue.moduleURI = moduleURI;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).deleteModuleAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).deleteModuleAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.deleteWorkItemResponse> PolarionApiClient.Core.Generated.TrackerWebService.deleteWorkItemAsync(PolarionApiClient.Core.Generated.deleteWorkItemRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.deleteWorkItemResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.deleteWorkItemAsync(PolarionApiClient.Core.Generated.Tracker.deleteWorkItemRequest request)
         {
             return base.Channel.deleteWorkItemAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.deleteWorkItemResponse> deleteWorkItemAsync(string workitemURI)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.deleteWorkItemResponse> deleteWorkItemAsync(string workitemURI)
         {
-            PolarionApiClient.Core.Generated.deleteWorkItemRequest inValue = new PolarionApiClient.Core.Generated.deleteWorkItemRequest();
+            PolarionApiClient.Core.Generated.Tracker.deleteWorkItemRequest inValue = new PolarionApiClient.Core.Generated.Tracker.deleteWorkItemRequest();
             inValue.workitemURI = workitemURI;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).deleteWorkItemAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).deleteWorkItemAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.deleteWorkRecordResponse> PolarionApiClient.Core.Generated.TrackerWebService.deleteWorkRecordAsync(PolarionApiClient.Core.Generated.deleteWorkRecordRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.deleteWorkRecordResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.deleteWorkRecordAsync(PolarionApiClient.Core.Generated.Tracker.deleteWorkRecordRequest request)
         {
             return base.Channel.deleteWorkRecordAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.deleteWorkRecordResponse> deleteWorkRecordAsync(string workitemURI, string workRecordURI)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.deleteWorkRecordResponse> deleteWorkRecordAsync(string workitemURI, string workRecordURI)
         {
-            PolarionApiClient.Core.Generated.deleteWorkRecordRequest inValue = new PolarionApiClient.Core.Generated.deleteWorkRecordRequest();
+            PolarionApiClient.Core.Generated.Tracker.deleteWorkRecordRequest inValue = new PolarionApiClient.Core.Generated.Tracker.deleteWorkRecordRequest();
             inValue.workitemURI = workitemURI;
             inValue.workRecordURI = workRecordURI;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).deleteWorkRecordAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).deleteWorkRecordAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.doAutoSuspectResponse> PolarionApiClient.Core.Generated.TrackerWebService.doAutoSuspectAsync(PolarionApiClient.Core.Generated.doAutoSuspectRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.doAutoSuspectResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.doAutoSuspectAsync(PolarionApiClient.Core.Generated.Tracker.doAutoSuspectRequest request)
         {
             return base.Channel.doAutoSuspectAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.doAutoSuspectResponse> doAutoSuspectAsync(string workitemURI)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.doAutoSuspectResponse> doAutoSuspectAsync(string workitemURI)
         {
-            PolarionApiClient.Core.Generated.doAutoSuspectRequest inValue = new PolarionApiClient.Core.Generated.doAutoSuspectRequest();
+            PolarionApiClient.Core.Generated.Tracker.doAutoSuspectRequest inValue = new PolarionApiClient.Core.Generated.Tracker.doAutoSuspectRequest();
             inValue.workitemURI = workitemURI;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).doAutoSuspectAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).doAutoSuspectAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.doAutoassignResponse> PolarionApiClient.Core.Generated.TrackerWebService.doAutoassignAsync(PolarionApiClient.Core.Generated.doAutoassignRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.doAutoassignResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.doAutoassignAsync(PolarionApiClient.Core.Generated.Tracker.doAutoassignRequest request)
         {
             return base.Channel.doAutoassignAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.doAutoassignResponse> doAutoassignAsync(string workitemURI)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.doAutoassignResponse> doAutoassignAsync(string workitemURI)
         {
-            PolarionApiClient.Core.Generated.doAutoassignRequest inValue = new PolarionApiClient.Core.Generated.doAutoassignRequest();
+            PolarionApiClient.Core.Generated.Tracker.doAutoassignRequest inValue = new PolarionApiClient.Core.Generated.Tracker.doAutoassignRequest();
             inValue.workitemURI = workitemURI;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).doAutoassignAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).doAutoassignAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.editApprovalResponse> PolarionApiClient.Core.Generated.TrackerWebService.editApprovalAsync(PolarionApiClient.Core.Generated.editApprovalRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.editApprovalResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.editApprovalAsync(PolarionApiClient.Core.Generated.Tracker.editApprovalRequest request)
         {
             return base.Channel.editApprovalAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.editApprovalResponse> editApprovalAsync(string workitemURI, string approveeId, PolarionApiClient.Core.Generated.EnumOptionId status)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.editApprovalResponse> editApprovalAsync(string workitemURI, string approveeId, PolarionApiClient.Core.Generated.Tracker.EnumOptionId status)
         {
-            PolarionApiClient.Core.Generated.editApprovalRequest inValue = new PolarionApiClient.Core.Generated.editApprovalRequest();
+            PolarionApiClient.Core.Generated.Tracker.editApprovalRequest inValue = new PolarionApiClient.Core.Generated.Tracker.editApprovalRequest();
             inValue.workitemURI = workitemURI;
             inValue.approveeId = approveeId;
             inValue.status = status;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).editApprovalAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).editApprovalAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.exportDocumentToPDFResponse> PolarionApiClient.Core.Generated.TrackerWebService.exportDocumentToPDFAsync(PolarionApiClient.Core.Generated.exportDocumentToPDFRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.exportDocumentToPDFResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.exportDocumentToPDFAsync(PolarionApiClient.Core.Generated.Tracker.exportDocumentToPDFRequest request)
         {
             return base.Channel.exportDocumentToPDFAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.exportDocumentToPDFResponse> exportDocumentToPDFAsync(string uri, PolarionApiClient.Core.Generated.PdfProperties exportPdfProperties)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.exportDocumentToPDFResponse> exportDocumentToPDFAsync(string uri, PolarionApiClient.Core.Generated.Tracker.PdfProperties exportPdfProperties)
         {
-            PolarionApiClient.Core.Generated.exportDocumentToPDFRequest inValue = new PolarionApiClient.Core.Generated.exportDocumentToPDFRequest();
+            PolarionApiClient.Core.Generated.Tracker.exportDocumentToPDFRequest inValue = new PolarionApiClient.Core.Generated.Tracker.exportDocumentToPDFRequest();
             inValue.uri = uri;
             inValue.exportPdfProperties = exportPdfProperties;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).exportDocumentToPDFAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).exportDocumentToPDFAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.generateHistoryResponse> PolarionApiClient.Core.Generated.TrackerWebService.generateHistoryAsync(PolarionApiClient.Core.Generated.generateHistoryRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.generateHistoryResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.generateHistoryAsync(PolarionApiClient.Core.Generated.Tracker.generateHistoryRequest request)
         {
             return base.Channel.generateHistoryAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.generateHistoryResponse> generateHistoryAsync(string workitemURI, string[] ignoredFields, string[] fieldOrder)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.generateHistoryResponse> generateHistoryAsync(string workitemURI, string[] ignoredFields, string[] fieldOrder)
         {
-            PolarionApiClient.Core.Generated.generateHistoryRequest inValue = new PolarionApiClient.Core.Generated.generateHistoryRequest();
+            PolarionApiClient.Core.Generated.Tracker.generateHistoryRequest inValue = new PolarionApiClient.Core.Generated.Tracker.generateHistoryRequest();
             inValue.workitemURI = workitemURI;
             inValue.ignoredFields = ignoredFields;
             inValue.fieldOrder = fieldOrder;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).generateHistoryAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).generateHistoryAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getActivityByGlobalIdResponse> PolarionApiClient.Core.Generated.TrackerWebService.getActivityByGlobalIdAsync(PolarionApiClient.Core.Generated.getActivityByGlobalIdRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getActivityByGlobalIdResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getActivityByGlobalIdAsync(PolarionApiClient.Core.Generated.Tracker.getActivityByGlobalIdRequest request)
         {
             return base.Channel.getActivityByGlobalIdAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getActivityByGlobalIdResponse> getActivityByGlobalIdAsync(string activityGlobalId)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getActivityByGlobalIdResponse> getActivityByGlobalIdAsync(string activityGlobalId)
         {
-            PolarionApiClient.Core.Generated.getActivityByGlobalIdRequest inValue = new PolarionApiClient.Core.Generated.getActivityByGlobalIdRequest();
+            PolarionApiClient.Core.Generated.Tracker.getActivityByGlobalIdRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getActivityByGlobalIdRequest();
             inValue.activityGlobalId = activityGlobalId;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getActivityByGlobalIdAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getActivityByGlobalIdAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getAllEnumOptionIdsForIdResponse> PolarionApiClient.Core.Generated.TrackerWebService.getAllEnumOptionIdsForIdAsync(PolarionApiClient.Core.Generated.getAllEnumOptionIdsForIdRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getAllEnumOptionIdsForIdResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getAllEnumOptionIdsForIdAsync(PolarionApiClient.Core.Generated.Tracker.getAllEnumOptionIdsForIdRequest request)
         {
             return base.Channel.getAllEnumOptionIdsForIdAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getAllEnumOptionIdsForIdResponse> getAllEnumOptionIdsForIdAsync(string projectID, string enumId)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getAllEnumOptionIdsForIdResponse> getAllEnumOptionIdsForIdAsync(string projectID, string enumId)
         {
-            PolarionApiClient.Core.Generated.getAllEnumOptionIdsForIdRequest inValue = new PolarionApiClient.Core.Generated.getAllEnumOptionIdsForIdRequest();
+            PolarionApiClient.Core.Generated.Tracker.getAllEnumOptionIdsForIdRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getAllEnumOptionIdsForIdRequest();
             inValue.projectID = projectID;
             inValue.enumId = enumId;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getAllEnumOptionIdsForIdAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getAllEnumOptionIdsForIdAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getAllEnumOptionIdsForKeyResponse> PolarionApiClient.Core.Generated.TrackerWebService.getAllEnumOptionIdsForKeyAsync(PolarionApiClient.Core.Generated.getAllEnumOptionIdsForKeyRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getAllEnumOptionIdsForKeyResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getAllEnumOptionIdsForKeyAsync(PolarionApiClient.Core.Generated.Tracker.getAllEnumOptionIdsForKeyRequest request)
         {
             return base.Channel.getAllEnumOptionIdsForKeyAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getAllEnumOptionIdsForKeyResponse> getAllEnumOptionIdsForKeyAsync(string projectID, string key)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getAllEnumOptionIdsForKeyResponse> getAllEnumOptionIdsForKeyAsync(string projectID, string key)
         {
-            PolarionApiClient.Core.Generated.getAllEnumOptionIdsForKeyRequest inValue = new PolarionApiClient.Core.Generated.getAllEnumOptionIdsForKeyRequest();
+            PolarionApiClient.Core.Generated.Tracker.getAllEnumOptionIdsForKeyRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getAllEnumOptionIdsForKeyRequest();
             inValue.projectID = projectID;
             inValue.key = key;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getAllEnumOptionIdsForKeyAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getAllEnumOptionIdsForKeyAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getAllEnumOptionsForIdResponse> PolarionApiClient.Core.Generated.TrackerWebService.getAllEnumOptionsForIdAsync(PolarionApiClient.Core.Generated.getAllEnumOptionsForIdRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getAllEnumOptionsForIdResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getAllEnumOptionsForIdAsync(PolarionApiClient.Core.Generated.Tracker.getAllEnumOptionsForIdRequest request)
         {
             return base.Channel.getAllEnumOptionsForIdAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getAllEnumOptionsForIdResponse> getAllEnumOptionsForIdAsync(string projectID, string enumID)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getAllEnumOptionsForIdResponse> getAllEnumOptionsForIdAsync(string projectID, string enumID)
         {
-            PolarionApiClient.Core.Generated.getAllEnumOptionsForIdRequest inValue = new PolarionApiClient.Core.Generated.getAllEnumOptionsForIdRequest();
+            PolarionApiClient.Core.Generated.Tracker.getAllEnumOptionsForIdRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getAllEnumOptionsForIdRequest();
             inValue.projectID = projectID;
             inValue.enumID = enumID;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getAllEnumOptionsForIdAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getAllEnumOptionsForIdAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getAllEnumOptionsForKeyResponse> PolarionApiClient.Core.Generated.TrackerWebService.getAllEnumOptionsForKeyAsync(PolarionApiClient.Core.Generated.getAllEnumOptionsForKeyRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getAllEnumOptionsForKeyResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getAllEnumOptionsForKeyAsync(PolarionApiClient.Core.Generated.Tracker.getAllEnumOptionsForKeyRequest request)
         {
             return base.Channel.getAllEnumOptionsForKeyAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getAllEnumOptionsForKeyResponse> getAllEnumOptionsForKeyAsync(string projectID, string key)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getAllEnumOptionsForKeyResponse> getAllEnumOptionsForKeyAsync(string projectID, string key)
         {
-            PolarionApiClient.Core.Generated.getAllEnumOptionsForKeyRequest inValue = new PolarionApiClient.Core.Generated.getAllEnumOptionsForKeyRequest();
+            PolarionApiClient.Core.Generated.Tracker.getAllEnumOptionsForKeyRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getAllEnumOptionsForKeyRequest();
             inValue.projectID = projectID;
             inValue.key = key;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getAllEnumOptionsForKeyAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getAllEnumOptionsForKeyAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getAllowedApproversResponse> PolarionApiClient.Core.Generated.TrackerWebService.getAllowedApproversAsync(PolarionApiClient.Core.Generated.getAllowedApproversRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getAllowedApproversResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getAllowedApproversAsync(PolarionApiClient.Core.Generated.Tracker.getAllowedApproversRequest request)
         {
             return base.Channel.getAllowedApproversAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getAllowedApproversResponse> getAllowedApproversAsync(string workitemURI)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getAllowedApproversResponse> getAllowedApproversAsync(string workitemURI)
         {
-            PolarionApiClient.Core.Generated.getAllowedApproversRequest inValue = new PolarionApiClient.Core.Generated.getAllowedApproversRequest();
+            PolarionApiClient.Core.Generated.Tracker.getAllowedApproversRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getAllowedApproversRequest();
             inValue.workitemURI = workitemURI;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getAllowedApproversAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getAllowedApproversAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getAllowedAssigneesResponse> PolarionApiClient.Core.Generated.TrackerWebService.getAllowedAssigneesAsync(PolarionApiClient.Core.Generated.getAllowedAssigneesRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getAllowedAssigneesResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getAllowedAssigneesAsync(PolarionApiClient.Core.Generated.Tracker.getAllowedAssigneesRequest request)
         {
             return base.Channel.getAllowedAssigneesAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getAllowedAssigneesResponse> getAllowedAssigneesAsync(string workitemURI)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getAllowedAssigneesResponse> getAllowedAssigneesAsync(string workitemURI)
         {
-            PolarionApiClient.Core.Generated.getAllowedAssigneesRequest inValue = new PolarionApiClient.Core.Generated.getAllowedAssigneesRequest();
+            PolarionApiClient.Core.Generated.Tracker.getAllowedAssigneesRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getAllowedAssigneesRequest();
             inValue.workitemURI = workitemURI;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getAllowedAssigneesAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getAllowedAssigneesAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getAttachmentResponse> PolarionApiClient.Core.Generated.TrackerWebService.getAttachmentAsync(PolarionApiClient.Core.Generated.getAttachmentRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getAttachmentResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getAttachmentAsync(PolarionApiClient.Core.Generated.Tracker.getAttachmentRequest request)
         {
             return base.Channel.getAttachmentAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getAttachmentResponse> getAttachmentAsync(string workitemURI, string attachmentId)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getAttachmentResponse> getAttachmentAsync(string workitemURI, string attachmentId)
         {
-            PolarionApiClient.Core.Generated.getAttachmentRequest inValue = new PolarionApiClient.Core.Generated.getAttachmentRequest();
+            PolarionApiClient.Core.Generated.Tracker.getAttachmentRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getAttachmentRequest();
             inValue.workitemURI = workitemURI;
             inValue.attachmentId = attachmentId;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getAttachmentAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getAttachmentAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getAvailableActionsResponse> PolarionApiClient.Core.Generated.TrackerWebService.getAvailableActionsAsync(PolarionApiClient.Core.Generated.getAvailableActionsRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getAvailableActionsResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getAvailableActionsAsync(PolarionApiClient.Core.Generated.Tracker.getAvailableActionsRequest request)
         {
             return base.Channel.getAvailableActionsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getAvailableActionsResponse> getAvailableActionsAsync(string workitemURI)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getAvailableActionsResponse> getAvailableActionsAsync(string workitemURI)
         {
-            PolarionApiClient.Core.Generated.getAvailableActionsRequest inValue = new PolarionApiClient.Core.Generated.getAvailableActionsRequest();
+            PolarionApiClient.Core.Generated.Tracker.getAvailableActionsRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getAvailableActionsRequest();
             inValue.workitemURI = workitemURI;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getAvailableActionsAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getAvailableActionsAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getAvailableEnumOptionIdsForIdResponse> PolarionApiClient.Core.Generated.TrackerWebService.getAvailableEnumOptionIdsForIdAsync(PolarionApiClient.Core.Generated.getAvailableEnumOptionIdsForIdRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getAvailableEnumOptionIdsForIdResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getAvailableEnumOptionIdsForIdAsync(PolarionApiClient.Core.Generated.Tracker.getAvailableEnumOptionIdsForIdRequest request)
         {
             return base.Channel.getAvailableEnumOptionIdsForIdAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getAvailableEnumOptionIdsForIdResponse> getAvailableEnumOptionIdsForIdAsync(string workitemURI, string enumID)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getAvailableEnumOptionIdsForIdResponse> getAvailableEnumOptionIdsForIdAsync(string workitemURI, string enumID)
         {
-            PolarionApiClient.Core.Generated.getAvailableEnumOptionIdsForIdRequest inValue = new PolarionApiClient.Core.Generated.getAvailableEnumOptionIdsForIdRequest();
+            PolarionApiClient.Core.Generated.Tracker.getAvailableEnumOptionIdsForIdRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getAvailableEnumOptionIdsForIdRequest();
             inValue.workitemURI = workitemURI;
             inValue.enumID = enumID;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getAvailableEnumOptionIdsForIdAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getAvailableEnumOptionIdsForIdAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getAvailableEnumOptionIdsForKeyResponse> PolarionApiClient.Core.Generated.TrackerWebService.getAvailableEnumOptionIdsForKeyAsync(PolarionApiClient.Core.Generated.getAvailableEnumOptionIdsForKeyRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getAvailableEnumOptionIdsForKeyResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getAvailableEnumOptionIdsForKeyAsync(PolarionApiClient.Core.Generated.Tracker.getAvailableEnumOptionIdsForKeyRequest request)
         {
             return base.Channel.getAvailableEnumOptionIdsForKeyAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getAvailableEnumOptionIdsForKeyResponse> getAvailableEnumOptionIdsForKeyAsync(string workitemURI, string key)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getAvailableEnumOptionIdsForKeyResponse> getAvailableEnumOptionIdsForKeyAsync(string workitemURI, string key)
         {
-            PolarionApiClient.Core.Generated.getAvailableEnumOptionIdsForKeyRequest inValue = new PolarionApiClient.Core.Generated.getAvailableEnumOptionIdsForKeyRequest();
+            PolarionApiClient.Core.Generated.Tracker.getAvailableEnumOptionIdsForKeyRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getAvailableEnumOptionIdsForKeyRequest();
             inValue.workitemURI = workitemURI;
             inValue.key = key;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getAvailableEnumOptionIdsForKeyAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getAvailableEnumOptionIdsForKeyAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getBackLinkedWorkitemsResponse> PolarionApiClient.Core.Generated.TrackerWebService.getBackLinkedWorkitemsAsync(PolarionApiClient.Core.Generated.getBackLinkedWorkitemsRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getBackLinkedWorkitemsResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getBackLinkedWorkitemsAsync(PolarionApiClient.Core.Generated.Tracker.getBackLinkedWorkitemsRequest request)
         {
             return base.Channel.getBackLinkedWorkitemsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getBackLinkedWorkitemsResponse> getBackLinkedWorkitemsAsync(string workitemURI)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getBackLinkedWorkitemsResponse> getBackLinkedWorkitemsAsync(string workitemURI)
         {
-            PolarionApiClient.Core.Generated.getBackLinkedWorkitemsRequest inValue = new PolarionApiClient.Core.Generated.getBackLinkedWorkitemsRequest();
+            PolarionApiClient.Core.Generated.Tracker.getBackLinkedWorkitemsRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getBackLinkedWorkitemsRequest();
             inValue.workitemURI = workitemURI;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getBackLinkedWorkitemsAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getBackLinkedWorkitemsAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getCategoriesResponse> PolarionApiClient.Core.Generated.TrackerWebService.getCategoriesAsync(PolarionApiClient.Core.Generated.getCategoriesRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getCategoriesResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getCategoriesAsync(PolarionApiClient.Core.Generated.Tracker.getCategoriesRequest request)
         {
             return base.Channel.getCategoriesAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getCategoriesResponse> getCategoriesAsync(string projectId)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getCategoriesResponse> getCategoriesAsync(string projectId)
         {
-            PolarionApiClient.Core.Generated.getCategoriesRequest inValue = new PolarionApiClient.Core.Generated.getCategoriesRequest();
+            PolarionApiClient.Core.Generated.Tracker.getCategoriesRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getCategoriesRequest();
             inValue.projectId = projectId;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getCategoriesAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getCategoriesAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getChildFoldersResponse> PolarionApiClient.Core.Generated.TrackerWebService.getChildFoldersAsync(PolarionApiClient.Core.Generated.getChildFoldersRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getChildFoldersResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getChildFoldersAsync(PolarionApiClient.Core.Generated.Tracker.getChildFoldersRequest request)
         {
             return base.Channel.getChildFoldersAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getChildFoldersResponse> getChildFoldersAsync(string projectId, string parentFolderId)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getChildFoldersResponse> getChildFoldersAsync(string projectId, string parentFolderId)
         {
-            PolarionApiClient.Core.Generated.getChildFoldersRequest inValue = new PolarionApiClient.Core.Generated.getChildFoldersRequest();
+            PolarionApiClient.Core.Generated.Tracker.getChildFoldersRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getChildFoldersRequest();
             inValue.projectId = projectId;
             inValue.parentFolderId = parentFolderId;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getChildFoldersAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getChildFoldersAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getCustomFieldResponse> PolarionApiClient.Core.Generated.TrackerWebService.getCustomFieldAsync(PolarionApiClient.Core.Generated.getCustomFieldRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getCustomFieldResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getCustomFieldAsync(PolarionApiClient.Core.Generated.Tracker.getCustomFieldRequest request)
         {
             return base.Channel.getCustomFieldAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getCustomFieldResponse> getCustomFieldAsync(string workitemURI, string key)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getCustomFieldResponse> getCustomFieldAsync(string workitemURI, string key)
         {
-            PolarionApiClient.Core.Generated.getCustomFieldRequest inValue = new PolarionApiClient.Core.Generated.getCustomFieldRequest();
+            PolarionApiClient.Core.Generated.Tracker.getCustomFieldRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getCustomFieldRequest();
             inValue.workitemURI = workitemURI;
             inValue.key = key;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getCustomFieldAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getCustomFieldAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getCustomFieldKeysResponse> PolarionApiClient.Core.Generated.TrackerWebService.getCustomFieldKeysAsync(PolarionApiClient.Core.Generated.getCustomFieldKeysRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getCustomFieldKeysResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getCustomFieldKeysAsync(PolarionApiClient.Core.Generated.Tracker.getCustomFieldKeysRequest request)
         {
             return base.Channel.getCustomFieldKeysAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getCustomFieldKeysResponse> getCustomFieldKeysAsync(string workitemURI)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getCustomFieldKeysResponse> getCustomFieldKeysAsync(string workitemURI)
         {
-            PolarionApiClient.Core.Generated.getCustomFieldKeysRequest inValue = new PolarionApiClient.Core.Generated.getCustomFieldKeysRequest();
+            PolarionApiClient.Core.Generated.Tracker.getCustomFieldKeysRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getCustomFieldKeysRequest();
             inValue.workitemURI = workitemURI;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getCustomFieldKeysAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getCustomFieldKeysAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getCustomFieldTypeResponse> PolarionApiClient.Core.Generated.TrackerWebService.getCustomFieldTypeAsync(PolarionApiClient.Core.Generated.getCustomFieldTypeRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getCustomFieldTypeResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getCustomFieldTypeAsync(PolarionApiClient.Core.Generated.Tracker.getCustomFieldTypeRequest request)
         {
             return base.Channel.getCustomFieldTypeAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getCustomFieldTypeResponse> getCustomFieldTypeAsync(string workitemURI, string key)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getCustomFieldTypeResponse> getCustomFieldTypeAsync(string workitemURI, string key)
         {
-            PolarionApiClient.Core.Generated.getCustomFieldTypeRequest inValue = new PolarionApiClient.Core.Generated.getCustomFieldTypeRequest();
+            PolarionApiClient.Core.Generated.Tracker.getCustomFieldTypeRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getCustomFieldTypeRequest();
             inValue.workitemURI = workitemURI;
             inValue.key = key;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getCustomFieldTypeAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getCustomFieldTypeAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getCustomFieldTypesResponse> PolarionApiClient.Core.Generated.TrackerWebService.getCustomFieldTypesAsync(PolarionApiClient.Core.Generated.getCustomFieldTypesRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getCustomFieldTypesResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getCustomFieldTypesAsync(PolarionApiClient.Core.Generated.Tracker.getCustomFieldTypesRequest request)
         {
             return base.Channel.getCustomFieldTypesAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getCustomFieldTypesResponse> getCustomFieldTypesAsync(string workitemURI)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getCustomFieldTypesResponse> getCustomFieldTypesAsync(string workitemURI)
         {
-            PolarionApiClient.Core.Generated.getCustomFieldTypesRequest inValue = new PolarionApiClient.Core.Generated.getCustomFieldTypesRequest();
+            PolarionApiClient.Core.Generated.Tracker.getCustomFieldTypesRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getCustomFieldTypesRequest();
             inValue.workitemURI = workitemURI;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getCustomFieldTypesAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getCustomFieldTypesAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getDefaultLanguageDefinitionResponse> PolarionApiClient.Core.Generated.TrackerWebService.getDefaultLanguageDefinitionAsync(PolarionApiClient.Core.Generated.getDefaultLanguageDefinitionRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getDefaultLanguageDefinitionResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getDefaultLanguageDefinitionAsync(PolarionApiClient.Core.Generated.Tracker.getDefaultLanguageDefinitionRequest request)
         {
             return base.Channel.getDefaultLanguageDefinitionAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getDefaultLanguageDefinitionResponse> getDefaultLanguageDefinitionAsync(string projectId)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getDefaultLanguageDefinitionResponse> getDefaultLanguageDefinitionAsync(string projectId)
         {
-            PolarionApiClient.Core.Generated.getDefaultLanguageDefinitionRequest inValue = new PolarionApiClient.Core.Generated.getDefaultLanguageDefinitionRequest();
+            PolarionApiClient.Core.Generated.Tracker.getDefaultLanguageDefinitionRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getDefaultLanguageDefinitionRequest();
             inValue.projectId = projectId;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getDefaultLanguageDefinitionAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getDefaultLanguageDefinitionAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getDefinedCustomFieldKeysResponse> PolarionApiClient.Core.Generated.TrackerWebService.getDefinedCustomFieldKeysAsync(PolarionApiClient.Core.Generated.getDefinedCustomFieldKeysRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getDefinedCustomFieldKeysResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getDefinedCustomFieldKeysAsync(PolarionApiClient.Core.Generated.Tracker.getDefinedCustomFieldKeysRequest request)
         {
             return base.Channel.getDefinedCustomFieldKeysAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getDefinedCustomFieldKeysResponse> getDefinedCustomFieldKeysAsync(string projectID, string typeID)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getDefinedCustomFieldKeysResponse> getDefinedCustomFieldKeysAsync(string projectID, string typeID)
         {
-            PolarionApiClient.Core.Generated.getDefinedCustomFieldKeysRequest inValue = new PolarionApiClient.Core.Generated.getDefinedCustomFieldKeysRequest();
+            PolarionApiClient.Core.Generated.Tracker.getDefinedCustomFieldKeysRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getDefinedCustomFieldKeysRequest();
             inValue.projectID = projectID;
             inValue.typeID = typeID;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getDefinedCustomFieldKeysAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getDefinedCustomFieldKeysAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getDefinedCustomFieldTypeResponse> PolarionApiClient.Core.Generated.TrackerWebService.getDefinedCustomFieldTypeAsync(PolarionApiClient.Core.Generated.getDefinedCustomFieldTypeRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getDefinedCustomFieldTypeResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getDefinedCustomFieldTypeAsync(PolarionApiClient.Core.Generated.Tracker.getDefinedCustomFieldTypeRequest request)
         {
             return base.Channel.getDefinedCustomFieldTypeAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getDefinedCustomFieldTypeResponse> getDefinedCustomFieldTypeAsync(string projectID, string typeID, string key)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getDefinedCustomFieldTypeResponse> getDefinedCustomFieldTypeAsync(string projectID, string typeID, string key)
         {
-            PolarionApiClient.Core.Generated.getDefinedCustomFieldTypeRequest inValue = new PolarionApiClient.Core.Generated.getDefinedCustomFieldTypeRequest();
+            PolarionApiClient.Core.Generated.Tracker.getDefinedCustomFieldTypeRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getDefinedCustomFieldTypeRequest();
             inValue.projectID = projectID;
             inValue.typeID = typeID;
             inValue.key = key;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getDefinedCustomFieldTypeAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getDefinedCustomFieldTypeAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getDefinedCustomFieldTypesResponse> PolarionApiClient.Core.Generated.TrackerWebService.getDefinedCustomFieldTypesAsync(PolarionApiClient.Core.Generated.getDefinedCustomFieldTypesRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getDefinedCustomFieldTypesResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getDefinedCustomFieldTypesAsync(PolarionApiClient.Core.Generated.Tracker.getDefinedCustomFieldTypesRequest request)
         {
             return base.Channel.getDefinedCustomFieldTypesAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getDefinedCustomFieldTypesResponse> getDefinedCustomFieldTypesAsync(string projectID, string typeID)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getDefinedCustomFieldTypesResponse> getDefinedCustomFieldTypesAsync(string projectID, string typeID)
         {
-            PolarionApiClient.Core.Generated.getDefinedCustomFieldTypesRequest inValue = new PolarionApiClient.Core.Generated.getDefinedCustomFieldTypesRequest();
+            PolarionApiClient.Core.Generated.Tracker.getDefinedCustomFieldTypesRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getDefinedCustomFieldTypesRequest();
             inValue.projectID = projectID;
             inValue.typeID = typeID;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getDefinedCustomFieldTypesAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getDefinedCustomFieldTypesAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getDocumentLocationsResponse> PolarionApiClient.Core.Generated.TrackerWebService.getDocumentLocationsAsync(PolarionApiClient.Core.Generated.getDocumentLocationsRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getDocumentLocationsResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getDocumentLocationsAsync(PolarionApiClient.Core.Generated.Tracker.getDocumentLocationsRequest request)
         {
             return base.Channel.getDocumentLocationsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getDocumentLocationsResponse> getDocumentLocationsAsync(string projectId)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getDocumentLocationsResponse> getDocumentLocationsAsync(string projectId)
         {
-            PolarionApiClient.Core.Generated.getDocumentLocationsRequest inValue = new PolarionApiClient.Core.Generated.getDocumentLocationsRequest();
+            PolarionApiClient.Core.Generated.Tracker.getDocumentLocationsRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getDocumentLocationsRequest();
             inValue.projectId = projectId;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getDocumentLocationsAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getDocumentLocationsAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getDocumentSpacesResponse> PolarionApiClient.Core.Generated.TrackerWebService.getDocumentSpacesAsync(PolarionApiClient.Core.Generated.getDocumentSpacesRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getDocumentSpacesResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getDocumentSpacesAsync(PolarionApiClient.Core.Generated.Tracker.getDocumentSpacesRequest request)
         {
             return base.Channel.getDocumentSpacesAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getDocumentSpacesResponse> getDocumentSpacesAsync(string projectId)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getDocumentSpacesResponse> getDocumentSpacesAsync(string projectId)
         {
-            PolarionApiClient.Core.Generated.getDocumentSpacesRequest inValue = new PolarionApiClient.Core.Generated.getDocumentSpacesRequest();
+            PolarionApiClient.Core.Generated.Tracker.getDocumentSpacesRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getDocumentSpacesRequest();
             inValue.projectId = projectId;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getDocumentSpacesAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getDocumentSpacesAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getDurationHoursResponse> PolarionApiClient.Core.Generated.TrackerWebService.getDurationHoursAsync(PolarionApiClient.Core.Generated.getDurationHoursRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getDurationHoursResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getDurationHoursAsync(PolarionApiClient.Core.Generated.Tracker.getDurationHoursRequest request)
         {
             return base.Channel.getDurationHoursAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getDurationHoursResponse> getDurationHoursAsync(string duration)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getDurationHoursResponse> getDurationHoursAsync(string duration)
         {
-            PolarionApiClient.Core.Generated.getDurationHoursRequest inValue = new PolarionApiClient.Core.Generated.getDurationHoursRequest();
+            PolarionApiClient.Core.Generated.Tracker.getDurationHoursRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getDurationHoursRequest();
             inValue.duration = duration;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getDurationHoursAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getDurationHoursAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getEnumControlKeyForIdResponse> PolarionApiClient.Core.Generated.TrackerWebService.getEnumControlKeyForIdAsync(PolarionApiClient.Core.Generated.getEnumControlKeyForIdRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getEnumControlKeyForIdResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getEnumControlKeyForIdAsync(PolarionApiClient.Core.Generated.Tracker.getEnumControlKeyForIdRequest request)
         {
             return base.Channel.getEnumControlKeyForIdAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getEnumControlKeyForIdResponse> getEnumControlKeyForIdAsync(string projectID, string enumID)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getEnumControlKeyForIdResponse> getEnumControlKeyForIdAsync(string projectID, string enumID)
         {
-            PolarionApiClient.Core.Generated.getEnumControlKeyForIdRequest inValue = new PolarionApiClient.Core.Generated.getEnumControlKeyForIdRequest();
+            PolarionApiClient.Core.Generated.Tracker.getEnumControlKeyForIdRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getEnumControlKeyForIdRequest();
             inValue.projectID = projectID;
             inValue.enumID = enumID;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getEnumControlKeyForIdAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getEnumControlKeyForIdAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getEnumControlKeyForKeyResponse> PolarionApiClient.Core.Generated.TrackerWebService.getEnumControlKeyForKeyAsync(PolarionApiClient.Core.Generated.getEnumControlKeyForKeyRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getEnumControlKeyForKeyResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getEnumControlKeyForKeyAsync(PolarionApiClient.Core.Generated.Tracker.getEnumControlKeyForKeyRequest request)
         {
             return base.Channel.getEnumControlKeyForKeyAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getEnumControlKeyForKeyResponse> getEnumControlKeyForKeyAsync(string projectID, string key)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getEnumControlKeyForKeyResponse> getEnumControlKeyForKeyAsync(string projectID, string key)
         {
-            PolarionApiClient.Core.Generated.getEnumControlKeyForKeyRequest inValue = new PolarionApiClient.Core.Generated.getEnumControlKeyForKeyRequest();
+            PolarionApiClient.Core.Generated.Tracker.getEnumControlKeyForKeyRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getEnumControlKeyForKeyRequest();
             inValue.projectID = projectID;
             inValue.key = key;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getEnumControlKeyForKeyAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getEnumControlKeyForKeyAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getEnumOptionFromObjectUriForIdResponse> PolarionApiClient.Core.Generated.TrackerWebService.getEnumOptionFromObjectUriForIdAsync(PolarionApiClient.Core.Generated.getEnumOptionFromObjectUriForIdRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getEnumOptionFromObjectUriForIdResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getEnumOptionFromObjectUriForIdAsync(PolarionApiClient.Core.Generated.Tracker.getEnumOptionFromObjectUriForIdRequest request)
         {
             return base.Channel.getEnumOptionFromObjectUriForIdAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getEnumOptionFromObjectUriForIdResponse> getEnumOptionFromObjectUriForIdAsync(string uri, string enumId)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getEnumOptionFromObjectUriForIdResponse> getEnumOptionFromObjectUriForIdAsync(string uri, string enumId)
         {
-            PolarionApiClient.Core.Generated.getEnumOptionFromObjectUriForIdRequest inValue = new PolarionApiClient.Core.Generated.getEnumOptionFromObjectUriForIdRequest();
+            PolarionApiClient.Core.Generated.Tracker.getEnumOptionFromObjectUriForIdRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getEnumOptionFromObjectUriForIdRequest();
             inValue.uri = uri;
             inValue.enumId = enumId;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getEnumOptionFromObjectUriForIdAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getEnumOptionFromObjectUriForIdAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getEnumOptionFromObjectUriForKeyResponse> PolarionApiClient.Core.Generated.TrackerWebService.getEnumOptionFromObjectUriForKeyAsync(PolarionApiClient.Core.Generated.getEnumOptionFromObjectUriForKeyRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getEnumOptionFromObjectUriForKeyResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getEnumOptionFromObjectUriForKeyAsync(PolarionApiClient.Core.Generated.Tracker.getEnumOptionFromObjectUriForKeyRequest request)
         {
             return base.Channel.getEnumOptionFromObjectUriForKeyAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getEnumOptionFromObjectUriForKeyResponse> getEnumOptionFromObjectUriForKeyAsync(string uri, string prototypeName, string key)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getEnumOptionFromObjectUriForKeyResponse> getEnumOptionFromObjectUriForKeyAsync(string uri, string prototypeName, string key)
         {
-            PolarionApiClient.Core.Generated.getEnumOptionFromObjectUriForKeyRequest inValue = new PolarionApiClient.Core.Generated.getEnumOptionFromObjectUriForKeyRequest();
+            PolarionApiClient.Core.Generated.Tracker.getEnumOptionFromObjectUriForKeyRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getEnumOptionFromObjectUriForKeyRequest();
             inValue.uri = uri;
             inValue.prototypeName = prototypeName;
             inValue.key = key;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getEnumOptionFromObjectUriForKeyAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getEnumOptionFromObjectUriForKeyAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getEnumOptionWithEnumIdResponse> PolarionApiClient.Core.Generated.TrackerWebService.getEnumOptionWithEnumIdAsync(PolarionApiClient.Core.Generated.getEnumOptionWithEnumIdRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getEnumOptionWithEnumIdResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getEnumOptionWithEnumIdAsync(PolarionApiClient.Core.Generated.Tracker.getEnumOptionWithEnumIdRequest request)
         {
             return base.Channel.getEnumOptionWithEnumIdAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getEnumOptionWithEnumIdResponse> getEnumOptionWithEnumIdAsync(string workitemURI, string enumID, PolarionApiClient.Core.Generated.EnumOptionId id)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getEnumOptionWithEnumIdResponse> getEnumOptionWithEnumIdAsync(string workitemURI, string enumID, PolarionApiClient.Core.Generated.Tracker.EnumOptionId id)
         {
-            PolarionApiClient.Core.Generated.getEnumOptionWithEnumIdRequest inValue = new PolarionApiClient.Core.Generated.getEnumOptionWithEnumIdRequest();
+            PolarionApiClient.Core.Generated.Tracker.getEnumOptionWithEnumIdRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getEnumOptionWithEnumIdRequest();
             inValue.workitemURI = workitemURI;
             inValue.enumID = enumID;
             inValue.id = id;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getEnumOptionWithEnumIdAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getEnumOptionWithEnumIdAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getEnumOptionWithKeyResponse> PolarionApiClient.Core.Generated.TrackerWebService.getEnumOptionWithKeyAsync(PolarionApiClient.Core.Generated.getEnumOptionWithKeyRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getEnumOptionWithKeyResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getEnumOptionWithKeyAsync(PolarionApiClient.Core.Generated.Tracker.getEnumOptionWithKeyRequest request)
         {
             return base.Channel.getEnumOptionWithKeyAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getEnumOptionWithKeyResponse> getEnumOptionWithKeyAsync(string workitemURI, string key, PolarionApiClient.Core.Generated.EnumOptionId id)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getEnumOptionWithKeyResponse> getEnumOptionWithKeyAsync(string workitemURI, string key, PolarionApiClient.Core.Generated.Tracker.EnumOptionId id)
         {
-            PolarionApiClient.Core.Generated.getEnumOptionWithKeyRequest inValue = new PolarionApiClient.Core.Generated.getEnumOptionWithKeyRequest();
+            PolarionApiClient.Core.Generated.Tracker.getEnumOptionWithKeyRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getEnumOptionWithKeyRequest();
             inValue.workitemURI = workitemURI;
             inValue.key = key;
             inValue.id = id;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getEnumOptionWithKeyAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getEnumOptionWithKeyAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getEnumOptionsForIdResponse> PolarionApiClient.Core.Generated.TrackerWebService.getEnumOptionsForIdAsync(PolarionApiClient.Core.Generated.getEnumOptionsForIdRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getEnumOptionsForIdResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getEnumOptionsForIdAsync(PolarionApiClient.Core.Generated.Tracker.getEnumOptionsForIdRequest request)
         {
             return base.Channel.getEnumOptionsForIdAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getEnumOptionsForIdResponse> getEnumOptionsForIdAsync(string workitemURI, string enumID)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getEnumOptionsForIdResponse> getEnumOptionsForIdAsync(string workitemURI, string enumID)
         {
-            PolarionApiClient.Core.Generated.getEnumOptionsForIdRequest inValue = new PolarionApiClient.Core.Generated.getEnumOptionsForIdRequest();
+            PolarionApiClient.Core.Generated.Tracker.getEnumOptionsForIdRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getEnumOptionsForIdRequest();
             inValue.workitemURI = workitemURI;
             inValue.enumID = enumID;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getEnumOptionsForIdAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getEnumOptionsForIdAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getEnumOptionsForIdWithControlResponse> PolarionApiClient.Core.Generated.TrackerWebService.getEnumOptionsForIdWithControlAsync(PolarionApiClient.Core.Generated.getEnumOptionsForIdWithControlRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getEnumOptionsForIdWithControlResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getEnumOptionsForIdWithControlAsync(PolarionApiClient.Core.Generated.Tracker.getEnumOptionsForIdWithControlRequest request)
         {
             return base.Channel.getEnumOptionsForIdWithControlAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getEnumOptionsForIdWithControlResponse> getEnumOptionsForIdWithControlAsync(string projectID, string enumID, string controlValue)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getEnumOptionsForIdWithControlResponse> getEnumOptionsForIdWithControlAsync(string projectID, string enumID, string controlValue)
         {
-            PolarionApiClient.Core.Generated.getEnumOptionsForIdWithControlRequest inValue = new PolarionApiClient.Core.Generated.getEnumOptionsForIdWithControlRequest();
+            PolarionApiClient.Core.Generated.Tracker.getEnumOptionsForIdWithControlRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getEnumOptionsForIdWithControlRequest();
             inValue.projectID = projectID;
             inValue.enumID = enumID;
             inValue.controlValue = controlValue;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getEnumOptionsForIdWithControlAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getEnumOptionsForIdWithControlAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getEnumOptionsForKeyResponse> PolarionApiClient.Core.Generated.TrackerWebService.getEnumOptionsForKeyAsync(PolarionApiClient.Core.Generated.getEnumOptionsForKeyRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getEnumOptionsForKeyResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getEnumOptionsForKeyAsync(PolarionApiClient.Core.Generated.Tracker.getEnumOptionsForKeyRequest request)
         {
             return base.Channel.getEnumOptionsForKeyAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getEnumOptionsForKeyResponse> getEnumOptionsForKeyAsync(string workitemURI, string key)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getEnumOptionsForKeyResponse> getEnumOptionsForKeyAsync(string workitemURI, string key)
         {
-            PolarionApiClient.Core.Generated.getEnumOptionsForKeyRequest inValue = new PolarionApiClient.Core.Generated.getEnumOptionsForKeyRequest();
+            PolarionApiClient.Core.Generated.Tracker.getEnumOptionsForKeyRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getEnumOptionsForKeyRequest();
             inValue.workitemURI = workitemURI;
             inValue.key = key;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getEnumOptionsForKeyAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getEnumOptionsForKeyAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getEnumOptionsForKeyWithControlResponse> PolarionApiClient.Core.Generated.TrackerWebService.getEnumOptionsForKeyWithControlAsync(PolarionApiClient.Core.Generated.getEnumOptionsForKeyWithControlRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getEnumOptionsForKeyWithControlResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getEnumOptionsForKeyWithControlAsync(PolarionApiClient.Core.Generated.Tracker.getEnumOptionsForKeyWithControlRequest request)
         {
             return base.Channel.getEnumOptionsForKeyWithControlAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getEnumOptionsForKeyWithControlResponse> getEnumOptionsForKeyWithControlAsync(string projectID, string key, string controlValue)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getEnumOptionsForKeyWithControlResponse> getEnumOptionsForKeyWithControlAsync(string projectID, string key, string controlValue)
         {
-            PolarionApiClient.Core.Generated.getEnumOptionsForKeyWithControlRequest inValue = new PolarionApiClient.Core.Generated.getEnumOptionsForKeyWithControlRequest();
+            PolarionApiClient.Core.Generated.Tracker.getEnumOptionsForKeyWithControlRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getEnumOptionsForKeyWithControlRequest();
             inValue.projectID = projectID;
             inValue.key = key;
             inValue.controlValue = controlValue;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getEnumOptionsForKeyWithControlAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getEnumOptionsForKeyWithControlAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getFilteredEnumOptionsForKeyResponse> PolarionApiClient.Core.Generated.TrackerWebService.getFilteredEnumOptionsForKeyAsync(PolarionApiClient.Core.Generated.getFilteredEnumOptionsForKeyRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getFilteredEnumOptionsForKeyResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getFilteredEnumOptionsForKeyAsync(PolarionApiClient.Core.Generated.Tracker.getFilteredEnumOptionsForKeyRequest request)
         {
             return base.Channel.getFilteredEnumOptionsForKeyAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getFilteredEnumOptionsForKeyResponse> getFilteredEnumOptionsForKeyAsync(string uri, string key, string filter)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getFilteredEnumOptionsForKeyResponse> getFilteredEnumOptionsForKeyAsync(string uri, string key, string filter)
         {
-            PolarionApiClient.Core.Generated.getFilteredEnumOptionsForKeyRequest inValue = new PolarionApiClient.Core.Generated.getFilteredEnumOptionsForKeyRequest();
+            PolarionApiClient.Core.Generated.Tracker.getFilteredEnumOptionsForKeyRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getFilteredEnumOptionsForKeyRequest();
             inValue.uri = uri;
             inValue.key = key;
             inValue.filter = filter;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getFilteredEnumOptionsForKeyAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getFilteredEnumOptionsForKeyAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getFolderResponse> PolarionApiClient.Core.Generated.TrackerWebService.getFolderAsync(PolarionApiClient.Core.Generated.getFolderRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getFolderResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getFolderAsync(PolarionApiClient.Core.Generated.Tracker.getFolderRequest request)
         {
             return base.Channel.getFolderAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getFolderResponse> getFolderAsync(string projectId, string folderName)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getFolderResponse> getFolderAsync(string projectId, string folderName)
         {
-            PolarionApiClient.Core.Generated.getFolderRequest inValue = new PolarionApiClient.Core.Generated.getFolderRequest();
+            PolarionApiClient.Core.Generated.Tracker.getFolderRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getFolderRequest();
             inValue.projectId = projectId;
             inValue.folderName = folderName;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getFolderAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getFolderAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getFolderForURIResponse> PolarionApiClient.Core.Generated.TrackerWebService.getFolderForURIAsync(PolarionApiClient.Core.Generated.getFolderForURIRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getFolderForURIResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getFolderForURIAsync(PolarionApiClient.Core.Generated.Tracker.getFolderForURIRequest request)
         {
             return base.Channel.getFolderForURIAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getFolderForURIResponse> getFolderForURIAsync(string objectURI)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getFolderForURIResponse> getFolderForURIAsync(string objectURI)
         {
-            PolarionApiClient.Core.Generated.getFolderForURIRequest inValue = new PolarionApiClient.Core.Generated.getFolderForURIRequest();
+            PolarionApiClient.Core.Generated.Tracker.getFolderForURIRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getFolderForURIRequest();
             inValue.objectURI = objectURI;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getFolderForURIAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getFolderForURIAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getFoldersResponse> PolarionApiClient.Core.Generated.TrackerWebService.getFoldersAsync(PolarionApiClient.Core.Generated.getFoldersRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getFoldersResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getFoldersAsync(PolarionApiClient.Core.Generated.Tracker.getFoldersRequest request)
         {
             return base.Channel.getFoldersAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getFoldersResponse> getFoldersAsync(string projectId)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getFoldersResponse> getFoldersAsync(string projectId)
         {
-            PolarionApiClient.Core.Generated.getFoldersRequest inValue = new PolarionApiClient.Core.Generated.getFoldersRequest();
+            PolarionApiClient.Core.Generated.Tracker.getFoldersRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getFoldersRequest();
             inValue.projectId = projectId;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getFoldersAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getFoldersAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getInitialWorkflowActionResponse> PolarionApiClient.Core.Generated.TrackerWebService.getInitialWorkflowActionAsync(PolarionApiClient.Core.Generated.getInitialWorkflowActionRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getInitialWorkflowActionResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getInitialWorkflowActionAsync(PolarionApiClient.Core.Generated.Tracker.getInitialWorkflowActionRequest request)
         {
             return base.Channel.getInitialWorkflowActionAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getInitialWorkflowActionResponse> getInitialWorkflowActionAsync(string workitemURI)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getInitialWorkflowActionResponse> getInitialWorkflowActionAsync(string workitemURI)
         {
-            PolarionApiClient.Core.Generated.getInitialWorkflowActionRequest inValue = new PolarionApiClient.Core.Generated.getInitialWorkflowActionRequest();
+            PolarionApiClient.Core.Generated.Tracker.getInitialWorkflowActionRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getInitialWorkflowActionRequest();
             inValue.workitemURI = workitemURI;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getInitialWorkflowActionAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getInitialWorkflowActionAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getInitialWorkflowActionForProjectAndTypeResponse> PolarionApiClient.Core.Generated.TrackerWebService.getInitialWorkflowActionForProjectAndTypeAsync(PolarionApiClient.Core.Generated.getInitialWorkflowActionForProjectAndTypeRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getInitialWorkflowActionForProjectAndTypeResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getInitialWorkflowActionForProjectAndTypeAsync(PolarionApiClient.Core.Generated.Tracker.getInitialWorkflowActionForProjectAndTypeRequest request)
         {
             return base.Channel.getInitialWorkflowActionForProjectAndTypeAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getInitialWorkflowActionForProjectAndTypeResponse> getInitialWorkflowActionForProjectAndTypeAsync(string projectId, PolarionApiClient.Core.Generated.EnumOptionId wiType)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getInitialWorkflowActionForProjectAndTypeResponse> getInitialWorkflowActionForProjectAndTypeAsync(string projectId, PolarionApiClient.Core.Generated.Tracker.EnumOptionId wiType)
         {
-            PolarionApiClient.Core.Generated.getInitialWorkflowActionForProjectAndTypeRequest inValue = new PolarionApiClient.Core.Generated.getInitialWorkflowActionForProjectAndTypeRequest();
+            PolarionApiClient.Core.Generated.Tracker.getInitialWorkflowActionForProjectAndTypeRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getInitialWorkflowActionForProjectAndTypeRequest();
             inValue.projectId = projectId;
             inValue.wiType = wiType;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getInitialWorkflowActionForProjectAndTypeAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getInitialWorkflowActionForProjectAndTypeAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getLanguageDefinitionResponse> PolarionApiClient.Core.Generated.TrackerWebService.getLanguageDefinitionAsync(PolarionApiClient.Core.Generated.getLanguageDefinitionRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getLanguageDefinitionResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getLanguageDefinitionAsync(PolarionApiClient.Core.Generated.Tracker.getLanguageDefinitionRequest request)
         {
             return base.Channel.getLanguageDefinitionAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getLanguageDefinitionResponse> getLanguageDefinitionAsync(string projectId, string language)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getLanguageDefinitionResponse> getLanguageDefinitionAsync(string projectId, string language)
         {
-            PolarionApiClient.Core.Generated.getLanguageDefinitionRequest inValue = new PolarionApiClient.Core.Generated.getLanguageDefinitionRequest();
+            PolarionApiClient.Core.Generated.Tracker.getLanguageDefinitionRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getLanguageDefinitionRequest();
             inValue.projectId = projectId;
             inValue.language = language;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getLanguageDefinitionAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getLanguageDefinitionAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getLanguageDefinitionsResponse> PolarionApiClient.Core.Generated.TrackerWebService.getLanguageDefinitionsAsync(PolarionApiClient.Core.Generated.getLanguageDefinitionsRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getLanguageDefinitionsResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getLanguageDefinitionsAsync(PolarionApiClient.Core.Generated.Tracker.getLanguageDefinitionsRequest request)
         {
             return base.Channel.getLanguageDefinitionsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getLanguageDefinitionsResponse> getLanguageDefinitionsAsync(string projectId)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getLanguageDefinitionsResponse> getLanguageDefinitionsAsync(string projectId)
         {
-            PolarionApiClient.Core.Generated.getLanguageDefinitionsRequest inValue = new PolarionApiClient.Core.Generated.getLanguageDefinitionsRequest();
+            PolarionApiClient.Core.Generated.Tracker.getLanguageDefinitionsRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getLanguageDefinitionsRequest();
             inValue.projectId = projectId;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getLanguageDefinitionsAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getLanguageDefinitionsAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getLinkedResourcesResponse> PolarionApiClient.Core.Generated.TrackerWebService.getLinkedResourcesAsync(PolarionApiClient.Core.Generated.getLinkedResourcesRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getLinkedResourcesResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getLinkedResourcesAsync(PolarionApiClient.Core.Generated.Tracker.getLinkedResourcesRequest request)
         {
             return base.Channel.getLinkedResourcesAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getLinkedResourcesResponse> getLinkedResourcesAsync(string workitemURI)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getLinkedResourcesResponse> getLinkedResourcesAsync(string workitemURI)
         {
-            PolarionApiClient.Core.Generated.getLinkedResourcesRequest inValue = new PolarionApiClient.Core.Generated.getLinkedResourcesRequest();
+            PolarionApiClient.Core.Generated.Tracker.getLinkedResourcesRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getLinkedResourcesRequest();
             inValue.workitemURI = workitemURI;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getLinkedResourcesAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getLinkedResourcesAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getLocalizedWorkItemDescriptionResponse> PolarionApiClient.Core.Generated.TrackerWebService.getLocalizedWorkItemDescriptionAsync(PolarionApiClient.Core.Generated.getLocalizedWorkItemDescriptionRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getLocalizedWorkItemDescriptionResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getLocalizedWorkItemDescriptionAsync(PolarionApiClient.Core.Generated.Tracker.getLocalizedWorkItemDescriptionRequest request)
         {
             return base.Channel.getLocalizedWorkItemDescriptionAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getLocalizedWorkItemDescriptionResponse> getLocalizedWorkItemDescriptionAsync(string uri, string language)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getLocalizedWorkItemDescriptionResponse> getLocalizedWorkItemDescriptionAsync(string uri, string language)
         {
-            PolarionApiClient.Core.Generated.getLocalizedWorkItemDescriptionRequest inValue = new PolarionApiClient.Core.Generated.getLocalizedWorkItemDescriptionRequest();
+            PolarionApiClient.Core.Generated.Tracker.getLocalizedWorkItemDescriptionRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getLocalizedWorkItemDescriptionRequest();
             inValue.uri = uri;
             inValue.language = language;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getLocalizedWorkItemDescriptionAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getLocalizedWorkItemDescriptionAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getLocalizedWorkItemDescriptionFieldResponse> PolarionApiClient.Core.Generated.TrackerWebService.getLocalizedWorkItemDescriptionFieldAsync(PolarionApiClient.Core.Generated.getLocalizedWorkItemDescriptionFieldRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getLocalizedWorkItemDescriptionFieldResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getLocalizedWorkItemDescriptionFieldAsync(PolarionApiClient.Core.Generated.Tracker.getLocalizedWorkItemDescriptionFieldRequest request)
         {
             return base.Channel.getLocalizedWorkItemDescriptionFieldAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getLocalizedWorkItemDescriptionFieldResponse> getLocalizedWorkItemDescriptionFieldAsync(string projectId, string language, PolarionApiClient.Core.Generated.EnumOptionId type)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getLocalizedWorkItemDescriptionFieldResponse> getLocalizedWorkItemDescriptionFieldAsync(string projectId, string language, PolarionApiClient.Core.Generated.Tracker.EnumOptionId type)
         {
-            PolarionApiClient.Core.Generated.getLocalizedWorkItemDescriptionFieldRequest inValue = new PolarionApiClient.Core.Generated.getLocalizedWorkItemDescriptionFieldRequest();
+            PolarionApiClient.Core.Generated.Tracker.getLocalizedWorkItemDescriptionFieldRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getLocalizedWorkItemDescriptionFieldRequest();
             inValue.projectId = projectId;
             inValue.language = language;
             inValue.type = type;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getLocalizedWorkItemDescriptionFieldAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getLocalizedWorkItemDescriptionFieldAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getLocalizedWorkItemTitleResponse> PolarionApiClient.Core.Generated.TrackerWebService.getLocalizedWorkItemTitleAsync(PolarionApiClient.Core.Generated.getLocalizedWorkItemTitleRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getLocalizedWorkItemTitleResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getLocalizedWorkItemTitleAsync(PolarionApiClient.Core.Generated.Tracker.getLocalizedWorkItemTitleRequest request)
         {
             return base.Channel.getLocalizedWorkItemTitleAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getLocalizedWorkItemTitleResponse> getLocalizedWorkItemTitleAsync(string uri, string language)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getLocalizedWorkItemTitleResponse> getLocalizedWorkItemTitleAsync(string uri, string language)
         {
-            PolarionApiClient.Core.Generated.getLocalizedWorkItemTitleRequest inValue = new PolarionApiClient.Core.Generated.getLocalizedWorkItemTitleRequest();
+            PolarionApiClient.Core.Generated.Tracker.getLocalizedWorkItemTitleRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getLocalizedWorkItemTitleRequest();
             inValue.uri = uri;
             inValue.language = language;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getLocalizedWorkItemTitleAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getLocalizedWorkItemTitleAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getLocalizedWorkItemTitleFieldResponse> PolarionApiClient.Core.Generated.TrackerWebService.getLocalizedWorkItemTitleFieldAsync(PolarionApiClient.Core.Generated.getLocalizedWorkItemTitleFieldRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getLocalizedWorkItemTitleFieldResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getLocalizedWorkItemTitleFieldAsync(PolarionApiClient.Core.Generated.Tracker.getLocalizedWorkItemTitleFieldRequest request)
         {
             return base.Channel.getLocalizedWorkItemTitleFieldAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getLocalizedWorkItemTitleFieldResponse> getLocalizedWorkItemTitleFieldAsync(string projectId, string language, PolarionApiClient.Core.Generated.EnumOptionId type)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getLocalizedWorkItemTitleFieldResponse> getLocalizedWorkItemTitleFieldAsync(string projectId, string language, PolarionApiClient.Core.Generated.Tracker.EnumOptionId type)
         {
-            PolarionApiClient.Core.Generated.getLocalizedWorkItemTitleFieldRequest inValue = new PolarionApiClient.Core.Generated.getLocalizedWorkItemTitleFieldRequest();
+            PolarionApiClient.Core.Generated.Tracker.getLocalizedWorkItemTitleFieldRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getLocalizedWorkItemTitleFieldRequest();
             inValue.projectId = projectId;
             inValue.language = language;
             inValue.type = type;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getLocalizedWorkItemTitleFieldAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getLocalizedWorkItemTitleFieldAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getModuleByLocationResponse> PolarionApiClient.Core.Generated.TrackerWebService.getModuleByLocationAsync(PolarionApiClient.Core.Generated.getModuleByLocationRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getModuleByLocationResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getModuleByLocationAsync(PolarionApiClient.Core.Generated.Tracker.getModuleByLocationRequest request)
         {
             return base.Channel.getModuleByLocationAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getModuleByLocationResponse> getModuleByLocationAsync(string projectId, string location)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getModuleByLocationResponse> getModuleByLocationAsync(string projectId, string location)
         {
-            PolarionApiClient.Core.Generated.getModuleByLocationRequest inValue = new PolarionApiClient.Core.Generated.getModuleByLocationRequest();
+            PolarionApiClient.Core.Generated.Tracker.getModuleByLocationRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getModuleByLocationRequest();
             inValue.projectId = projectId;
             inValue.location = location;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getModuleByLocationAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getModuleByLocationAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getModuleByLocationWithFieldsResponse> PolarionApiClient.Core.Generated.TrackerWebService.getModuleByLocationWithFieldsAsync(PolarionApiClient.Core.Generated.getModuleByLocationWithFieldsRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getModuleByLocationWithFieldsResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getModuleByLocationWithFieldsAsync(PolarionApiClient.Core.Generated.Tracker.getModuleByLocationWithFieldsRequest request)
         {
             return base.Channel.getModuleByLocationWithFieldsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getModuleByLocationWithFieldsResponse> getModuleByLocationWithFieldsAsync(string projectId, string location, string[] fields)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getModuleByLocationWithFieldsResponse> getModuleByLocationWithFieldsAsync(string projectId, string location, string[] fields)
         {
-            PolarionApiClient.Core.Generated.getModuleByLocationWithFieldsRequest inValue = new PolarionApiClient.Core.Generated.getModuleByLocationWithFieldsRequest();
+            PolarionApiClient.Core.Generated.Tracker.getModuleByLocationWithFieldsRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getModuleByLocationWithFieldsRequest();
             inValue.projectId = projectId;
             inValue.location = location;
             inValue.fields = fields;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getModuleByLocationWithFieldsAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getModuleByLocationWithFieldsAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getModuleByUriResponse> PolarionApiClient.Core.Generated.TrackerWebService.getModuleByUriAsync(PolarionApiClient.Core.Generated.getModuleByUriRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getModuleByUriResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getModuleByUriAsync(PolarionApiClient.Core.Generated.Tracker.getModuleByUriRequest request)
         {
             return base.Channel.getModuleByUriAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getModuleByUriResponse> getModuleByUriAsync(string uri)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getModuleByUriResponse> getModuleByUriAsync(string uri)
         {
-            PolarionApiClient.Core.Generated.getModuleByUriRequest inValue = new PolarionApiClient.Core.Generated.getModuleByUriRequest();
+            PolarionApiClient.Core.Generated.Tracker.getModuleByUriRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getModuleByUriRequest();
             inValue.uri = uri;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getModuleByUriAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getModuleByUriAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getModuleByUriWithFieldsResponse> PolarionApiClient.Core.Generated.TrackerWebService.getModuleByUriWithFieldsAsync(PolarionApiClient.Core.Generated.getModuleByUriWithFieldsRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getModuleByUriWithFieldsResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getModuleByUriWithFieldsAsync(PolarionApiClient.Core.Generated.Tracker.getModuleByUriWithFieldsRequest request)
         {
             return base.Channel.getModuleByUriWithFieldsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getModuleByUriWithFieldsResponse> getModuleByUriWithFieldsAsync(string uri, string[] fields)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getModuleByUriWithFieldsResponse> getModuleByUriWithFieldsAsync(string uri, string[] fields)
         {
-            PolarionApiClient.Core.Generated.getModuleByUriWithFieldsRequest inValue = new PolarionApiClient.Core.Generated.getModuleByUriWithFieldsRequest();
+            PolarionApiClient.Core.Generated.Tracker.getModuleByUriWithFieldsRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getModuleByUriWithFieldsRequest();
             inValue.uri = uri;
             inValue.fields = fields;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getModuleByUriWithFieldsAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getModuleByUriWithFieldsAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getModuleUrisResponse> PolarionApiClient.Core.Generated.TrackerWebService.getModuleUrisAsync(PolarionApiClient.Core.Generated.getModuleUrisRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getModuleUrisResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getModuleUrisAsync(PolarionApiClient.Core.Generated.Tracker.getModuleUrisRequest request)
         {
             return base.Channel.getModuleUrisAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getModuleUrisResponse> getModuleUrisAsync(string projectId, string location)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getModuleUrisResponse> getModuleUrisAsync(string projectId, string location)
         {
-            PolarionApiClient.Core.Generated.getModuleUrisRequest inValue = new PolarionApiClient.Core.Generated.getModuleUrisRequest();
+            PolarionApiClient.Core.Generated.Tracker.getModuleUrisRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getModuleUrisRequest();
             inValue.projectId = projectId;
             inValue.location = location;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getModuleUrisAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getModuleUrisAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getModuleWorkItemUrisResponse> PolarionApiClient.Core.Generated.TrackerWebService.getModuleWorkItemUrisAsync(PolarionApiClient.Core.Generated.getModuleWorkItemUrisRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getModuleWorkItemUrisResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getModuleWorkItemUrisAsync(PolarionApiClient.Core.Generated.Tracker.getModuleWorkItemUrisRequest request)
         {
             return base.Channel.getModuleWorkItemUrisAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getModuleWorkItemUrisResponse> getModuleWorkItemUrisAsync(string moduleURI, string parentWorkItemURI, bool deep)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getModuleWorkItemUrisResponse> getModuleWorkItemUrisAsync(string moduleURI, string parentWorkItemURI, bool deep)
         {
-            PolarionApiClient.Core.Generated.getModuleWorkItemUrisRequest inValue = new PolarionApiClient.Core.Generated.getModuleWorkItemUrisRequest();
+            PolarionApiClient.Core.Generated.Tracker.getModuleWorkItemUrisRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getModuleWorkItemUrisRequest();
             inValue.moduleURI = moduleURI;
             inValue.parentWorkItemURI = parentWorkItemURI;
             inValue.deep = deep;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getModuleWorkItemUrisAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getModuleWorkItemUrisAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getModuleWorkItemsResponse> PolarionApiClient.Core.Generated.TrackerWebService.getModuleWorkItemsAsync(PolarionApiClient.Core.Generated.getModuleWorkItemsRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getModuleWorkItemsResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getModuleWorkItemsAsync(PolarionApiClient.Core.Generated.Tracker.getModuleWorkItemsRequest request)
         {
             return base.Channel.getModuleWorkItemsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getModuleWorkItemsResponse> getModuleWorkItemsAsync(string moduleURI, string parentWorkItemURI, bool deep, string[] fields)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getModuleWorkItemsResponse> getModuleWorkItemsAsync(string moduleURI, string parentWorkItemURI, bool deep, string[] fields)
         {
-            PolarionApiClient.Core.Generated.getModuleWorkItemsRequest inValue = new PolarionApiClient.Core.Generated.getModuleWorkItemsRequest();
+            PolarionApiClient.Core.Generated.Tracker.getModuleWorkItemsRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getModuleWorkItemsRequest();
             inValue.moduleURI = moduleURI;
             inValue.parentWorkItemURI = parentWorkItemURI;
             inValue.deep = deep;
             inValue.fields = fields;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getModuleWorkItemsAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getModuleWorkItemsAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getModulesResponse> PolarionApiClient.Core.Generated.TrackerWebService.getModulesAsync(PolarionApiClient.Core.Generated.getModulesRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getModulesResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getModulesAsync(PolarionApiClient.Core.Generated.Tracker.getModulesRequest request)
         {
             return base.Channel.getModulesAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getModulesResponse> getModulesAsync(string projectId, string location)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getModulesResponse> getModulesAsync(string projectId, string location)
         {
-            PolarionApiClient.Core.Generated.getModulesRequest inValue = new PolarionApiClient.Core.Generated.getModulesRequest();
+            PolarionApiClient.Core.Generated.Tracker.getModulesRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getModulesRequest();
             inValue.projectId = projectId;
             inValue.location = location;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getModulesAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getModulesAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getModulesSubFoldersResponse> PolarionApiClient.Core.Generated.TrackerWebService.getModulesSubFoldersAsync(PolarionApiClient.Core.Generated.getModulesSubFoldersRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getModulesSubFoldersResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getModulesSubFoldersAsync(PolarionApiClient.Core.Generated.Tracker.getModulesSubFoldersRequest request)
         {
             return base.Channel.getModulesSubFoldersAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getModulesSubFoldersResponse> getModulesSubFoldersAsync(string projectId, string location)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getModulesSubFoldersResponse> getModulesSubFoldersAsync(string projectId, string location)
         {
-            PolarionApiClient.Core.Generated.getModulesSubFoldersRequest inValue = new PolarionApiClient.Core.Generated.getModulesSubFoldersRequest();
+            PolarionApiClient.Core.Generated.Tracker.getModulesSubFoldersRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getModulesSubFoldersRequest();
             inValue.projectId = projectId;
             inValue.location = location;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getModulesSubFoldersAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getModulesSubFoldersAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getModulesWithFieldsResponse> PolarionApiClient.Core.Generated.TrackerWebService.getModulesWithFieldsAsync(PolarionApiClient.Core.Generated.getModulesWithFieldsRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getModulesWithFieldsResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getModulesWithFieldsAsync(PolarionApiClient.Core.Generated.Tracker.getModulesWithFieldsRequest request)
         {
             return base.Channel.getModulesWithFieldsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getModulesWithFieldsResponse> getModulesWithFieldsAsync(string projectId, string location, string[] fields)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getModulesWithFieldsResponse> getModulesWithFieldsAsync(string projectId, string location, string[] fields)
         {
-            PolarionApiClient.Core.Generated.getModulesWithFieldsRequest inValue = new PolarionApiClient.Core.Generated.getModulesWithFieldsRequest();
+            PolarionApiClient.Core.Generated.Tracker.getModulesWithFieldsRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getModulesWithFieldsRequest();
             inValue.projectId = projectId;
             inValue.location = location;
             inValue.fields = fields;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getModulesWithFieldsAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getModulesWithFieldsAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getOneDayLengthResponse> PolarionApiClient.Core.Generated.TrackerWebService.getOneDayLengthAsync(PolarionApiClient.Core.Generated.getOneDayLengthRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getOneDayLengthResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getOneDayLengthAsync(PolarionApiClient.Core.Generated.Tracker.getOneDayLengthRequest request)
         {
             return base.Channel.getOneDayLengthAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getOneDayLengthResponse> getOneDayLengthAsync()
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getOneDayLengthResponse> getOneDayLengthAsync()
         {
-            PolarionApiClient.Core.Generated.getOneDayLengthRequest inValue = new PolarionApiClient.Core.Generated.getOneDayLengthRequest();
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getOneDayLengthAsync(inValue);
+            PolarionApiClient.Core.Generated.Tracker.getOneDayLengthRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getOneDayLengthRequest();
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getOneDayLengthAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getRevisionResponse> PolarionApiClient.Core.Generated.TrackerWebService.getRevisionAsync(PolarionApiClient.Core.Generated.getRevisionRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getRevisionResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getRevisionAsync(PolarionApiClient.Core.Generated.Tracker.getRevisionRequest request)
         {
             return base.Channel.getRevisionAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getRevisionResponse> getRevisionAsync(string repositoryName, string revisionId)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getRevisionResponse> getRevisionAsync(string repositoryName, string revisionId)
         {
-            PolarionApiClient.Core.Generated.getRevisionRequest inValue = new PolarionApiClient.Core.Generated.getRevisionRequest();
+            PolarionApiClient.Core.Generated.Tracker.getRevisionRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getRevisionRequest();
             inValue.repositoryName = repositoryName;
             inValue.revisionId = revisionId;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getRevisionAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getRevisionAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getRevisionByUriResponse> PolarionApiClient.Core.Generated.TrackerWebService.getRevisionByUriAsync(PolarionApiClient.Core.Generated.getRevisionByUriRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getRevisionByUriResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getRevisionByUriAsync(PolarionApiClient.Core.Generated.Tracker.getRevisionByUriRequest request)
         {
             return base.Channel.getRevisionByUriAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getRevisionByUriResponse> getRevisionByUriAsync(string revisionURI)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getRevisionByUriResponse> getRevisionByUriAsync(string revisionURI)
         {
-            PolarionApiClient.Core.Generated.getRevisionByUriRequest inValue = new PolarionApiClient.Core.Generated.getRevisionByUriRequest();
+            PolarionApiClient.Core.Generated.Tracker.getRevisionByUriRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getRevisionByUriRequest();
             inValue.revisionURI = revisionURI;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getRevisionByUriAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getRevisionByUriAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getRevisionsResponse> PolarionApiClient.Core.Generated.TrackerWebService.getRevisionsAsync(PolarionApiClient.Core.Generated.getRevisionsRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getRevisionsResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getRevisionsAsync(PolarionApiClient.Core.Generated.Tracker.getRevisionsRequest request)
         {
             return base.Channel.getRevisionsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getRevisionsResponse> getRevisionsAsync(string in0)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getRevisionsResponse> getRevisionsAsync(string in0)
         {
-            PolarionApiClient.Core.Generated.getRevisionsRequest inValue = new PolarionApiClient.Core.Generated.getRevisionsRequest();
+            PolarionApiClient.Core.Generated.Tracker.getRevisionsRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getRevisionsRequest();
             inValue.in0 = in0;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getRevisionsAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getRevisionsAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getRootFoldersResponse> PolarionApiClient.Core.Generated.TrackerWebService.getRootFoldersAsync(PolarionApiClient.Core.Generated.getRootFoldersRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getRootFoldersResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getRootFoldersAsync(PolarionApiClient.Core.Generated.Tracker.getRootFoldersRequest request)
         {
             return base.Channel.getRootFoldersAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getRootFoldersResponse> getRootFoldersAsync(string projectId)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getRootFoldersResponse> getRootFoldersAsync(string projectId)
         {
-            PolarionApiClient.Core.Generated.getRootFoldersRequest inValue = new PolarionApiClient.Core.Generated.getRootFoldersRequest();
+            PolarionApiClient.Core.Generated.Tracker.getRootFoldersRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getRootFoldersRequest();
             inValue.projectId = projectId;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getRootFoldersAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getRootFoldersAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getTimepointsResponse> PolarionApiClient.Core.Generated.TrackerWebService.getTimepointsAsync(PolarionApiClient.Core.Generated.getTimepointsRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getTimepointsResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getTimepointsAsync(PolarionApiClient.Core.Generated.Tracker.getTimepointsRequest request)
         {
             return base.Channel.getTimepointsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getTimepointsResponse> getTimepointsAsync(string projectId)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getTimepointsResponse> getTimepointsAsync(string projectId)
         {
-            PolarionApiClient.Core.Generated.getTimepointsRequest inValue = new PolarionApiClient.Core.Generated.getTimepointsRequest();
+            PolarionApiClient.Core.Generated.Tracker.getTimepointsRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getTimepointsRequest();
             inValue.projectId = projectId;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getTimepointsAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getTimepointsAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getUnavailableActionsResponse> PolarionApiClient.Core.Generated.TrackerWebService.getUnavailableActionsAsync(PolarionApiClient.Core.Generated.getUnavailableActionsRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getUnavailableActionsResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getUnavailableActionsAsync(PolarionApiClient.Core.Generated.Tracker.getUnavailableActionsRequest request)
         {
             return base.Channel.getUnavailableActionsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getUnavailableActionsResponse> getUnavailableActionsAsync(string workitemURI)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getUnavailableActionsResponse> getUnavailableActionsAsync(string workitemURI)
         {
-            PolarionApiClient.Core.Generated.getUnavailableActionsRequest inValue = new PolarionApiClient.Core.Generated.getUnavailableActionsRequest();
+            PolarionApiClient.Core.Generated.Tracker.getUnavailableActionsRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getUnavailableActionsRequest();
             inValue.workitemURI = workitemURI;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getUnavailableActionsAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getUnavailableActionsAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getWikiPageByUriResponse> PolarionApiClient.Core.Generated.TrackerWebService.getWikiPageByUriAsync(PolarionApiClient.Core.Generated.getWikiPageByUriRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getWikiPageByUriResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getWikiPageByUriAsync(PolarionApiClient.Core.Generated.Tracker.getWikiPageByUriRequest request)
         {
             return base.Channel.getWikiPageByUriAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getWikiPageByUriResponse> getWikiPageByUriAsync(string uri)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getWikiPageByUriResponse> getWikiPageByUriAsync(string uri)
         {
-            PolarionApiClient.Core.Generated.getWikiPageByUriRequest inValue = new PolarionApiClient.Core.Generated.getWikiPageByUriRequest();
+            PolarionApiClient.Core.Generated.Tracker.getWikiPageByUriRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getWikiPageByUriRequest();
             inValue.uri = uri;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getWikiPageByUriAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getWikiPageByUriAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getWikiPageByUriWithFieldsResponse> PolarionApiClient.Core.Generated.TrackerWebService.getWikiPageByUriWithFieldsAsync(PolarionApiClient.Core.Generated.getWikiPageByUriWithFieldsRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getWikiPageByUriWithFieldsResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getWikiPageByUriWithFieldsAsync(PolarionApiClient.Core.Generated.Tracker.getWikiPageByUriWithFieldsRequest request)
         {
             return base.Channel.getWikiPageByUriWithFieldsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getWikiPageByUriWithFieldsResponse> getWikiPageByUriWithFieldsAsync(string uri, string[] fields)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getWikiPageByUriWithFieldsResponse> getWikiPageByUriWithFieldsAsync(string uri, string[] fields)
         {
-            PolarionApiClient.Core.Generated.getWikiPageByUriWithFieldsRequest inValue = new PolarionApiClient.Core.Generated.getWikiPageByUriWithFieldsRequest();
+            PolarionApiClient.Core.Generated.Tracker.getWikiPageByUriWithFieldsRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getWikiPageByUriWithFieldsRequest();
             inValue.uri = uri;
             inValue.fields = fields;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getWikiPageByUriWithFieldsAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getWikiPageByUriWithFieldsAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getWikiPageUrisResponse> PolarionApiClient.Core.Generated.TrackerWebService.getWikiPageUrisAsync(PolarionApiClient.Core.Generated.getWikiPageUrisRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getWikiPageUrisResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getWikiPageUrisAsync(PolarionApiClient.Core.Generated.Tracker.getWikiPageUrisRequest request)
         {
             return base.Channel.getWikiPageUrisAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getWikiPageUrisResponse> getWikiPageUrisAsync(string projectId, string spaceId)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getWikiPageUrisResponse> getWikiPageUrisAsync(string projectId, string spaceId)
         {
-            PolarionApiClient.Core.Generated.getWikiPageUrisRequest inValue = new PolarionApiClient.Core.Generated.getWikiPageUrisRequest();
+            PolarionApiClient.Core.Generated.Tracker.getWikiPageUrisRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getWikiPageUrisRequest();
             inValue.projectId = projectId;
             inValue.spaceId = spaceId;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getWikiPageUrisAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getWikiPageUrisAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getWikiPagesResponse> PolarionApiClient.Core.Generated.TrackerWebService.getWikiPagesAsync(PolarionApiClient.Core.Generated.getWikiPagesRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getWikiPagesResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getWikiPagesAsync(PolarionApiClient.Core.Generated.Tracker.getWikiPagesRequest request)
         {
             return base.Channel.getWikiPagesAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getWikiPagesResponse> getWikiPagesAsync(string projectId, string spaceId)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getWikiPagesResponse> getWikiPagesAsync(string projectId, string spaceId)
         {
-            PolarionApiClient.Core.Generated.getWikiPagesRequest inValue = new PolarionApiClient.Core.Generated.getWikiPagesRequest();
+            PolarionApiClient.Core.Generated.Tracker.getWikiPagesRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getWikiPagesRequest();
             inValue.projectId = projectId;
             inValue.spaceId = spaceId;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getWikiPagesAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getWikiPagesAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getWikiPagesWithFieldsResponse> PolarionApiClient.Core.Generated.TrackerWebService.getWikiPagesWithFieldsAsync(PolarionApiClient.Core.Generated.getWikiPagesWithFieldsRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getWikiPagesWithFieldsResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getWikiPagesWithFieldsAsync(PolarionApiClient.Core.Generated.Tracker.getWikiPagesWithFieldsRequest request)
         {
             return base.Channel.getWikiPagesWithFieldsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getWikiPagesWithFieldsResponse> getWikiPagesWithFieldsAsync(string projectId, string spaceId, string[] fields)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getWikiPagesWithFieldsResponse> getWikiPagesWithFieldsAsync(string projectId, string spaceId, string[] fields)
         {
-            PolarionApiClient.Core.Generated.getWikiPagesWithFieldsRequest inValue = new PolarionApiClient.Core.Generated.getWikiPagesWithFieldsRequest();
+            PolarionApiClient.Core.Generated.Tracker.getWikiPagesWithFieldsRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getWikiPagesWithFieldsRequest();
             inValue.projectId = projectId;
             inValue.spaceId = spaceId;
             inValue.fields = fields;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getWikiPagesWithFieldsAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getWikiPagesWithFieldsAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getWikiSpacesResponse> PolarionApiClient.Core.Generated.TrackerWebService.getWikiSpacesAsync(PolarionApiClient.Core.Generated.getWikiSpacesRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getWikiSpacesResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getWikiSpacesAsync(PolarionApiClient.Core.Generated.Tracker.getWikiSpacesRequest request)
         {
             return base.Channel.getWikiSpacesAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getWikiSpacesResponse> getWikiSpacesAsync(string projectId)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getWikiSpacesResponse> getWikiSpacesAsync(string projectId)
         {
-            PolarionApiClient.Core.Generated.getWikiSpacesRequest inValue = new PolarionApiClient.Core.Generated.getWikiSpacesRequest();
+            PolarionApiClient.Core.Generated.Tracker.getWikiSpacesRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getWikiSpacesRequest();
             inValue.projectId = projectId;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getWikiSpacesAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getWikiSpacesAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getWorkItemByIdResponse> PolarionApiClient.Core.Generated.TrackerWebService.getWorkItemByIdAsync(PolarionApiClient.Core.Generated.getWorkItemByIdRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getWorkItemByIdResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getWorkItemByIdAsync(PolarionApiClient.Core.Generated.Tracker.getWorkItemByIdRequest request)
         {
             return base.Channel.getWorkItemByIdAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getWorkItemByIdResponse> getWorkItemByIdAsync(string projectId, string workitemId)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getWorkItemByIdResponse> getWorkItemByIdAsync(string projectId, string workitemId)
         {
-            PolarionApiClient.Core.Generated.getWorkItemByIdRequest inValue = new PolarionApiClient.Core.Generated.getWorkItemByIdRequest();
+            PolarionApiClient.Core.Generated.Tracker.getWorkItemByIdRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getWorkItemByIdRequest();
             inValue.projectId = projectId;
             inValue.workitemId = workitemId;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getWorkItemByIdAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getWorkItemByIdAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getWorkItemByIdsWithFieldsResponse> PolarionApiClient.Core.Generated.TrackerWebService.getWorkItemByIdsWithFieldsAsync(PolarionApiClient.Core.Generated.getWorkItemByIdsWithFieldsRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getWorkItemByIdsWithFieldsResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getWorkItemByIdsWithFieldsAsync(PolarionApiClient.Core.Generated.Tracker.getWorkItemByIdsWithFieldsRequest request)
         {
             return base.Channel.getWorkItemByIdsWithFieldsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getWorkItemByIdsWithFieldsResponse> getWorkItemByIdsWithFieldsAsync(string projectId, string workitemId, string[] keys)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getWorkItemByIdsWithFieldsResponse> getWorkItemByIdsWithFieldsAsync(string projectId, string workitemId, string[] keys)
         {
-            PolarionApiClient.Core.Generated.getWorkItemByIdsWithFieldsRequest inValue = new PolarionApiClient.Core.Generated.getWorkItemByIdsWithFieldsRequest();
+            PolarionApiClient.Core.Generated.Tracker.getWorkItemByIdsWithFieldsRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getWorkItemByIdsWithFieldsRequest();
             inValue.projectId = projectId;
             inValue.workitemId = workitemId;
             inValue.keys = keys;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getWorkItemByIdsWithFieldsAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getWorkItemByIdsWithFieldsAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getWorkItemByUriResponse> PolarionApiClient.Core.Generated.TrackerWebService.getWorkItemByUriAsync(PolarionApiClient.Core.Generated.getWorkItemByUriRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getWorkItemByUriResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getWorkItemByUriAsync(PolarionApiClient.Core.Generated.Tracker.getWorkItemByUriRequest request)
         {
             return base.Channel.getWorkItemByUriAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getWorkItemByUriResponse> getWorkItemByUriAsync(string uri)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getWorkItemByUriResponse> getWorkItemByUriAsync(string uri)
         {
-            PolarionApiClient.Core.Generated.getWorkItemByUriRequest inValue = new PolarionApiClient.Core.Generated.getWorkItemByUriRequest();
+            PolarionApiClient.Core.Generated.Tracker.getWorkItemByUriRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getWorkItemByUriRequest();
             inValue.uri = uri;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getWorkItemByUriAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getWorkItemByUriAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getWorkItemByUriInRevisionResponse> PolarionApiClient.Core.Generated.TrackerWebService.getWorkItemByUriInRevisionAsync(PolarionApiClient.Core.Generated.getWorkItemByUriInRevisionRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getWorkItemByUriInRevisionResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getWorkItemByUriInRevisionAsync(PolarionApiClient.Core.Generated.Tracker.getWorkItemByUriInRevisionRequest request)
         {
             return base.Channel.getWorkItemByUriInRevisionAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getWorkItemByUriInRevisionResponse> getWorkItemByUriInRevisionAsync(string uri, string revision)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getWorkItemByUriInRevisionResponse> getWorkItemByUriInRevisionAsync(string uri, string revision)
         {
-            PolarionApiClient.Core.Generated.getWorkItemByUriInRevisionRequest inValue = new PolarionApiClient.Core.Generated.getWorkItemByUriInRevisionRequest();
+            PolarionApiClient.Core.Generated.Tracker.getWorkItemByUriInRevisionRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getWorkItemByUriInRevisionRequest();
             inValue.uri = uri;
             inValue.revision = revision;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getWorkItemByUriInRevisionAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getWorkItemByUriInRevisionAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getWorkItemByUriInRevisionWithFieldsResponse> PolarionApiClient.Core.Generated.TrackerWebService.getWorkItemByUriInRevisionWithFieldsAsync(PolarionApiClient.Core.Generated.getWorkItemByUriInRevisionWithFieldsRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getWorkItemByUriInRevisionWithFieldsResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getWorkItemByUriInRevisionWithFieldsAsync(PolarionApiClient.Core.Generated.Tracker.getWorkItemByUriInRevisionWithFieldsRequest request)
         {
             return base.Channel.getWorkItemByUriInRevisionWithFieldsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getWorkItemByUriInRevisionWithFieldsResponse> getWorkItemByUriInRevisionWithFieldsAsync(string uri, string revision, string[] keys)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getWorkItemByUriInRevisionWithFieldsResponse> getWorkItemByUriInRevisionWithFieldsAsync(string uri, string revision, string[] keys)
         {
-            PolarionApiClient.Core.Generated.getWorkItemByUriInRevisionWithFieldsRequest inValue = new PolarionApiClient.Core.Generated.getWorkItemByUriInRevisionWithFieldsRequest();
+            PolarionApiClient.Core.Generated.Tracker.getWorkItemByUriInRevisionWithFieldsRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getWorkItemByUriInRevisionWithFieldsRequest();
             inValue.uri = uri;
             inValue.revision = revision;
             inValue.keys = keys;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getWorkItemByUriInRevisionWithFieldsAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getWorkItemByUriInRevisionWithFieldsAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getWorkItemByUriWithFieldsResponse> PolarionApiClient.Core.Generated.TrackerWebService.getWorkItemByUriWithFieldsAsync(PolarionApiClient.Core.Generated.getWorkItemByUriWithFieldsRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getWorkItemByUriWithFieldsResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getWorkItemByUriWithFieldsAsync(PolarionApiClient.Core.Generated.Tracker.getWorkItemByUriWithFieldsRequest request)
         {
             return base.Channel.getWorkItemByUriWithFieldsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getWorkItemByUriWithFieldsResponse> getWorkItemByUriWithFieldsAsync(string uri, string[] keys)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getWorkItemByUriWithFieldsResponse> getWorkItemByUriWithFieldsAsync(string uri, string[] keys)
         {
-            PolarionApiClient.Core.Generated.getWorkItemByUriWithFieldsRequest inValue = new PolarionApiClient.Core.Generated.getWorkItemByUriWithFieldsRequest();
+            PolarionApiClient.Core.Generated.Tracker.getWorkItemByUriWithFieldsRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getWorkItemByUriWithFieldsRequest();
             inValue.uri = uri;
             inValue.keys = keys;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getWorkItemByUriWithFieldsAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getWorkItemByUriWithFieldsAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getWorkItemsCountResponse> PolarionApiClient.Core.Generated.TrackerWebService.getWorkItemsCountAsync(PolarionApiClient.Core.Generated.getWorkItemsCountRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getWorkItemsCountResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getWorkItemsCountAsync(PolarionApiClient.Core.Generated.Tracker.getWorkItemsCountRequest request)
         {
             return base.Channel.getWorkItemsCountAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getWorkItemsCountResponse> getWorkItemsCountAsync(string query)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getWorkItemsCountResponse> getWorkItemsCountAsync(string query)
         {
-            PolarionApiClient.Core.Generated.getWorkItemsCountRequest inValue = new PolarionApiClient.Core.Generated.getWorkItemsCountRequest();
+            PolarionApiClient.Core.Generated.Tracker.getWorkItemsCountRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getWorkItemsCountRequest();
             inValue.query = query;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getWorkItemsCountAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getWorkItemsCountAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getWorkItemsLinkedToRevisionResponse> PolarionApiClient.Core.Generated.TrackerWebService.getWorkItemsLinkedToRevisionAsync(PolarionApiClient.Core.Generated.getWorkItemsLinkedToRevisionRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getWorkItemsLinkedToRevisionResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getWorkItemsLinkedToRevisionAsync(PolarionApiClient.Core.Generated.Tracker.getWorkItemsLinkedToRevisionRequest request)
         {
             return base.Channel.getWorkItemsLinkedToRevisionAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getWorkItemsLinkedToRevisionResponse> getWorkItemsLinkedToRevisionAsync(string revisionURI)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getWorkItemsLinkedToRevisionResponse> getWorkItemsLinkedToRevisionAsync(string revisionURI)
         {
-            PolarionApiClient.Core.Generated.getWorkItemsLinkedToRevisionRequest inValue = new PolarionApiClient.Core.Generated.getWorkItemsLinkedToRevisionRequest();
+            PolarionApiClient.Core.Generated.Tracker.getWorkItemsLinkedToRevisionRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getWorkItemsLinkedToRevisionRequest();
             inValue.revisionURI = revisionURI;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getWorkItemsLinkedToRevisionAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getWorkItemsLinkedToRevisionAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getWorkItemsLinkedToRevisionWithFieldsResponse> PolarionApiClient.Core.Generated.TrackerWebService.getWorkItemsLinkedToRevisionWithFieldsAsync(PolarionApiClient.Core.Generated.getWorkItemsLinkedToRevisionWithFieldsRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getWorkItemsLinkedToRevisionWithFieldsResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.getWorkItemsLinkedToRevisionWithFieldsAsync(PolarionApiClient.Core.Generated.Tracker.getWorkItemsLinkedToRevisionWithFieldsRequest request)
         {
             return base.Channel.getWorkItemsLinkedToRevisionWithFieldsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.getWorkItemsLinkedToRevisionWithFieldsResponse> getWorkItemsLinkedToRevisionWithFieldsAsync(string revisionURI, string[] keys)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.getWorkItemsLinkedToRevisionWithFieldsResponse> getWorkItemsLinkedToRevisionWithFieldsAsync(string revisionURI, string[] keys)
         {
-            PolarionApiClient.Core.Generated.getWorkItemsLinkedToRevisionWithFieldsRequest inValue = new PolarionApiClient.Core.Generated.getWorkItemsLinkedToRevisionWithFieldsRequest();
+            PolarionApiClient.Core.Generated.Tracker.getWorkItemsLinkedToRevisionWithFieldsRequest inValue = new PolarionApiClient.Core.Generated.Tracker.getWorkItemsLinkedToRevisionWithFieldsRequest();
             inValue.revisionURI = revisionURI;
             inValue.keys = keys;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).getWorkItemsLinkedToRevisionWithFieldsAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).getWorkItemsLinkedToRevisionWithFieldsAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.isHistoryAvailableResponse> PolarionApiClient.Core.Generated.TrackerWebService.isHistoryAvailableAsync(PolarionApiClient.Core.Generated.isHistoryAvailableRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.isHistoryAvailableResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.isHistoryAvailableAsync(PolarionApiClient.Core.Generated.Tracker.isHistoryAvailableRequest request)
         {
             return base.Channel.isHistoryAvailableAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.isHistoryAvailableResponse> isHistoryAvailableAsync()
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.isHistoryAvailableResponse> isHistoryAvailableAsync()
         {
-            PolarionApiClient.Core.Generated.isHistoryAvailableRequest inValue = new PolarionApiClient.Core.Generated.isHistoryAvailableRequest();
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).isHistoryAvailableAsync(inValue);
+            PolarionApiClient.Core.Generated.Tracker.isHistoryAvailableRequest inValue = new PolarionApiClient.Core.Generated.Tracker.isHistoryAvailableRequest();
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).isHistoryAvailableAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.isResolvedCommentResponse> PolarionApiClient.Core.Generated.TrackerWebService.isResolvedCommentAsync(PolarionApiClient.Core.Generated.isResolvedCommentRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.isResolvedCommentResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.isResolvedCommentAsync(PolarionApiClient.Core.Generated.Tracker.isResolvedCommentRequest request)
         {
             return base.Channel.isResolvedCommentAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.isResolvedCommentResponse> isResolvedCommentAsync(string commentURI)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.isResolvedCommentResponse> isResolvedCommentAsync(string commentURI)
         {
-            PolarionApiClient.Core.Generated.isResolvedCommentRequest inValue = new PolarionApiClient.Core.Generated.isResolvedCommentRequest();
+            PolarionApiClient.Core.Generated.Tracker.isResolvedCommentRequest inValue = new PolarionApiClient.Core.Generated.Tracker.isResolvedCommentRequest();
             inValue.commentURI = commentURI;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).isResolvedCommentAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).isResolvedCommentAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.listActivitySourcesResponse> PolarionApiClient.Core.Generated.TrackerWebService.listActivitySourcesAsync(PolarionApiClient.Core.Generated.listActivitySourcesRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.listActivitySourcesResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.listActivitySourcesAsync(PolarionApiClient.Core.Generated.Tracker.listActivitySourcesRequest request)
         {
             return base.Channel.listActivitySourcesAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.listActivitySourcesResponse> listActivitySourcesAsync()
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.listActivitySourcesResponse> listActivitySourcesAsync()
         {
-            PolarionApiClient.Core.Generated.listActivitySourcesRequest inValue = new PolarionApiClient.Core.Generated.listActivitySourcesRequest();
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).listActivitySourcesAsync(inValue);
+            PolarionApiClient.Core.Generated.Tracker.listActivitySourcesRequest inValue = new PolarionApiClient.Core.Generated.Tracker.listActivitySourcesRequest();
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).listActivitySourcesAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.listAllActivitiesResponse> PolarionApiClient.Core.Generated.TrackerWebService.listAllActivitiesAsync(PolarionApiClient.Core.Generated.listAllActivitiesRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.listAllActivitiesResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.listAllActivitiesAsync(PolarionApiClient.Core.Generated.Tracker.listAllActivitiesRequest request)
         {
             return base.Channel.listAllActivitiesAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.listAllActivitiesResponse> listAllActivitiesAsync(string query, int count)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.listAllActivitiesResponse> listAllActivitiesAsync(string query, int count)
         {
-            PolarionApiClient.Core.Generated.listAllActivitiesRequest inValue = new PolarionApiClient.Core.Generated.listAllActivitiesRequest();
+            PolarionApiClient.Core.Generated.Tracker.listAllActivitiesRequest inValue = new PolarionApiClient.Core.Generated.Tracker.listAllActivitiesRequest();
             inValue.query = query;
             inValue.count = count;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).listAllActivitiesAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).listAllActivitiesAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.listAllActivitiesGlobalIdsResponse> PolarionApiClient.Core.Generated.TrackerWebService.listAllActivitiesGlobalIdsAsync(PolarionApiClient.Core.Generated.listAllActivitiesGlobalIdsRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.listAllActivitiesGlobalIdsResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.listAllActivitiesGlobalIdsAsync(PolarionApiClient.Core.Generated.Tracker.listAllActivitiesGlobalIdsRequest request)
         {
             return base.Channel.listAllActivitiesGlobalIdsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.listAllActivitiesGlobalIdsResponse> listAllActivitiesGlobalIdsAsync(string query, int count)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.listAllActivitiesGlobalIdsResponse> listAllActivitiesGlobalIdsAsync(string query, int count)
         {
-            PolarionApiClient.Core.Generated.listAllActivitiesGlobalIdsRequest inValue = new PolarionApiClient.Core.Generated.listAllActivitiesGlobalIdsRequest();
+            PolarionApiClient.Core.Generated.Tracker.listAllActivitiesGlobalIdsRequest inValue = new PolarionApiClient.Core.Generated.Tracker.listAllActivitiesGlobalIdsRequest();
             inValue.query = query;
             inValue.count = count;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).listAllActivitiesGlobalIdsAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).listAllActivitiesGlobalIdsAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.listGroupActivitiesResponse> PolarionApiClient.Core.Generated.TrackerWebService.listGroupActivitiesAsync(PolarionApiClient.Core.Generated.listGroupActivitiesRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.listGroupActivitiesResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.listGroupActivitiesAsync(PolarionApiClient.Core.Generated.Tracker.listGroupActivitiesRequest request)
         {
             return base.Channel.listGroupActivitiesAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.listGroupActivitiesResponse> listGroupActivitiesAsync(string uri, string query, int count)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.listGroupActivitiesResponse> listGroupActivitiesAsync(string uri, string query, int count)
         {
-            PolarionApiClient.Core.Generated.listGroupActivitiesRequest inValue = new PolarionApiClient.Core.Generated.listGroupActivitiesRequest();
+            PolarionApiClient.Core.Generated.Tracker.listGroupActivitiesRequest inValue = new PolarionApiClient.Core.Generated.Tracker.listGroupActivitiesRequest();
             inValue.uri = uri;
             inValue.query = query;
             inValue.count = count;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).listGroupActivitiesAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).listGroupActivitiesAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.listGroupActivitiesGlobalIdsResponse> PolarionApiClient.Core.Generated.TrackerWebService.listGroupActivitiesGlobalIdsAsync(PolarionApiClient.Core.Generated.listGroupActivitiesGlobalIdsRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.listGroupActivitiesGlobalIdsResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.listGroupActivitiesGlobalIdsAsync(PolarionApiClient.Core.Generated.Tracker.listGroupActivitiesGlobalIdsRequest request)
         {
             return base.Channel.listGroupActivitiesGlobalIdsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.listGroupActivitiesGlobalIdsResponse> listGroupActivitiesGlobalIdsAsync(string uri, string query, int count)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.listGroupActivitiesGlobalIdsResponse> listGroupActivitiesGlobalIdsAsync(string uri, string query, int count)
         {
-            PolarionApiClient.Core.Generated.listGroupActivitiesGlobalIdsRequest inValue = new PolarionApiClient.Core.Generated.listGroupActivitiesGlobalIdsRequest();
+            PolarionApiClient.Core.Generated.Tracker.listGroupActivitiesGlobalIdsRequest inValue = new PolarionApiClient.Core.Generated.Tracker.listGroupActivitiesGlobalIdsRequest();
             inValue.uri = uri;
             inValue.query = query;
             inValue.count = count;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).listGroupActivitiesGlobalIdsAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).listGroupActivitiesGlobalIdsAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.listProjectActivitiesResponse> PolarionApiClient.Core.Generated.TrackerWebService.listProjectActivitiesAsync(PolarionApiClient.Core.Generated.listProjectActivitiesRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.listProjectActivitiesResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.listProjectActivitiesAsync(PolarionApiClient.Core.Generated.Tracker.listProjectActivitiesRequest request)
         {
             return base.Channel.listProjectActivitiesAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.listProjectActivitiesResponse> listProjectActivitiesAsync(string projectId, string query, int count)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.listProjectActivitiesResponse> listProjectActivitiesAsync(string projectId, string query, int count)
         {
-            PolarionApiClient.Core.Generated.listProjectActivitiesRequest inValue = new PolarionApiClient.Core.Generated.listProjectActivitiesRequest();
+            PolarionApiClient.Core.Generated.Tracker.listProjectActivitiesRequest inValue = new PolarionApiClient.Core.Generated.Tracker.listProjectActivitiesRequest();
             inValue.projectId = projectId;
             inValue.query = query;
             inValue.count = count;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).listProjectActivitiesAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).listProjectActivitiesAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.listProjectActivitiesGlobalIdsResponse> PolarionApiClient.Core.Generated.TrackerWebService.listProjectActivitiesGlobalIdsAsync(PolarionApiClient.Core.Generated.listProjectActivitiesGlobalIdsRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.listProjectActivitiesGlobalIdsResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.listProjectActivitiesGlobalIdsAsync(PolarionApiClient.Core.Generated.Tracker.listProjectActivitiesGlobalIdsRequest request)
         {
             return base.Channel.listProjectActivitiesGlobalIdsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.listProjectActivitiesGlobalIdsResponse> listProjectActivitiesGlobalIdsAsync(string projectId, string query, int count)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.listProjectActivitiesGlobalIdsResponse> listProjectActivitiesGlobalIdsAsync(string projectId, string query, int count)
         {
-            PolarionApiClient.Core.Generated.listProjectActivitiesGlobalIdsRequest inValue = new PolarionApiClient.Core.Generated.listProjectActivitiesGlobalIdsRequest();
+            PolarionApiClient.Core.Generated.Tracker.listProjectActivitiesGlobalIdsRequest inValue = new PolarionApiClient.Core.Generated.Tracker.listProjectActivitiesGlobalIdsRequest();
             inValue.projectId = projectId;
             inValue.query = query;
             inValue.count = count;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).listProjectActivitiesGlobalIdsAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).listProjectActivitiesGlobalIdsAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.moveWorkItemToDocumentResponse> PolarionApiClient.Core.Generated.TrackerWebService.moveWorkItemToDocumentAsync(PolarionApiClient.Core.Generated.moveWorkItemToDocumentRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.moveWorkItemToDocumentResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.moveWorkItemToDocumentAsync(PolarionApiClient.Core.Generated.Tracker.moveWorkItemToDocumentRequest request)
         {
             return base.Channel.moveWorkItemToDocumentAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.moveWorkItemToDocumentResponse> moveWorkItemToDocumentAsync(string workItemURI, string documentURI, string parentWorkItemURI, int position, bool retainDocumentFlow)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.moveWorkItemToDocumentResponse> moveWorkItemToDocumentAsync(string workItemURI, string documentURI, string parentWorkItemURI, int position, bool retainDocumentFlow)
         {
-            PolarionApiClient.Core.Generated.moveWorkItemToDocumentRequest inValue = new PolarionApiClient.Core.Generated.moveWorkItemToDocumentRequest();
+            PolarionApiClient.Core.Generated.Tracker.moveWorkItemToDocumentRequest inValue = new PolarionApiClient.Core.Generated.Tracker.moveWorkItemToDocumentRequest();
             inValue.workItemURI = workItemURI;
             inValue.documentURI = documentURI;
             inValue.parentWorkItemURI = parentWorkItemURI;
             inValue.position = position;
             inValue.retainDocumentFlow = retainDocumentFlow;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).moveWorkItemToDocumentAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).moveWorkItemToDocumentAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.moveWorkItemToModuleResponse> PolarionApiClient.Core.Generated.TrackerWebService.moveWorkItemToModuleAsync(PolarionApiClient.Core.Generated.moveWorkItemToModuleRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.moveWorkItemToModuleResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.moveWorkItemToModuleAsync(PolarionApiClient.Core.Generated.Tracker.moveWorkItemToModuleRequest request)
         {
             return base.Channel.moveWorkItemToModuleAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.moveWorkItemToModuleResponse> moveWorkItemToModuleAsync(string workItemURI, string moduleURI, string parentWorkItemURI, int position)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.moveWorkItemToModuleResponse> moveWorkItemToModuleAsync(string workItemURI, string moduleURI, string parentWorkItemURI, int position)
         {
-            PolarionApiClient.Core.Generated.moveWorkItemToModuleRequest inValue = new PolarionApiClient.Core.Generated.moveWorkItemToModuleRequest();
+            PolarionApiClient.Core.Generated.Tracker.moveWorkItemToModuleRequest inValue = new PolarionApiClient.Core.Generated.Tracker.moveWorkItemToModuleRequest();
             inValue.workItemURI = workItemURI;
             inValue.moduleURI = moduleURI;
             inValue.parentWorkItemURI = parentWorkItemURI;
             inValue.position = position;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).moveWorkItemToModuleAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).moveWorkItemToModuleAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.performWorkflowActionResponse> PolarionApiClient.Core.Generated.TrackerWebService.performWorkflowActionAsync(PolarionApiClient.Core.Generated.performWorkflowActionRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.performWorkflowActionResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.performWorkflowActionAsync(PolarionApiClient.Core.Generated.Tracker.performWorkflowActionRequest request)
         {
             return base.Channel.performWorkflowActionAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.performWorkflowActionResponse> performWorkflowActionAsync(string workitemURI, int actionId)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.performWorkflowActionResponse> performWorkflowActionAsync(string workitemURI, int actionId)
         {
-            PolarionApiClient.Core.Generated.performWorkflowActionRequest inValue = new PolarionApiClient.Core.Generated.performWorkflowActionRequest();
+            PolarionApiClient.Core.Generated.Tracker.performWorkflowActionRequest inValue = new PolarionApiClient.Core.Generated.Tracker.performWorkflowActionRequest();
             inValue.workitemURI = workitemURI;
             inValue.actionId = actionId;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).performWorkflowActionAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).performWorkflowActionAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryBaselinesResponse> PolarionApiClient.Core.Generated.TrackerWebService.queryBaselinesAsync(PolarionApiClient.Core.Generated.queryBaselinesRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryBaselinesResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.queryBaselinesAsync(PolarionApiClient.Core.Generated.Tracker.queryBaselinesRequest request)
         {
             return base.Channel.queryBaselinesAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryBaselinesResponse> queryBaselinesAsync(string query, string sort)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryBaselinesResponse> queryBaselinesAsync(string query, string sort)
         {
-            PolarionApiClient.Core.Generated.queryBaselinesRequest inValue = new PolarionApiClient.Core.Generated.queryBaselinesRequest();
+            PolarionApiClient.Core.Generated.Tracker.queryBaselinesRequest inValue = new PolarionApiClient.Core.Generated.Tracker.queryBaselinesRequest();
             inValue.query = query;
             inValue.sort = sort;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).queryBaselinesAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).queryBaselinesAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryModuleUrisResponse> PolarionApiClient.Core.Generated.TrackerWebService.queryModuleUrisAsync(PolarionApiClient.Core.Generated.queryModuleUrisRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryModuleUrisResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.queryModuleUrisAsync(PolarionApiClient.Core.Generated.Tracker.queryModuleUrisRequest request)
         {
             return base.Channel.queryModuleUrisAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryModuleUrisResponse> queryModuleUrisAsync(string query, string sort, int resultsLimit)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryModuleUrisResponse> queryModuleUrisAsync(string query, string sort, int resultsLimit)
         {
-            PolarionApiClient.Core.Generated.queryModuleUrisRequest inValue = new PolarionApiClient.Core.Generated.queryModuleUrisRequest();
+            PolarionApiClient.Core.Generated.Tracker.queryModuleUrisRequest inValue = new PolarionApiClient.Core.Generated.Tracker.queryModuleUrisRequest();
             inValue.query = query;
             inValue.sort = sort;
             inValue.resultsLimit = resultsLimit;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).queryModuleUrisAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).queryModuleUrisAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryModuleUrisBySQLResponse> PolarionApiClient.Core.Generated.TrackerWebService.queryModuleUrisBySQLAsync(PolarionApiClient.Core.Generated.queryModuleUrisBySQLRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryModuleUrisBySQLResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.queryModuleUrisBySQLAsync(PolarionApiClient.Core.Generated.Tracker.queryModuleUrisBySQLRequest request)
         {
             return base.Channel.queryModuleUrisBySQLAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryModuleUrisBySQLResponse> queryModuleUrisBySQLAsync(string sqlQuery)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryModuleUrisBySQLResponse> queryModuleUrisBySQLAsync(string sqlQuery)
         {
-            PolarionApiClient.Core.Generated.queryModuleUrisBySQLRequest inValue = new PolarionApiClient.Core.Generated.queryModuleUrisBySQLRequest();
+            PolarionApiClient.Core.Generated.Tracker.queryModuleUrisBySQLRequest inValue = new PolarionApiClient.Core.Generated.Tracker.queryModuleUrisBySQLRequest();
             inValue.sqlQuery = sqlQuery;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).queryModuleUrisBySQLAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).queryModuleUrisBySQLAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryModuleUrisInBaselineResponse> PolarionApiClient.Core.Generated.TrackerWebService.queryModuleUrisInBaselineAsync(PolarionApiClient.Core.Generated.queryModuleUrisInBaselineRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryModuleUrisInBaselineResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.queryModuleUrisInBaselineAsync(PolarionApiClient.Core.Generated.Tracker.queryModuleUrisInBaselineRequest request)
         {
             return base.Channel.queryModuleUrisInBaselineAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryModuleUrisInBaselineResponse> queryModuleUrisInBaselineAsync(string query, string sort, string baselineRevision, int resultsLimit)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryModuleUrisInBaselineResponse> queryModuleUrisInBaselineAsync(string query, string sort, string baselineRevision, int resultsLimit)
         {
-            PolarionApiClient.Core.Generated.queryModuleUrisInBaselineRequest inValue = new PolarionApiClient.Core.Generated.queryModuleUrisInBaselineRequest();
+            PolarionApiClient.Core.Generated.Tracker.queryModuleUrisInBaselineRequest inValue = new PolarionApiClient.Core.Generated.Tracker.queryModuleUrisInBaselineRequest();
             inValue.query = query;
             inValue.sort = sort;
             inValue.baselineRevision = baselineRevision;
             inValue.resultsLimit = resultsLimit;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).queryModuleUrisInBaselineAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).queryModuleUrisInBaselineAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryModuleUrisInBaselineBySQLResponse> PolarionApiClient.Core.Generated.TrackerWebService.queryModuleUrisInBaselineBySQLAsync(PolarionApiClient.Core.Generated.queryModuleUrisInBaselineBySQLRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryModuleUrisInBaselineBySQLResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.queryModuleUrisInBaselineBySQLAsync(PolarionApiClient.Core.Generated.Tracker.queryModuleUrisInBaselineBySQLRequest request)
         {
             return base.Channel.queryModuleUrisInBaselineBySQLAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryModuleUrisInBaselineBySQLResponse> queryModuleUrisInBaselineBySQLAsync(string sqlQuery, string baselineRevision)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryModuleUrisInBaselineBySQLResponse> queryModuleUrisInBaselineBySQLAsync(string sqlQuery, string baselineRevision)
         {
-            PolarionApiClient.Core.Generated.queryModuleUrisInBaselineBySQLRequest inValue = new PolarionApiClient.Core.Generated.queryModuleUrisInBaselineBySQLRequest();
+            PolarionApiClient.Core.Generated.Tracker.queryModuleUrisInBaselineBySQLRequest inValue = new PolarionApiClient.Core.Generated.Tracker.queryModuleUrisInBaselineBySQLRequest();
             inValue.sqlQuery = sqlQuery;
             inValue.baselineRevision = baselineRevision;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).queryModuleUrisInBaselineBySQLAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).queryModuleUrisInBaselineBySQLAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryModulesResponse> PolarionApiClient.Core.Generated.TrackerWebService.queryModulesAsync(PolarionApiClient.Core.Generated.queryModulesRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryModulesResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.queryModulesAsync(PolarionApiClient.Core.Generated.Tracker.queryModulesRequest request)
         {
             return base.Channel.queryModulesAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryModulesResponse> queryModulesAsync(string query, string sort, string[] fields, int resultsLimit)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryModulesResponse> queryModulesAsync(string query, string sort, string[] fields, int resultsLimit)
         {
-            PolarionApiClient.Core.Generated.queryModulesRequest inValue = new PolarionApiClient.Core.Generated.queryModulesRequest();
+            PolarionApiClient.Core.Generated.Tracker.queryModulesRequest inValue = new PolarionApiClient.Core.Generated.Tracker.queryModulesRequest();
             inValue.query = query;
             inValue.sort = sort;
             inValue.fields = fields;
             inValue.resultsLimit = resultsLimit;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).queryModulesAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).queryModulesAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryModulesBySQLResponse> PolarionApiClient.Core.Generated.TrackerWebService.queryModulesBySQLAsync(PolarionApiClient.Core.Generated.queryModulesBySQLRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryModulesBySQLResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.queryModulesBySQLAsync(PolarionApiClient.Core.Generated.Tracker.queryModulesBySQLRequest request)
         {
             return base.Channel.queryModulesBySQLAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryModulesBySQLResponse> queryModulesBySQLAsync(string sqlQuery, string[] fields)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryModulesBySQLResponse> queryModulesBySQLAsync(string sqlQuery, string[] fields)
         {
-            PolarionApiClient.Core.Generated.queryModulesBySQLRequest inValue = new PolarionApiClient.Core.Generated.queryModulesBySQLRequest();
+            PolarionApiClient.Core.Generated.Tracker.queryModulesBySQLRequest inValue = new PolarionApiClient.Core.Generated.Tracker.queryModulesBySQLRequest();
             inValue.sqlQuery = sqlQuery;
             inValue.fields = fields;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).queryModulesBySQLAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).queryModulesBySQLAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryModulesInBaselineResponse> PolarionApiClient.Core.Generated.TrackerWebService.queryModulesInBaselineAsync(PolarionApiClient.Core.Generated.queryModulesInBaselineRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryModulesInBaselineResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.queryModulesInBaselineAsync(PolarionApiClient.Core.Generated.Tracker.queryModulesInBaselineRequest request)
         {
             return base.Channel.queryModulesInBaselineAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryModulesInBaselineResponse> queryModulesInBaselineAsync(string query, string sort, string baselineRevision, string[] fields, int resultsLimit)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryModulesInBaselineResponse> queryModulesInBaselineAsync(string query, string sort, string baselineRevision, string[] fields, int resultsLimit)
         {
-            PolarionApiClient.Core.Generated.queryModulesInBaselineRequest inValue = new PolarionApiClient.Core.Generated.queryModulesInBaselineRequest();
+            PolarionApiClient.Core.Generated.Tracker.queryModulesInBaselineRequest inValue = new PolarionApiClient.Core.Generated.Tracker.queryModulesInBaselineRequest();
             inValue.query = query;
             inValue.sort = sort;
             inValue.baselineRevision = baselineRevision;
             inValue.fields = fields;
             inValue.resultsLimit = resultsLimit;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).queryModulesInBaselineAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).queryModulesInBaselineAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryModulesInBaselineBySQLResponse> PolarionApiClient.Core.Generated.TrackerWebService.queryModulesInBaselineBySQLAsync(PolarionApiClient.Core.Generated.queryModulesInBaselineBySQLRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryModulesInBaselineBySQLResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.queryModulesInBaselineBySQLAsync(PolarionApiClient.Core.Generated.Tracker.queryModulesInBaselineBySQLRequest request)
         {
             return base.Channel.queryModulesInBaselineBySQLAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryModulesInBaselineBySQLResponse> queryModulesInBaselineBySQLAsync(string sqlQuery, string baselineRevision, string[] fields)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryModulesInBaselineBySQLResponse> queryModulesInBaselineBySQLAsync(string sqlQuery, string baselineRevision, string[] fields)
         {
-            PolarionApiClient.Core.Generated.queryModulesInBaselineBySQLRequest inValue = new PolarionApiClient.Core.Generated.queryModulesInBaselineBySQLRequest();
+            PolarionApiClient.Core.Generated.Tracker.queryModulesInBaselineBySQLRequest inValue = new PolarionApiClient.Core.Generated.Tracker.queryModulesInBaselineBySQLRequest();
             inValue.sqlQuery = sqlQuery;
             inValue.baselineRevision = baselineRevision;
             inValue.fields = fields;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).queryModulesInBaselineBySQLAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).queryModulesInBaselineBySQLAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryRevisionUrisResponse> PolarionApiClient.Core.Generated.TrackerWebService.queryRevisionUrisAsync(PolarionApiClient.Core.Generated.queryRevisionUrisRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryRevisionUrisResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.queryRevisionUrisAsync(PolarionApiClient.Core.Generated.Tracker.queryRevisionUrisRequest request)
         {
             return base.Channel.queryRevisionUrisAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryRevisionUrisResponse> queryRevisionUrisAsync(string query, string sort, bool includeInternal)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryRevisionUrisResponse> queryRevisionUrisAsync(string query, string sort, bool includeInternal)
         {
-            PolarionApiClient.Core.Generated.queryRevisionUrisRequest inValue = new PolarionApiClient.Core.Generated.queryRevisionUrisRequest();
+            PolarionApiClient.Core.Generated.Tracker.queryRevisionUrisRequest inValue = new PolarionApiClient.Core.Generated.Tracker.queryRevisionUrisRequest();
             inValue.query = query;
             inValue.sort = sort;
             inValue.includeInternal = includeInternal;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).queryRevisionUrisAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).queryRevisionUrisAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryRevisionsResponse> PolarionApiClient.Core.Generated.TrackerWebService.queryRevisionsAsync(PolarionApiClient.Core.Generated.queryRevisionsRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryRevisionsResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.queryRevisionsAsync(PolarionApiClient.Core.Generated.Tracker.queryRevisionsRequest request)
         {
             return base.Channel.queryRevisionsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryRevisionsResponse> queryRevisionsAsync(string query, string sort, string[] fields)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryRevisionsResponse> queryRevisionsAsync(string query, string sort, string[] fields)
         {
-            PolarionApiClient.Core.Generated.queryRevisionsRequest inValue = new PolarionApiClient.Core.Generated.queryRevisionsRequest();
+            PolarionApiClient.Core.Generated.Tracker.queryRevisionsRequest inValue = new PolarionApiClient.Core.Generated.Tracker.queryRevisionsRequest();
             inValue.query = query;
             inValue.sort = sort;
             inValue.fields = fields;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).queryRevisionsAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).queryRevisionsAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWikiPageUrisResponse> PolarionApiClient.Core.Generated.TrackerWebService.queryWikiPageUrisAsync(PolarionApiClient.Core.Generated.queryWikiPageUrisRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWikiPageUrisResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.queryWikiPageUrisAsync(PolarionApiClient.Core.Generated.Tracker.queryWikiPageUrisRequest request)
         {
             return base.Channel.queryWikiPageUrisAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWikiPageUrisResponse> queryWikiPageUrisAsync(string query, string sort, int resultsLimit)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWikiPageUrisResponse> queryWikiPageUrisAsync(string query, string sort, int resultsLimit)
         {
-            PolarionApiClient.Core.Generated.queryWikiPageUrisRequest inValue = new PolarionApiClient.Core.Generated.queryWikiPageUrisRequest();
+            PolarionApiClient.Core.Generated.Tracker.queryWikiPageUrisRequest inValue = new PolarionApiClient.Core.Generated.Tracker.queryWikiPageUrisRequest();
             inValue.query = query;
             inValue.sort = sort;
             inValue.resultsLimit = resultsLimit;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).queryWikiPageUrisAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).queryWikiPageUrisAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWikiPageUrisBySQLResponse> PolarionApiClient.Core.Generated.TrackerWebService.queryWikiPageUrisBySQLAsync(PolarionApiClient.Core.Generated.queryWikiPageUrisBySQLRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWikiPageUrisBySQLResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.queryWikiPageUrisBySQLAsync(PolarionApiClient.Core.Generated.Tracker.queryWikiPageUrisBySQLRequest request)
         {
             return base.Channel.queryWikiPageUrisBySQLAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWikiPageUrisBySQLResponse> queryWikiPageUrisBySQLAsync(string sqlQuery)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWikiPageUrisBySQLResponse> queryWikiPageUrisBySQLAsync(string sqlQuery)
         {
-            PolarionApiClient.Core.Generated.queryWikiPageUrisBySQLRequest inValue = new PolarionApiClient.Core.Generated.queryWikiPageUrisBySQLRequest();
+            PolarionApiClient.Core.Generated.Tracker.queryWikiPageUrisBySQLRequest inValue = new PolarionApiClient.Core.Generated.Tracker.queryWikiPageUrisBySQLRequest();
             inValue.sqlQuery = sqlQuery;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).queryWikiPageUrisBySQLAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).queryWikiPageUrisBySQLAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWikiPageUrisInBaselineResponse> PolarionApiClient.Core.Generated.TrackerWebService.queryWikiPageUrisInBaselineAsync(PolarionApiClient.Core.Generated.queryWikiPageUrisInBaselineRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWikiPageUrisInBaselineResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.queryWikiPageUrisInBaselineAsync(PolarionApiClient.Core.Generated.Tracker.queryWikiPageUrisInBaselineRequest request)
         {
             return base.Channel.queryWikiPageUrisInBaselineAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWikiPageUrisInBaselineResponse> queryWikiPageUrisInBaselineAsync(string query, string sort, string baselineRevision, int resultsLimit)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWikiPageUrisInBaselineResponse> queryWikiPageUrisInBaselineAsync(string query, string sort, string baselineRevision, int resultsLimit)
         {
-            PolarionApiClient.Core.Generated.queryWikiPageUrisInBaselineRequest inValue = new PolarionApiClient.Core.Generated.queryWikiPageUrisInBaselineRequest();
+            PolarionApiClient.Core.Generated.Tracker.queryWikiPageUrisInBaselineRequest inValue = new PolarionApiClient.Core.Generated.Tracker.queryWikiPageUrisInBaselineRequest();
             inValue.query = query;
             inValue.sort = sort;
             inValue.baselineRevision = baselineRevision;
             inValue.resultsLimit = resultsLimit;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).queryWikiPageUrisInBaselineAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).queryWikiPageUrisInBaselineAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWikiPageUrisInBaselineBySQLResponse> PolarionApiClient.Core.Generated.TrackerWebService.queryWikiPageUrisInBaselineBySQLAsync(PolarionApiClient.Core.Generated.queryWikiPageUrisInBaselineBySQLRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWikiPageUrisInBaselineBySQLResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.queryWikiPageUrisInBaselineBySQLAsync(PolarionApiClient.Core.Generated.Tracker.queryWikiPageUrisInBaselineBySQLRequest request)
         {
             return base.Channel.queryWikiPageUrisInBaselineBySQLAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWikiPageUrisInBaselineBySQLResponse> queryWikiPageUrisInBaselineBySQLAsync(string sqlQuery, string baselineRevision)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWikiPageUrisInBaselineBySQLResponse> queryWikiPageUrisInBaselineBySQLAsync(string sqlQuery, string baselineRevision)
         {
-            PolarionApiClient.Core.Generated.queryWikiPageUrisInBaselineBySQLRequest inValue = new PolarionApiClient.Core.Generated.queryWikiPageUrisInBaselineBySQLRequest();
+            PolarionApiClient.Core.Generated.Tracker.queryWikiPageUrisInBaselineBySQLRequest inValue = new PolarionApiClient.Core.Generated.Tracker.queryWikiPageUrisInBaselineBySQLRequest();
             inValue.sqlQuery = sqlQuery;
             inValue.baselineRevision = baselineRevision;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).queryWikiPageUrisInBaselineBySQLAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).queryWikiPageUrisInBaselineBySQLAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWikiPagesResponse> PolarionApiClient.Core.Generated.TrackerWebService.queryWikiPagesAsync(PolarionApiClient.Core.Generated.queryWikiPagesRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWikiPagesResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.queryWikiPagesAsync(PolarionApiClient.Core.Generated.Tracker.queryWikiPagesRequest request)
         {
             return base.Channel.queryWikiPagesAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWikiPagesResponse> queryWikiPagesAsync(string query, string sort, string[] fields, int resultsLimit)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWikiPagesResponse> queryWikiPagesAsync(string query, string sort, string[] fields, int resultsLimit)
         {
-            PolarionApiClient.Core.Generated.queryWikiPagesRequest inValue = new PolarionApiClient.Core.Generated.queryWikiPagesRequest();
+            PolarionApiClient.Core.Generated.Tracker.queryWikiPagesRequest inValue = new PolarionApiClient.Core.Generated.Tracker.queryWikiPagesRequest();
             inValue.query = query;
             inValue.sort = sort;
             inValue.fields = fields;
             inValue.resultsLimit = resultsLimit;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).queryWikiPagesAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).queryWikiPagesAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWikiPagesBySQLResponse> PolarionApiClient.Core.Generated.TrackerWebService.queryWikiPagesBySQLAsync(PolarionApiClient.Core.Generated.queryWikiPagesBySQLRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWikiPagesBySQLResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.queryWikiPagesBySQLAsync(PolarionApiClient.Core.Generated.Tracker.queryWikiPagesBySQLRequest request)
         {
             return base.Channel.queryWikiPagesBySQLAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWikiPagesBySQLResponse> queryWikiPagesBySQLAsync(string sqlQuery, string[] fields)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWikiPagesBySQLResponse> queryWikiPagesBySQLAsync(string sqlQuery, string[] fields)
         {
-            PolarionApiClient.Core.Generated.queryWikiPagesBySQLRequest inValue = new PolarionApiClient.Core.Generated.queryWikiPagesBySQLRequest();
+            PolarionApiClient.Core.Generated.Tracker.queryWikiPagesBySQLRequest inValue = new PolarionApiClient.Core.Generated.Tracker.queryWikiPagesBySQLRequest();
             inValue.sqlQuery = sqlQuery;
             inValue.fields = fields;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).queryWikiPagesBySQLAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).queryWikiPagesBySQLAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWikiPagesInBaselineResponse> PolarionApiClient.Core.Generated.TrackerWebService.queryWikiPagesInBaselineAsync(PolarionApiClient.Core.Generated.queryWikiPagesInBaselineRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWikiPagesInBaselineResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.queryWikiPagesInBaselineAsync(PolarionApiClient.Core.Generated.Tracker.queryWikiPagesInBaselineRequest request)
         {
             return base.Channel.queryWikiPagesInBaselineAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWikiPagesInBaselineResponse> queryWikiPagesInBaselineAsync(string query, string sort, string baselineRevision, string[] fields, int resultsLimit)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWikiPagesInBaselineResponse> queryWikiPagesInBaselineAsync(string query, string sort, string baselineRevision, string[] fields, int resultsLimit)
         {
-            PolarionApiClient.Core.Generated.queryWikiPagesInBaselineRequest inValue = new PolarionApiClient.Core.Generated.queryWikiPagesInBaselineRequest();
+            PolarionApiClient.Core.Generated.Tracker.queryWikiPagesInBaselineRequest inValue = new PolarionApiClient.Core.Generated.Tracker.queryWikiPagesInBaselineRequest();
             inValue.query = query;
             inValue.sort = sort;
             inValue.baselineRevision = baselineRevision;
             inValue.fields = fields;
             inValue.resultsLimit = resultsLimit;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).queryWikiPagesInBaselineAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).queryWikiPagesInBaselineAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWikiPagesInBaselineBySQLResponse> PolarionApiClient.Core.Generated.TrackerWebService.queryWikiPagesInBaselineBySQLAsync(PolarionApiClient.Core.Generated.queryWikiPagesInBaselineBySQLRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWikiPagesInBaselineBySQLResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.queryWikiPagesInBaselineBySQLAsync(PolarionApiClient.Core.Generated.Tracker.queryWikiPagesInBaselineBySQLRequest request)
         {
             return base.Channel.queryWikiPagesInBaselineBySQLAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWikiPagesInBaselineBySQLResponse> queryWikiPagesInBaselineBySQLAsync(string sqlQuery, string baselineRevision, string[] fields)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWikiPagesInBaselineBySQLResponse> queryWikiPagesInBaselineBySQLAsync(string sqlQuery, string baselineRevision, string[] fields)
         {
-            PolarionApiClient.Core.Generated.queryWikiPagesInBaselineBySQLRequest inValue = new PolarionApiClient.Core.Generated.queryWikiPagesInBaselineBySQLRequest();
+            PolarionApiClient.Core.Generated.Tracker.queryWikiPagesInBaselineBySQLRequest inValue = new PolarionApiClient.Core.Generated.Tracker.queryWikiPagesInBaselineBySQLRequest();
             inValue.sqlQuery = sqlQuery;
             inValue.baselineRevision = baselineRevision;
             inValue.fields = fields;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).queryWikiPagesInBaselineBySQLAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).queryWikiPagesInBaselineBySQLAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWorkItemUrisResponse> PolarionApiClient.Core.Generated.TrackerWebService.queryWorkItemUrisAsync(PolarionApiClient.Core.Generated.queryWorkItemUrisRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWorkItemUrisResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.queryWorkItemUrisAsync(PolarionApiClient.Core.Generated.Tracker.queryWorkItemUrisRequest request)
         {
             return base.Channel.queryWorkItemUrisAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWorkItemUrisResponse> queryWorkItemUrisAsync(string query, string sort)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWorkItemUrisResponse> queryWorkItemUrisAsync(string query, string sort)
         {
-            PolarionApiClient.Core.Generated.queryWorkItemUrisRequest inValue = new PolarionApiClient.Core.Generated.queryWorkItemUrisRequest();
+            PolarionApiClient.Core.Generated.Tracker.queryWorkItemUrisRequest inValue = new PolarionApiClient.Core.Generated.Tracker.queryWorkItemUrisRequest();
             inValue.query = query;
             inValue.sort = sort;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).queryWorkItemUrisAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).queryWorkItemUrisAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWorkItemUrisBySQLResponse> PolarionApiClient.Core.Generated.TrackerWebService.queryWorkItemUrisBySQLAsync(PolarionApiClient.Core.Generated.queryWorkItemUrisBySQLRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWorkItemUrisBySQLResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.queryWorkItemUrisBySQLAsync(PolarionApiClient.Core.Generated.Tracker.queryWorkItemUrisBySQLRequest request)
         {
             return base.Channel.queryWorkItemUrisBySQLAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWorkItemUrisBySQLResponse> queryWorkItemUrisBySQLAsync(string sqlQuery)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWorkItemUrisBySQLResponse> queryWorkItemUrisBySQLAsync(string sqlQuery)
         {
-            PolarionApiClient.Core.Generated.queryWorkItemUrisBySQLRequest inValue = new PolarionApiClient.Core.Generated.queryWorkItemUrisBySQLRequest();
+            PolarionApiClient.Core.Generated.Tracker.queryWorkItemUrisBySQLRequest inValue = new PolarionApiClient.Core.Generated.Tracker.queryWorkItemUrisBySQLRequest();
             inValue.sqlQuery = sqlQuery;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).queryWorkItemUrisBySQLAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).queryWorkItemUrisBySQLAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWorkItemUrisInBaselineResponse> PolarionApiClient.Core.Generated.TrackerWebService.queryWorkItemUrisInBaselineAsync(PolarionApiClient.Core.Generated.queryWorkItemUrisInBaselineRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWorkItemUrisInBaselineResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.queryWorkItemUrisInBaselineAsync(PolarionApiClient.Core.Generated.Tracker.queryWorkItemUrisInBaselineRequest request)
         {
             return base.Channel.queryWorkItemUrisInBaselineAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWorkItemUrisInBaselineResponse> queryWorkItemUrisInBaselineAsync(string query, string sort, string baselineRevision)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWorkItemUrisInBaselineResponse> queryWorkItemUrisInBaselineAsync(string query, string sort, string baselineRevision)
         {
-            PolarionApiClient.Core.Generated.queryWorkItemUrisInBaselineRequest inValue = new PolarionApiClient.Core.Generated.queryWorkItemUrisInBaselineRequest();
+            PolarionApiClient.Core.Generated.Tracker.queryWorkItemUrisInBaselineRequest inValue = new PolarionApiClient.Core.Generated.Tracker.queryWorkItemUrisInBaselineRequest();
             inValue.query = query;
             inValue.sort = sort;
             inValue.baselineRevision = baselineRevision;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).queryWorkItemUrisInBaselineAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).queryWorkItemUrisInBaselineAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWorkItemUrisInBaselineBySQLResponse> PolarionApiClient.Core.Generated.TrackerWebService.queryWorkItemUrisInBaselineBySQLAsync(PolarionApiClient.Core.Generated.queryWorkItemUrisInBaselineBySQLRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWorkItemUrisInBaselineBySQLResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.queryWorkItemUrisInBaselineBySQLAsync(PolarionApiClient.Core.Generated.Tracker.queryWorkItemUrisInBaselineBySQLRequest request)
         {
             return base.Channel.queryWorkItemUrisInBaselineBySQLAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWorkItemUrisInBaselineBySQLResponse> queryWorkItemUrisInBaselineBySQLAsync(string sqlQuery, string baselineRevision)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWorkItemUrisInBaselineBySQLResponse> queryWorkItemUrisInBaselineBySQLAsync(string sqlQuery, string baselineRevision)
         {
-            PolarionApiClient.Core.Generated.queryWorkItemUrisInBaselineBySQLRequest inValue = new PolarionApiClient.Core.Generated.queryWorkItemUrisInBaselineBySQLRequest();
+            PolarionApiClient.Core.Generated.Tracker.queryWorkItemUrisInBaselineBySQLRequest inValue = new PolarionApiClient.Core.Generated.Tracker.queryWorkItemUrisInBaselineBySQLRequest();
             inValue.sqlQuery = sqlQuery;
             inValue.baselineRevision = baselineRevision;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).queryWorkItemUrisInBaselineBySQLAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).queryWorkItemUrisInBaselineBySQLAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWorkItemUrisInBaselineLimitedResponse> PolarionApiClient.Core.Generated.TrackerWebService.queryWorkItemUrisInBaselineLimitedAsync(PolarionApiClient.Core.Generated.queryWorkItemUrisInBaselineLimitedRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWorkItemUrisInBaselineLimitedResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.queryWorkItemUrisInBaselineLimitedAsync(PolarionApiClient.Core.Generated.Tracker.queryWorkItemUrisInBaselineLimitedRequest request)
         {
             return base.Channel.queryWorkItemUrisInBaselineLimitedAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWorkItemUrisInBaselineLimitedResponse> queryWorkItemUrisInBaselineLimitedAsync(string query, string sort, string baselineRevision, int resultsLimit)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWorkItemUrisInBaselineLimitedResponse> queryWorkItemUrisInBaselineLimitedAsync(string query, string sort, string baselineRevision, int resultsLimit)
         {
-            PolarionApiClient.Core.Generated.queryWorkItemUrisInBaselineLimitedRequest inValue = new PolarionApiClient.Core.Generated.queryWorkItemUrisInBaselineLimitedRequest();
+            PolarionApiClient.Core.Generated.Tracker.queryWorkItemUrisInBaselineLimitedRequest inValue = new PolarionApiClient.Core.Generated.Tracker.queryWorkItemUrisInBaselineLimitedRequest();
             inValue.query = query;
             inValue.sort = sort;
             inValue.baselineRevision = baselineRevision;
             inValue.resultsLimit = resultsLimit;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).queryWorkItemUrisInBaselineLimitedAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).queryWorkItemUrisInBaselineLimitedAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWorkItemUrisLimitedResponse> PolarionApiClient.Core.Generated.TrackerWebService.queryWorkItemUrisLimitedAsync(PolarionApiClient.Core.Generated.queryWorkItemUrisLimitedRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWorkItemUrisLimitedResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.queryWorkItemUrisLimitedAsync(PolarionApiClient.Core.Generated.Tracker.queryWorkItemUrisLimitedRequest request)
         {
             return base.Channel.queryWorkItemUrisLimitedAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWorkItemUrisLimitedResponse> queryWorkItemUrisLimitedAsync(string query, string sort, int resultsLimit)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWorkItemUrisLimitedResponse> queryWorkItemUrisLimitedAsync(string query, string sort, int resultsLimit)
         {
-            PolarionApiClient.Core.Generated.queryWorkItemUrisLimitedRequest inValue = new PolarionApiClient.Core.Generated.queryWorkItemUrisLimitedRequest();
+            PolarionApiClient.Core.Generated.Tracker.queryWorkItemUrisLimitedRequest inValue = new PolarionApiClient.Core.Generated.Tracker.queryWorkItemUrisLimitedRequest();
             inValue.query = query;
             inValue.sort = sort;
             inValue.resultsLimit = resultsLimit;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).queryWorkItemUrisLimitedAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).queryWorkItemUrisLimitedAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWorkItemsResponse> PolarionApiClient.Core.Generated.TrackerWebService.queryWorkItemsAsync(PolarionApiClient.Core.Generated.queryWorkItemsRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWorkItemsResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.queryWorkItemsAsync(PolarionApiClient.Core.Generated.Tracker.queryWorkItemsRequest request)
         {
             return base.Channel.queryWorkItemsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWorkItemsResponse> queryWorkItemsAsync(string query, string sort, string[] fields)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWorkItemsResponse> queryWorkItemsAsync(string query, string sort, string[] fields)
         {
-            PolarionApiClient.Core.Generated.queryWorkItemsRequest inValue = new PolarionApiClient.Core.Generated.queryWorkItemsRequest();
+            PolarionApiClient.Core.Generated.Tracker.queryWorkItemsRequest inValue = new PolarionApiClient.Core.Generated.Tracker.queryWorkItemsRequest();
             inValue.query = query;
             inValue.sort = sort;
             inValue.fields = fields;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).queryWorkItemsAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).queryWorkItemsAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWorkItemsBySQLResponse> PolarionApiClient.Core.Generated.TrackerWebService.queryWorkItemsBySQLAsync(PolarionApiClient.Core.Generated.queryWorkItemsBySQLRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWorkItemsBySQLResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.queryWorkItemsBySQLAsync(PolarionApiClient.Core.Generated.Tracker.queryWorkItemsBySQLRequest request)
         {
             return base.Channel.queryWorkItemsBySQLAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWorkItemsBySQLResponse> queryWorkItemsBySQLAsync(string sqlQuery, string[] fields)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWorkItemsBySQLResponse> queryWorkItemsBySQLAsync(string sqlQuery, string[] fields)
         {
-            PolarionApiClient.Core.Generated.queryWorkItemsBySQLRequest inValue = new PolarionApiClient.Core.Generated.queryWorkItemsBySQLRequest();
+            PolarionApiClient.Core.Generated.Tracker.queryWorkItemsBySQLRequest inValue = new PolarionApiClient.Core.Generated.Tracker.queryWorkItemsBySQLRequest();
             inValue.sqlQuery = sqlQuery;
             inValue.fields = fields;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).queryWorkItemsBySQLAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).queryWorkItemsBySQLAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWorkItemsInBaselineResponse> PolarionApiClient.Core.Generated.TrackerWebService.queryWorkItemsInBaselineAsync(PolarionApiClient.Core.Generated.queryWorkItemsInBaselineRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWorkItemsInBaselineResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.queryWorkItemsInBaselineAsync(PolarionApiClient.Core.Generated.Tracker.queryWorkItemsInBaselineRequest request)
         {
             return base.Channel.queryWorkItemsInBaselineAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWorkItemsInBaselineResponse> queryWorkItemsInBaselineAsync(string query, string sort, string baselineRevision, string[] fields)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWorkItemsInBaselineResponse> queryWorkItemsInBaselineAsync(string query, string sort, string baselineRevision, string[] fields)
         {
-            PolarionApiClient.Core.Generated.queryWorkItemsInBaselineRequest inValue = new PolarionApiClient.Core.Generated.queryWorkItemsInBaselineRequest();
+            PolarionApiClient.Core.Generated.Tracker.queryWorkItemsInBaselineRequest inValue = new PolarionApiClient.Core.Generated.Tracker.queryWorkItemsInBaselineRequest();
             inValue.query = query;
             inValue.sort = sort;
             inValue.baselineRevision = baselineRevision;
             inValue.fields = fields;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).queryWorkItemsInBaselineAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).queryWorkItemsInBaselineAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWorkItemsInBaselineBySQLResponse> PolarionApiClient.Core.Generated.TrackerWebService.queryWorkItemsInBaselineBySQLAsync(PolarionApiClient.Core.Generated.queryWorkItemsInBaselineBySQLRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWorkItemsInBaselineBySQLResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.queryWorkItemsInBaselineBySQLAsync(PolarionApiClient.Core.Generated.Tracker.queryWorkItemsInBaselineBySQLRequest request)
         {
             return base.Channel.queryWorkItemsInBaselineBySQLAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWorkItemsInBaselineBySQLResponse> queryWorkItemsInBaselineBySQLAsync(string sqlQuery, string baselineRevision, string[] fields)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWorkItemsInBaselineBySQLResponse> queryWorkItemsInBaselineBySQLAsync(string sqlQuery, string baselineRevision, string[] fields)
         {
-            PolarionApiClient.Core.Generated.queryWorkItemsInBaselineBySQLRequest inValue = new PolarionApiClient.Core.Generated.queryWorkItemsInBaselineBySQLRequest();
+            PolarionApiClient.Core.Generated.Tracker.queryWorkItemsInBaselineBySQLRequest inValue = new PolarionApiClient.Core.Generated.Tracker.queryWorkItemsInBaselineBySQLRequest();
             inValue.sqlQuery = sqlQuery;
             inValue.baselineRevision = baselineRevision;
             inValue.fields = fields;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).queryWorkItemsInBaselineBySQLAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).queryWorkItemsInBaselineBySQLAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWorkItemsInBaselineLimitedResponse> PolarionApiClient.Core.Generated.TrackerWebService.queryWorkItemsInBaselineLimitedAsync(PolarionApiClient.Core.Generated.queryWorkItemsInBaselineLimitedRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWorkItemsInBaselineLimitedResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.queryWorkItemsInBaselineLimitedAsync(PolarionApiClient.Core.Generated.Tracker.queryWorkItemsInBaselineLimitedRequest request)
         {
             return base.Channel.queryWorkItemsInBaselineLimitedAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWorkItemsInBaselineLimitedResponse> queryWorkItemsInBaselineLimitedAsync(string query, string sort, string baselineRevision, string[] fields, int resultsLimit)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWorkItemsInBaselineLimitedResponse> queryWorkItemsInBaselineLimitedAsync(string query, string sort, string baselineRevision, string[] fields, int resultsLimit)
         {
-            PolarionApiClient.Core.Generated.queryWorkItemsInBaselineLimitedRequest inValue = new PolarionApiClient.Core.Generated.queryWorkItemsInBaselineLimitedRequest();
+            PolarionApiClient.Core.Generated.Tracker.queryWorkItemsInBaselineLimitedRequest inValue = new PolarionApiClient.Core.Generated.Tracker.queryWorkItemsInBaselineLimitedRequest();
             inValue.query = query;
             inValue.sort = sort;
             inValue.baselineRevision = baselineRevision;
             inValue.fields = fields;
             inValue.resultsLimit = resultsLimit;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).queryWorkItemsInBaselineLimitedAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).queryWorkItemsInBaselineLimitedAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWorkItemsInRevisionResponse> PolarionApiClient.Core.Generated.TrackerWebService.queryWorkItemsInRevisionAsync(PolarionApiClient.Core.Generated.queryWorkItemsInRevisionRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWorkItemsInRevisionResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.queryWorkItemsInRevisionAsync(PolarionApiClient.Core.Generated.Tracker.queryWorkItemsInRevisionRequest request)
         {
             return base.Channel.queryWorkItemsInRevisionAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWorkItemsInRevisionResponse> queryWorkItemsInRevisionAsync(string query, string sort, string revision, string[] fields)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWorkItemsInRevisionResponse> queryWorkItemsInRevisionAsync(string query, string sort, string revision, string[] fields)
         {
-            PolarionApiClient.Core.Generated.queryWorkItemsInRevisionRequest inValue = new PolarionApiClient.Core.Generated.queryWorkItemsInRevisionRequest();
+            PolarionApiClient.Core.Generated.Tracker.queryWorkItemsInRevisionRequest inValue = new PolarionApiClient.Core.Generated.Tracker.queryWorkItemsInRevisionRequest();
             inValue.query = query;
             inValue.sort = sort;
             inValue.revision = revision;
             inValue.fields = fields;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).queryWorkItemsInRevisionAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).queryWorkItemsInRevisionAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWorkItemsInRevisionLimitedResponse> PolarionApiClient.Core.Generated.TrackerWebService.queryWorkItemsInRevisionLimitedAsync(PolarionApiClient.Core.Generated.queryWorkItemsInRevisionLimitedRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWorkItemsInRevisionLimitedResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.queryWorkItemsInRevisionLimitedAsync(PolarionApiClient.Core.Generated.Tracker.queryWorkItemsInRevisionLimitedRequest request)
         {
             return base.Channel.queryWorkItemsInRevisionLimitedAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWorkItemsInRevisionLimitedResponse> queryWorkItemsInRevisionLimitedAsync(string query, string sort, string revision, string[] fields, int resultsLimit)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWorkItemsInRevisionLimitedResponse> queryWorkItemsInRevisionLimitedAsync(string query, string sort, string revision, string[] fields, int resultsLimit)
         {
-            PolarionApiClient.Core.Generated.queryWorkItemsInRevisionLimitedRequest inValue = new PolarionApiClient.Core.Generated.queryWorkItemsInRevisionLimitedRequest();
+            PolarionApiClient.Core.Generated.Tracker.queryWorkItemsInRevisionLimitedRequest inValue = new PolarionApiClient.Core.Generated.Tracker.queryWorkItemsInRevisionLimitedRequest();
             inValue.query = query;
             inValue.sort = sort;
             inValue.revision = revision;
             inValue.fields = fields;
             inValue.resultsLimit = resultsLimit;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).queryWorkItemsInRevisionLimitedAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).queryWorkItemsInRevisionLimitedAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWorkItemsLimitedResponse> PolarionApiClient.Core.Generated.TrackerWebService.queryWorkItemsLimitedAsync(PolarionApiClient.Core.Generated.queryWorkItemsLimitedRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWorkItemsLimitedResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.queryWorkItemsLimitedAsync(PolarionApiClient.Core.Generated.Tracker.queryWorkItemsLimitedRequest request)
         {
             return base.Channel.queryWorkItemsLimitedAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.queryWorkItemsLimitedResponse> queryWorkItemsLimitedAsync(string query, string sort, string[] fields, int resultsLimit)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.queryWorkItemsLimitedResponse> queryWorkItemsLimitedAsync(string query, string sort, string[] fields, int resultsLimit)
         {
-            PolarionApiClient.Core.Generated.queryWorkItemsLimitedRequest inValue = new PolarionApiClient.Core.Generated.queryWorkItemsLimitedRequest();
+            PolarionApiClient.Core.Generated.Tracker.queryWorkItemsLimitedRequest inValue = new PolarionApiClient.Core.Generated.Tracker.queryWorkItemsLimitedRequest();
             inValue.query = query;
             inValue.sort = sort;
             inValue.fields = fields;
             inValue.resultsLimit = resultsLimit;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).queryWorkItemsLimitedAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).queryWorkItemsLimitedAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.removeApproveeResponse> PolarionApiClient.Core.Generated.TrackerWebService.removeApproveeAsync(PolarionApiClient.Core.Generated.removeApproveeRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.removeApproveeResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.removeApproveeAsync(PolarionApiClient.Core.Generated.Tracker.removeApproveeRequest request)
         {
             return base.Channel.removeApproveeAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.removeApproveeResponse> removeApproveeAsync(string workitemURI, string approveeId)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.removeApproveeResponse> removeApproveeAsync(string workitemURI, string approveeId)
         {
-            PolarionApiClient.Core.Generated.removeApproveeRequest inValue = new PolarionApiClient.Core.Generated.removeApproveeRequest();
+            PolarionApiClient.Core.Generated.Tracker.removeApproveeRequest inValue = new PolarionApiClient.Core.Generated.Tracker.removeApproveeRequest();
             inValue.workitemURI = workitemURI;
             inValue.approveeId = approveeId;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).removeApproveeAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).removeApproveeAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.removeAssigneeResponse> PolarionApiClient.Core.Generated.TrackerWebService.removeAssigneeAsync(PolarionApiClient.Core.Generated.removeAssigneeRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.removeAssigneeResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.removeAssigneeAsync(PolarionApiClient.Core.Generated.Tracker.removeAssigneeRequest request)
         {
             return base.Channel.removeAssigneeAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.removeAssigneeResponse> removeAssigneeAsync(string workitemURI, string assigneeId)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.removeAssigneeResponse> removeAssigneeAsync(string workitemURI, string assigneeId)
         {
-            PolarionApiClient.Core.Generated.removeAssigneeRequest inValue = new PolarionApiClient.Core.Generated.removeAssigneeRequest();
+            PolarionApiClient.Core.Generated.Tracker.removeAssigneeRequest inValue = new PolarionApiClient.Core.Generated.Tracker.removeAssigneeRequest();
             inValue.workitemURI = workitemURI;
             inValue.assigneeId = assigneeId;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).removeAssigneeAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).removeAssigneeAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.removeCategoryResponse> PolarionApiClient.Core.Generated.TrackerWebService.removeCategoryAsync(PolarionApiClient.Core.Generated.removeCategoryRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.removeCategoryResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.removeCategoryAsync(PolarionApiClient.Core.Generated.Tracker.removeCategoryRequest request)
         {
             return base.Channel.removeCategoryAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.removeCategoryResponse> removeCategoryAsync(string workitemURI, string categoryId)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.removeCategoryResponse> removeCategoryAsync(string workitemURI, string categoryId)
         {
-            PolarionApiClient.Core.Generated.removeCategoryRequest inValue = new PolarionApiClient.Core.Generated.removeCategoryRequest();
+            PolarionApiClient.Core.Generated.Tracker.removeCategoryRequest inValue = new PolarionApiClient.Core.Generated.Tracker.removeCategoryRequest();
             inValue.workitemURI = workitemURI;
             inValue.categoryId = categoryId;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).removeCategoryAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).removeCategoryAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.removeExternalLinkedRevisionResponse> PolarionApiClient.Core.Generated.TrackerWebService.removeExternalLinkedRevisionAsync(PolarionApiClient.Core.Generated.removeExternalLinkedRevisionRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.removeExternalLinkedRevisionResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.removeExternalLinkedRevisionAsync(PolarionApiClient.Core.Generated.Tracker.removeExternalLinkedRevisionRequest request)
         {
             return base.Channel.removeExternalLinkedRevisionAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.removeExternalLinkedRevisionResponse> removeExternalLinkedRevisionAsync(string workitemURI, string repositoryName, string revisionId)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.removeExternalLinkedRevisionResponse> removeExternalLinkedRevisionAsync(string workitemURI, string repositoryName, string revisionId)
         {
-            PolarionApiClient.Core.Generated.removeExternalLinkedRevisionRequest inValue = new PolarionApiClient.Core.Generated.removeExternalLinkedRevisionRequest();
+            PolarionApiClient.Core.Generated.Tracker.removeExternalLinkedRevisionRequest inValue = new PolarionApiClient.Core.Generated.Tracker.removeExternalLinkedRevisionRequest();
             inValue.workitemURI = workitemURI;
             inValue.repositoryName = repositoryName;
             inValue.revisionId = revisionId;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).removeExternalLinkedRevisionAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).removeExternalLinkedRevisionAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.removeExternallyLinkedItemResponse> PolarionApiClient.Core.Generated.TrackerWebService.removeExternallyLinkedItemAsync(PolarionApiClient.Core.Generated.removeExternallyLinkedItemRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.removeExternallyLinkedItemResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.removeExternallyLinkedItemAsync(PolarionApiClient.Core.Generated.Tracker.removeExternallyLinkedItemRequest request)
         {
             return base.Channel.removeExternallyLinkedItemAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.removeExternallyLinkedItemResponse> removeExternallyLinkedItemAsync(string workitemURI, string linkedExternalWorkitemURI, PolarionApiClient.Core.Generated.EnumOptionId role)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.removeExternallyLinkedItemResponse> removeExternallyLinkedItemAsync(string workitemURI, string linkedExternalWorkitemURI, PolarionApiClient.Core.Generated.Tracker.EnumOptionId role)
         {
-            PolarionApiClient.Core.Generated.removeExternallyLinkedItemRequest inValue = new PolarionApiClient.Core.Generated.removeExternallyLinkedItemRequest();
+            PolarionApiClient.Core.Generated.Tracker.removeExternallyLinkedItemRequest inValue = new PolarionApiClient.Core.Generated.Tracker.removeExternallyLinkedItemRequest();
             inValue.workitemURI = workitemURI;
             inValue.linkedExternalWorkitemURI = linkedExternalWorkitemURI;
             inValue.role = role;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).removeExternallyLinkedItemAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).removeExternallyLinkedItemAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.removeHyperlinkResponse> PolarionApiClient.Core.Generated.TrackerWebService.removeHyperlinkAsync(PolarionApiClient.Core.Generated.removeHyperlinkRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.removeHyperlinkResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.removeHyperlinkAsync(PolarionApiClient.Core.Generated.Tracker.removeHyperlinkRequest request)
         {
             return base.Channel.removeHyperlinkAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.removeHyperlinkResponse> removeHyperlinkAsync(string workitemURI, string url)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.removeHyperlinkResponse> removeHyperlinkAsync(string workitemURI, string url)
         {
-            PolarionApiClient.Core.Generated.removeHyperlinkRequest inValue = new PolarionApiClient.Core.Generated.removeHyperlinkRequest();
+            PolarionApiClient.Core.Generated.Tracker.removeHyperlinkRequest inValue = new PolarionApiClient.Core.Generated.Tracker.removeHyperlinkRequest();
             inValue.workitemURI = workitemURI;
             inValue.url = url;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).removeHyperlinkAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).removeHyperlinkAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.removeLinkedItemResponse> PolarionApiClient.Core.Generated.TrackerWebService.removeLinkedItemAsync(PolarionApiClient.Core.Generated.removeLinkedItemRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.removeLinkedItemResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.removeLinkedItemAsync(PolarionApiClient.Core.Generated.Tracker.removeLinkedItemRequest request)
         {
             return base.Channel.removeLinkedItemAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.removeLinkedItemResponse> removeLinkedItemAsync(string workitemURI, string linkedItemURI, PolarionApiClient.Core.Generated.EnumOptionId role)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.removeLinkedItemResponse> removeLinkedItemAsync(string workitemURI, string linkedItemURI, PolarionApiClient.Core.Generated.Tracker.EnumOptionId role)
         {
-            PolarionApiClient.Core.Generated.removeLinkedItemRequest inValue = new PolarionApiClient.Core.Generated.removeLinkedItemRequest();
+            PolarionApiClient.Core.Generated.Tracker.removeLinkedItemRequest inValue = new PolarionApiClient.Core.Generated.Tracker.removeLinkedItemRequest();
             inValue.workitemURI = workitemURI;
             inValue.linkedItemURI = linkedItemURI;
             inValue.role = role;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).removeLinkedItemAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).removeLinkedItemAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.removeLinkedRevisionResponse> PolarionApiClient.Core.Generated.TrackerWebService.removeLinkedRevisionAsync(PolarionApiClient.Core.Generated.removeLinkedRevisionRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.removeLinkedRevisionResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.removeLinkedRevisionAsync(PolarionApiClient.Core.Generated.Tracker.removeLinkedRevisionRequest request)
         {
             return base.Channel.removeLinkedRevisionAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.removeLinkedRevisionResponse> removeLinkedRevisionAsync(string workitemURI, string revisionId)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.removeLinkedRevisionResponse> removeLinkedRevisionAsync(string workitemURI, string revisionId)
         {
-            PolarionApiClient.Core.Generated.removeLinkedRevisionRequest inValue = new PolarionApiClient.Core.Generated.removeLinkedRevisionRequest();
+            PolarionApiClient.Core.Generated.Tracker.removeLinkedRevisionRequest inValue = new PolarionApiClient.Core.Generated.Tracker.removeLinkedRevisionRequest();
             inValue.workitemURI = workitemURI;
             inValue.revisionId = revisionId;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).removeLinkedRevisionAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).removeLinkedRevisionAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.removePlaningConstraintResponse> PolarionApiClient.Core.Generated.TrackerWebService.removePlaningConstraintAsync(PolarionApiClient.Core.Generated.removePlaningConstraintRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.removePlaningConstraintResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.removePlaningConstraintAsync(PolarionApiClient.Core.Generated.Tracker.removePlaningConstraintRequest request)
         {
             return base.Channel.removePlaningConstraintAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.removePlaningConstraintResponse> removePlaningConstraintAsync(string workitemURI, System.DateTime date, PolarionApiClient.Core.Generated.EnumOptionId constraint)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.removePlaningConstraintResponse> removePlaningConstraintAsync(string workitemURI, System.DateTime date, PolarionApiClient.Core.Generated.Tracker.EnumOptionId constraint)
         {
-            PolarionApiClient.Core.Generated.removePlaningConstraintRequest inValue = new PolarionApiClient.Core.Generated.removePlaningConstraintRequest();
+            PolarionApiClient.Core.Generated.Tracker.removePlaningConstraintRequest inValue = new PolarionApiClient.Core.Generated.Tracker.removePlaningConstraintRequest();
             inValue.workitemURI = workitemURI;
             inValue.date = date;
             inValue.constraint = constraint;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).removePlaningConstraintAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).removePlaningConstraintAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.resetWorkflowResponse> PolarionApiClient.Core.Generated.TrackerWebService.resetWorkflowAsync(PolarionApiClient.Core.Generated.resetWorkflowRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.resetWorkflowResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.resetWorkflowAsync(PolarionApiClient.Core.Generated.Tracker.resetWorkflowRequest request)
         {
             return base.Channel.resetWorkflowAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.resetWorkflowResponse> resetWorkflowAsync(string workflowObjectURI)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.resetWorkflowResponse> resetWorkflowAsync(string workflowObjectURI)
         {
-            PolarionApiClient.Core.Generated.resetWorkflowRequest inValue = new PolarionApiClient.Core.Generated.resetWorkflowRequest();
+            PolarionApiClient.Core.Generated.Tracker.resetWorkflowRequest inValue = new PolarionApiClient.Core.Generated.Tracker.resetWorkflowRequest();
             inValue.workflowObjectURI = workflowObjectURI;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).resetWorkflowAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).resetWorkflowAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.reuseDocumentResponse> PolarionApiClient.Core.Generated.TrackerWebService.reuseDocumentAsync(PolarionApiClient.Core.Generated.reuseDocumentRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.reuseDocumentResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.reuseDocumentAsync(PolarionApiClient.Core.Generated.Tracker.reuseDocumentRequest request)
         {
             return base.Channel.reuseDocumentAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.reuseDocumentResponse> reuseDocumentAsync(string sourceURI, string targetProjectId, string targetLocation, string targetName, string targetTitle, bool updateTitleInDocument, PolarionApiClient.Core.Generated.EnumOptionId linkRole, string[] derivedFields)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.reuseDocumentResponse> reuseDocumentAsync(string sourceURI, string targetProjectId, string targetLocation, string targetName, string targetTitle, bool updateTitleInDocument, PolarionApiClient.Core.Generated.Tracker.EnumOptionId linkRole, string[] derivedFields)
         {
-            PolarionApiClient.Core.Generated.reuseDocumentRequest inValue = new PolarionApiClient.Core.Generated.reuseDocumentRequest();
+            PolarionApiClient.Core.Generated.Tracker.reuseDocumentRequest inValue = new PolarionApiClient.Core.Generated.Tracker.reuseDocumentRequest();
             inValue.sourceURI = sourceURI;
             inValue.targetProjectId = targetProjectId;
             inValue.targetLocation = targetLocation;
@@ -18119,18 +18112,18 @@ namespace PolarionApiClient.Core.Generated
             inValue.updateTitleInDocument = updateTitleInDocument;
             inValue.linkRole = linkRole;
             inValue.derivedFields = derivedFields;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).reuseDocumentAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).reuseDocumentAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.reuseModuleResponse> PolarionApiClient.Core.Generated.TrackerWebService.reuseModuleAsync(PolarionApiClient.Core.Generated.reuseModuleRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.reuseModuleResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.reuseModuleAsync(PolarionApiClient.Core.Generated.Tracker.reuseModuleRequest request)
         {
             return base.Channel.reuseModuleAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.reuseModuleResponse> reuseModuleAsync(string sourceURI, string targetProjectId, string targetLocation, string targetName, PolarionApiClient.Core.Generated.EnumOptionId linkRole, string[] fields, string[] exceptFields, string[] derivedFields)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.reuseModuleResponse> reuseModuleAsync(string sourceURI, string targetProjectId, string targetLocation, string targetName, PolarionApiClient.Core.Generated.Tracker.EnumOptionId linkRole, string[] fields, string[] exceptFields, string[] derivedFields)
         {
-            PolarionApiClient.Core.Generated.reuseModuleRequest inValue = new PolarionApiClient.Core.Generated.reuseModuleRequest();
+            PolarionApiClient.Core.Generated.Tracker.reuseModuleRequest inValue = new PolarionApiClient.Core.Generated.Tracker.reuseModuleRequest();
             inValue.sourceURI = sourceURI;
             inValue.targetProjectId = targetProjectId;
             inValue.targetLocation = targetLocation;
@@ -18139,191 +18132,191 @@ namespace PolarionApiClient.Core.Generated
             inValue.fields = fields;
             inValue.exceptFields = exceptFields;
             inValue.derivedFields = derivedFields;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).reuseModuleAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).reuseModuleAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.setCommentTagsResponse> PolarionApiClient.Core.Generated.TrackerWebService.setCommentTagsAsync(PolarionApiClient.Core.Generated.setCommentTagsRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.setCommentTagsResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.setCommentTagsAsync(PolarionApiClient.Core.Generated.Tracker.setCommentTagsRequest request)
         {
             return base.Channel.setCommentTagsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.setCommentTagsResponse> setCommentTagsAsync(string commentURI, PolarionApiClient.Core.Generated.EnumOptionId[] tags)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.setCommentTagsResponse> setCommentTagsAsync(string commentURI, PolarionApiClient.Core.Generated.Tracker.EnumOptionId[] tags)
         {
-            PolarionApiClient.Core.Generated.setCommentTagsRequest inValue = new PolarionApiClient.Core.Generated.setCommentTagsRequest();
+            PolarionApiClient.Core.Generated.Tracker.setCommentTagsRequest inValue = new PolarionApiClient.Core.Generated.Tracker.setCommentTagsRequest();
             inValue.commentURI = commentURI;
             inValue.tags = tags;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).setCommentTagsAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).setCommentTagsAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.setCustomFieldResponse> PolarionApiClient.Core.Generated.TrackerWebService.setCustomFieldAsync(PolarionApiClient.Core.Generated.setCustomFieldRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.setCustomFieldResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.setCustomFieldAsync(PolarionApiClient.Core.Generated.Tracker.setCustomFieldRequest request)
         {
             return base.Channel.setCustomFieldAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.setCustomFieldResponse> setCustomFieldAsync(PolarionApiClient.Core.Generated.CustomField customField)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.setCustomFieldResponse> setCustomFieldAsync(PolarionApiClient.Core.Generated.Tracker.CustomField customField)
         {
-            PolarionApiClient.Core.Generated.setCustomFieldRequest inValue = new PolarionApiClient.Core.Generated.setCustomFieldRequest();
+            PolarionApiClient.Core.Generated.Tracker.setCustomFieldRequest inValue = new PolarionApiClient.Core.Generated.Tracker.setCustomFieldRequest();
             inValue.customField = customField;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).setCustomFieldAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).setCustomFieldAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.setFieldsNullResponse> PolarionApiClient.Core.Generated.TrackerWebService.setFieldsNullAsync(PolarionApiClient.Core.Generated.setFieldsNullRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.setFieldsNullResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.setFieldsNullAsync(PolarionApiClient.Core.Generated.Tracker.setFieldsNullRequest request)
         {
             return base.Channel.setFieldsNullAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.setFieldsNullResponse> setFieldsNullAsync(string workitemURI, string[] fields)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.setFieldsNullResponse> setFieldsNullAsync(string workitemURI, string[] fields)
         {
-            PolarionApiClient.Core.Generated.setFieldsNullRequest inValue = new PolarionApiClient.Core.Generated.setFieldsNullRequest();
+            PolarionApiClient.Core.Generated.Tracker.setFieldsNullRequest inValue = new PolarionApiClient.Core.Generated.Tracker.setFieldsNullRequest();
             inValue.workitemURI = workitemURI;
             inValue.fields = fields;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).setFieldsNullAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).setFieldsNullAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.setLocalizedWorkItemDescriptionResponse> PolarionApiClient.Core.Generated.TrackerWebService.setLocalizedWorkItemDescriptionAsync(PolarionApiClient.Core.Generated.setLocalizedWorkItemDescriptionRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.setLocalizedWorkItemDescriptionResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.setLocalizedWorkItemDescriptionAsync(PolarionApiClient.Core.Generated.Tracker.setLocalizedWorkItemDescriptionRequest request)
         {
             return base.Channel.setLocalizedWorkItemDescriptionAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.setLocalizedWorkItemDescriptionResponse> setLocalizedWorkItemDescriptionAsync(string uri, string language, PolarionApiClient.Core.Generated.Text description)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.setLocalizedWorkItemDescriptionResponse> setLocalizedWorkItemDescriptionAsync(string uri, string language, PolarionApiClient.Core.Generated.Tracker.Text description)
         {
-            PolarionApiClient.Core.Generated.setLocalizedWorkItemDescriptionRequest inValue = new PolarionApiClient.Core.Generated.setLocalizedWorkItemDescriptionRequest();
+            PolarionApiClient.Core.Generated.Tracker.setLocalizedWorkItemDescriptionRequest inValue = new PolarionApiClient.Core.Generated.Tracker.setLocalizedWorkItemDescriptionRequest();
             inValue.uri = uri;
             inValue.language = language;
             inValue.description = description;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).setLocalizedWorkItemDescriptionAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).setLocalizedWorkItemDescriptionAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.setLocalizedWorkItemTitleResponse> PolarionApiClient.Core.Generated.TrackerWebService.setLocalizedWorkItemTitleAsync(PolarionApiClient.Core.Generated.setLocalizedWorkItemTitleRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.setLocalizedWorkItemTitleResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.setLocalizedWorkItemTitleAsync(PolarionApiClient.Core.Generated.Tracker.setLocalizedWorkItemTitleRequest request)
         {
             return base.Channel.setLocalizedWorkItemTitleAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.setLocalizedWorkItemTitleResponse> setLocalizedWorkItemTitleAsync(string uri, string language, string title)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.setLocalizedWorkItemTitleResponse> setLocalizedWorkItemTitleAsync(string uri, string language, string title)
         {
-            PolarionApiClient.Core.Generated.setLocalizedWorkItemTitleRequest inValue = new PolarionApiClient.Core.Generated.setLocalizedWorkItemTitleRequest();
+            PolarionApiClient.Core.Generated.Tracker.setLocalizedWorkItemTitleRequest inValue = new PolarionApiClient.Core.Generated.Tracker.setLocalizedWorkItemTitleRequest();
             inValue.uri = uri;
             inValue.language = language;
             inValue.title = title;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).setLocalizedWorkItemTitleAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).setLocalizedWorkItemTitleAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.setResolvedCommentResponse> PolarionApiClient.Core.Generated.TrackerWebService.setResolvedCommentAsync(PolarionApiClient.Core.Generated.setResolvedCommentRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.setResolvedCommentResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.setResolvedCommentAsync(PolarionApiClient.Core.Generated.Tracker.setResolvedCommentRequest request)
         {
             return base.Channel.setResolvedCommentAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.setResolvedCommentResponse> setResolvedCommentAsync(string commentURI, bool resolved)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.setResolvedCommentResponse> setResolvedCommentAsync(string commentURI, bool resolved)
         {
-            PolarionApiClient.Core.Generated.setResolvedCommentRequest inValue = new PolarionApiClient.Core.Generated.setResolvedCommentRequest();
+            PolarionApiClient.Core.Generated.Tracker.setResolvedCommentRequest inValue = new PolarionApiClient.Core.Generated.Tracker.setResolvedCommentRequest();
             inValue.commentURI = commentURI;
             inValue.resolved = resolved;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).setResolvedCommentAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).setResolvedCommentAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.updateAttachmentResponse> PolarionApiClient.Core.Generated.TrackerWebService.updateAttachmentAsync(PolarionApiClient.Core.Generated.updateAttachmentRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.updateAttachmentResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.updateAttachmentAsync(PolarionApiClient.Core.Generated.Tracker.updateAttachmentRequest request)
         {
             return base.Channel.updateAttachmentAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.updateAttachmentResponse> updateAttachmentAsync(string workitemURI, string id, string fileName, string title, byte[] data)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.updateAttachmentResponse> updateAttachmentAsync(string workitemURI, string id, string fileName, string title, byte[] data)
         {
-            PolarionApiClient.Core.Generated.updateAttachmentRequest inValue = new PolarionApiClient.Core.Generated.updateAttachmentRequest();
+            PolarionApiClient.Core.Generated.Tracker.updateAttachmentRequest inValue = new PolarionApiClient.Core.Generated.Tracker.updateAttachmentRequest();
             inValue.workitemURI = workitemURI;
             inValue.id = id;
             inValue.fileName = fileName;
             inValue.title = title;
             inValue.data = data;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).updateAttachmentAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).updateAttachmentAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.updateBaselineResponse> PolarionApiClient.Core.Generated.TrackerWebService.updateBaselineAsync(PolarionApiClient.Core.Generated.updateBaselineRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.updateBaselineResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.updateBaselineAsync(PolarionApiClient.Core.Generated.Tracker.updateBaselineRequest request)
         {
             return base.Channel.updateBaselineAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.updateBaselineResponse> updateBaselineAsync(PolarionApiClient.Core.Generated.Baseline baseline)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.updateBaselineResponse> updateBaselineAsync(PolarionApiClient.Core.Generated.Tracker.Baseline baseline)
         {
-            PolarionApiClient.Core.Generated.updateBaselineRequest inValue = new PolarionApiClient.Core.Generated.updateBaselineRequest();
+            PolarionApiClient.Core.Generated.Tracker.updateBaselineRequest inValue = new PolarionApiClient.Core.Generated.Tracker.updateBaselineRequest();
             inValue.baseline = baseline;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).updateBaselineAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).updateBaselineAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.updateDerivedDocumentResponse> PolarionApiClient.Core.Generated.TrackerWebService.updateDerivedDocumentAsync(PolarionApiClient.Core.Generated.updateDerivedDocumentRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.updateDerivedDocumentResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.updateDerivedDocumentAsync(PolarionApiClient.Core.Generated.Tracker.updateDerivedDocumentRequest request)
         {
             return base.Channel.updateDerivedDocumentAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.updateDerivedDocumentResponse> updateDerivedDocumentAsync(string documentURI, string revision, bool autoSuspect)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.updateDerivedDocumentResponse> updateDerivedDocumentAsync(string documentURI, string revision, bool autoSuspect)
         {
-            PolarionApiClient.Core.Generated.updateDerivedDocumentRequest inValue = new PolarionApiClient.Core.Generated.updateDerivedDocumentRequest();
+            PolarionApiClient.Core.Generated.Tracker.updateDerivedDocumentRequest inValue = new PolarionApiClient.Core.Generated.Tracker.updateDerivedDocumentRequest();
             inValue.documentURI = documentURI;
             inValue.revision = revision;
             inValue.autoSuspect = autoSuspect;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).updateDerivedDocumentAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).updateDerivedDocumentAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.updateDerivedModuleResponse> PolarionApiClient.Core.Generated.TrackerWebService.updateDerivedModuleAsync(PolarionApiClient.Core.Generated.updateDerivedModuleRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.updateDerivedModuleResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.updateDerivedModuleAsync(PolarionApiClient.Core.Generated.Tracker.updateDerivedModuleRequest request)
         {
             return base.Channel.updateDerivedModuleAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.updateDerivedModuleResponse> updateDerivedModuleAsync(string moduleURI, string revision)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.updateDerivedModuleResponse> updateDerivedModuleAsync(string moduleURI, string revision)
         {
-            PolarionApiClient.Core.Generated.updateDerivedModuleRequest inValue = new PolarionApiClient.Core.Generated.updateDerivedModuleRequest();
+            PolarionApiClient.Core.Generated.Tracker.updateDerivedModuleRequest inValue = new PolarionApiClient.Core.Generated.Tracker.updateDerivedModuleRequest();
             inValue.moduleURI = moduleURI;
             inValue.revision = revision;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).updateDerivedModuleAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).updateDerivedModuleAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.updateModuleResponse> PolarionApiClient.Core.Generated.TrackerWebService.updateModuleAsync(PolarionApiClient.Core.Generated.updateModuleRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.updateModuleResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.updateModuleAsync(PolarionApiClient.Core.Generated.Tracker.updateModuleRequest request)
         {
             return base.Channel.updateModuleAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.updateModuleResponse> updateModuleAsync(PolarionApiClient.Core.Generated.Module module)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.updateModuleResponse> updateModuleAsync(PolarionApiClient.Core.Generated.Tracker.Module module)
         {
-            PolarionApiClient.Core.Generated.updateModuleRequest inValue = new PolarionApiClient.Core.Generated.updateModuleRequest();
+            PolarionApiClient.Core.Generated.Tracker.updateModuleRequest inValue = new PolarionApiClient.Core.Generated.Tracker.updateModuleRequest();
             inValue.module = module;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).updateModuleAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).updateModuleAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.updateTitleHeadingInDocumentResponse> PolarionApiClient.Core.Generated.TrackerWebService.updateTitleHeadingInDocumentAsync(PolarionApiClient.Core.Generated.updateTitleHeadingInDocumentRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.updateTitleHeadingInDocumentResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.updateTitleHeadingInDocumentAsync(PolarionApiClient.Core.Generated.Tracker.updateTitleHeadingInDocumentRequest request)
         {
             return base.Channel.updateTitleHeadingInDocumentAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.updateTitleHeadingInDocumentResponse> updateTitleHeadingInDocumentAsync(string documentURI, string title)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.updateTitleHeadingInDocumentResponse> updateTitleHeadingInDocumentAsync(string documentURI, string title)
         {
-            PolarionApiClient.Core.Generated.updateTitleHeadingInDocumentRequest inValue = new PolarionApiClient.Core.Generated.updateTitleHeadingInDocumentRequest();
+            PolarionApiClient.Core.Generated.Tracker.updateTitleHeadingInDocumentRequest inValue = new PolarionApiClient.Core.Generated.Tracker.updateTitleHeadingInDocumentRequest();
             inValue.documentURI = documentURI;
             inValue.title = title;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).updateTitleHeadingInDocumentAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).updateTitleHeadingInDocumentAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.updateWorkItemResponse> PolarionApiClient.Core.Generated.TrackerWebService.updateWorkItemAsync(PolarionApiClient.Core.Generated.updateWorkItemRequest request)
+        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.updateWorkItemResponse> PolarionApiClient.Core.Generated.Tracker.TrackerWebService.updateWorkItemAsync(PolarionApiClient.Core.Generated.Tracker.updateWorkItemRequest request)
         {
             return base.Channel.updateWorkItemAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.updateWorkItemResponse> updateWorkItemAsync(PolarionApiClient.Core.Generated.WorkItem content)
+        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Tracker.updateWorkItemResponse> updateWorkItemAsync(PolarionApiClient.Core.Generated.Tracker.WorkItem content)
         {
-            PolarionApiClient.Core.Generated.updateWorkItemRequest inValue = new PolarionApiClient.Core.Generated.updateWorkItemRequest();
+            PolarionApiClient.Core.Generated.Tracker.updateWorkItemRequest inValue = new PolarionApiClient.Core.Generated.Tracker.updateWorkItemRequest();
             inValue.content = content;
-            return ((PolarionApiClient.Core.Generated.TrackerWebService)(this)).updateWorkItemAsync(inValue);
+            return ((PolarionApiClient.Core.Generated.Tracker.TrackerWebService)(this)).updateWorkItemAsync(inValue);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()
@@ -18346,11 +18339,11 @@ namespace PolarionApiClient.Core.Generated
             throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));
         }
         
-        private static System.ServiceModel.EndpointAddress GetEndpointAddress(EndpointConfiguration endpointConfiguration)
+        private static System.ServiceModel.EndpointAddress GetEndpointAddress(EndpointConfiguration endpointConfiguration, string serverUrl)
         {
             if ((endpointConfiguration == EndpointConfiguration.TrackerWebService))
             {
-                return new System.ServiceModel.EndpointAddress("https://polarion.int.archer.com/polarion/ws/services/TrackerWebService");
+                return new System.ServiceModel.EndpointAddress($"{serverUrl}/polarion/ws/services/TrackerWebService");
             }
             throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));
         }
@@ -18360,9 +18353,9 @@ namespace PolarionApiClient.Core.Generated
             return TrackerWebServiceClient.GetBindingForEndpoint(EndpointConfiguration.TrackerWebService);
         }
         
-        private static System.ServiceModel.EndpointAddress GetDefaultEndpointAddress()
+        private static System.ServiceModel.EndpointAddress GetDefaultEndpointAddress(string serverUrl)
         {
-            return TrackerWebServiceClient.GetEndpointAddress(EndpointConfiguration.TrackerWebService);
+            return TrackerWebServiceClient.GetEndpointAddress(EndpointConfiguration.TrackerWebService, serverUrl);
         }
         
         public enum EndpointConfiguration
