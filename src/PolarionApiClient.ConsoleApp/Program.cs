@@ -39,10 +39,10 @@ try
     if (workItem != null)
     {
         Console.WriteLine($"Found work item: {workItem.id} - {workItem.title}");
-        Console.WriteLine($"Type: {workItem.type}, Status: {workItem.status}");
+        Console.WriteLine($"Type: {workItem.type.id}, Status: {workItem.status.id}");
         Console.WriteLine($"Created: {workItem.created}, Updated: {workItem.updated}");
-        Console.WriteLine($"Author: {workItem.author}");
-        Console.WriteLine($"Description: {workItem.description}");
+        Console.WriteLine($"Author: {workItem.author.name}");
+        Console.WriteLine($"Description: {workItem.description.content}");
     }
     else
     {
