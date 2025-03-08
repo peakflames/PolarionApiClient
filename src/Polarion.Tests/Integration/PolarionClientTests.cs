@@ -84,10 +84,11 @@ public class PolarionClientTests : IAsyncLifetime
         var query = _config.TestScenarioData.SearchWorkitemQuery;
         var order = _config.TestScenarioData.SearchWorkitemOrder;
         var fieldList = _config.TestScenarioData.SearchWorkitemFieldList.ToList();
+        var baselineRevision = _config.TestScenarioData.SearchWorkitemBaselineRevision;
 
         // Act
         var result = await _client.SearchWorkitemInBaseline(
-            baselineRevision: "416824",
+            baselineRevision: baselineRevision,
             query: query,
             order: order,
             field_list: fieldList
@@ -101,6 +102,29 @@ public class PolarionClientTests : IAsyncLifetime
         
         // Verify first item has expected fields
         var firstItem = workItems.First();
+        firstItem.id.Should().NotBeNullOrEmpty();
+        firstItem.title.Should().NotBeNullOrEmpty();
+        firstItem.type.id.Should().NotBeNullOrEmpty();
+    }
+
+
+    [Fact]
+    public async Task GetDocumentsInSpace_ShouldReturnExpectedResults()
+    {
+        // Arrange
+        var spaceName = _config.TestScenarioData.GetDocumentsInSpaceSpaceName;
+
+        // Act
+        var result = await _client.GetDocumentsInSpace(spaceName); 
+        
+        // Assert
+        result.IsSuccess.Should().BeTrue("Document search should succeed");
+        var documents = result.Value;
+        documents.Should().NotBeNull();
+        documents.Should().NotBeEmpty("Search should return at least one work item");
+        
+        // Verify first item has expected fields
+        var firstItem = documents.First();
         firstItem.id.Should().NotBeNullOrEmpty();
         firstItem.title.Should().NotBeNullOrEmpty();
         firstItem.type.id.Should().NotBeNullOrEmpty();
