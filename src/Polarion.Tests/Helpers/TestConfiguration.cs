@@ -40,4 +40,6 @@ public class TestScenarioData
     public string SearchWorkitemQuery { get; set; } = null!;
     public string SearchWorkitemOrder { get; set; } = null!;
     public string[] SearchWorkitemFieldList { get; set; } = null!;
+    public string SearchWorkitemBaselineRevision { get; set; } = null!;
+    public string GetDocumentsInSpaceSpaceName { get; set; } = null!;
 }
