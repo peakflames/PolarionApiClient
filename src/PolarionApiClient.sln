@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polarion", "Polarion\Polarion.csproj", "{196AC0F8-FEB5-461E-9E74-134452D4650B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polarion.ConsoleApp", "Polarion.ConsoleApp\Polarion.ConsoleApp.csproj", "{51F9218E-7743-44B8-995C-FAAECDA20D3F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polarion.Tests", "Polarion.Tests\Polarion.Tests.csproj", "{B4F9218E-7743-44B8-995C-FAAECDA20D4F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{196AC0F8-FEB5-461E-9E74-134452D4650B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{196AC0F8-FEB5-461E-9E74-134452D4650B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{196AC0F8-FEB5-461E-9E74-134452D4650B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{51F9218E-7743-44B8-995C-FAAECDA20D3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{51F9218E-7743-44B8-995C-FAAECDA20D3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{51F9218E-7743-44B8-995C-FAAECDA20D3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{51F9218E-7743-44B8-995C-FAAECDA20D3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4F9218E-7743-44B8-995C-FAAECDA20D4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4F9218E-7743-44B8-995C-FAAECDA20D4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4F9218E-7743-44B8-995C-FAAECDA20D4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4F9218E-7743-44B8-995C-FAAECDA20D4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

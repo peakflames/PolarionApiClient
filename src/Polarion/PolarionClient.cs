@@ -109,7 +109,6 @@ public class PolarionClient : IPolarionClient
     {
         try
         {
-            Console.WriteLine($"Executing query: {query}");
             var result = await _trackerClient.queryWorkItemsAsync(new(query, order, field_list.ToArray()));
             return result is null ? Result.Fail<WorkItem[]>("Query failed") : result.queryWorkItemsReturn;
         }
