@@ -484,5 +484,4 @@ $RECYCLE.BIN/
 *.swp
 tmp.txt
 tmp/
-custom.config.json
-custom.config.json
+custom.test.json
