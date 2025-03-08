@@ -1,4 +1,4 @@
-using PolarionApiClient.Core;
+using Polarion;
 
 namespace PolarionApiClient.ConsoleApp;
 

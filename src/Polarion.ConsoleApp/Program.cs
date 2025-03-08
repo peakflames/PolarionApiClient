@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
 using PolarionApiClient.ConsoleApp;
-using PolarionApiClient.Core;
+using Polarion;
 
 if (args.Length < 1)
 {
@@ -70,7 +70,7 @@ try
         Console.WriteLine($"\tType: {workItem.type.id}, Status: {workItem.status.id}");
         Console.WriteLine($"\tCreated: {workItem.created}, Updated: {workItem.updated}");
         Console.WriteLine($"\tAuthor: {workItem.author.name}");
-        Console.WriteLine($"\tDescription: {workItem.description.content.Take(50)}...");
+        Console.WriteLine($"\tDescription: {workItem.description.content[..40]}...");
     }
     else
     {

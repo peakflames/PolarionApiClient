@@ -7,35 +7,35 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PolarionApiClient.Core.Generated.Session
+namespace Polarion.Generated.Session
 {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://ws.polarion.com/SessionWebService", ConfigurationName="PolarionApiClient.Core.Generated.Session.SessionWebService")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://ws.polarion.com/SessionWebService", ConfigurationName="Polarion.Generated.Session.SessionWebService")]
     public interface SessionWebService
     {
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Session.beginTransactionResponse> beginTransactionAsync(PolarionApiClient.Core.Generated.Session.beginTransactionRequest request);
+        System.Threading.Tasks.Task<Polarion.Generated.Session.beginTransactionResponse> beginTransactionAsync(Polarion.Generated.Session.beginTransactionRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Session.endSessionResponse> endSessionAsync(PolarionApiClient.Core.Generated.Session.endSessionRequest request);
+        System.Threading.Tasks.Task<Polarion.Generated.Session.endSessionResponse> endSessionAsync(Polarion.Generated.Session.endSessionRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Session.endTransactionResponse> endTransactionAsync(PolarionApiClient.Core.Generated.Session.endTransactionRequest request);
+        System.Threading.Tasks.Task<Polarion.Generated.Session.endTransactionResponse> endTransactionAsync(Polarion.Generated.Session.endTransactionRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Session.hasSubjectResponse> hasSubjectAsync(PolarionApiClient.Core.Generated.Session.hasSubjectRequest request);
+        System.Threading.Tasks.Task<Polarion.Generated.Session.hasSubjectResponse> hasSubjectAsync(Polarion.Generated.Session.hasSubjectRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Session.logInResponse> logInAsync(PolarionApiClient.Core.Generated.Session.logInRequest request);
+        System.Threading.Tasks.Task<Polarion.Generated.Session.logInResponse> logInAsync(Polarion.Generated.Session.logInRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Session.logInWithTokenResponse> logInWithTokenAsync(PolarionApiClient.Core.Generated.Session.logInWithTokenRequest request);
+        System.Threading.Tasks.Task<Polarion.Generated.Session.logInWithTokenResponse> logInWithTokenAsync(Polarion.Generated.Session.logInWithTokenRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Session.transactionExistsResponse> transactionExistsAsync(PolarionApiClient.Core.Generated.Session.transactionExistsRequest request);
+        System.Threading.Tasks.Task<Polarion.Generated.Session.transactionExistsResponse> transactionExistsAsync(Polarion.Generated.Session.transactionExistsRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -259,13 +259,13 @@ namespace PolarionApiClient.Core.Generated.Session
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
-    public interface SessionWebServiceChannel : PolarionApiClient.Core.Generated.Session.SessionWebService, System.ServiceModel.IClientChannel
+    public interface SessionWebServiceChannel : Polarion.Generated.Session.SessionWebService, System.ServiceModel.IClientChannel
     {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
-    public partial class SessionWebServiceClient : System.ServiceModel.ClientBase<PolarionApiClient.Core.Generated.Session.SessionWebService>, PolarionApiClient.Core.Generated.Session.SessionWebService
+    public partial class SessionWebServiceClient : System.ServiceModel.ClientBase<Polarion.Generated.Session.SessionWebService>, Polarion.Generated.Session.SessionWebService
     {
         
         /// <summary>
@@ -302,93 +302,93 @@ namespace PolarionApiClient.Core.Generated.Session
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Session.beginTransactionResponse> PolarionApiClient.Core.Generated.Session.SessionWebService.beginTransactionAsync(PolarionApiClient.Core.Generated.Session.beginTransactionRequest request)
+        System.Threading.Tasks.Task<Polarion.Generated.Session.beginTransactionResponse> Polarion.Generated.Session.SessionWebService.beginTransactionAsync(Polarion.Generated.Session.beginTransactionRequest request)
         {
             return base.Channel.beginTransactionAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Session.beginTransactionResponse> beginTransactionAsync()
+        public System.Threading.Tasks.Task<Polarion.Generated.Session.beginTransactionResponse> beginTransactionAsync()
         {
-            PolarionApiClient.Core.Generated.Session.beginTransactionRequest inValue = new PolarionApiClient.Core.Generated.Session.beginTransactionRequest();
-            return ((PolarionApiClient.Core.Generated.Session.SessionWebService)(this)).beginTransactionAsync(inValue);
+            Polarion.Generated.Session.beginTransactionRequest inValue = new Polarion.Generated.Session.beginTransactionRequest();
+            return ((Polarion.Generated.Session.SessionWebService)(this)).beginTransactionAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Session.endSessionResponse> PolarionApiClient.Core.Generated.Session.SessionWebService.endSessionAsync(PolarionApiClient.Core.Generated.Session.endSessionRequest request)
+        System.Threading.Tasks.Task<Polarion.Generated.Session.endSessionResponse> Polarion.Generated.Session.SessionWebService.endSessionAsync(Polarion.Generated.Session.endSessionRequest request)
         {
             return base.Channel.endSessionAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Session.endSessionResponse> endSessionAsync()
+        public System.Threading.Tasks.Task<Polarion.Generated.Session.endSessionResponse> endSessionAsync()
         {
-            PolarionApiClient.Core.Generated.Session.endSessionRequest inValue = new PolarionApiClient.Core.Generated.Session.endSessionRequest();
-            return ((PolarionApiClient.Core.Generated.Session.SessionWebService)(this)).endSessionAsync(inValue);
+            Polarion.Generated.Session.endSessionRequest inValue = new Polarion.Generated.Session.endSessionRequest();
+            return ((Polarion.Generated.Session.SessionWebService)(this)).endSessionAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Session.endTransactionResponse> PolarionApiClient.Core.Generated.Session.SessionWebService.endTransactionAsync(PolarionApiClient.Core.Generated.Session.endTransactionRequest request)
+        System.Threading.Tasks.Task<Polarion.Generated.Session.endTransactionResponse> Polarion.Generated.Session.SessionWebService.endTransactionAsync(Polarion.Generated.Session.endTransactionRequest request)
         {
             return base.Channel.endTransactionAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Session.endTransactionResponse> endTransactionAsync(bool rollback)
+        public System.Threading.Tasks.Task<Polarion.Generated.Session.endTransactionResponse> endTransactionAsync(bool rollback)
         {
-            PolarionApiClient.Core.Generated.Session.endTransactionRequest inValue = new PolarionApiClient.Core.Generated.Session.endTransactionRequest();
+            Polarion.Generated.Session.endTransactionRequest inValue = new Polarion.Generated.Session.endTransactionRequest();
             inValue.rollback = rollback;
-            return ((PolarionApiClient.Core.Generated.Session.SessionWebService)(this)).endTransactionAsync(inValue);
+            return ((Polarion.Generated.Session.SessionWebService)(this)).endTransactionAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Session.hasSubjectResponse> PolarionApiClient.Core.Generated.Session.SessionWebService.hasSubjectAsync(PolarionApiClient.Core.Generated.Session.hasSubjectRequest request)
+        System.Threading.Tasks.Task<Polarion.Generated.Session.hasSubjectResponse> Polarion.Generated.Session.SessionWebService.hasSubjectAsync(Polarion.Generated.Session.hasSubjectRequest request)
         {
             return base.Channel.hasSubjectAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Session.hasSubjectResponse> hasSubjectAsync()
+        public System.Threading.Tasks.Task<Polarion.Generated.Session.hasSubjectResponse> hasSubjectAsync()
         {
-            PolarionApiClient.Core.Generated.Session.hasSubjectRequest inValue = new PolarionApiClient.Core.Generated.Session.hasSubjectRequest();
-            return ((PolarionApiClient.Core.Generated.Session.SessionWebService)(this)).hasSubjectAsync(inValue);
+            Polarion.Generated.Session.hasSubjectRequest inValue = new Polarion.Generated.Session.hasSubjectRequest();
+            return ((Polarion.Generated.Session.SessionWebService)(this)).hasSubjectAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Session.logInResponse> PolarionApiClient.Core.Generated.Session.SessionWebService.logInAsync(PolarionApiClient.Core.Generated.Session.logInRequest request)
+        System.Threading.Tasks.Task<Polarion.Generated.Session.logInResponse> Polarion.Generated.Session.SessionWebService.logInAsync(Polarion.Generated.Session.logInRequest request)
         {
             return base.Channel.logInAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Session.logInResponse> logInAsync(string userName, string password)
+        public System.Threading.Tasks.Task<Polarion.Generated.Session.logInResponse> logInAsync(string userName, string password)
         {
-            PolarionApiClient.Core.Generated.Session.logInRequest inValue = new PolarionApiClient.Core.Generated.Session.logInRequest();
+            Polarion.Generated.Session.logInRequest inValue = new Polarion.Generated.Session.logInRequest();
             inValue.userName = userName;
             inValue.password = password;
-            return ((PolarionApiClient.Core.Generated.Session.SessionWebService)(this)).logInAsync(inValue);
+            return ((Polarion.Generated.Session.SessionWebService)(this)).logInAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Session.logInWithTokenResponse> PolarionApiClient.Core.Generated.Session.SessionWebService.logInWithTokenAsync(PolarionApiClient.Core.Generated.Session.logInWithTokenRequest request)
+        System.Threading.Tasks.Task<Polarion.Generated.Session.logInWithTokenResponse> Polarion.Generated.Session.SessionWebService.logInWithTokenAsync(Polarion.Generated.Session.logInWithTokenRequest request)
         {
             return base.Channel.logInWithTokenAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Session.logInWithTokenResponse> logInWithTokenAsync(string mechanism, string username, string token)
+        public System.Threading.Tasks.Task<Polarion.Generated.Session.logInWithTokenResponse> logInWithTokenAsync(string mechanism, string username, string token)
         {
-            PolarionApiClient.Core.Generated.Session.logInWithTokenRequest inValue = new PolarionApiClient.Core.Generated.Session.logInWithTokenRequest();
+            Polarion.Generated.Session.logInWithTokenRequest inValue = new Polarion.Generated.Session.logInWithTokenRequest();
             inValue.mechanism = mechanism;
             inValue.username = username;
             inValue.token = token;
-            return ((PolarionApiClient.Core.Generated.Session.SessionWebService)(this)).logInWithTokenAsync(inValue);
+            return ((Polarion.Generated.Session.SessionWebService)(this)).logInWithTokenAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Session.transactionExistsResponse> PolarionApiClient.Core.Generated.Session.SessionWebService.transactionExistsAsync(PolarionApiClient.Core.Generated.Session.transactionExistsRequest request)
+        System.Threading.Tasks.Task<Polarion.Generated.Session.transactionExistsResponse> Polarion.Generated.Session.SessionWebService.transactionExistsAsync(Polarion.Generated.Session.transactionExistsRequest request)
         {
             return base.Channel.transactionExistsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PolarionApiClient.Core.Generated.Session.transactionExistsResponse> transactionExistsAsync()
+        public System.Threading.Tasks.Task<Polarion.Generated.Session.transactionExistsResponse> transactionExistsAsync()
         {
-            PolarionApiClient.Core.Generated.Session.transactionExistsRequest inValue = new PolarionApiClient.Core.Generated.Session.transactionExistsRequest();
-            return ((PolarionApiClient.Core.Generated.Session.SessionWebService)(this)).transactionExistsAsync(inValue);
+            Polarion.Generated.Session.transactionExistsRequest inValue = new Polarion.Generated.Session.transactionExistsRequest();
+            return ((Polarion.Generated.Session.SessionWebService)(this)).transactionExistsAsync(inValue);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()
