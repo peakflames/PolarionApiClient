@@ -8,6 +8,6 @@ namespace PolarionApiClient.Core;
 public interface IPolarionClient
 {
     Task<Result<WorkItem>> GetWorkItemByIdAsync(string workItemId);
-    Task<Result<WorkItem[]>> QueryWorkItemsAsync(string query, string sort, string[] fields);
+    Task<Result<WorkItem[]>> SearchWorkitem(string query, string order, List<string> field_list);
 }
 

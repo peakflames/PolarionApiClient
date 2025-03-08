@@ -1,36 +1,64 @@
-﻿using System.ServiceModel;
+﻿using System.Text.Json;
+using PolarionApiClient.ConsoleApp;
 using PolarionApiClient.Core;
-using PolarionApiClient.Core.Generated;
-using PolarionApiClient.Core.Models;
 
-var config = new PolarionClientConfiguration(){
-    ServerUrl = "https://polarion-url/",
-    Username = "my-username",
-    Password = "my-password",
-    ProjectId = "my-project-id",
-    TimeoutSeconds = 60,
-};
+if (args.Length < 1)
+{
+    Console.ForegroundColor = ConsoleColor.Red;
+    Console.WriteLine("Error: Configuration file path is required as first argument.");
+    Console.WriteLine("Usage: program.exe path/to/config.json");
+    return;
+}
+
+string configFilePath = args[0];
+AppConfiguration? appConfig = null;
+
+if (!File.Exists(configFilePath))
+{
+    Console.ForegroundColor = ConsoleColor.Red;
+    Console.WriteLine($"Error: Configuration file not found at {configFilePath}");
+    return;
+}
+
+
+// Load and parse the configuration file
+string jsonContent = File.ReadAllText(configFilePath);
+appConfig = JsonSerializer.Deserialize<AppConfiguration>(jsonContent,
+    new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+
+if (appConfig == null)
+{
+    Console.WriteLine("Error: Failed to parse configuration file.");
+    return;
+}
+
+// Now you can use the configurations as needed
+var polarionConfig = appConfig.PolarionClient;
+var testConfig = appConfig.TestConfig;
+
+Console.WriteLine($"Loaded Test configuration: Project ID = {polarionConfig.ProjectId}");
 
 
 try
 {
-    Console.WriteLine("Starting Polarion API test...");
+    Console.WriteLine("\nStarting Polarion API test...");
 
-    var workItemId = "MD-81294";
-
-    var client = await PolarionClient.CreateAsync(config);
+    Console.WriteLine("\n📡 Authenticating with Polarion...");
+    var client = await PolarionClient.CreateAsync(polarionConfig);
     if (client is null)
     {
         Console.ForegroundColor = ConsoleColor.Red;
-        Console.Error.WriteLine("Failed to create Polarion client");
+        Console.Error.WriteLine("❌ Failed to create Polarion client");
         return;
     }
 
-    var workItemResult = await client.GetWorkItemByIdAsync(workItemId);
+
+    Console.WriteLine("\n🧪 Testing GetWorkItemByIdAsync()...");
+    var workItemResult = await client.GetWorkItemByIdAsync(testConfig.GetWorkItemByIdAsyncWorkItemId);
     if(workItemResult.IsFailed)
     {
         Console.ForegroundColor = ConsoleColor.Red;
-        Console.Error.WriteLine($"Failed to get work item: {workItemId}");
+        Console.Error.WriteLine($"❌ Failed to get work item: {testConfig.GetWorkItemByIdAsyncWorkItemId}");
         return;
     }
     
@@ -38,37 +66,56 @@ try
     
     if (workItem != null)
     {
-        Console.WriteLine($"Found work item: {workItem.id} - {workItem.title}");
-        Console.WriteLine($"Type: {workItem.type.id}, Status: {workItem.status.id}");
-        Console.WriteLine($"Created: {workItem.created}, Updated: {workItem.updated}");
-        Console.WriteLine($"Author: {workItem.author.name}");
-        Console.WriteLine($"Description: {workItem.description.content}");
+        Console.WriteLine($"✅ Found work item: {workItem.id} - {workItem.title}");
+        Console.WriteLine($"\tType: {workItem.type.id}, Status: {workItem.status.id}");
+        Console.WriteLine($"\tCreated: {workItem.created}, Updated: {workItem.updated}");
+        Console.WriteLine($"\tAuthor: {workItem.author.name}");
+        Console.WriteLine($"\tDescription: {workItem.description.content.Take(50)}...");
     }
     else
     {
-        Console.WriteLine("Work item not found.");
+        Console.WriteLine("❌ Work item not found.");
     }
 
-    // // Example: Query work items
-    // Console.WriteLine("\nEnter a query (e.g. 'type:requirement'):");
-    // var query = Console.ReadLine();
+    // Example: Query work items
+    var title = "L5 BMU Control Application SRS";
+    var documentFilter = $"document.title:\"{title}\"";
 
-    // var workItems = await client.QueryWorkItemsAsync(query);
-    // Console.WriteLine($"Found {workItems.Length} items:");
+    Console.WriteLine("\n\n🧪 Testing SearchWorkitem()...");
+
+    var searchResult = await client.SearchWorkitem(
+        query: testConfig.SearchWorkitemQuery,
+        order: testConfig.SearchWorkitemOrder,
+        field_list: testConfig.SearchWorkitemFieldList
+    );
+
+    if (searchResult.IsFailed)
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.Error.WriteLine($"❌ Failed to search for workitems: {searchResult.Errors.FirstOrDefault()}");
+        return;
+    }
+
+    var workItems = searchResult.Value;
+
+    Console.WriteLine($"✅ Found {workItems.Length} items. Listing first 5:");
     
-    // foreach (var item in workItems)
-    // {
-    //     Console.WriteLine($"  - {item.Id}: {item.Title} ({item.Type})");
-    // }
+    foreach (var item in workItems.Take(5))
+    {
+        Console.WriteLine($"  - {item.id}: {item.title} ({item.type.id})");
+    }
+
+    Console.ForegroundColor = ConsoleColor.Green;
+    Console.WriteLine("\n✅ Completed.\n\n");
 }
 catch (Exception ex)
 {
     var currentColor = Console.ForegroundColor;
     Console.ForegroundColor = ConsoleColor.Red;
-    Console.WriteLine($"Error: {ex.Message}");
+    Console.WriteLine($"❌ Error: {ex.Message}");
     if (ex.InnerException != null)
     {
-        Console.WriteLine($"Inner error: {ex.InnerException.Message}");
+        Console.WriteLine($"❌ Inner error: {ex.InnerException.Message}");
     }
     Console.ForegroundColor = currentColor;
 }

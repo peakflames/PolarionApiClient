@@ -1,0 +1,21 @@
+{
+    "PolarionClient": {
+        "ServerUrl": "https://my-polarion-server",
+        "Username": "my-username",
+        "Password": "my-password",
+        "ProjectId": "my-project",
+        "TimeoutSeconds": 60
+    },
+    "TestConfig": {
+        "GetWorkItemByIdAsyncWorkItemId": "MD-81294",
+        "SearchWorkitemQuery": "(type:softwareHLR  OR type:heading) AND document.title:\"SOME_DOC_TITLE\"",
+        "SearchWorkitemOrder": "outlineNumber",
+        "SearchWorkitemFieldList": [
+            "id",
+            "outlineNumber",
+            "type",
+            "status",
+            "title"
+        ]
+    }
+}
