@@ -6,7 +6,7 @@ A .NET client library for accessing Polarion Requirements Management System via 
 ## Installation
 
 ```sh
-dotnet add package PolarionApiClient.Core
+dotnet add package Polarion
 ```
 
 ## Usage

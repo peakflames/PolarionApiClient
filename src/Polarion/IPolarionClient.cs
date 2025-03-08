@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 
 
-namespace PolarionApiClient.Core;
+namespace Polarion;
 
 public interface IPolarionClient
 {

@@ -1,7 +1,7 @@
 
 using System;
 
-namespace PolarionApiClient.Core;
+namespace Polarion;
 
 public class PolarionClientException : Exception
 {

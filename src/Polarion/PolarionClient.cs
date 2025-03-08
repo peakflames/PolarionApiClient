@@ -6,7 +6,7 @@ using System.ServiceModel.Dispatcher;
 using System.Xml.Linq;
 
 
-namespace PolarionApiClient.Core;
+namespace Polarion;
 
 public class PolarionClient : IPolarionClient
 {

@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\PolarionApiClient.Core\PolarionApiClient.Core.csproj" />
+    <ProjectReference Include="..\Polarion\Polarion.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
