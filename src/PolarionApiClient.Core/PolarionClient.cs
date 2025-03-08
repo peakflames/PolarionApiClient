@@ -1,17 +1,10 @@
-using System;
-using System.Linq;
 using System.Net;
-using System.Reflection.Metadata.Ecma335;
-using System.Runtime.CompilerServices;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
 using System.ServiceModel.Description;
 using System.ServiceModel.Dispatcher;
-using System.Threading.Tasks;
 using System.Xml.Linq;
-using Microsoft.Extensions.Logging;
-using PolarionApiClient.Core.Generated;
-using PolarionApiClient.Core.Models;
+
 
 namespace PolarionApiClient.Core;
 
@@ -112,12 +105,12 @@ public class PolarionClient : IPolarionClient
         }
     }
 
-    public async Task<Result<WorkItem[]>> QueryWorkItemsAsync(string query, string sort, string[] fields)
+    public async Task<Result<WorkItem[]>> SearchWorkitem(string query, string order, List<string> field_list)
     {
         try
         {
             Console.WriteLine($"Executing query: {query}");
-            var result = await _trackerClient.queryWorkItemsAsync(new(query, sort, fields));
+            var result = await _trackerClient.queryWorkItemsAsync(new(query, order, field_list.ToArray()));
             return result is null ? Result.Fail<WorkItem[]>("Query failed") : result.queryWorkItemsReturn;
         }
         catch (Exception ex)

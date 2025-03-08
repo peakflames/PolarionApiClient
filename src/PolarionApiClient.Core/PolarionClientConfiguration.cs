@@ -1,5 +1,5 @@
 
-namespace PolarionApiClient.Core.Models
+namespace PolarionApiClient.Core
 {
     public record PolarionClientConfiguration
     {

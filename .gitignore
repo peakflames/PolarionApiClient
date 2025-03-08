@@ -484,3 +484,4 @@ $RECYCLE.BIN/
 *.swp
 tmp.txt
 tmp/
+src/PolarionApiClient.ConsoleApp/custom.config.json
