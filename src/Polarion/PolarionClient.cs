@@ -112,7 +112,7 @@ public class PolarionClient : IPolarionClient
     /// If you also want the Workitems to be retrieved, used searchWorkitemFullItem.
     ///
     /// For retrieving custom field using field_list, use the following syntax:
-    /// field_list=['customFields.<key of custom field here>']
+    /// field_list=['customFields.SomeField']
     /// </summary>
     /// <param name="query">The query to use while searching</param>
     /// <param name="order">Order by</param>
@@ -144,7 +144,7 @@ public class PolarionClient : IPolarionClient
     /// If you also want the Workitems to be retrieved, used searchWorkitemFullItemInBaseline.
     ///
     /// For retrieving custom field using field_list, use the following syntax:
-    /// field_list=['customFields.<key of custom field here>']
+    /// field_list=['customFields.FieldName']
     /// </summary>
     /// <param name="baselineRevision">The revision number of the baseline to search in</param>
     /// <param name="query">The query to use while searching</param>
