@@ -1,8 +1,3 @@
-using System.IO.Pipelines;
-using System.Threading.Tasks;
-
-
-
 namespace Polarion;
 
 public interface IPolarionClient
