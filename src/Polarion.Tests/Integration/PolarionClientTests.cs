@@ -76,4 +76,33 @@ public class PolarionClientTests : IAsyncLifetime
         firstItem.title.Should().NotBeNullOrEmpty();
         firstItem.type.id.Should().NotBeNullOrEmpty();
     }
+
+    [Fact]
+    public async Task SearchWorkitemInBaseline_ShouldReturnExpectedResults()
+    {
+        // Arrange
+        var query = _config.TestScenarioData.SearchWorkitemQuery;
+        var order = _config.TestScenarioData.SearchWorkitemOrder;
+        var fieldList = _config.TestScenarioData.SearchWorkitemFieldList.ToList();
+
+        // Act
+        var result = await _client.SearchWorkitemInBaseline(
+            baselineRevision: "416824",
+            query: query,
+            order: order,
+            field_list: fieldList
+        );
+
+        // Assert
+        result.IsSuccess.Should().BeTrue("Work item search should succeed");
+        var workItems = result.Value;
+        workItems.Should().NotBeNull();
+        workItems.Should().NotBeEmpty("Search should return at least one work item");
+        
+        // Verify first item has expected fields
+        var firstItem = workItems.First();
+        firstItem.id.Should().NotBeNullOrEmpty();
+        firstItem.title.Should().NotBeNullOrEmpty();
+        firstItem.type.id.Should().NotBeNullOrEmpty();
+    }
 }
