@@ -15,7 +15,7 @@ public class PolarionClient : IPolarionClient
     private readonly PolarionClientConfiguration _config;
     
 
-    public static async Task<PolarionClient> CreateAsync(PolarionClientConfiguration config)
+    public static async Task<Result<PolarionClient>> CreateAsync(PolarionClientConfiguration config)
     {
         // Create binding for Session service
         var binding = new BasicHttpBinding();
@@ -46,7 +46,7 @@ public class PolarionClient : IPolarionClient
             var loginResponse = await sessionClient.logInAsync(config.Username, config.Password);
             if (loginResponse is null)
             {
-                throw new PolarionClientException("Login failed - invalid credentials");
+                return Result.Fail<PolarionClient>("Login failed - invalid credentials");
             }
 
             // Extract session ID from response
@@ -56,7 +56,7 @@ public class PolarionClient : IPolarionClient
 
             if (sessionHeader == null)
             {
-                throw new PolarionClientException("Failed to get session ID from response");
+                return Result.Fail<PolarionClient>("Failed to get session ID from response");
             }
 
             // Extract cookies from the client
@@ -82,7 +82,7 @@ public class PolarionClient : IPolarionClient
         }
         catch (Exception ex) when (ex is not PolarionClientException)
         {
-            throw new PolarionClientException($"Failed to initialize Polarion client: {ex.Message}", ex);
+            return Result.Fail<PolarionClient>($"Failed to initialize Polarion client: {ex.Message}");
         }
     }
 
