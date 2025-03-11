@@ -60,7 +60,7 @@ public class PolarionClientTests : IAsyncLifetime
         var fieldList = _config.TestScenarioData.SearchWorkitemFieldList.ToList();
 
         // Act
-        var result = await _client.SearchWorkitem(
+        var result = await _client.SearchWorkitemAsync(
             query: query,
             order: order,
             field_list: fieldList
@@ -89,7 +89,7 @@ public class PolarionClientTests : IAsyncLifetime
         var baselineRevision = _config.TestScenarioData.SearchWorkitemBaselineRevision;
 
         // Act
-        var result = await _client.SearchWorkitemInBaseline(
+        var result = await _client.SearchWorkitemInBaselineAsync(
             baselineRevision: baselineRevision,
             query: query,
             order: order,
@@ -117,7 +117,7 @@ public class PolarionClientTests : IAsyncLifetime
         var spaceName = _config.TestScenarioData.GetDocumentsInSpaceSpaceName;
 
         // Act
-        var result = await _client.GetDocumentsInSpace(spaceName); 
+        var result = await _client.GetDocumentsInSpaceAsync(spaceName); 
         
         // Assert
         result.IsSuccess.Should().BeTrue("Document search should succeed");
