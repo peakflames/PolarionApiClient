@@ -25,19 +25,20 @@ if ($currentBranch -ne "main") {
 Write-Host "Clear all the old nuget-local folder..."
 rm -r -force .\nuget-local
 
-# Build and pack Polarion package
-Write-Host "Building and packing Polarion package..."
-# Build and pack Polarion package
-dotnet clean src/Polarion/Polarion.csproj
-if ($LASTEXITCODE -ne 0) { 
-  Write-ErrorAndExit "Error occurred while cleaning Polarion package." 
-}
+Write-Host "Clean entire solution..." -ForegroundColor Yellow
+dotnet clean src/PolarionApiClient.sln
+if ($LASTEXITCODE -ne 0) { exit 1 }
 
+Write-Host "Run tests..." -ForegroundColor Yellow
+dotnet test src/PolarionApiClient.sln
+if ($LASTEXITCODE -ne 0) { exit 1 }
+
+Write-Host "Publish Polarion package..." -ForegroundColor Yellow
 dotnet publish src/Polarion/Polarion.csproj -c Release
 if ($LASTEXITCODE -ne 0) { 
   Write-ErrorAndExit "Error occurred while preparing Polarion package." 
 }
-
+Write-Host "Pack Polarion package..." -ForegroundColor Yellow
 dotnet pack src/Polarion/Polarion.csproj -c Release -o nuget-local
 if ($LASTEXITCODE -ne 0) { 
   Write-ErrorAndExit "Error occurred while packing Polarion package." 
