@@ -131,7 +131,7 @@ public class PolarionClient : IPolarionClient
             query += $" AND project.id:{_config.ProjectId}";
 
             var result = await _trackerClient.queryWorkItemsAsync(new(query, order, field_list.ToArray()));
-            return result is null ? Result.Fail<WorkItem[]>("Query failed") : result.queryWorkItemsReturn;
+            return result.queryWorkItemsReturn is null ? Result.Fail<WorkItem[]>("Query failed") : result.queryWorkItemsReturn;
         }
         catch (Exception ex)
         {
@@ -169,7 +169,7 @@ public class PolarionClient : IPolarionClient
             query += $" AND project.id:{_config.ProjectId}";
 
             var result = await _trackerClient.queryWorkItemsInRevisionAsync(new(query, order, baselineRevision,field_list.ToArray()));
-            return result is null ? Result.Fail<WorkItem[]>("Query failed") : result.queryWorkItemsInRevisionReturn;
+            return result.queryWorkItemsInRevisionReturn is null ? Result.Fail<WorkItem[]>("Query failed") : result.queryWorkItemsInRevisionReturn;
         }
         catch (Exception ex)
         {
