@@ -1,5 +1,9 @@
 # Polarion Changelog
 
+## 0.0.2
+
+- PolarionClient.CreateAsync() now returns a Result<PolarionClient> type.
+
 ## 0.0.1
 
 - Initial release
