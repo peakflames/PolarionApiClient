@@ -19,7 +19,9 @@ public class PolarionClientTests : IAsyncLifetime
     public async Task InitializeAsync()
     {
         // Create the client before each test
-        _client = await PolarionClient.CreateAsync(_config.PolarionClient);
+        var result = await PolarionClient.CreateAsync(_config.PolarionClient);
+        result.IsSuccess.Should().BeTrue("Polarion client should be created successfully");
+        _client = result.Value;
         _client.Should().NotBeNull("Polarion client should be created successfully");
     }
 
