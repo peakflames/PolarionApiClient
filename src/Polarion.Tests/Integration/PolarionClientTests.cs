@@ -80,6 +80,46 @@ public class PolarionClientTests : IAsyncLifetime
     }
 
     [Fact]
+    public async Task SearchWorkitem_ShouldGracfullyFail_Type1()
+    {
+        // Arrange
+        var query = "";
+        var order = _config.TestScenarioData.SearchWorkitemOrder;
+        var fieldList = _config.TestScenarioData.SearchWorkitemFieldList.ToList();
+        var baselineRevision = _config.TestScenarioData.SearchWorkitemBaselineRevision;
+
+        // Act
+        var result = await _client.SearchWorkitemAsync(
+            query: query,
+            order: order,
+            field_list: fieldList
+        );
+
+        // Assert
+        result.IsSuccess.Should().BeFalse("Work item search is expected to failed");
+    }
+
+    [Fact]
+    public async Task SearchWorkitem_ShouldGracfullyFail_Type2()
+    {
+        // Arrange
+        var query = "(type:softwareHLR OR type:heading OR type:paragraph) AND document.title:\"Your Module Title\"";
+        var order = _config.TestScenarioData.SearchWorkitemOrder;
+        var fieldList = _config.TestScenarioData.SearchWorkitemFieldList.ToList();
+        var baselineRevision = _config.TestScenarioData.SearchWorkitemBaselineRevision;
+
+        // Act
+        var result = await _client.SearchWorkitemAsync(
+            query: query,
+            order: order,
+            field_list: fieldList
+        );
+
+        // Assert
+        result.IsSuccess.Should().BeFalse("Work item search is expected to failed");
+    }
+
+    [Fact]
     public async Task SearchWorkitemInBaseline_ShouldReturnExpectedResults()
     {
         // Arrange
@@ -107,6 +147,48 @@ public class PolarionClientTests : IAsyncLifetime
         firstItem.id.Should().NotBeNullOrEmpty();
         firstItem.title.Should().NotBeNullOrEmpty();
         firstItem.type.id.Should().NotBeNullOrEmpty();
+    }
+
+    [Fact]
+    public async Task SearchWorkitemInBaseline_ShouldGracfullyFail_Type1()
+    {
+        // Arrange
+        var query = "";
+        var order = _config.TestScenarioData.SearchWorkitemOrder;
+        var fieldList = _config.TestScenarioData.SearchWorkitemFieldList.ToList();
+        var baselineRevision = _config.TestScenarioData.SearchWorkitemBaselineRevision;
+
+        // Act
+        var result = await _client.SearchWorkitemInBaselineAsync(
+            baselineRevision: baselineRevision,
+            query: query,
+            order: order,
+            field_list: fieldList
+        );
+
+        // Assert
+        result.IsSuccess.Should().BeFalse("Work item search is expected to failed");
+    }
+
+    [Fact]
+    public async Task SearchWorkitemInBaseline_ShouldGracfullyFail_Type2()
+    {
+        // Arrange
+        var query = "(type:softwareHLR OR type:heading OR type:paragraph) AND document.title:\"Your Module Title\"";
+        var order = _config.TestScenarioData.SearchWorkitemOrder;
+        var fieldList = _config.TestScenarioData.SearchWorkitemFieldList.ToList();
+        var baselineRevision = _config.TestScenarioData.SearchWorkitemBaselineRevision;
+
+        // Act
+        var result = await _client.SearchWorkitemInBaselineAsync(
+            baselineRevision: baselineRevision,
+            query: query,
+            order: order,
+            field_list: fieldList
+        );
+
+        // Assert
+        result.IsSuccess.Should().BeFalse("Work item search is expected to failed");
     }
 
 

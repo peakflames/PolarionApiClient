@@ -1,5 +1,9 @@
 # Polarion Changelog
 
+## 0.0.4
+
+- Fix bug in SearchWorkitemAsync and SearchWorkitemInBaselineAsync
+
 ## 0.0.3
 
 - Add Suffix to all IPolarionClient methods
