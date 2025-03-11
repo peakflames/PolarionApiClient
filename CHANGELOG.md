@@ -1,5 +1,9 @@
 # Polarion Changelog
 
+## 0.0.3
+
+- Add Suffix to all IPolarionClient methods
+
 ## 0.0.2
 
 - PolarionClient.CreateAsync() now returns a Result<PolarionClient> type.

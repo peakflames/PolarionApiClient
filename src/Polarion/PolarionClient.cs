@@ -119,7 +119,7 @@ public class PolarionClient : IPolarionClient
     /// <param name="field_list">list of fields to retrieve for each search result</param>
     /// <returns>Search results but only with the given fields set</returns>
     /// <exception cref="PolarionClientException"></exception>
-    public async Task<Result<WorkItem[]>> SearchWorkitem(string query, string order = "Created", List<string>? field_list = null)
+    public async Task<Result<WorkItem[]>> SearchWorkitemAsync(string query, string order = "Created", List<string>? field_list = null)
     {
         try
         {
@@ -152,7 +152,7 @@ public class PolarionClient : IPolarionClient
     /// <param name="field_list">list of fields to retrieve for each search result</param>
     /// <returns>Search results but only with the given fields set</returns>
     /// <exception cref="PolarionClientException"></exception>
-    public async Task<Result<WorkItem[]>> SearchWorkitemInBaseline(string baselineRevision, string query, string order = "Created", List<string>? field_list = null)
+    public async Task<Result<WorkItem[]>> SearchWorkitemInBaselineAsync(string baselineRevision, string query, string order = "Created", List<string>? field_list = null)
     {
         try
         {
@@ -184,7 +184,7 @@ public class PolarionClient : IPolarionClient
     /// <param name="spaceName">Name of the space</param>
     /// <returns>Result with the documents</returns>
     /// <exception cref="PolarionClientException"></exception>
-    public async Task<Result<Module[]>> GetDocumentsInSpace(string spaceName)
+    public async Task<Result<Module[]>> GetDocumentsInSpaceAsync(string spaceName)
     {
         try
         {
