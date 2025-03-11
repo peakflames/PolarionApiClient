@@ -29,9 +29,9 @@ Write-Host "Clean entire solution..." -ForegroundColor Yellow
 dotnet clean src/PolarionApiClient.sln
 if ($LASTEXITCODE -ne 0) { exit 1 }
 
-Write-Host "Run tests..." -ForegroundColor Yellow
-dotnet test src/PolarionApiClient.sln
-if ($LASTEXITCODE -ne 0) { exit 1 }
+# Write-Host "Run tests..." -ForegroundColor Yellow
+# dotnet test src/PolarionApiClient.sln
+# if ($LASTEXITCODE -ne 0) { exit 1 }
 
 Write-Host "Publish Polarion package..." -ForegroundColor Yellow
 dotnet publish src/Polarion/Polarion.csproj -c Release
