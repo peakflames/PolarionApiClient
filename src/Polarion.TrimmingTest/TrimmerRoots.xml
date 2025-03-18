@@ -1,0 +1,8 @@
+<linker>
+  <assembly fullname="Polarion.TrimmingTest">
+    <type fullname="Program" preserve="all" />
+  </assembly>
+  
+  <!-- Reference the Polarion assembly to ensure its TrimmerRoots.xml is used -->
+  <assembly fullname="Polarion" />
+</linker>
