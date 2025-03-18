@@ -1,5 +1,12 @@
 # Polarion Changelog
 
+## 0.0.5
+
+- Added support for trimming
+- Added RequiresUnreferencedCode attributes to API methods
+- Added TrimmerRoots.xml for reflection support
+- Updated documentation with trimming guidance
+
 ## 0.0.4
 
 - Fix bug in SearchWorkitemAsync and SearchWorkitemInBaselineAsync
@@ -23,4 +30,3 @@
         - SearchWorkitem
         - SearchWorkitemInBaseline
         - GetDocumentsInSpace
-  
