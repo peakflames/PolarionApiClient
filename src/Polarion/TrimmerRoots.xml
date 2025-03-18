@@ -1,0 +1,11 @@
+<linker>
+  <assembly fullname="Polarion">
+    <!-- Preserve types needed for WCF services -->
+    <type fullname="Polarion.MessageInspector" preserve="all" />
+    <type fullname="Polarion.EndpointBehavior" preserve="all" />
+    <type fullname="Polarion.SessionHeaderBehavior" preserve="all" />
+    <type fullname="Polarion.SessionHeaderInspector" preserve="all" />
+    <type fullname="Polarion.CookieContainerBehavior" preserve="all" />
+    <type fullname="Polarion.PolarionClient" preserve="all" />
+  </assembly>
+</linker>

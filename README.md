@@ -71,7 +71,7 @@ if (documentsResult.IsSuccess)
 - Document/Module access capabilities
 - Custom field support
 - Strongly-typed models
-- Built on .NET 8.0
+- Trimmable for size-optimized applications
 - Automatic session management
 - Secure cookie handling
 - Configurable timeouts
@@ -79,6 +79,7 @@ if (documentsResult.IsSuccess)
 ## Query Examples
 
 ### Basic Queries
+
 ```csharp
 // Search for approved requirements
 "type:requirement AND status:approved"
@@ -88,7 +89,9 @@ if (documentsResult.IsSuccess)
 ```
 
 ### Using Custom Fields
+
 When retrieving custom fields, use the following syntax in the field_list:
+
 ```csharp
 var fields = new List<string> { "customFields.myCustomField" };
 ```
@@ -109,6 +112,58 @@ else
     var errorMessage = result.Error;
     // Handle error
 }
+```
+
+## Trimming Support
+
+This library supports trimming in .NET 9 applications, which helps reduce the size of your application by removing unused code. However, since the library uses WCF services that rely on reflection, there are some important considerations when using it in a trimmed application:
+
+### Using the Library in a Trimmed Application
+
+When using this library in a trimmed application, you need to annotate your code that calls the Polarion API with the `[RequiresUnreferencedCode]` attribute:
+
+```csharp
+using System.Diagnostics.CodeAnalysis;
+
+[RequiresUnreferencedCode("Uses Polarion API which requires reflection")]
+public async Task<bool> CheckRequirementStatus(string requirementId)
+{
+    var polarionClient = await PolarionClient.CreateAsync(config);
+    var result = await polarionClient.GetWorkItemByIdAsync(requirementId);
+    return result.IsSuccess && result.Value.Status == "approved";
+}
+```
+
+### Creating a TrimmerRoots.xml File
+
+For more complex scenarios, you may need to create a TrimmerRoots.xml file in your application to preserve additional types:
+
+```xml
+<linker>
+  <assembly fullname="YourApplication">
+    <!-- Preserve your types that interact with Polarion -->
+    <type fullname="YourNamespace.YourPolarionService" preserve="all" />
+  </assembly>
+  
+  <!-- Reference the Polarion assembly to ensure its TrimmerRoots.xml is used -->
+  <assembly fullname="Polarion" />
+</linker>
+```
+
+Add this file to your project as an embedded resource:
+
+```xml
+<ItemGroup>
+  <EmbeddedResource Include="TrimmerRoots.xml" />
+</ItemGroup>
+```
+
+### Publishing a Trimmed Application
+
+When publishing your application with trimming enabled:
+
+```sh
+dotnet publish -c Release -r win-x64 --self-contained /p:PublishTrimmed=true
 ```
 
 ## License

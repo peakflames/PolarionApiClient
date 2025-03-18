@@ -9,12 +9,12 @@ using System.Xml.Linq;
 
 namespace Polarion;
 
-public class PolarionClient : IPolarionClient
+public partial class PolarionClient : IPolarionClient
 {
     private readonly TrackerWebService _trackerClient;
     private readonly PolarionClientConfiguration _config;
     
-
+    [RequiresUnreferencedCode("Uses WCF services which require reflection")]
     public static async Task<Result<PolarionClient>> CreateAsync(PolarionClientConfiguration config)
     {
         // Create binding for Session service
@@ -93,6 +93,7 @@ public class PolarionClient : IPolarionClient
         _config = config ?? throw new ArgumentNullException(nameof(config));
     }
 
+    [RequiresUnreferencedCode("Uses WCF services which require reflection")]
     public async Task<Result<WorkItem>> GetWorkItemByIdAsync(string workItemId)
     {
         try
@@ -119,6 +120,7 @@ public class PolarionClient : IPolarionClient
     /// <param name="field_list">list of fields to retrieve for each search result</param>
     /// <returns>Search results but only with the given fields set</returns>
     /// <exception cref="PolarionClientException"></exception>
+    [RequiresUnreferencedCode("Uses WCF services which require reflection")]
     public async Task<Result<WorkItem[]>> SearchWorkitemAsync(string query, string order = "Created", List<string>? field_list = null)
     {
         try
@@ -152,6 +154,7 @@ public class PolarionClient : IPolarionClient
     /// <param name="field_list">list of fields to retrieve for each search result</param>
     /// <returns>Search results but only with the given fields set</returns>
     /// <exception cref="PolarionClientException"></exception>
+    [RequiresUnreferencedCode("Uses WCF services which require reflection")]
     public async Task<Result<WorkItem[]>> SearchWorkitemInBaselineAsync(string baselineRevision, string query, string order = "Created", List<string>? field_list = null)
     {
         try
@@ -184,6 +187,7 @@ public class PolarionClient : IPolarionClient
     /// <param name="spaceName">Name of the space</param>
     /// <returns>Result with the documents</returns>
     /// <exception cref="PolarionClientException"></exception>
+    [RequiresUnreferencedCode("Uses WCF services which require reflection")]
     public async Task<Result<Module[]>> GetDocumentsInSpaceAsync(string spaceName)
     {
         try
