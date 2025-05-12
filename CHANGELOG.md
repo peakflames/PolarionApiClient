@@ -1,5 +1,9 @@
 # Polarion Changelog
 
+## 0.0.6
+
+- Update PolarionClientConfiguration type to no longer need requred fields. This is to support more use cases in json serialization.
+
 ## 0.0.5
 
 - Added support for trimming
