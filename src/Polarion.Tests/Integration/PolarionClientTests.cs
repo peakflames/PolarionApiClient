@@ -71,7 +71,7 @@ public class PolarionClientTests : IAsyncLifetime
         var workItems = result.Value;
         workItems.Should().NotBeNull();
         workItems.Should().NotBeEmpty("Search should return at least one work item");
-        
+
         // Verify first item has expected fields
         var firstItem = workItems.First();
         firstItem.id.Should().NotBeNullOrEmpty();
@@ -141,7 +141,7 @@ public class PolarionClientTests : IAsyncLifetime
         var workItems = result.Value;
         workItems.Should().NotBeNull();
         workItems.Should().NotBeEmpty("Search should return at least one work item");
-        
+
         // Verify first item has expected fields
         var firstItem = workItems.First();
         firstItem.id.Should().NotBeNullOrEmpty();
@@ -199,18 +199,38 @@ public class PolarionClientTests : IAsyncLifetime
         var spaceName = _config.TestScenarioData.GetDocumentsInSpaceSpaceName;
 
         // Act
-        var result = await _client.GetDocumentsInSpaceAsync(spaceName); 
-        
+        var result = await _client.GetDocumentsInSpaceAsync(spaceName);
+
         // Assert
         result.IsSuccess.Should().BeTrue("Document search should succeed");
         var documents = result.Value;
         documents.Should().NotBeNull();
         documents.Should().NotBeEmpty("Search should return at least one work item");
-        
+
         // Verify first item has expected fields
         var firstItem = documents.First();
         firstItem.id.Should().NotBeNullOrEmpty();
         firstItem.title.Should().NotBeNullOrEmpty();
         firstItem.type.id.Should().NotBeNullOrEmpty();
+    }
+
+    [Fact]
+    public async Task GetDocumentsSpaces_ShouldReturnExpectedResults()
+    {
+        // Arrange
+        // (none)
+
+        // Act
+        var result = await _client.GetDocumentSpacesAsync();
+
+        // Assert
+        result.IsSuccess.Should().BeTrue("Document search should succeed");
+        var documentSpaces = result.Value;
+        documentSpaces.Should().NotBeNull();
+        documentSpaces.Should().NotBeEmpty("Search should return at least one work item");
+
+        // Verify first item has expected fields
+        var firstItem = documentSpaces.First();
+        firstItem.Should().NotBeNullOrEmpty();
     }
 }
