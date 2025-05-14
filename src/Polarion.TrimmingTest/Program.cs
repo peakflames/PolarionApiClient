@@ -10,14 +10,7 @@ public class Program
         Console.WriteLine("Polarion Trimming Test");
         
         // Create a mock configuration (we won't actually connect to a server)
-        var config = new PolarionClientConfiguration
-        {
-            ServerUrl = "",
-            Username = "",
-            Password = "",
-            ProjectId = "",
-            TimeoutSeconds = 60,
-        };
+        var config = new PolarionClientConfiguration("", "", "", "");
 
         try
         {
