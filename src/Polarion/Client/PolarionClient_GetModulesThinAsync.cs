@@ -14,12 +14,12 @@ public partial class PolarionClient : IPolarionClient
     /// <summary>
     /// Gets modules in the project that match the specified criteria
     /// </summary>
-    /// <param name="excludeFolderNameContains">Optional filter to exclude modules whose folder name contains this string</param>
+    /// <param name="excludeSpaceNameContains">Optional filter to exclude modules whose folder name contains this string</param>
     /// <param name="titleContains">Optional filter to include only modules whose title contains this string</param>
     /// <returns>Result containing an array of ModuleThin objects representing the filtered modules</returns>
     /// <exception cref="PolarionClientException">Thrown when there is an error communicating with the Polarion service</exception>
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]
-    public async Task<Result<ModuleThin[]>> GetModulesThinAsync(string? excludeFolderNameContains = null, string? titleContains = null)
+    public async Task<Result<ModuleThin[]>> GetModulesThinAsync(string? excludeSpaceNameContains = null, string? titleContains = null)
     {
         try
         {
@@ -28,9 +28,9 @@ public partial class PolarionClient : IPolarionClient
             $"WHERE proj.C_ID = '{_config.ProjectId}' " +
             "AND doc.FK_URI_PROJECT = proj.C_URI ";
 
-            if (excludeFolderNameContains is not null)
+            if (excludeSpaceNameContains is not null)
             {
-                sqlQuery += $"AND doc.C_MODULEFOLDER NOT LIKE '%{excludeFolderNameContains}%' ";
+                sqlQuery += $"AND doc.C_MODULEFOLDER NOT LIKE '%{excludeSpaceNameContains}%' ";
             }
 
             if (titleContains is not null)

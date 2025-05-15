@@ -15,10 +15,10 @@ public interface IPolarionClient
     Task<Result<ModuleThin[]>> GetModulesInSpaceThinAsync(string spaceName);
 
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]
-    Task<Result<List<string>>> GetSpacesAsync();
+    Task<Result<List<string>>> GetSpacesAsync(string? excludeSpaceNameContains = null);
 
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]
-    Task<Result<ModuleThin[]>> GetModulesThinAsync(string? excludeFolderNameContains = null, string? titleContains = null);
+    Task<Result<ModuleThin[]>> GetModulesThinAsync(string? excludeSpaceNameContains = null, string? titleContains = null);
 
     TrackerWebService TrackerService { get; }
 }
