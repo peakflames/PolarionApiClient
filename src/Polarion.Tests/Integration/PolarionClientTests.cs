@@ -1,7 +1,9 @@
 using Xunit;
+using Xunit.Abstractions;
 using Polarion;
 using Polarion.Tests.Helpers;
 using FluentAssertions;
+using FluentResults;
 
 namespace Polarion.Tests.Integration;
 
@@ -9,9 +11,11 @@ public class PolarionClientTests : IAsyncLifetime
 {
     private readonly TestConfiguration _config;
     private PolarionClient _client = null!;
+    private readonly ITestOutputHelper _output;
 
-    public PolarionClientTests()
+    public PolarionClientTests(ITestOutputHelper output)
     {
+        _output = output;
         // Load configuration from the test settings file
         _config = TestConfigurationLoader.Load("../../../appsettings.test.json");
     }
@@ -193,13 +197,13 @@ public class PolarionClientTests : IAsyncLifetime
 
 
     [Fact]
-    public async Task GetDocumentsInSpace_ShouldReturnExpectedResults()
+    public async Task GetModulesInSpaceThin_ShouldReturnExpectedResults()
     {
         // Arrange
         var spaceName = _config.TestScenarioData.GetDocumentsInSpaceSpaceName;
 
         // Act
-        var result = await _client.GetDocumentsInSpaceAsync(spaceName);
+        var result = await _client.GetModulesInSpaceThinAsync(spaceName);
 
         // Assert
         result.IsSuccess.Should().BeTrue("Document search should succeed");
@@ -209,9 +213,9 @@ public class PolarionClientTests : IAsyncLifetime
 
         // Verify first item has expected fields
         var firstItem = documents.First();
-        firstItem.id.Should().NotBeNullOrEmpty();
-        firstItem.title.Should().NotBeNullOrEmpty();
-        firstItem.type.id.Should().NotBeNullOrEmpty();
+        firstItem.Id.Should().NotBeNullOrEmpty();
+        firstItem.Title.Should().NotBeNullOrEmpty();
+        firstItem.Type.Should().NotBeNullOrEmpty();
     }
 
     [Fact]
@@ -221,7 +225,7 @@ public class PolarionClientTests : IAsyncLifetime
         // (none)
 
         // Act
-        var result = await _client.GetDocumentSpacesAsync();
+        var result = await _client.GetSpacesAsync();
 
         // Assert
         result.IsSuccess.Should().BeTrue("Document search should succeed");
@@ -232,5 +236,26 @@ public class PolarionClientTests : IAsyncLifetime
         // Verify first item has expected fields
         var firstItem = documentSpaces.First();
         firstItem.Should().NotBeNullOrEmpty();
+    }
+
+    [Fact]
+    public async Task GetModulesThin_ShouldReturnExpectedResults()
+    {
+        // Arrange
+        // (none)
+
+        // Act
+        var result = await _client.GetModulesThinAsync("Archive", "Deck");
+        result.Should().NotBeNull();
+        var modules = result.Value;
+        modules.Should().NotBeNull();
+        modules.Should().NotBeEmpty();
+        
+        // Print module IDs to output
+        _output.WriteLine("Module IDs:");
+        foreach (var module in modules)
+        {
+            _output.WriteLine($"- {module.Id} ({module.Title})");
+        }
     }
 }

@@ -12,8 +12,13 @@ public interface IPolarionClient
     Task<Result<WorkItem[]>> SearchWorkitemInBaselineAsync(string baselineRevision, string query, string order, List<string> field_list);
 
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]
-    Task<Result<Module[]>> GetDocumentsInSpaceAsync(string spaceName);
+    Task<Result<ModuleThin[]>> GetModulesInSpaceThinAsync(string spaceName);
 
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]
-    Task<Result<List<string>>> GetDocumentSpacesAsync();
+    Task<Result<List<string>>> GetSpacesAsync(string? excludeSpaceNameContains = null);
+
+    [RequiresUnreferencedCode("Uses WCF services which require reflection")]
+    Task<Result<ModuleThin[]>> GetModulesThinAsync(string? excludeSpaceNameContains = null, string? titleContains = null);
+
+    TrackerWebService TrackerService { get; }
 }

@@ -98,7 +98,7 @@ public class Program
             var client = await PolarionClient.CreateAsync(config);
             if (client.IsSuccess)
             {
-                var result = await client.Value.GetDocumentsInSpaceAsync("TestSpace");
+                var result = await client.Value.GetModulesInSpaceThinAsync("TestSpace");
                 Console.WriteLine($"GetDocumentsInSpaceAsync completed with status: {(result.IsSuccess ? "Success" : "Failure")}");
             }
         }

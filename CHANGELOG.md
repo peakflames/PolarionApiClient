@@ -1,5 +1,10 @@
 # Polarion Changelog
 
+## 0.0.8
+
+- Renamed GetDocumentsInSpaceAsync to GetModulesInSpaceThinAsync
+- Added GetModulesThinAsync method
+
 ## 0.0.7
 
 - Added GetDocumentSpacesAsync method
