@@ -2,7 +2,7 @@
 
 ## 0.0.9
 
-- TBD
+- Improve null handling in GetModulesThinAsync method
 
 ## 0.0.8
 
