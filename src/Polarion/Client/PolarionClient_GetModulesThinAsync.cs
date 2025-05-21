@@ -28,12 +28,12 @@ public partial class PolarionClient : IPolarionClient
             $"WHERE proj.C_ID = '{_config.ProjectId}' " +
             "AND doc.FK_URI_PROJECT = proj.C_URI ";
 
-            if (excludeSpaceNameContains is not null)
+            if (!string.IsNullOrWhiteSpace(excludeSpaceNameContains))
             {
                 sqlQuery += $"AND doc.C_MODULEFOLDER NOT LIKE '%{excludeSpaceNameContains}%' ";
             }
 
-            if (titleContains is not null)
+            if (!string.IsNullOrWhiteSpace(titleContains))
             {
                 sqlQuery += $"AND doc.C_TITLE LIKE '%{titleContains}%' ";
             }
@@ -49,9 +49,14 @@ public partial class PolarionClient : IPolarionClient
                 return Result.Fail("Failed to get documents");
             }
 
+            if (result?.queryModulesBySQLReturn is null || result.queryModulesBySQLReturn.Length == 0)
+            {
+                return Result.Ok(Array.Empty<ModuleThin>());
+            }
+
             // only keep the modules whose id is not null
             var modules = result.queryModulesBySQLReturn.Where(x => x.id != null)
-                                                        .Select(x => new ModuleThin(x.id, x.title, x.type.id, x.status.id, x.moduleFolder, x.moduleLocation));
+                                                    .Select(x => new ModuleThin(x.id, x.title, x.type.id, x.status.id, x.moduleFolder, x.moduleLocation));
 
             // sort the list of documents by title
             modules = modules.OrderBy(x => x.Title).ToList();
