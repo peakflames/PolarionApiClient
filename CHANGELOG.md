@@ -1,5 +1,9 @@
 # Polarion Changelog
 
+## 0.1.0
+
+- TBD
+
 ## 0.0.9
 
 - Improve null handling in GetModulesThinAsync method
