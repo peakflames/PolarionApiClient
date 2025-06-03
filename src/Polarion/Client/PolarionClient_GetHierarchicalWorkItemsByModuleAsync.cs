@@ -5,14 +5,14 @@ public partial class PolarionClient : IPolarionClient
     /// <summary>
     /// Fetches work items from Polarion and organizes them into a hierarchical structure.
     /// </summary>
-    /// <param name="itemPrefix">The prefix used for work item IDs.</param>
+    /// <param name="workItemPrefix">The prefix used for work item IDs.</param>
     /// <param name="moduleTitle">The title of the module to fetch data from.</param>
     /// <param name="filter">The filter criteria for work items.</param>
     /// <param name="moduleRevision">Optional revision identifier. If null, fetches from the latest revision.</param>
     /// <returns>A Result containing a hierarchical dictionary of WorkItems if successful.</returns>
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]
     public async Task<Result<SortedDictionary<string, SortedDictionary<string, WorkItem>>>> GetHierarchicalWorkItemsByModuleAsync(
-        string itemPrefix, string moduleTitle, PolarionFilter filter, string? moduleRevision = null) 
+        string workItemPrefix, string moduleTitle, PolarionFilter filter, string? moduleRevision = null) 
     {
         var result = await GetWorkItemsByModuleAsync(moduleTitle, filter, moduleRevision);
         if (result.IsFailed)
@@ -24,7 +24,7 @@ public partial class PolarionClient : IPolarionClient
 
         var outlineComparer = new OutlineNumberComparer();
         var objectHierarchy = new SortedDictionary<string, SortedDictionary<string, WorkItem>>(outlineComparer);
-        var targetItemPrefix = $"{itemPrefix}-";
+        var targetItemPrefix = $"{workItemPrefix}-";
 
         foreach (var workItem in workItems)
         {
