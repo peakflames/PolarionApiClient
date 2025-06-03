@@ -22,7 +22,7 @@ public partial class PolarionClient : IPolarionClient
     // Returns:
     //     A Result containing an array of WorkItems if successful.
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]
-    public async Task<Result<WorkItem[]>> FetchModuleWorkItemsAsync(string moduleTitle, PolarionFilter filter, string? moduleRevision = null)
+    public async Task<Result<WorkItem[]>> GetWorkItemsByModuleAsync(string moduleTitle, PolarionFilter filter, string? moduleRevision = null)
     {
         string text = "document.title:\"" + moduleTitle + "\"";
         string query = filter.WorkItemFilter + " AND " + text;

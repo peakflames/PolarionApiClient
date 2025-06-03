@@ -20,5 +20,20 @@ public interface IPolarionClient
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]
     Task<Result<ModuleThin[]>> GetModulesThinAsync(string? excludeSpaceNameContains = null, string? titleContains = null);
 
+    [RequiresUnreferencedCode("Uses WCF services which require reflection")]
+    Task<Result<WorkItem[]>> GetWorkItemsByModuleAsync(string moduleTitle, PolarionFilter filter, string? moduleRevision = null);
+
+    [RequiresUnreferencedCode("Uses WCF services which require reflection")]
+    Task<Result<SortedDictionary<string, SortedDictionary<string, WorkItem>>>> GetHierarchicalWorkItemsByModuleAsync(
+        string itemPrefix, string moduleTitle, PolarionFilter filter, string? moduleRevision = null);
+
+    [RequiresUnreferencedCode("Uses WCF services which require reflection")]
+    Task<Result<StringBuilder>> ExportModuleToMarkdownAsync(
+        string workItemPrefix, string moduleTitle, PolarionFilter filter, Dictionary<string, string> workItemTypeToShortNameMap, string? revision = null);
+
+    [RequiresUnreferencedCode("Uses WCF services which require reflection")]
+    public Task<Result<SortedDictionary<string, StringBuilder>>> ExportModuleToMarkdownGroupedByHeadingAsync(
+        int headingLevel, string workItemPrefix, string moduleTitle, PolarionFilter filter, Dictionary<string, string> workItemTypeToShortNameMap, string? revision = null);
+
     TrackerWebService TrackerService { get; }
 }
