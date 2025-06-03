@@ -8,7 +8,7 @@ public class Program
     public static async Task Main(string[] args)
     {
         Console.WriteLine("Polarion Trimming Test");
-        
+
         // Create a mock configuration (we won't actually connect to a server)
         var config = new PolarionClientConfiguration("", "", "", "");
 
@@ -19,7 +19,8 @@ public class Program
             await TestSearchWorkitemAsync(config);
             await TestSearchWorkitemInBaselineAsync(config);
             await TestGetDocumentsInSpaceAsync(config);
-            
+            await TestExportModuleToMarkdownAsync(config);
+
             Console.WriteLine("All tests completed successfully!");
         }
         catch (Exception ex)
@@ -105,6 +106,27 @@ public class Program
         catch (Exception ex)
         {
             Console.WriteLine($"GetDocumentsInSpaceAsync test failed: {ex.Message}");
+            throw;
+        }
+    }
+    
+    [RequiresUnreferencedCode("Uses Polarion API & Markdown which requires reflection")]
+    private static async Task TestExportModuleToMarkdownAsync(PolarionClientConfiguration config)
+    {
+        Console.WriteLine("Testing ExportModuleToMarkdownAsync...");
+        try
+        {
+            var client = await PolarionClient.CreateAsync(config);
+            if (client.IsSuccess)
+            {
+                var result = await client.Value.ExportModuleToMarkdownAsync(
+                    "MD", "TestModule", PolarionFilter.Create("type:requirement", true, true, [], true), []);
+                Console.WriteLine($"ExportModuleToMarkdownAsync completed with status: {(result.IsSuccess ? "Success" : "Failure")}");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"ExportModuleToMarkdownAsync test failed: {ex.Message}");
             throw;
         }
     }

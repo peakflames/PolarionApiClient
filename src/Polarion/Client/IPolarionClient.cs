@@ -25,7 +25,7 @@ public interface IPolarionClient
 
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]
     Task<Result<SortedDictionary<string, SortedDictionary<string, WorkItem>>>> GetHierarchicalWorkItemsByModuleAsync(
-        string itemPrefix, string moduleTitle, PolarionFilter filter, string? moduleRevision = null);
+        string workItemPrefix, string moduleTitle, PolarionFilter filter, string? moduleRevision = null);
 
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]
     Task<Result<StringBuilder>> ExportModuleToMarkdownAsync(
