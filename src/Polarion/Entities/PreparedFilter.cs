@@ -12,13 +12,13 @@ public record PolarionFilter(string WorkItemFilter, string Order, List<string> F
     /// <summary>
     /// Creates a PolarionFilter object with the specified criteria.
     /// </summary>
-    /// <param name="workItemFilter">Lucent query to filter work items (e.g., type:testCase OR type:testStep)</param>
+    /// <param name="workItemFilter">if null, then all work item types are included (e.g., type:testCase OR type:testStep)</param>
     /// <param name="headings">Whether to include heading items.</param>
     /// <param name="paragraphs">Whether to include paragraph items.</param>
     /// <param name="customFields">Whether to include custom fields in the results.</param>
     /// <param name="links">Whether to include linked work items in the results.</param>
     /// <returns></returns>
-    public static PolarionFilter Create(string workItemFilter, bool headings, bool paragraphs, List<string> customFields, bool links)
+    public static PolarionFilter Create(string? workItemFilter, bool headings, bool paragraphs, List<string> customFields, bool links)
     {
         var fields = new List<string>()
         {
@@ -41,18 +41,21 @@ public record PolarionFilter(string WorkItemFilter, string Order, List<string> F
             fields.Add("linkedWorkItems");
         }
 
-        if (headings)
+        if (!string.IsNullOrWhiteSpace(workItemFilter))
         {
-            workItemFilter += " OR type:heading";
-        }
+            if (headings)
+            {
+                workItemFilter += " OR type:heading";
+            }
 
-        if (paragraphs)
-        {
-            workItemFilter += " OR type:paragraph";
+            if (paragraphs)
+            {
+                workItemFilter += " OR type:paragraph";
+            }
         }
 
         return new PolarionFilter(
-            $"({workItemFilter})",
+            string.IsNullOrWhiteSpace(workItemFilter) ? "" : $"({workItemFilter})",
             "outlineNumber",
             fields
         );
