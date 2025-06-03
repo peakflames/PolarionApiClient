@@ -29,23 +29,20 @@ public partial class PolarionClient : IPolarionClient
                 builder.AppendLine(content);
             }
         }
-        else if (workItemTypeToShortNameMap.ContainsKey(item.type.id))
+        else
         {
             builder.AppendLine();
             // count the number of . in the outlineNumber
             var dotCount = item.outlineNumber.Count(c => c == '.') + 1;
-            builder.AppendLine($"{new string('#', dotCount)} {{{workItemTypeToShortNameMap[item.type.id]}}} {item.id}");
+
+            var type = workItemTypeToShortNameMap.ContainsKey(item.type.id) ? workItemTypeToShortNameMap[item.type.id] : item.type.id;
+
+            builder.AppendLine($"{new string('#', dotCount)} WorkItem (id='{item.id}', type='{type}')");
 
             var content = item.description.type == "text/html"
                             ? _markdownConverter.Convert(item.description.content)
                             : item.description.content;
             builder.AppendLine(content);
-        }
-        else
-        {
-            builder.AppendLine();
-            var dotCount = item.outlineNumber.Count(c => c == '.') + 1;
-            builder.AppendLine($"{new string('#', dotCount)} {item.id}");
         }
     }
 }
