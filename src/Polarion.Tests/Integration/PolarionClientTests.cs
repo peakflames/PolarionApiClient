@@ -250,7 +250,7 @@ public class PolarionClientTests : IAsyncLifetime
         var modules = result.Value;
         modules.Should().NotBeNull();
         modules.Should().NotBeEmpty();
-        
+
         // Print module IDs to output
         _output.WriteLine("Module IDs:");
         foreach (var module in modules)
@@ -258,4 +258,87 @@ public class PolarionClientTests : IAsyncLifetime
             _output.WriteLine($"- {module.Id} ({module.Title})");
         }
     }
+
+    [Fact]
+    public async Task GetWorkItemsByModuleAsync_ShouldReturnExpectedResults()
+    {
+        // Arrange
+        var workItemFilter = _config.TestScenarioData.GetWorktemsByModuleModuleWorkItemFilter;
+        var customFieldList = _config.TestScenarioData.GetWorktemsByModuleModuleWorkItemCustomFieldList.ToList();
+        var filter = PolarionFilter.Create(workItemFilter, true, true, customFieldList, true);
+        var moduleTitle = _config.TestScenarioData.GetWorktemsByModuleModuleTitle;
+
+        // Act
+        var result = await _client.GetWorkItemsByModuleAsync(moduleTitle, filter);
+        result.Should().NotBeNull();
+        var workItems = result.Value;
+        workItems.Should().NotBeNull();
+        workItems.Should().NotBeEmpty();
+    }
+
+    [Fact]
+    public async Task GetHierarchicalWorkItemsByModuleAsync_ShouldReturnExpectedResults()
+    {
+        // Arrange
+        var workItemFilter = _config.TestScenarioData.GetWorktemsByModuleModuleWorkItemFilter;
+        var customFieldList = _config.TestScenarioData.GetWorktemsByModuleModuleWorkItemCustomFieldList.ToList();
+        var filter = PolarionFilter.Create(workItemFilter, true, true, customFieldList, true);
+        var moduleTitle = _config.TestScenarioData.GetWorktemsByModuleModuleTitle;
+        var workItemPrefix = _config.TestScenarioData.GetHierarchicalWorkItemsByModuleItemPrefix;
+        // Act
+        var result = await _client.GetHierarchicalWorkItemsByModuleAsync(workItemPrefix, moduleTitle, filter);
+        result.Should().NotBeNull();
+
+        var workItemHierarchy = result.Value;
+        workItemHierarchy.Should().NotBeNull();
+        workItemHierarchy.Should().NotBeEmpty();
+    }
+
+    [Fact]
+    public async Task ExportModuleToMarkdownAsync_ShouldReturnExpectedResults()
+    {
+        // Arrange
+        var workItemFilter = _config.TestScenarioData.GetWorktemsByModuleModuleWorkItemFilter;
+        var customFieldList = _config.TestScenarioData.GetWorktemsByModuleModuleWorkItemCustomFieldList.ToList();
+        var filter = PolarionFilter.Create(workItemFilter, true, true, customFieldList, true);
+        var moduleTitle = _config.TestScenarioData.GetWorktemsByModuleModuleTitle;
+        var workItemPrefix = _config.TestScenarioData.GetHierarchicalWorkItemsByModuleItemPrefix;
+        var workItemTypeToShortNameMap = _config.TestScenarioData.ExportModuleToMarkdownWorkItemTypeToShortNameMap;
+
+        // Act
+        var result = await _client.ExportModuleToMarkdownAsync(workItemPrefix, moduleTitle, filter, workItemTypeToShortNameMap);
+        result.Should().NotBeNull();
+        var stringBuilder = result.Value;
+        stringBuilder.Should().NotBeNull();
+        stringBuilder.ToString().Should().NotBeNullOrEmpty();
+    }
+
+    [Fact]
+    public async Task ExportModuleToMarkdownGroupedByHeadingAsync_ShouldReturnExpectedResults()
+    {
+        // Arrange
+        var workItemFilter = _config.TestScenarioData.GetWorktemsByModuleModuleWorkItemFilter;
+        var customFieldList = _config.TestScenarioData.GetWorktemsByModuleModuleWorkItemCustomFieldList.ToList();
+        var filter = PolarionFilter.Create(workItemFilter, true, true, customFieldList, true);
+        var moduleTitle = _config.TestScenarioData.GetWorktemsByModuleModuleTitle;
+        var workItemPrefix = _config.TestScenarioData.GetHierarchicalWorkItemsByModuleItemPrefix;
+        var workItemTypeToShortNameMap = _config.TestScenarioData.ExportModuleToMarkdownWorkItemTypeToShortNameMap;
+
+        // Act
+        var result = await _client.ExportModuleToMarkdownGroupedByHeadingAsync(4, workItemPrefix, moduleTitle, filter, workItemTypeToShortNameMap);
+        result.Should().NotBeNull();
+
+        var headingGroupedMarkdown = result.Value;
+        headingGroupedMarkdown.Should().NotBeNull();
+        headingGroupedMarkdown.Should().NotBeEmpty();
+
+        foreach (var markdownBuilder in headingGroupedMarkdown.Values)
+        {
+            markdownBuilder.Should().NotBeNull();
+            markdownBuilder.ToString().Should().NotBeNullOrEmpty();
+        }
+    }
+
+    
+
 }

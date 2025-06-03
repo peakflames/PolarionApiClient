@@ -42,5 +42,10 @@ public class TestScenarioData
     public string[] SearchWorkitemFieldList { get; set; } = null!;
     public string SearchWorkitemBaselineRevision { get; set; } = null!;
     public string GetDocumentsInSpaceSpaceName { get; set; } = null!;
+    public string GetWorktemsByModuleModuleTitle { get; set; } = null!;
+    public string GetWorktemsByModuleModuleWorkItemFilter { get; set; } = null!;
+    public string[] GetWorktemsByModuleModuleWorkItemCustomFieldList { get; set; } = null!;
+    public string GetHierarchicalWorkItemsByModuleItemPrefix { get; set; } = null!;
+    public Dictionary<string, string> ExportModuleToMarkdownWorkItemTypeToShortNameMap { get; set; } = null!;
     
 }
