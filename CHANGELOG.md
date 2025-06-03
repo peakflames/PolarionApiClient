@@ -2,7 +2,10 @@
 
 ## 0.1.0
 
-- Add Markdown export for Polarion modules
+- Added `GetWorkItemsByModuleAsync`
+- Added `GetHierarchicalWorkItemsByModuleAsync`
+- Added `ExportModuleToMarkdownAsync`
+- Added `ExportModuleToMarkdownGroupedByHeadingAsync`
 
 ## 0.0.9
 
@@ -10,8 +13,8 @@
 
 ## 0.0.8
 
-- Renamed GetDocumentsInSpaceAsync to GetModulesInSpaceThinAsync
-- Added GetModulesThinAsync method
+- Renamed GetDocumentsInSpaceAsync to `GetModulesInSpaceThinAsync`
+- Added `GetModulesThinAsync` method
 
 ## 0.0.7
 
