@@ -25,7 +25,7 @@ public partial class PolarionClient : IPolarionClient
     public async Task<Result<WorkItem[]>> GetWorkItemsByModuleAsync(string moduleTitle, PolarionFilter filter, string? moduleRevision = null)
     {
         string text = "document.title:\"" + moduleTitle + "\"";
-        string query = filter.WorkItemFilter + " AND " + text;
+        string query = string.IsNullOrWhiteSpace(filter.WorkItemFilter) ? text : filter.WorkItemFilter + " AND " + text;
         WorkItem[] value;
         if (moduleRevision == null)
         {

@@ -265,7 +265,7 @@ public class PolarionClientTests : IAsyncLifetime
         // Arrange
         var workItemFilter = _config.TestScenarioData.GetWorktemsByModuleModuleWorkItemFilter;
         var customFieldList = _config.TestScenarioData.GetWorktemsByModuleModuleWorkItemCustomFieldList.ToList();
-        var filter = PolarionFilter.Create(workItemFilter, true, true, customFieldList, true);
+        var filter = PolarionFilter.Create(null, true, true, customFieldList, true);
         var moduleTitle = _config.TestScenarioData.GetWorktemsByModuleModuleTitle;
 
         // Act
