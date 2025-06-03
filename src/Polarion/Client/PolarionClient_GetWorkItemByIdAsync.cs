@@ -1,12 +1,3 @@
-using System.Net;
-using System.Reflection.Metadata;
-using System.ServiceModel;
-using System.ServiceModel.Channels;
-using System.ServiceModel.Description;
-using System.ServiceModel.Dispatcher;
-using System.Xml.Linq;
-
-
 namespace Polarion;
 
 public partial class PolarionClient : IPolarionClient
