@@ -15,7 +15,7 @@
     <Authors>Todd Schavey</Authors>
     <Company>Peakflames</Company>
     <Description>A C# package to access the Polarion WSDL API</Description>
-    <PackageTags>polarion;polaron-alm</PackageTags>
+    <PackageTags>polarion;polaron-alm;markdown</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/peakflames/PolarionApiClient</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -40,6 +40,7 @@
     <PackageReference Include="System.ServiceModel.Http" Version="8.1.2" />
     <PackageReference Include="System.ServiceModel.Primitives" Version="8.1.2" />
     <PackageReference Include="System.ServiceModel.Security" Version="6.0.0" />
+    <PackageReference Include="ReverseMarkdown" Version="4.6.0" />
   </ItemGroup>
 
   <ItemGroup>

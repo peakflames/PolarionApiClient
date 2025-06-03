@@ -10,6 +10,7 @@ global using System.ServiceModel.Channels;
 global using System.Xml.Linq;
 
 global using System.Net;
+global using System.Text;
 global using System.Reflection.Metadata;
 
 global using System.ServiceModel.Description;
