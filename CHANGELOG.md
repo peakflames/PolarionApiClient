@@ -2,7 +2,7 @@
 
 ## 0.1.0
 
-- TBD
+- Add Markdown export for Polarion modules
 
 ## 0.0.9
 
