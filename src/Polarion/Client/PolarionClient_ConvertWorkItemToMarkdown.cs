@@ -33,7 +33,7 @@ public partial class PolarionClient : IPolarionClient
             if (workItem.description?.type == "text/html")
             {
                 var htmlContent = workItem.description.content?.ToString() ?? "";
-                var markdownContent = _markdownConverter.Convert(htmlContent);
+                var markdownContent = ConvertPolarionWorkItemHtmlToMarkdown(htmlContent);
                 description = markdownContent;
             }
         }
@@ -49,5 +49,40 @@ public partial class PolarionClient : IPolarionClient
         sb.AppendLine("");
         sb.AppendLine(description);
         return sb.ToString();
+    }
+
+
+    public string ConvertPolarionWorkItemHtmlToMarkdown(string htmlContent)
+    {
+        // Process Polarion's math formula spans by replacing them with pre tags containing the data-source content
+        // Pattern matches: <span data-source="..." data-inline="..." class="polarion-rte-formula">...</span>
+        var processedHtml = System.Text.RegularExpressions.Regex.Replace(
+            htmlContent,
+            @"<span\s+(?:[^>]*?\s+)?data-source=""([^""]*?)""(?:\s+[^>]*?)?\s+class=""polarion-rte-formula""[^>]*>.*?</span>",
+            match => {
+                // Extract the data-source attribute value
+                var dataSource = match.Groups[1].Value;
+                // Replace with pre tag containing the data-source content
+                return $"$${dataSource}$$";
+            },
+            System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.Singleline
+        );
+
+        // Process Polarion's cross-reference spans by replacing them with markdown links to the referenced work items
+        // Pattern matches: <span class="polarion-rte-link" data-type="crossReference" ... data-item-id="MD-145888" ...>...</span>
+        processedHtml = System.Text.RegularExpressions.Regex.Replace(
+            processedHtml,
+            @"<span\s+(?:[^>]*?\s+)?class=""polarion-rte-link""(?:\s+[^>]*?)?\s+data-type=""crossReference""(?:\s+[^>]*?)?\s+data-item-id=""([^""]*?)""[^>]*>.*?</span>",
+            match => {
+                // Extract the data-item-id attribute value
+                var itemId = match.Groups[1].Value;
+                // Replace with a markdown link to the referenced work item
+                return $"[{itemId}](#{itemId})";
+            },
+            System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.Singleline
+        );
+
+        var markdownContent = _markdownConverter.Convert(processedHtml);
+        return markdownContent;
     }
 }

@@ -377,6 +377,11 @@ public class PolarionClientTests : IAsyncLifetime
         }
     }
 
+    // The EEC Application shall set [publisher_id] according to the following mapping:<br/>
+    //  <span data-source="\text{[publisher_id]} = \begin{cases}
+    //  \text{[location_id]} + 14 &amp;, \hspace{0.5 cm} 1 \leq \text{[location_id]} \leq 12 \\ 
+    //  0 &amp;, \hspace{0.5 cm} \text{otherwise }
+    // \end{cases}" data-inline="false" class="polarion-rte-formula"></span> 
 
     [Fact]
     public async Task ConvertWorkItemToMarkdown_ShouldReturnExpectedResults()
@@ -396,15 +401,60 @@ public class PolarionClientTests : IAsyncLifetime
         // Assert
         markdownContent.Should().NotBeNullOrEmpty();
         markdownContent.Should().Contain("__WorkItem(id='");
-        
+
 
         // Act: Don't Include WorkItem Identifiers
         markdownContent = _client.ConvertWorkItemToMarkdown(workItemId, workItem, null, false);
-        
+
         // Assert
         markdownContent.Should().NotBeNullOrEmpty();
         markdownContent.Should().NotContain("__WorkItem(id='");
-        
+
+    }
+
+    [Fact]
+    public void ConvertPolarionWorkItemHtmlToMarkdown_LaTeX_ShouldReturnExpectedResults()
+    {
+        // Arrange
+        var htmlContent =
+            """
+            The software shall set [publisher_id] according to the following mapping:<br/>
+            <span data-source="\text{[publisher_id]} = \begin{cases}
+            \text{[location_id]} + 14 &amp;, \hspace{0.5 cm} 1 \leq \text{[location_id]} \leq 12 \\ 
+            0 &amp;, \hspace{0.5 cm} \text{otherwise }
+            \end{cases}" data-inline="false" class="polarion-rte-formula"></span>
+            """;
+
+        // Act:
+        var markdownContent = _client.ConvertPolarionWorkItemHtmlToMarkdown(htmlContent);
+
+        // Assert
+        markdownContent.Should().NotBeNullOrEmpty();
+
+        // Verify LaTeX is retained during Markdown
+        markdownContent.Should().Contain("$$\\text");
+        markdownContent.Should().Contain("{cases}$$");
+    }
+    
+    [Fact]
+    public void ConvertPolarionWorkItemHtmlToMarkdown_PolarionCrossReference_ShouldReturnExpectedResults()
+    {
+        // Arrange
+        var htmlContent =
+            """
+            The software shall set the value of [epu_type] as LIFTER or TILTER according to 
+            <span class="polarion-rte-link" data-type="crossReference" id="fake" data-item-id="YADA-YADA-YADA" data-option-id="longoutline">
+            </span>.
+            """;
+
+        // Act:
+        var markdownContent = _client.ConvertPolarionWorkItemHtmlToMarkdown(htmlContent);
+
+        // Assert
+        markdownContent.Should().NotBeNullOrEmpty();
+
+        // Verify cross-reference is converted to a markdown link
+        markdownContent.Should().Contain("[YADA-YADA-YADA](#YADA-YADA-YADA)");        
     }
 
 }
