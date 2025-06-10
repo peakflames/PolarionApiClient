@@ -1,5 +1,11 @@
 # Polarion Changelog
 
+## 0.2.0
+
+- Updated `ExportModuleToMarkdownAsync` by adding parameter to control visibility of work item **identifiers**
+- Updated `ExportModuleToMarkdownGroupedByHeadingAsync` by adding parameter to control visibility of work item **identifiers**
+- Adding `ConvertWorkItemToMarkdown` method
+
 ## 0.1.0
 
 - Added `GetWorkItemsByModuleAsync`

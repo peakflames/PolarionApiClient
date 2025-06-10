@@ -9,10 +9,13 @@ public partial class PolarionClient : IPolarionClient
     /// <param name="moduleTitle">The title of the module to export.</param>
     /// <param name="filter">The filter criteria for work items.</param>
     /// <param name="workItemTypeToShortNameMap">A dictionary mapping work item type IDs to short names.</param>
+    /// <param name="includeWorkItemIdentifiers">Whether to include the work item identifiers in the Markdown output.</param>
     /// <param name="revision">Optional revision identifier. If null, exports the latest revision.</param>
     /// <returns>A Result containing a StringBuilder with the Markdown content if successful.</returns>
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]
-    public async Task<Result<StringBuilder>> ExportModuleToMarkdownAsync(string workItemPrefix, string moduleTitle, PolarionFilter filter, Dictionary<string, string> workItemTypeToShortNameMap, string? revision = null)
+    public async Task<Result<StringBuilder>> ExportModuleToMarkdownAsync(
+        string workItemPrefix, string moduleTitle, PolarionFilter filter,
+        Dictionary<string, string> workItemTypeToShortNameMap, bool includeWorkItemIdentifiers = true, string? revision = null)
     {
         if (string.IsNullOrWhiteSpace(moduleTitle))
         {
@@ -37,7 +40,8 @@ public partial class PolarionClient : IPolarionClient
 
             foreach (var workItemEntry in entry.Value)
             {
-                ConvertToMarkdown(workItemEntry.Value, workItemTypeToShortNameMap, stringBuilder);
+                StringBuilderAppendWorkItemMarkdown(
+                    workItemEntry.Value, workItemTypeToShortNameMap, includeWorkItemIdentifiers, stringBuilder);
             }
         }
 

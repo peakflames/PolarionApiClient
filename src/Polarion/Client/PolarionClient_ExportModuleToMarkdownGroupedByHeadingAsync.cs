@@ -10,10 +10,13 @@ public partial class PolarionClient : IPolarionClient
     /// <param name="moduleTitle">The title of the module to export.</param>
     /// <param name="filter">The filter criteria for work items.</param>
     /// <param name="workItemTypeToShortNameMap">A dictionary mapping work item type IDs to short names.</param>
+    /// <param name="includeWorkItemIdentifiers">Whether to include the work item identifiers in the Markdown output.</param>
     /// <param name="revision">Optional revision identifier. If null, exports the latest revision.</param>
     /// <returns>A Result containing a SortedDictionary of heading-grouped Markdown content if successful.</returns>
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]
-    public async Task<Result<SortedDictionary<string, StringBuilder>>> ExportModuleToMarkdownGroupedByHeadingAsync(int headingLevel, string workItemPrefix, string moduleTitle, PolarionFilter filter, Dictionary<string, string> workItemTypeToShortNameMap, string? revision = null)
+    public async Task<Result<SortedDictionary<string, StringBuilder>>> ExportModuleToMarkdownGroupedByHeadingAsync(
+        int headingLevel, string workItemPrefix, string moduleTitle, PolarionFilter filter,
+        Dictionary<string, string> workItemTypeToShortNameMap, bool includeWorkItemIdentifiers = true, string? revision = null)
     {
         if (string.IsNullOrWhiteSpace(moduleTitle))
         {
@@ -70,12 +73,12 @@ public partial class PolarionClient : IPolarionClient
             {
                 if (contentGroupedByHeading.TryGetValue(key, out var markdownBuilder))
                 {
-                    ConvertToMarkdown(workItem, workItemTypeToShortNameMap, markdownBuilder);
+                    StringBuilderAppendWorkItemMarkdown(workItem, workItemTypeToShortNameMap, includeWorkItemIdentifiers,markdownBuilder);
                 }
                 else
                 {
                     markdownBuilder = new StringBuilder();
-                    ConvertToMarkdown(workItem, workItemTypeToShortNameMap, markdownBuilder);
+                    StringBuilderAppendWorkItemMarkdown(workItem, workItemTypeToShortNameMap, includeWorkItemIdentifiers, markdownBuilder);
                     contentGroupedByHeading.Add(key, markdownBuilder);
                 }
             }

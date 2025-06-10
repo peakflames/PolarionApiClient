@@ -41,7 +41,7 @@ public class PolarionClientTests : IAsyncLifetime
         var workItemId = _config.TestScenarioData.GetWorkItemByIdAsyncWorkItemId;
 
         // Act
-        var result = await _client.GetWorkItemByIdAsync(workItemId);
+        var result = await _client.GetWorkItemByIdAsync("MD-149588");
 
         // Assert
         result.IsSuccess.Should().BeTrue("Work item retrieval should succeed");
@@ -305,12 +305,25 @@ public class PolarionClientTests : IAsyncLifetime
         var workItemPrefix = _config.TestScenarioData.GetHierarchicalWorkItemsByModuleItemPrefix;
         var workItemTypeToShortNameMap = _config.TestScenarioData.ExportModuleToMarkdownWorkItemTypeToShortNameMap;
 
-        // Act
+        // Act: Include WorkItem Identifiers
         var result = await _client.ExportModuleToMarkdownAsync(workItemPrefix, moduleTitle, filter, workItemTypeToShortNameMap);
         result.Should().NotBeNull();
         var stringBuilder = result.Value;
         stringBuilder.Should().NotBeNull();
-        stringBuilder.ToString().Should().NotBeNullOrEmpty();
+        var markdownDocumentContent = stringBuilder.ToString();
+        markdownDocumentContent.Should().NotBeNullOrEmpty();
+        markdownDocumentContent.Should().Contain(", type='paragraph'):__");
+        markdownDocumentContent.Should().Contain("WorkItem(id='");
+
+        // Act: Don't Include WorkItem Identifiers
+        result = await _client.ExportModuleToMarkdownAsync(workItemPrefix, moduleTitle, filter, workItemTypeToShortNameMap, false);
+        result.Should().NotBeNull();
+        stringBuilder = result.Value;
+        stringBuilder.Should().NotBeNull();
+        markdownDocumentContent = stringBuilder.ToString();
+        markdownDocumentContent.Should().NotBeNullOrEmpty();
+        markdownDocumentContent.Should().NotContain(", type='paragraph'):__");
+        markdownDocumentContent.Should().NotContain("WorkItem(id='");
     }
 
     [Fact]
@@ -324,7 +337,7 @@ public class PolarionClientTests : IAsyncLifetime
         var workItemPrefix = _config.TestScenarioData.GetHierarchicalWorkItemsByModuleItemPrefix;
         var workItemTypeToShortNameMap = _config.TestScenarioData.ExportModuleToMarkdownWorkItemTypeToShortNameMap;
 
-        // Act
+        // Act: Include WorkItem Identifiers
         var result = await _client.ExportModuleToMarkdownGroupedByHeadingAsync(4, workItemPrefix, moduleTitle, filter, workItemTypeToShortNameMap);
         result.Should().NotBeNull();
 
@@ -332,13 +345,66 @@ public class PolarionClientTests : IAsyncLifetime
         headingGroupedMarkdown.Should().NotBeNull();
         headingGroupedMarkdown.Should().NotBeEmpty();
 
+        var countOfWorkItemWithExpectedWorkItemIdentifiers = 0;
         foreach (var markdownBuilder in headingGroupedMarkdown.Values)
         {
             markdownBuilder.Should().NotBeNull();
-            markdownBuilder.ToString().Should().NotBeNullOrEmpty();
+            var markdownDocumentContent = markdownBuilder.ToString();
+            markdownDocumentContent.Should().NotBeNullOrEmpty();
+            if (markdownDocumentContent.Contains("__WorkItem(id='"))
+            {
+                countOfWorkItemWithExpectedWorkItemIdentifiers++;
+            }
+        }
+
+        // Assert
+        countOfWorkItemWithExpectedWorkItemIdentifiers.Should().BeGreaterThan(0);
+
+        // Act: Don't Include WorkItem Identifiers
+        result = await _client.ExportModuleToMarkdownGroupedByHeadingAsync(4, workItemPrefix, moduleTitle, filter, workItemTypeToShortNameMap, false);
+        result.Should().NotBeNull();
+
+        headingGroupedMarkdown = result.Value;
+        headingGroupedMarkdown.Should().NotBeNull();
+        headingGroupedMarkdown.Should().NotBeEmpty();
+
+        foreach (var markdownBuilder in headingGroupedMarkdown.Values)
+        {
+            markdownBuilder.Should().NotBeNull();
+            var markdownDocumentContent = markdownBuilder.ToString();
+            markdownDocumentContent.Should().NotBeNullOrEmpty();
+            markdownDocumentContent.Should().NotContain("__WorkItem(id='");
         }
     }
 
-    
+
+    [Fact]
+    public async Task ConvertWorkItemToMarkdown_ShouldReturnExpectedResults()
+    {
+        // Arrange
+        var workItemId = _config.TestScenarioData.GetWorkItemByIdAsyncWorkItemId;
+
+
+        var result = await _client.GetWorkItemByIdAsync(workItemId);
+        result.IsSuccess.Should().BeTrue("Work item retrieval should succeed");
+        var workItem = result.Value;
+        workItem.Should().NotBeNull();
+
+        // Act: Include WorkItem Identifiers
+        var markdownContent = _client.ConvertWorkItemToMarkdown(workItemId, workItem, null, true);
+
+        // Assert
+        markdownContent.Should().NotBeNullOrEmpty();
+        markdownContent.Should().Contain("__WorkItem(id='");
+        
+
+        // Act: Don't Include WorkItem Identifiers
+        markdownContent = _client.ConvertWorkItemToMarkdown(workItemId, workItem, null, false);
+        
+        // Assert
+        markdownContent.Should().NotBeNullOrEmpty();
+        markdownContent.Should().NotContain("__WorkItem(id='");
+        
+    }
 
 }
