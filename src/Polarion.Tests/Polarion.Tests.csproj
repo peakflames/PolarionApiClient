@@ -5,6 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <IsPackable>false</IsPackable>
+    <TrimMode>partial</TrimMode>
   </PropertyGroup>
 
   <ItemGroup>
@@ -24,5 +25,12 @@
   <ItemGroup>
     <ProjectReference Include="..\Polarion\Polarion.csproj" />
   </ItemGroup>
+
+  <ItemGroup>    
+    <TrimmerRootAssembly Include="ReverseMarkdown" />
+    <TrimmerRootAssembly Include="HtmlAgilityPack" />
+    <TrimmerRootAssembly Include="Polarion" />
+  </ItemGroup>
+
 
 </Project>
