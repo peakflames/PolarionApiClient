@@ -29,11 +29,14 @@ public interface IPolarionClient
 
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]
     Task<Result<StringBuilder>> ExportModuleToMarkdownAsync(
-        string workItemPrefix, string moduleTitle, PolarionFilter filter, Dictionary<string, string> workItemTypeToShortNameMap, string? revision = null);
+        string workItemPrefix, string moduleTitle, PolarionFilter filter, Dictionary<string, string> workItemTypeToShortNameMap, bool includeWorkItemIdentifiers = true, string? revision = null);
 
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]
-    public Task<Result<SortedDictionary<string, StringBuilder>>> ExportModuleToMarkdownGroupedByHeadingAsync(
-        int headingLevel, string workItemPrefix, string moduleTitle, PolarionFilter filter, Dictionary<string, string> workItemTypeToShortNameMap, string? revision = null);
+    Task<Result<SortedDictionary<string, StringBuilder>>> ExportModuleToMarkdownGroupedByHeadingAsync(
+        int headingLevel, string workItemPrefix, string moduleTitle, PolarionFilter filter, Dictionary<string, string> workItemTypeToShortNameMap, bool includeWorkItemIdentifiers = true, string? revision = null);
+
+    [RequiresUnreferencedCode("Uses ReverseMarkdown which requires reflection")]
+    string ConvertWorkItemToMarkdown(string workItemId, WorkItem? workItem, string? errorMsgPrefix = null, bool includeMetadata = false);
 
     TrackerWebService TrackerService { get; }
 }
