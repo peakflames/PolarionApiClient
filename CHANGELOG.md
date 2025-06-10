@@ -5,6 +5,7 @@
 - Updated `ExportModuleToMarkdownAsync` by adding parameter to control visibility of work item **identifiers**
 - Updated `ExportModuleToMarkdownGroupedByHeadingAsync` by adding parameter to control visibility of work item **identifiers**
 - Adding `ConvertWorkItemToMarkdown` method
+- Add LaTeX and cross-reference support in Polarion HTML to Markdown conversion
 
 ## 0.1.0
 
