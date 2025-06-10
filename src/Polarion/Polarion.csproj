@@ -4,7 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <IsTrimmable>true</IsTrimmable>
     <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
-    <TrimmerDefaultAction>link</TrimmerDefaultAction>
+    <TrimMode>partial</TrimMode>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <NoWarn>CS8981,CS1591</NoWarn>
@@ -45,7 +45,13 @@
 
   <ItemGroup>
     <None Include="..\..\README.md" Pack="true" PackagePath="\" />
-    <EmbeddedResource Include="TrimmerRoots.xml" />
+    <!-- <EmbeddedResource Include="TrimmerRoots.xml" /> -->
+  </ItemGroup>
+
+  <ItemGroup>    
+    <TrimmerRootAssembly Include="ReverseMarkdown" />
+    <TrimmerRootAssembly Include="HtmlAgilityPack" />
+    <TrimmerRootAssembly Include="Polarion" />
   </ItemGroup>
 
 </Project>
