@@ -33,7 +33,7 @@ public partial class PolarionClient : IPolarionClient
             if (item.description is not null)
             {
                 var content = item.description.type is not null && item.description.type == "text/html"
-                                ? _markdownConverter.Convert(item.description.content)
+                                ? ConvertPolarionWorkItemHtmlToMarkdown(item.description.content)
                                 : item.description.content;
                 builder.AppendLine(content);
             }
@@ -48,7 +48,7 @@ public partial class PolarionClient : IPolarionClient
             }
             
             var content = item.description.type == "text/html"
-                            ? _markdownConverter.Convert(item.description.content)
+                            ? ConvertPolarionWorkItemHtmlToMarkdown(item.description.content)
                             : item.description.content;
             builder.AppendLine(content);
         }
