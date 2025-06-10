@@ -7,6 +7,7 @@
     <Nullable>enable</Nullable>
 
     <!-- Size optimization -->
+    <TrimMode>partial</TrimMode>
     <PublishSingleFile>true</PublishSingleFile>
     <SelfContained>true</SelfContained>
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>
@@ -22,8 +23,12 @@
   <ItemGroup>
     <RuntimeHostConfigurationOption Include="System.Globalization.Invariant" Value="true" />
     <ProjectReference Include="..\Polarion\Polarion.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>    
+    <TrimmerRootAssembly Include="ReverseMarkdown" />
+    <TrimmerRootAssembly Include="HtmlAgilityPack" />
     <TrimmerRootAssembly Include="Polarion" />
-    <EmbeddedResource Include="TrimmerRoots.xml" />
   </ItemGroup>
 
 </Project>
