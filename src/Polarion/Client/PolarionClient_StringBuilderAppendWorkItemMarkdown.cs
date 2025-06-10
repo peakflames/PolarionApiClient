@@ -3,24 +3,33 @@ namespace Polarion;
 public partial class PolarionClient : IPolarionClient
 {
     /// <summary>
-    /// Converts a Polarion work item to Markdown format.
+    /// Appends a document-style formatted Markdown representation of a Polarion work item to a StringBuilder.
     /// </summary>
     /// <param name="item">The work item to convert.</param>
     /// <param name="workItemTypeToShortNameMap">A dictionary mapping work item type IDs to short names.</param>
+    /// <param name="includeWorkItemIdentifiers">Whether to include the work item identifiers in the Markdown output.</param>
     /// <param name="builder">The StringBuilder to append the Markdown content to.</param>
     [RequiresUnreferencedCode("Uses ReverseMarkdown which requires reflection")]
-    protected void ConvertToMarkdown(WorkItem item, Dictionary<string, string> workItemTypeToShortNameMap, StringBuilder builder)
+    protected void StringBuilderAppendWorkItemMarkdown(WorkItem item, Dictionary<string, string> workItemTypeToShortNameMap, bool includeWorkItemIdentifiers, StringBuilder builder)
     {
-        if (item.type.id == "heading")
+        var type = workItemTypeToShortNameMap.TryGetValue(item.type.id, out string? value) ? value : item.type.id;
+
+        if (type == "heading")
         {
             builder.AppendLine();
             // count the number of . in the outlineNumber
             var dotCount = item.outlineNumber.Count(c => c == '.') + 1;
             builder.AppendLine($"{new string('#', dotCount)} {item.outlineNumber} {item.title}");
         }
-        else if (item.type.id == "paragraph")
+        else if (type == "paragraph")
         {
             builder.AppendLine();
+
+            if (includeWorkItemIdentifiers)
+            {
+                builder.AppendLine($"__WorkItem(id='{item.id}', type='{type}'):__");
+            }
+            
             if (item.description is not null)
             {
                 var content = item.description.type is not null && item.description.type == "text/html"
@@ -32,13 +41,12 @@ public partial class PolarionClient : IPolarionClient
         else
         {
             builder.AppendLine();
-            // count the number of . in the outlineNumber
-            var dotCount = item.outlineNumber.Count(c => c == '.') + 1;
 
-            var type = workItemTypeToShortNameMap.ContainsKey(item.type.id) ? workItemTypeToShortNameMap[item.type.id] : item.type.id;
-
-            builder.AppendLine($"{new string('#', dotCount)} WorkItem (id='{item.id}', type='{type}')");
-
+            if (includeWorkItemIdentifiers)
+            {
+                builder.AppendLine($"__WorkItem(id='{item.id}', type='{type}'):__");
+            }
+            
             var content = item.description.type == "text/html"
                             ? _markdownConverter.Convert(item.description.content)
                             : item.description.content;
