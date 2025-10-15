@@ -1,5 +1,9 @@
 # Polarion Changelog
 
+## 0.2.1
+
+- make module filtering case-insensitive in `GetModulesThinAsync`
+
 ## 0.2.0
 
 - Updated `ExportModuleToMarkdownAsync` by adding parameter to control visibility of work item **identifiers**

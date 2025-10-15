@@ -21,12 +21,12 @@ public partial class PolarionClient : IPolarionClient
 
             if (!string.IsNullOrWhiteSpace(excludeSpaceNameContains))
             {
-                sqlQuery += $"AND doc.C_MODULEFOLDER NOT LIKE '%{excludeSpaceNameContains}%' ";
+                sqlQuery += $"AND UPPER(doc.C_MODULEFOLDER) NOT LIKE '%{excludeSpaceNameContains.ToUpper()}%' ";
             }
 
             if (!string.IsNullOrWhiteSpace(titleContains))
             {
-                sqlQuery += $"AND doc.C_TITLE LIKE '%{titleContains}%' ";
+                sqlQuery += $"AND UPPER(doc.C_TITLE) LIKE '%{titleContains.ToUpper()}%' ";
             }
 
             var result = await _trackerClient.queryModulesBySQLAsync(

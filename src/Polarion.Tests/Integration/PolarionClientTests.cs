@@ -251,12 +251,16 @@ public class PolarionClientTests : IAsyncLifetime
         modules.Should().NotBeNull();
         modules.Should().NotBeEmpty();
 
-        // Print module IDs to output
-        _output.WriteLine("Module IDs:");
-        foreach (var module in modules)
-        {
-            _output.WriteLine($"- {module.Id} ({module.Title})");
-        }
+        var initialCount = modules.Length;
+
+        result = await _client.GetModulesThinAsync("Archive", "DECK");
+        result.Should().NotBeNull();
+        modules = result.Value;
+        modules.Should().NotBeNull();
+        modules.Should().NotBeEmpty();
+
+        // Assert the count is the same regardless of case
+        modules.Length.Should().Be(initialCount);
     }
 
     [Fact]
