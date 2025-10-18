@@ -4,7 +4,7 @@
 
 - Add `GetWorkItemRevisionsByIdAsync` and `GetRevisionIdsByWorkItemIdAsync`
 - Add `GetRevisionIdsAsync`
-- Add `GetModuleByUriAsync` and `GetModuleByLocationAsync`
+- Add `GetModuleByUriAsync` and `GetModuleByLocationAsync` and `GetModuleRevisionsByLocationAsync`
 
 ## 0.2.1
 

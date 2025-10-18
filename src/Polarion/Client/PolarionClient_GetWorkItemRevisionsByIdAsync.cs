@@ -7,7 +7,7 @@ public partial class PolarionClient : IPolarionClient
     /// </summary>
     /// <param name="workItemId">The target workitem</param>
     /// <param name="maxRevisions">Max number of revisions to return newest to oldest. -1 returns all</param>
-    /// <returns>List of Revision objects</returns>
+    /// <returns>Array of Workitems</returns>
     /// <exception cref="PolarionClientException"></exception>
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]
     public async Task<Result<WorkItem[]>> GetWorkItemRevisionsByIdAsync(string workItemId, int maxRevisions = -1)

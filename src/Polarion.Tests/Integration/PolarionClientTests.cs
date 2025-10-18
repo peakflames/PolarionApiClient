@@ -570,4 +570,29 @@ public class PolarionClientTests : IAsyncLifetime
         module.Should().NotBeNull();
     }
 
+    // Test GetModuleRevisionsByLocationAsync
+    [Fact]
+    public async Task GetModuleRevisionsByLocationAsync_ShouldReturnValid()
+    {
+        // Arrange
+        var spaceName = _config.TestScenarioData.GetDocumentsInSpaceSpaceName;
+        var misResult = await _client.GetModulesInSpaceThinAsync(spaceName);
+        misResult.IsSuccess.Should().BeTrue("Module retrieval should succeed");
+        var modulesInSpace = misResult.Value;
+        modulesInSpace.Should().NotBeNull();
+        modulesInSpace.Should().NotBeEmpty();
+
+        var moduleLocation = modulesInSpace[0].Location;
+        moduleLocation.Should().NotBeNullOrEmpty();
+
+        // Act
+        var result = await _client.GetModuleRevisionsByLocationAsync(moduleLocation, 2);
+
+        // Assert
+        result.IsSuccess.Should().BeTrue("Module revisions retrieval should succeed");
+        var moduleRevisions = result.Value;
+        moduleRevisions.Should().NotBeNull();
+        moduleRevisions.Length.Should().Be(2);
+    }
+
 }
