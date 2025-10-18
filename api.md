@@ -65,17 +65,22 @@ Creates and initializes a new Polarion client instance with the provided configu
 ### GetWorkItemByIdAsync
 
 ```csharp
-public async Task<Result<WorkItem>> GetWorkItemByIdAsync(string workItemId)
+public async Task<Result<WorkItem>> GetWorkItemByIdAsync(
+    string workItemId, 
+    string? revision = null)
 ```
 
-Retrieves a single work item by its ID.
+Retrieves a single work item by its ID, optionally at a specific revision.
 
 **Parameters:**
 - `workItemId` - The unique identifier of the work item
+- `revision` - Optional revision ID. If null, returns the latest version (default: null)
 
-**Returns:** A `Result<WorkItem>` containing the work item or error details
+**Returns:** A `Result<WorkItem>` containing the work item at the specified revision or latest if revision is null, or error details
 
 **Throws:** `PolarionClientException` if the operation fails
+
+**Remarks:** When no revision is specified, uses a single optimized API call. When a revision is specified, makes two API calls to first obtain the work item URI, then retrieve the specific revision.
 
 ---
 
@@ -382,20 +387,22 @@ Retrieves revision identifiers for a work item by its ID.
 ### GetWorkItemRevisionsByIdAsync
 
 ```csharp
-public async Task<Result<WorkItem[]>> GetWorkItemRevisionsByIdAsync(
+public async Task<Result<Dictionary<string, WorkItem>>> GetWorkItemRevisionsByIdAsync(
     string workItemId, 
     int maxRevisions = -1)
 ```
 
-Retrieves revisions for a work item by its ID.
+Retrieves revisions for a work item by its ID, returned as a dictionary keyed by revision ID.
 
 **Parameters:**
 - `workItemId` - The ID of the work item
 - `maxRevisions` - Maximum number of revisions to return (newest to oldest). -1 returns all (default: -1)
 
-**Returns:** A `Result<WorkItem[]>` containing the work item revisions or error details
+**Returns:** A `Result<Dictionary<string, WorkItem>>` containing a dictionary where keys are revision IDs and values are the corresponding work items, or error details
 
 **Throws:** `PolarionClientException` if the operation fails
+
+**Remarks:** The dictionary structure allows direct lookup of work items by their revision ID without iteration.
 
 ---
 
