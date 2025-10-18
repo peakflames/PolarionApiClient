@@ -1,5 +1,12 @@
 # Polarion Changelog
 
+## 0.3.0
+
+- Add `GetWorkItemRevisionsByIdAsync` and `GetRevisionIdsByWorkItemIdAsync`
+- Add `GetRevisionIdsAsync`
+- Add `GetModuleByUriAsync` and `GetModuleByLocationAsync` and `GetModuleRevisionsByLocationAsync`
+- ci: add GitHub Actions workflow for building and publishing to NuGet
+
 ## 0.2.1
 
 - make module filtering case-insensitive in `GetModulesThinAsync`

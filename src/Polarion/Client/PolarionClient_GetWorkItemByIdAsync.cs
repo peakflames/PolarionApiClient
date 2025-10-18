@@ -8,11 +8,11 @@ public partial class PolarionClient : IPolarionClient
         try
         {
             var result = await _trackerClient.getWorkItemByIdAsync(new(_config.ProjectId, workItemId));
-            return result is null ? Result.Fail<WorkItem>("Work item not found") : result.getWorkItemByIdReturn;
+            return result is null ? Result.Fail("Work item not found") : result.getWorkItemByIdReturn;
         }
         catch (Exception ex)
         {
             throw new PolarionClientException($"Failed to get work item {workItemId}", ex);
         }
-    }
+    }    
 }
