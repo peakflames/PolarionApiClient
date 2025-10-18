@@ -8,6 +8,10 @@ A .NET client library for accessing Polarion Requirements Management System via 
 dotnet add package Polarion
 ```
 
+## Documentation
+
+For complete API reference documentation with all available methods and their signatures, see [API.md](https://github.com/peakflames/PolarionApiClient/blob/main/api.md).
+
 ## Usage
 
 ### Creating the Client

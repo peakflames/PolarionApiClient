@@ -14,7 +14,7 @@
     <Version>0.3.0</Version>
     <Authors>Todd Schavey</Authors>
     <Company>Peakflames</Company>
-    <Description>A C# package to access the Polarion WSDL API</Description>
+    <Description>A C# package to access the Polarion WSDL API. Complete API documentation available at: https://github.com/peakflames/PolarionApiClient/blob/main/api.md</Description>
     <PackageTags>polarion;polaron-alm;markdown</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/peakflames/PolarionApiClient</PackageProjectUrl>
@@ -45,6 +45,7 @@
 
   <ItemGroup>
     <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+    <None Include="..\..\api.md" Pack="true" PackagePath="\" />
     <!-- <EmbeddedResource Include="TrimmerRoots.xml" /> -->
   </ItemGroup>
 
