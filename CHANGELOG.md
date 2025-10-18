@@ -1,5 +1,9 @@
 # Polarion Changelog
 
+## 0.3.1
+
+- **Interface**: Updated `IPolarionClient` interface to include all missing methods (`GetModuleByLocationAsync`, `GetModuleByUriAsync`, `GetRevisionIdsAsync`, `GetRevisionsIdsByWorkItemIdAsync`, `GetWorkItemRevisionsByIdAsync`, `GetModuleRevisionsByLocationAsync`)
+
 ## 0.3.0
 
 - Add `GetWorkItemRevisionsByIdAsync` and `GetRevisionIdsByWorkItemIdAsync`
