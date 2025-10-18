@@ -2,7 +2,8 @@
 
 ## 0.3.0
 
-- Add `GetRevisionsByWorkItemIdAsync` and `GetRevisionsByWorkItemIdThinAsync`
+- Add `GetWorkItemRevisionsByIdAsync` and `GetRevisionIdsByWorkItemIdAsync`
+- Add `GetRevisionIdsAsync`
 
 ## 0.2.1
 

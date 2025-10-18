@@ -10,7 +10,7 @@ public partial class PolarionClient : IPolarionClient
     /// <returns>List of Revision objects</returns>
     /// <exception cref="PolarionClientException"></exception>
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]
-    public async Task<Result<WorkItem[]>> GetRevisionsByWorkItemIdAsync(string workItemId, int maxRevisions = -1)
+    public async Task<Result<WorkItem[]>> GetWorkItemRevisionsByIdAsync(string workItemId, int maxRevisions = -1)
     {
         try
         {

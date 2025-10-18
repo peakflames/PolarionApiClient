@@ -468,7 +468,7 @@ public class PolarionClientTests : IAsyncLifetime
         var workItemId = _config.TestScenarioData.GetWorkItemByIdAsyncWorkItemId;
 
         // Act
-        var result = await _client.GetRevisionsByWorkItemIdThinAsync(workItemId);
+        var result = await _client.GetRevisionsIdsByWorkItemIdAsync(workItemId);
 
         // Assert
         result.IsSuccess.Should().BeTrue("Work item retrieval should succeed");
@@ -476,22 +476,22 @@ public class PolarionClientTests : IAsyncLifetime
         stringData.Should().NotBeNull();
     }
 
-    
+
     [Fact]
-    public async Task GetRevisionsByWorkItemIdAsync_ShouldReturnValid()
+    public async Task GetWorkItemRevisionsByIdAsync_ShouldReturnValid()
     {
         // Arrange
         var workItemId = _config.TestScenarioData.GetWorkItemByIdAsyncWorkItemId;
 
         // Act (get all revisions)
-        var result = await _client.GetRevisionsByWorkItemIdAsync(workItemId);
+        var result = await _client.GetWorkItemRevisionsByIdAsync(workItemId);
 
         // Assert
         result.IsSuccess.Should().BeTrue("Work item retrieval should succeed");
         var allRevisionObjects = result.Value;
         allRevisionObjects.Should().NotBeNull();
 
-        result = await _client.GetRevisionsByWorkItemIdAsync(workItemId, 2);
+        result = await _client.GetWorkItemRevisionsByIdAsync(workItemId, 2);
 
         // Assert
         result.IsSuccess.Should().BeTrue("Work item retrieval should succeed");
@@ -500,6 +500,26 @@ public class PolarionClientTests : IAsyncLifetime
 
         allRevisionObjects[0].Should().BeEquivalentTo(lastTwoRevisionObjects[0]);
         allRevisionObjects[1].Should().BeEquivalentTo(lastTwoRevisionObjects[1]);
+    }
+
+    [Fact]
+    public async Task GetRevisionsAsync_ShouldReturnValid()
+    {
+        // Arrange
+        var workItemId = _config.TestScenarioData.GetWorkItemByIdAsyncWorkItemId;
+
+        var wiResult = await _client.GetWorkItemByIdAsync(workItemId);
+        wiResult.IsSuccess.Should().BeTrue("Work item retrieval should succeed");
+        var workItem = wiResult.Value;
+        workItem.Should().NotBeNull();
+
+        // Act (get all revisions)
+        var result = await _client.GetRevisionIdsAsync(workItem.uri);
+
+        // Assert
+        result.IsSuccess.Should().BeTrue("Work item retrieval should succeed");
+        var allRevisionObjects = result.Value;
+        allRevisionObjects.Should().NotBeNull();
     }
 
 }
