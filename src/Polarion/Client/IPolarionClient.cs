@@ -21,6 +21,12 @@ public interface IPolarionClient
     Task<Result<ModuleThin[]>> GetModulesThinAsync(string? excludeSpaceNameContains = null, string? titleContains = null);
 
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]
+    Task<Result<Module>> GetModuleByLocationAsync(string location);
+
+    [RequiresUnreferencedCode("Uses WCF services which require reflection")]
+    Task<Result<Module>> GetModuleByUriAsync(string uri);
+
+    [RequiresUnreferencedCode("Uses WCF services which require reflection")]
     Task<Result<WorkItem[]>> GetWorkItemsByModuleAsync(string moduleTitle, PolarionFilter filter, string? moduleRevision = null);
 
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]
@@ -37,6 +43,18 @@ public interface IPolarionClient
 
     [RequiresUnreferencedCode("Uses ReverseMarkdown which requires reflection")]
     string ConvertWorkItemToMarkdown(string workItemId, WorkItem? workItem, string? errorMsgPrefix = null, bool includeMetadata = false);
+
+    [RequiresUnreferencedCode("Uses WCF services which require reflection")]
+    Task<Result<string[]>> GetRevisionIdsAsync(string uri);
+
+    [RequiresUnreferencedCode("Uses WCF services which require reflection")]
+    Task<Result<string[]>> GetRevisionsIdsByWorkItemIdAsync(string workItemId);
+
+    [RequiresUnreferencedCode("Uses WCF services which require reflection")]
+    Task<Result<WorkItem[]>> GetWorkItemRevisionsByIdAsync(string workItemId, int maxRevisions = -1);
+
+    [RequiresUnreferencedCode("Uses WCF services which require reflection")]
+    Task<Result<Module[]>> GetModuleRevisionsByLocationAsync(string location, int maxRevisions = -1);
 
     TrackerWebService TrackerService { get; }
 }
