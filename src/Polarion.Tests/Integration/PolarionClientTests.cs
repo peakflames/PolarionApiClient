@@ -439,7 +439,7 @@ public class PolarionClientTests : IAsyncLifetime
         markdownContent.Should().Contain("$$\\text");
         markdownContent.Should().Contain("{cases}$$");
     }
-    
+
     [Fact]
     public void ConvertPolarionWorkItemHtmlToMarkdown_PolarionCrossReference_ShouldReturnExpectedResults()
     {
@@ -458,7 +458,48 @@ public class PolarionClientTests : IAsyncLifetime
         markdownContent.Should().NotBeNullOrEmpty();
 
         // Verify cross-reference is converted to a markdown link
-        markdownContent.Should().Contain("[YADA-YADA-YADA](#YADA-YADA-YADA)");        
+        markdownContent.Should().Contain("[YADA-YADA-YADA](#YADA-YADA-YADA)");
+    }
+
+    [Fact]
+    public async Task GetRevisionsByWorkItemIdThinAsync_ShouldReturnValid()
+    {
+        // Arrange
+        var workItemId = _config.TestScenarioData.GetWorkItemByIdAsyncWorkItemId;
+
+        // Act
+        var result = await _client.GetRevisionsByWorkItemIdThinAsync(workItemId);
+
+        // Assert
+        result.IsSuccess.Should().BeTrue("Work item retrieval should succeed");
+        var stringData = result.Value;
+        stringData.Should().NotBeNull();
+    }
+
+    
+    [Fact]
+    public async Task GetRevisionsByWorkItemIdAsync_ShouldReturnValid()
+    {
+        // Arrange
+        var workItemId = _config.TestScenarioData.GetWorkItemByIdAsyncWorkItemId;
+
+        // Act (get all revisions)
+        var result = await _client.GetRevisionsByWorkItemIdAsync(workItemId);
+
+        // Assert
+        result.IsSuccess.Should().BeTrue("Work item retrieval should succeed");
+        var allRevisionObjects = result.Value;
+        allRevisionObjects.Should().NotBeNull();
+
+        result = await _client.GetRevisionsByWorkItemIdAsync(workItemId, 2);
+
+        // Assert
+        result.IsSuccess.Should().BeTrue("Work item retrieval should succeed");
+        var lastTwoRevisionObjects = result.Value;
+        lastTwoRevisionObjects.Should().NotBeNull();
+
+        allRevisionObjects[0].Should().BeEquivalentTo(lastTwoRevisionObjects[0]);
+        allRevisionObjects[1].Should().BeEquivalentTo(lastTwoRevisionObjects[1]);
     }
 
 }

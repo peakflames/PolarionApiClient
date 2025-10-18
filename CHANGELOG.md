@@ -1,5 +1,9 @@
 # Polarion Changelog
 
+## 0.3.0
+
+- Add `GetRevisionsByWorkItemIdAsync` and `GetRevisionsByWorkItemIdThinAsync`
+
 ## 0.2.1
 
 - make module filtering case-insensitive in `GetModulesThinAsync`
