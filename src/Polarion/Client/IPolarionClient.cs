@@ -51,7 +51,7 @@ public interface IPolarionClient
     Task<Result<string[]>> GetRevisionsIdsByWorkItemIdAsync(string workItemId);
 
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]
-    Task<Result<WorkItem[]>> GetWorkItemRevisionsByIdAsync(string workItemId, int maxRevisions = -1);
+    Task<Result<Dictionary<string, WorkItem>>> GetWorkItemRevisionsByIdAsync(string workItemId, int maxRevisions = -1);
 
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]
     Task<Result<Module[]>> GetModuleRevisionsByLocationAsync(string location, int maxRevisions = -1);
