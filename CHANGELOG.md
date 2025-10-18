@@ -1,5 +1,9 @@
 # Polarion Changelog
 
+## 0.3.3
+
+- TBD
+
 ## 0.3.2
 
 - **Breaking Change**: `GetWorkItemRevisionsByIdAsync` now returns `Dictionary<string, WorkItem>` instead of `WorkItem[]`, where the key is the revision ID
