@@ -56,6 +56,37 @@ public class PolarionClientTests : IAsyncLifetime
     }
 
     [Fact]
+    public async Task GetWorkItemById_WithRevision_ShouldReturnWorkItemAtRevision()
+    {
+        // Arrange
+        var workItemId = _config.TestScenarioData.GetWorkItemByIdAsyncWorkItemId;
+
+        // First, get the revision IDs for this work item
+        var revisionsResult = await _client.GetRevisionsIdsByWorkItemIdAsync(workItemId);
+        revisionsResult.IsSuccess.Should().BeTrue("Should be able to get revision IDs");
+        var revisionIds = revisionsResult.Value;
+        revisionIds.Should().NotBeNull();
+        revisionIds.Should().NotBeEmpty("Work item should have at least one revision");
+
+        // Get an older revision (not the latest)
+        var olderRevisionId = revisionIds.Length > 1 ? revisionIds[^2] : revisionIds[^1];
+
+        // Act - Get work item at specific revision
+        var result = await _client.GetWorkItemByIdAsync(workItemId, olderRevisionId);
+
+        // Assert
+        result.IsSuccess.Should().BeTrue("Work item retrieval at revision should succeed");
+        var workItem = result.Value;
+        workItem.Should().NotBeNull();
+        workItem.id.Should().Be(workItemId);
+        
+        // Verify we can also get the latest version without revision parameter
+        var latestResult = await _client.GetWorkItemByIdAsync(workItemId);
+        latestResult.IsSuccess.Should().BeTrue("Latest work item retrieval should succeed");
+        latestResult.Value.Should().NotBeNull();
+    }
+
+    [Fact]
     public async Task SearchWorkitem_ShouldReturnExpectedResults()
     {
         // Arrange
@@ -490,16 +521,29 @@ public class PolarionClientTests : IAsyncLifetime
         result.IsSuccess.Should().BeTrue("Work item retrieval should succeed");
         var allRevisionObjects = result.Value;
         allRevisionObjects.Should().NotBeNull();
+        allRevisionObjects.Should().NotBeEmpty("Should have at least one revision");
+        
+        // Verify dictionary has revision IDs as keys
+        allRevisionObjects.Keys.Should().AllSatisfy(key => key.Should().NotBeNullOrEmpty());
+        
+        // Verify all values are valid WorkItems
+        allRevisionObjects.Values.Should().AllSatisfy(wi => wi.Should().NotBeNull());
 
+        // Act (get limited revisions)
         result = await _client.GetWorkItemRevisionsByIdAsync(workItemId, 2);
 
         // Assert
         result.IsSuccess.Should().BeTrue("Work item retrieval should succeed");
         var lastTwoRevisionObjects = result.Value;
         lastTwoRevisionObjects.Should().NotBeNull();
+        lastTwoRevisionObjects.Count.Should().Be(2, "Should return exactly 2 revisions");
 
-        allRevisionObjects[0].Should().BeEquivalentTo(lastTwoRevisionObjects[0]);
-        allRevisionObjects[1].Should().BeEquivalentTo(lastTwoRevisionObjects[1]);
+        // Verify the first two revisions from full list match the limited list
+        var allRevisionsList = allRevisionObjects.Values.ToList();
+        var limitedRevisionsList = lastTwoRevisionObjects.Values.ToList();
+        
+        allRevisionsList[0].Should().BeEquivalentTo(limitedRevisionsList[0]);
+        allRevisionsList[1].Should().BeEquivalentTo(limitedRevisionsList[1]);
     }
 
     [Fact]
