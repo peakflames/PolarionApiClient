@@ -490,16 +490,29 @@ public class PolarionClientTests : IAsyncLifetime
         result.IsSuccess.Should().BeTrue("Work item retrieval should succeed");
         var allRevisionObjects = result.Value;
         allRevisionObjects.Should().NotBeNull();
+        allRevisionObjects.Should().NotBeEmpty("Should have at least one revision");
+        
+        // Verify dictionary has revision IDs as keys
+        allRevisionObjects.Keys.Should().AllSatisfy(key => key.Should().NotBeNullOrEmpty());
+        
+        // Verify all values are valid WorkItems
+        allRevisionObjects.Values.Should().AllSatisfy(wi => wi.Should().NotBeNull());
 
+        // Act (get limited revisions)
         result = await _client.GetWorkItemRevisionsByIdAsync(workItemId, 2);
 
         // Assert
         result.IsSuccess.Should().BeTrue("Work item retrieval should succeed");
         var lastTwoRevisionObjects = result.Value;
         lastTwoRevisionObjects.Should().NotBeNull();
+        lastTwoRevisionObjects.Count.Should().Be(2, "Should return exactly 2 revisions");
 
-        allRevisionObjects[0].Should().BeEquivalentTo(lastTwoRevisionObjects[0]);
-        allRevisionObjects[1].Should().BeEquivalentTo(lastTwoRevisionObjects[1]);
+        // Verify the first two revisions from full list match the limited list
+        var allRevisionsList = allRevisionObjects.Values.ToList();
+        var limitedRevisionsList = lastTwoRevisionObjects.Values.ToList();
+        
+        allRevisionsList[0].Should().BeEquivalentTo(limitedRevisionsList[0]);
+        allRevisionsList[1].Should().BeEquivalentTo(limitedRevisionsList[1]);
     }
 
     [Fact]

@@ -7,10 +7,10 @@ public partial class PolarionClient : IPolarionClient
     /// </summary>
     /// <param name="workItemId">The target workitem</param>
     /// <param name="maxRevisions">Max number of revisions to return newest to oldest. -1 returns all</param>
-    /// <returns>Array of Workitems</returns>
+    /// <returns>Dictionary of WorkItems keyed by revision ID</returns>
     /// <exception cref="PolarionClientException"></exception>
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]
-    public async Task<Result<WorkItem[]>> GetWorkItemRevisionsByIdAsync(string workItemId, int maxRevisions = -1)
+    public async Task<Result<Dictionary<string, WorkItem>>> GetWorkItemRevisionsByIdAsync(string workItemId, int maxRevisions = -1)
     {
         try
         {
@@ -30,7 +30,7 @@ public partial class PolarionClient : IPolarionClient
 
             var revisionIds = revisionsResult.getRevisionsReturn;
 
-            var workItemRevisions = new List<WorkItem>();
+            var workItemRevisions = new Dictionary<string, WorkItem>();
 
             // Get revisions in reverse order (latest first)
             foreach (var i in Enumerable.Range(0, revisionIds.Length).Reverse())
@@ -42,7 +42,7 @@ public partial class PolarionClient : IPolarionClient
                     return Result.Fail($"Revision {revisionId} for workitem {workItemId} not found");
                 }
 
-                workItemRevisions.Add(revisionResult.getWorkItemByUriInRevisionReturn);
+                workItemRevisions.Add(revisionId, revisionResult.getWorkItemByUriInRevisionReturn);
 
                 // Stop if we've reached the maximum number of revisions requested
                 if (maxRevisions != -1 && workItemRevisions.Count >= maxRevisions)
@@ -51,7 +51,7 @@ public partial class PolarionClient : IPolarionClient
                 }
             }
 
-            return workItemRevisions.ToArray();
+            return workItemRevisions;
         }
         catch (Exception ex)
         {
