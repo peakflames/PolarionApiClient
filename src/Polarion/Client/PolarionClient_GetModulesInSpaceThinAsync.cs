@@ -32,7 +32,7 @@ public partial class PolarionClient : IPolarionClient
 
             // only keep the modules whose id is not null
             var modules = result.queryModulesBySQLReturn.Where(x => x.id != null)
-                                                        .Select(x => new ModuleThin(x.id, x.title, x.type.id, x.status.id, x.moduleFolder, x.moduleLocation));
+                                                        .Select(x => new ModuleThin(x.id, x.title, x.type.id, x.status.id, x.moduleFolder, x.moduleLocation, x.uri));
 
             // sort the list of documents by title
             modules = modules.OrderBy(x => x.Title).ToList();

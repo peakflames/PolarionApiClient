@@ -439,7 +439,7 @@ public class PolarionClientTests : IAsyncLifetime
         markdownContent.Should().Contain("$$\\text");
         markdownContent.Should().Contain("{cases}$$");
     }
-    
+
     [Fact]
     public void ConvertPolarionWorkItemHtmlToMarkdown_PolarionCrossReference_ShouldReturnExpectedResults()
     {
@@ -458,7 +458,141 @@ public class PolarionClientTests : IAsyncLifetime
         markdownContent.Should().NotBeNullOrEmpty();
 
         // Verify cross-reference is converted to a markdown link
-        markdownContent.Should().Contain("[YADA-YADA-YADA](#YADA-YADA-YADA)");        
+        markdownContent.Should().Contain("[YADA-YADA-YADA](#YADA-YADA-YADA)");
+    }
+
+    [Fact]
+    public async Task GetRevisionsByWorkItemIdThinAsync_ShouldReturnValid()
+    {
+        // Arrange
+        var workItemId = _config.TestScenarioData.GetWorkItemByIdAsyncWorkItemId;
+
+        // Act
+        var result = await _client.GetRevisionsIdsByWorkItemIdAsync(workItemId);
+
+        // Assert
+        result.IsSuccess.Should().BeTrue("Work item retrieval should succeed");
+        var stringData = result.Value;
+        stringData.Should().NotBeNull();
+    }
+
+
+    [Fact]
+    public async Task GetWorkItemRevisionsByIdAsync_ShouldReturnValid()
+    {
+        // Arrange
+        var workItemId = _config.TestScenarioData.GetWorkItemByIdAsyncWorkItemId;
+
+        // Act (get all revisions)
+        var result = await _client.GetWorkItemRevisionsByIdAsync(workItemId);
+
+        // Assert
+        result.IsSuccess.Should().BeTrue("Work item retrieval should succeed");
+        var allRevisionObjects = result.Value;
+        allRevisionObjects.Should().NotBeNull();
+
+        result = await _client.GetWorkItemRevisionsByIdAsync(workItemId, 2);
+
+        // Assert
+        result.IsSuccess.Should().BeTrue("Work item retrieval should succeed");
+        var lastTwoRevisionObjects = result.Value;
+        lastTwoRevisionObjects.Should().NotBeNull();
+
+        allRevisionObjects[0].Should().BeEquivalentTo(lastTwoRevisionObjects[0]);
+        allRevisionObjects[1].Should().BeEquivalentTo(lastTwoRevisionObjects[1]);
+    }
+
+    [Fact]
+    public async Task GetRevisionsAsync_ShouldReturnValid()
+    {
+        // Arrange
+        var workItemId = _config.TestScenarioData.GetWorkItemByIdAsyncWorkItemId;
+
+        var wiResult = await _client.GetWorkItemByIdAsync(workItemId);
+        wiResult.IsSuccess.Should().BeTrue("Work item retrieval should succeed");
+        var workItem = wiResult.Value;
+        workItem.Should().NotBeNull();
+
+        // Act (get all revisions)
+        var result = await _client.GetRevisionIdsAsync(workItem.uri);
+
+        // Assert
+        result.IsSuccess.Should().BeTrue("Work item retrieval should succeed");
+        var allRevisionObjects = result.Value;
+        allRevisionObjects.Should().NotBeNull();
+    }
+
+
+    [Fact]
+    public async Task GetModuleByLocationAsync_ShouldReturnValid()
+    {
+        // Arrange
+        var spaceName = _config.TestScenarioData.GetDocumentsInSpaceSpaceName;
+        var misResult = await _client.GetModulesInSpaceThinAsync(spaceName);
+        misResult.IsSuccess.Should().BeTrue("Module retrieval should succeed");
+        var modulesInSpace = misResult.Value;
+        modulesInSpace.Should().NotBeNull();
+        modulesInSpace.Should().NotBeEmpty();
+
+        var moduleLocation = modulesInSpace[0].Location;
+        moduleLocation.Should().NotBeNullOrEmpty();
+
+        // Act
+        var result = await _client.GetModuleByLocationAsync(moduleLocation);
+
+        // Assert
+        result.IsSuccess.Should().BeTrue("Module retrieval should succeed");
+        var module = result.Value;
+        module.Should().NotBeNull();
+    }
+
+
+    [Fact]
+    public async Task GetModuleByUriAsync_ShouldReturnValid()
+    {
+        // Arrange
+        var spaceName = _config.TestScenarioData.GetDocumentsInSpaceSpaceName;
+        var misResult = await _client.GetModulesInSpaceThinAsync(spaceName);
+        misResult.IsSuccess.Should().BeTrue("Module retrieval should succeed");
+        var modulesInSpace = misResult.Value;
+        modulesInSpace.Should().NotBeNull();
+        modulesInSpace.Should().NotBeEmpty();
+
+        var moduleUri = modulesInSpace[0].Uri;
+        moduleUri.Should().NotBeNullOrEmpty();
+
+        // Act
+        var result = await _client.GetModuleByUriAsync(moduleUri);
+
+        // Assert
+        result.IsSuccess.Should().BeTrue("Module retrieval should succeed");
+        var module = result.Value;
+        module.Should().NotBeNull();
+    }
+
+    // Test GetModuleRevisionsByLocationAsync
+    [Fact]
+    public async Task GetModuleRevisionsByLocationAsync_ShouldReturnValid()
+    {
+        // Arrange
+        var spaceName = _config.TestScenarioData.GetDocumentsInSpaceSpaceName;
+        var misResult = await _client.GetModulesInSpaceThinAsync(spaceName);
+        misResult.IsSuccess.Should().BeTrue("Module retrieval should succeed");
+        var modulesInSpace = misResult.Value;
+        modulesInSpace.Should().NotBeNull();
+        modulesInSpace.Should().NotBeEmpty();
+
+        var moduleLocation = modulesInSpace[0].Location;
+        moduleLocation.Should().NotBeNullOrEmpty();
+
+        // Act
+        var result = await _client.GetModuleRevisionsByLocationAsync(moduleLocation, 2);
+
+        // Assert
+        result.IsSuccess.Should().BeTrue("Module revisions retrieval should succeed");
+        var moduleRevisions = result.Value;
+        moduleRevisions.Should().NotBeNull();
+        moduleRevisions.Length.Should().Be(2);
     }
 
 }
