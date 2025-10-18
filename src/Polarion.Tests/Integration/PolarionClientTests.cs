@@ -56,6 +56,37 @@ public class PolarionClientTests : IAsyncLifetime
     }
 
     [Fact]
+    public async Task GetWorkItemById_WithRevision_ShouldReturnWorkItemAtRevision()
+    {
+        // Arrange
+        var workItemId = _config.TestScenarioData.GetWorkItemByIdAsyncWorkItemId;
+
+        // First, get the revision IDs for this work item
+        var revisionsResult = await _client.GetRevisionsIdsByWorkItemIdAsync(workItemId);
+        revisionsResult.IsSuccess.Should().BeTrue("Should be able to get revision IDs");
+        var revisionIds = revisionsResult.Value;
+        revisionIds.Should().NotBeNull();
+        revisionIds.Should().NotBeEmpty("Work item should have at least one revision");
+
+        // Get an older revision (not the latest)
+        var olderRevisionId = revisionIds.Length > 1 ? revisionIds[^2] : revisionIds[^1];
+
+        // Act - Get work item at specific revision
+        var result = await _client.GetWorkItemByIdAsync(workItemId, olderRevisionId);
+
+        // Assert
+        result.IsSuccess.Should().BeTrue("Work item retrieval at revision should succeed");
+        var workItem = result.Value;
+        workItem.Should().NotBeNull();
+        workItem.id.Should().Be(workItemId);
+        
+        // Verify we can also get the latest version without revision parameter
+        var latestResult = await _client.GetWorkItemByIdAsync(workItemId);
+        latestResult.IsSuccess.Should().BeTrue("Latest work item retrieval should succeed");
+        latestResult.Value.Should().NotBeNull();
+    }
+
+    [Fact]
     public async Task SearchWorkitem_ShouldReturnExpectedResults()
     {
         // Arrange

@@ -3,7 +3,7 @@ namespace Polarion;
 public interface IPolarionClient
 {
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]
-    Task<Result<WorkItem>> GetWorkItemByIdAsync(string workItemId);
+    Task<Result<WorkItem>> GetWorkItemByIdAsync(string workItemId, string? revision = null);
 
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]
     Task<Result<WorkItem[]>> SearchWorkitemAsync(string query, string order, List<string> field_list);
