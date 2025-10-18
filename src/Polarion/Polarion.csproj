@@ -11,7 +11,7 @@
 
     <!-- Package Metadata -->
     <PackageId>Polarion</PackageId>
-    <Version>0.2.1</Version>
+    <Version>0.3.0</Version>
     <Authors>Todd Schavey</Authors>
     <Company>Peakflames</Company>
     <Description>A C# package to access the Polarion WSDL API</Description>
