@@ -522,4 +522,52 @@ public class PolarionClientTests : IAsyncLifetime
         allRevisionObjects.Should().NotBeNull();
     }
 
+
+    [Fact]
+    public async Task GetModuleByLocationAsync_ShouldReturnValid()
+    {
+        // Arrange
+        var spaceName = _config.TestScenarioData.GetDocumentsInSpaceSpaceName;
+        var misResult = await _client.GetModulesInSpaceThinAsync(spaceName);
+        misResult.IsSuccess.Should().BeTrue("Module retrieval should succeed");
+        var modulesInSpace = misResult.Value;
+        modulesInSpace.Should().NotBeNull();
+        modulesInSpace.Should().NotBeEmpty();
+
+        var moduleLocation = modulesInSpace[0].Location;
+        moduleLocation.Should().NotBeNullOrEmpty();
+
+        // Act
+        var result = await _client.GetModuleByLocationAsync(moduleLocation);
+
+        // Assert
+        result.IsSuccess.Should().BeTrue("Module retrieval should succeed");
+        var module = result.Value;
+        module.Should().NotBeNull();
+    }
+
+
+    [Fact]
+    public async Task GetModuleByUriAsync_ShouldReturnValid()
+    {
+        // Arrange
+        var spaceName = _config.TestScenarioData.GetDocumentsInSpaceSpaceName;
+        var misResult = await _client.GetModulesInSpaceThinAsync(spaceName);
+        misResult.IsSuccess.Should().BeTrue("Module retrieval should succeed");
+        var modulesInSpace = misResult.Value;
+        modulesInSpace.Should().NotBeNull();
+        modulesInSpace.Should().NotBeEmpty();
+
+        var moduleUri = modulesInSpace[0].Uri;
+        moduleUri.Should().NotBeNullOrEmpty();
+
+        // Act
+        var result = await _client.GetModuleByUriAsync(moduleUri);
+
+        // Assert
+        result.IsSuccess.Should().BeTrue("Module retrieval should succeed");
+        var module = result.Value;
+        module.Should().NotBeNull();
+    }
+
 }
