@@ -10,6 +10,7 @@ public partial class PolarionClient : IPolarionClient
     /// Get retrieve module revisions by location with configurable
     /// maximum revision limit. Includes integration test to verify the method
     /// returns the correct number of revisions for a given module location.
+    /// </remarks>
     /// <param name="location">The path of the module (e.g., MySpace/MyDoc)</param>
     /// <param name="maxRevisions">Max number of revisions to return newest to oldest. -1 returns all</param>
     /// <returns>Array Modules</returns>
