@@ -5,6 +5,7 @@
 - Add `GetWorkItemRevisionsByIdAsync` and `GetRevisionIdsByWorkItemIdAsync`
 - Add `GetRevisionIdsAsync`
 - Add `GetModuleByUriAsync` and `GetModuleByLocationAsync` and `GetModuleRevisionsByLocationAsync`
+- ci: add GitHub Actions workflow for building and publishing to NuGet
 
 ## 0.2.1
 
