@@ -1,0 +1,119 @@
+name: Build and Publish to NuGet
+
+permissions:
+  contents: write
+
+on:
+  push:
+    branches: [ main ]
+    tags: [ 'v*' ]
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+
+env:
+  PROJECT_PATH: src/Polarion/Polarion.csproj
+  SOLUTION_PATH: src/PolarionApiClient.sln
+  PACKAGE_OUTPUT_DIR: ./nuget-packages
+  DOTNET_VERSION: '8.0.x'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Fetch all history for proper versioning
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+
+    - name: Set version from tag
+      if: startsWith(github.ref, 'refs/tags/')
+      shell: bash
+      run: |
+        TAG=${GITHUB_REF#refs/tags/v}
+        echo "VERSION=$TAG" >> $GITHUB_ENV
+        echo "Building version $TAG"
+
+    - name: Restore dependencies
+      run: dotnet restore ${{ env.SOLUTION_PATH }}
+
+    - name: Build
+      run: dotnet build ${{ env.SOLUTION_PATH }} -c Release --no-restore
+
+    # Tests commented out due to corporate network requirements
+    # - name: Test
+    #   run: dotnet test ${{ env.SOLUTION_PATH }} --no-build --verbosity normal
+
+    - name: Pack NuGet package
+      run: dotnet pack ${{ env.PROJECT_PATH }} -c Release --no-build -o ${{ env.PACKAGE_OUTPUT_DIR }}
+
+    - name: Upload NuGet package artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: nuget-package
+        path: ${{ env.PACKAGE_OUTPUT_DIR }}/*.nupkg
+        if-no-files-found: error
+
+  publish-to-nuget:
+    needs: build
+    if: startsWith(github.ref, 'refs/tags/')
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+        
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Set version from tag
+        shell: bash
+        run: |
+          TAG=${GITHUB_REF#refs/tags/v}
+          echo "VERSION=$TAG" >> $GITHUB_ENV
+          echo "Publishing version $TAG to NuGet"
+
+      - name: Update project version
+        run: |
+          sed -i "s/<Version>.*<\/Version>/<Version>${VERSION}<\/Version>/" ${{ env.PROJECT_PATH }}
+
+      - name: Restore dependencies
+        run: dotnet restore ${{ env.SOLUTION_PATH }}
+
+      - name: Build
+        run: dotnet build ${{ env.PROJECT_PATH }} -c Release --no-restore
+
+      - name: Pack NuGet package
+        run: dotnet pack ${{ env.PROJECT_PATH }} -c Release --no-build -o ${{ env.PACKAGE_OUTPUT_DIR }}
+
+      - name: Publish to NuGet.org
+        run: |
+          dotnet nuget push ${{ env.PACKAGE_OUTPUT_DIR }}/*.nupkg \
+            --source https://api.nuget.org/v3/index.json \
+            --api-key ${{ secrets.NUGET_API_KEY }} \
+            --skip-duplicate
+        env:
+          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: Release v${{ env.VERSION }}
+          draft: false
+          prerelease: ${{ contains(github.ref, '-alpha') || contains(github.ref, '-beta') || contains(github.ref, '-rc') }}
+          body: |
+            ## NuGet Package
+            This release has been published to NuGet.org
+            
+            **Package:** Polarion v${{ env.VERSION }}
+            **Install:** `dotnet add package Polarion --version ${{ env.VERSION }}`
+            
+            View on NuGet: https://www.nuget.org/packages/Polarion/${{ env.VERSION }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
