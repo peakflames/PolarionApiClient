@@ -22,6 +22,7 @@ The Polarion API Client is a .NET library for interacting with Polarion ALM (App
     - [GetModulesThinAsync](#getmodulesthinasync)
     - [GetModuleByLocationAsync](#getmodulebylocationasync)
     - [GetModuleByUriAsync](#getmodulebyuriasync)
+    - [GetModuleWorkItemUrisAsync](#getmoduleworkitemurisasync)
   - [Space Operations](#space-operations)
     - [GetSpacesAsync](#getspacesasync)
   - [Markdown Export Operations](#markdown-export-operations)
@@ -247,6 +248,28 @@ Retrieves a module by its URI.
 **Returns:** A `Result<Module>` containing the module or error details
 
 **Throws:** `PolarionClientException` if the operation fails
+
+---
+
+### GetModuleWorkItemUrisAsync
+
+```csharp
+public async Task<Result<string[]>> GetModuleWorkItemUrisAsync(
+    string moduleUri, 
+    string? parentWorkItemUri = null, 
+    bool deep = true)
+```
+
+Gets URIs of all work items in a module at the specified revision.
+
+**Parameters:**
+- `moduleUri` - The module URI (may include revision specifier, e.g., `moduleUri%revision`)
+- `parentWorkItemUri` - Optional parent work item URI to filter children (default: null)
+- `deep` - Whether to include external/linked items (default: true)
+
+**Returns:** A `Result<string[]>` containing an array of work item URIs or error details
+
+**Remarks:** This is useful for retrieving work items from a module at a specific historical revision. The module URI can include a revision suffix (e.g., `%200000`) to get work items as they existed at that point in time.
 
 ---
 
