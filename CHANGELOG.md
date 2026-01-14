@@ -2,7 +2,11 @@
 
 ## 0.3.3
 
-- TBD
+- Add new test configuration properties for Module/Revision API test data
+- Add comprehensive integration tests for module and revision operations including `GetModuleByLocationAsync`, `GetModuleWorkItemUrisAsync`
+- Fix parameter naming convention: rename field_list to fieldList
+- Add `PolarionUriParser` utility for extracting IDs and revisions from URIs
+- Implement bulk work item fetching with revision comparison logic
 
 ## 0.3.2
 
