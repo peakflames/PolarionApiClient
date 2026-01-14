@@ -80,16 +80,41 @@ Use the 'execute_command' tool to push the tag to remote:
 git push origin vX.X.X
 ```
 
-## Step 6: Post-Release
+## Step 6: Return to Develop and Bump Version
 
-GitHub Actions will automatically publish the package to NuGet when the tag is pushed.
-
-Optionally return to develop branch:
+Use the 'execute_command' tool to return to develop branch:
 ```bash
 git switch develop
 ```
 
-## Verification
+Use the 'replace_in_file' tool to bump the version to the next minor version in `src/Polarion/Polarion.csproj`:
+```xml
+<Version>X.X.X</Version>
+```
+
+Use the 'replace_in_file' tool to add a placeholder for the next version at the top of `CHANGELOG.md`:
+```markdown
+## X.X.X
+
+- TBD
+```
+
+Use the 'execute_command' tool to stage the changes:
+```bash
+git add src/Polarion/Polarion.csproj CHANGELOG.md
+```
+
+Use the 'execute_command' tool to commit the version bump:
+```bash
+git commit -m "(chore) bump version to vX.X.X (develop)"
+```
+
+Use the 'execute_command' tool to push to remote:
+```bash
+git push origin develop
+```
+
+## Step 7: Verification
 
 - Verify the tag appears on GitHub
 - GitHub Actions will show the NuGet publish workflow status
