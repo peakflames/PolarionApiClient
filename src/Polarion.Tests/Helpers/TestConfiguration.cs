@@ -48,4 +48,10 @@ public class TestScenarioData
     public string GetHierarchicalWorkItemsByModuleItemPrefix { get; set; } = null!;
     public Dictionary<string, string> ExportModuleToMarkdownWorkItemTypeToShortNameMap { get; set; } = null!;
     
+    // Module/Revision API test data
+    public string GetModuleWorkItemUrisModuleFolder { get; set; } = null!;
+    public string GetModuleWorkItemUrisDocumentId { get; set; } = null!;
+    public string GetModuleWorkItemUrisRevision { get; set; } = null!;
+    public string QueryWorkItemsInModuleFolder { get; set; } = null!;
+    public string QueryWorkItemsInModuleDocumentId { get; set; } = null!;
 }

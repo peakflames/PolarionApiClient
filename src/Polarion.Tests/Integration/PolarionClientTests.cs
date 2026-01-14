@@ -98,7 +98,7 @@ public class PolarionClientTests : IAsyncLifetime
         var result = await _client.SearchWorkitemAsync(
             query: query,
             order: order,
-            field_list: fieldList
+            fieldList: fieldList
         );
 
         // Assert
@@ -127,7 +127,7 @@ public class PolarionClientTests : IAsyncLifetime
         var result = await _client.SearchWorkitemAsync(
             query: query,
             order: order,
-            field_list: fieldList
+            fieldList: fieldList
         );
 
         // Assert
@@ -147,7 +147,7 @@ public class PolarionClientTests : IAsyncLifetime
         var result = await _client.SearchWorkitemAsync(
             query: query,
             order: order,
-            field_list: fieldList
+            fieldList: fieldList
         );
 
         // Assert
@@ -638,5 +638,399 @@ public class PolarionClientTests : IAsyncLifetime
         moduleRevisions.Should().NotBeNull();
         moduleRevisions.Length.Should().Be(2);
     }
+
+    #region Module/Revision API Tests
+
+    [Fact]
+    public async Task GetModuleByLocationAsync_ShouldReturnModuleWithValidUri()
+    {
+        // Arrange
+        var moduleFolder = _config.TestScenarioData.GetModuleWorkItemUrisModuleFolder;
+        var documentId = _config.TestScenarioData.GetModuleWorkItemUrisDocumentId;
+        var location = $"{moduleFolder}/{documentId}";
+
+        // Act
+        var result = await _client.GetModuleByLocationAsync(location);
+
+        // Assert
+        result.IsSuccess.Should().BeTrue($"Should find module at location '{location}'");
+        var module = result.Value;
+        module.Should().NotBeNull();
+        module.uri.Should().NotBeNullOrEmpty("Module should have a URI");
+
+
+        // Log the URI for debugging
+        _output.WriteLine($"Module URI: {module.uri}");
+        _output.WriteLine($"Module Name: {module.moduleName}");
+    }
+
+    [Fact]
+    public async Task GetModuleWorkItemUrisAsync_WithValidModuleUri_ShouldReturnWorkItemUris()
+    {
+        // Arrange - First get a real module URI
+        var spaceName = _config.TestScenarioData.GetDocumentsInSpaceSpaceName;
+        var modulesResult = await _client.GetModulesInSpaceThinAsync(spaceName);
+        modulesResult.IsSuccess.Should().BeTrue();
+        var moduleUri = modulesResult.Value.First().Uri;       
+
+        _output.WriteLine($"Testing GetModuleWorkItemUrisAsync with module URI: {moduleUri}");
+
+        // Act
+        var result = await _client.GetModuleWorkItemUrisAsync(moduleUri);
+
+        // Assert
+        result.IsSuccess.Should().BeTrue($"Should get work item URIs for module URI: {moduleUri}. Error: {(result.IsFailed ? result.Errors.First().Message : "")}");
+        var uris = result.Value;
+        uris.Should().NotBeNull();
+        uris.Should().NotBeEmpty("Module should contain work items");
+
+        // Log sample URIs
+        _output.WriteLine($"Found {uris.Length} work item URIs");
+        foreach (var uri in uris.Take(5))
+        {
+            _output.WriteLine($"Work Item URI: {uri}");
+        }
+    }
+
+    [Fact]
+    public async Task GetModuleWorkItemUrisAsync_WithRevision_ShouldReturnWorkItemUris()
+    {
+        // Arrange - Get module by location, then append revision
+        var moduleFolder = _config.TestScenarioData.GetModuleWorkItemUrisModuleFolder;
+        var documentId = _config.TestScenarioData.GetModuleWorkItemUrisDocumentId;
+        var revision = _config.TestScenarioData.GetModuleWorkItemUrisRevision;
+        var location = $"{moduleFolder}/{documentId}";
+
+        var moduleResult = await _client.GetModuleByLocationAsync(location);
+        moduleResult.IsSuccess.Should().BeTrue($"Should find module at location '{location}'");
+        var moduleUri = moduleResult.Value.uri;
+
+        // Append revision
+        var moduleUriWithRevision = $"{moduleUri}%{revision}";
+        _output.WriteLine($"Testing URI with revision: {moduleUriWithRevision}");
+
+        // Act
+        var result = await _client.GetModuleWorkItemUrisAsync(moduleUriWithRevision);
+
+        // Assert
+        result.IsSuccess.Should().BeTrue($"Should get work item URIs with revision. Error: {(result.IsFailed ? result.Errors.First().Message : "")}");
+        var uris = result.Value;
+        uris.Should().NotBeNull();
+
+        // Log results
+        _output.WriteLine($"Found {uris.Length} work item URIs at revision {revision}");
+        foreach (var uri in uris.Take(5))
+        {
+            _output.WriteLine($"Work Item URI: {uri}");
+        }
+    }
+
+    [Fact]
+    public async Task QueryWorkItemsInModuleAsync_ShouldReturnWorkItems()
+    {
+        // Arrange
+        var moduleFolder = _config.TestScenarioData.QueryWorkItemsInModuleFolder;
+        var documentId = _config.TestScenarioData.QueryWorkItemsInModuleDocumentId;
+
+        _output.WriteLine($"Testing QueryWorkItemsInModuleAsync with folder='{moduleFolder}', documentId='{documentId}'");
+
+        // Act
+        var result = await _client.QueryWorkItemsInModuleAsync(moduleFolder, documentId);
+
+        // Assert
+        result.IsSuccess.Should().BeTrue($"SQL-based query should succeed. Error: {(result.IsFailed ? result.Errors.First().Message : "")}");
+        var workItems = result.Value;
+        workItems.Should().NotBeNull();
+        workItems.Should().NotBeEmpty("Module should contain work items");
+
+        // Verify work item properties
+        _output.WriteLine($"Found {workItems.Length} work items");
+        foreach (var wi in workItems.Take(5))
+        {
+            wi.id.Should().NotBeNullOrEmpty();
+            _output.WriteLine($"WorkItem: {wi.id}, OutlineNumber: {wi.outlineNumber}, Type: {wi.type?.id}");
+        }
+    }
+
+    [Fact]
+    public async Task QueryWorkItemsInModuleAsync_WithTypeFilter_ShouldReturnFilteredWorkItems()
+    {
+        // Arrange
+        var moduleFolder = _config.TestScenarioData.QueryWorkItemsInModuleFolder;
+        var documentId = _config.TestScenarioData.QueryWorkItemsInModuleDocumentId;
+        var itemTypes = new List<string> { "heading", "paragraph" };
+
+        _output.WriteLine($"Testing QueryWorkItemsInModuleAsync with type filter: {string.Join(", ", itemTypes)}");
+
+        // Act
+        var result = await _client.QueryWorkItemsInModuleAsync(moduleFolder, documentId, itemTypes);
+
+        // Assert
+        result.IsSuccess.Should().BeTrue($"Filtered query should succeed. Error: {(result.IsFailed ? result.Errors.First().Message : "")}");
+        var workItems = result.Value;
+        workItems.Should().NotBeNull();
+
+        _output.WriteLine($"Found {workItems.Length} work items with types: {string.Join(", ", itemTypes)}");
+
+        // All returned items should be of specified types
+        foreach (var wi in workItems)
+        {
+            itemTypes.Should().Contain(wi.type?.id, $"Work item {wi.id} has unexpected type {wi.type?.id}");
+        }
+    }
+
+    [Fact]
+    public async Task GetWorkItemsByModuleRevisionAsync_ShouldReturnWorkItemsWithRevisionInfo()
+    {
+        // Arrange
+        var moduleFolder = _config.TestScenarioData.GetModuleWorkItemUrisModuleFolder;
+        var documentId = _config.TestScenarioData.GetModuleWorkItemUrisDocumentId;
+        var revision = _config.TestScenarioData.GetModuleWorkItemUrisRevision;
+
+        _output.WriteLine($"Testing GetWorkItemsByModuleRevisionAsync with folder='{moduleFolder}', documentId='{documentId}', revision='{revision}'");
+
+        // Act
+        var result = await _client.GetWorkItemsByModuleRevisionAsync(moduleFolder, documentId, revision);
+
+        // Assert
+        result.IsSuccess.Should().BeTrue($"Should retrieve work items at revision {revision}. Error: {(result.IsFailed ? result.Errors.First().Message : "")}");
+        var workItemsWithInfo = result.Value;
+        workItemsWithInfo.Should().NotBeNull();
+        workItemsWithInfo.Should().NotBeEmpty("Module should contain work items");
+
+        // Verify each item has revision info
+        _output.WriteLine($"Found {workItemsWithInfo.Length} work items with revision info");
+        foreach (var wiInfo in workItemsWithInfo.Take(10))
+        {
+            wiInfo.WorkItem.Should().NotBeNull();
+            wiInfo.Revision.Should().NotBeNullOrEmpty();
+            wiInfo.HeadRevision.Should().NotBeNullOrEmpty();
+            wiInfo.SourceUri.Should().NotBeNullOrEmpty();
+
+            _output.WriteLine($"WorkItem: {wiInfo.WorkItem.id}, Revision: {wiInfo.Revision}, HEAD: {wiInfo.HeadRevision}, IsHistorical: {wiInfo.IsHistorical}");
+        }
+
+        // Check for historical items
+        var historicalCount = workItemsWithInfo.Count(wi => wi.IsHistorical);
+        var currentCount = workItemsWithInfo.Length - historicalCount;
+        _output.WriteLine($"Historical: {historicalCount}, Current: {currentCount}");
+    }
+
+    [Fact]
+    public async Task GetWorkItemsByModuleRevisionAsync_EmptyModuleFolder_ShouldFail()
+    {
+        // Arrange
+        var moduleFolder = "";
+        var documentId = "SomeDoc";
+        var revision = "100";
+
+        // Act
+        var result = await _client.GetWorkItemsByModuleRevisionAsync(moduleFolder, documentId, revision);
+
+        // Assert
+        result.IsFailed.Should().BeTrue("Empty module folder should fail validation");
+        _output.WriteLine($"Expected failure message: {result.Errors.First().Message}");
+    }
+
+    [Fact]
+    public async Task GetWorkItemsByModuleRevisionAsync_InvalidModule_ShouldFailGracefully()
+    {
+        // Arrange
+        var moduleFolder = "NonExistent_Folder";
+        var documentId = "NonExistent_Document";
+        var revision = "100";
+
+        // Act
+        var result = await _client.GetWorkItemsByModuleRevisionAsync(moduleFolder, documentId, revision);
+
+        // Assert
+        result.IsFailed.Should().BeTrue("Non-existent module should fail gracefully");
+        result.Errors.First().Message.Should().Contain("Failed to get module", "Error should mention module retrieval failure");
+        _output.WriteLine($"Expected failure message: {result.Errors.First().Message}");
+    }
+
+    [Fact]
+    public async Task GetWorkItemByUriAsync_WithValidUri_ShouldReturnWorkItem()
+    {
+        // Arrange - First get a work item to get its URI
+        var workItemId = _config.TestScenarioData.GetWorkItemByIdAsyncWorkItemId;
+        var wiResult = await _client.GetWorkItemByIdAsync(workItemId);
+        wiResult.IsSuccess.Should().BeTrue();
+        var workItemUri = wiResult.Value.uri;
+
+        _output.WriteLine($"Testing GetWorkItemByUriAsync with URI: {workItemUri}");
+
+        // Act
+        var result = await _client.GetWorkItemByUriAsync(workItemUri);
+
+        // Assert
+        result.IsSuccess.Should().BeTrue($"Should retrieve work item by URI. Error: {(result.IsFailed ? result.Errors.First().Message : "")}");
+        var workItem = result.Value;
+        workItem.Should().NotBeNull();
+        workItem.id.Should().Be(workItemId);
+
+        _output.WriteLine($"Retrieved work item: {workItem.id}, title: {workItem.title}");
+    }
+
+    [Fact]
+    public async Task GetWorkItemByUriAsync_WithRevision_ShouldReturnHistoricalWorkItem()
+    {
+        // Arrange - Get work item and its revisions
+        var workItemId = _config.TestScenarioData.GetWorkItemByIdAsyncWorkItemId;
+        var wiResult = await _client.GetWorkItemByIdAsync(workItemId);
+        wiResult.IsSuccess.Should().BeTrue();
+        var workItemUri = wiResult.Value.uri;
+
+        // Get revision IDs
+        var revisionsResult = await _client.GetRevisionIdsAsync(workItemUri);
+        revisionsResult.IsSuccess.Should().BeTrue();
+        var revisions = revisionsResult.Value;
+        revisions.Should().NotBeEmpty();
+
+        // Use an older revision (first in array is oldest)
+        var olderRevision = revisions.Length > 1 ? revisions[0] : revisions[^1];
+        var uriWithRevision = $"{workItemUri}%{olderRevision}";
+
+        _output.WriteLine($"Testing GetWorkItemByUriAsync with historical URI: {uriWithRevision}");
+
+        // Act
+        var result = await _client.GetWorkItemByUriAsync(uriWithRevision);
+
+        // Assert
+        result.IsSuccess.Should().BeTrue($"Should retrieve historical work item by URI with revision. Error: {(result.IsFailed ? result.Errors.First().Message : "")}");
+        var workItem = result.Value;
+        workItem.Should().NotBeNull();
+
+        _output.WriteLine($"Retrieved historical work item: {workItem.id} at revision {olderRevision}");
+    }
+
+    #endregion
+
+    #region Diagnostic/Investigation Tests
+
+    [Fact]
+    public async Task Diagnostic_LogAllModuleUriFormats()
+    {
+        // This test logs various module URI formats to help debug URI format issues
+        var spaceName = _config.TestScenarioData.GetDocumentsInSpaceSpaceName;
+
+        // Get modules in space
+        var modulesResult = await _client.GetModulesInSpaceThinAsync(spaceName);
+        modulesResult.IsSuccess.Should().BeTrue();
+
+        _output.WriteLine("=== Module URIs in Space ===");
+        foreach (var module in modulesResult.Value.Take(5))
+        {
+            _output.WriteLine($"Title: {module.Title}");
+            _output.WriteLine($"  Location: {module.Location}");
+            _output.WriteLine($"  URI: {module.Uri}");
+            _output.WriteLine($"  Space: {module.Space}");
+            _output.WriteLine("");
+        }
+
+        // Get full module details for one
+        if (modulesResult.Value.Length > 0)
+        {
+            var firstModule = modulesResult.Value[0];
+            var fullModuleResult = await _client.GetModuleByUriAsync(firstModule.Uri);
+            if (fullModuleResult.IsSuccess)
+            {
+                var module = fullModuleResult.Value;
+                _output.WriteLine("=== Full Module Details ===");
+                _output.WriteLine($"URI: {module.uri}");
+                _output.WriteLine($"moduleFolder: {module.moduleFolder}");
+                _output.WriteLine($"moduleName: {module.moduleName}");
+                _output.WriteLine($"moduleLocation: {module.moduleLocation}");
+            }
+        }
+    }
+
+    [Fact]
+    public async Task Diagnostic_CompareUriFormats()
+    {
+        // Compare URI from GetModuleByLocationAsync vs manually built URI
+        var moduleFolder = _config.TestScenarioData.GetModuleWorkItemUrisModuleFolder;
+        var documentId = _config.TestScenarioData.GetModuleWorkItemUrisDocumentId;
+        var revision = _config.TestScenarioData.GetModuleWorkItemUrisRevision;
+        var projectName = _config.PolarionClient.ProjectId;
+
+        // Get actual module
+        var location = $"{moduleFolder}/{documentId}";
+        var moduleResult = await _client.GetModuleByLocationAsync(location);
+
+        if (moduleResult.IsSuccess)
+        {
+            var actualUri = moduleResult.Value.uri;
+            _output.WriteLine($"Actual Module URI: {actualUri}");
+
+            // Build URI using our function
+            var builtUri = PolarionUriParser.BuildModuleUriWithRevision(projectName, moduleFolder, documentId, revision);
+            _output.WriteLine($"Built Module URI: {builtUri}");
+
+            // Compare base URI (without revision)
+            var builtUriWithoutRevision = builtUri.Replace($"%{revision}", "");
+            _output.WriteLine($"Built URI without revision: {builtUriWithoutRevision}");
+            _output.WriteLine($"URIs Match: {actualUri == builtUriWithoutRevision}");
+
+            // Analyze URI components
+            _output.WriteLine("\n=== URI Component Analysis ===");
+            _output.WriteLine($"Actual URI split by '/':");
+            foreach (var part in actualUri.Split('/'))
+            {
+                _output.WriteLine($"  '{part}'");
+            }
+
+            _output.WriteLine($"\nActual URI split by '$':");
+            foreach (var part in actualUri.Split('$'))
+            {
+                _output.WriteLine($"  '{part}'");
+            }
+
+            _output.WriteLine($"\nActual URI split by '#':");
+            foreach (var part in actualUri.Split('#'))
+            {
+                _output.WriteLine($"  '{part}'");
+            }
+        }
+        else
+        {
+            _output.WriteLine($"Failed to get module: {moduleResult.Errors.First().Message}");
+        }
+    }
+
+    [Fact]
+    public async Task Diagnostic_InvestigateActualModuleUriFormat()
+    {
+        // This test helps understand the actual Polarion URI format
+        // by fetching a real module and comparing its URI structure
+
+        // Arrange - Get a real module URI from Polarion
+        var spaceName = _config.TestScenarioData.GetDocumentsInSpaceSpaceName;
+        var modulesResult = await _client.GetModulesInSpaceThinAsync(spaceName);
+        modulesResult.IsSuccess.Should().BeTrue();
+
+        var actualModuleUri = modulesResult.Value.First().Uri;
+
+        // Log the actual URI format for analysis
+        _output.WriteLine($"Actual Module URI: {actualModuleUri}");
+
+        // Extract components from actual URI
+        var parts = actualModuleUri.Split(new[] { '$', '#', '%' }, StringSplitOptions.None);
+        _output.WriteLine("\nURI Parts split by $, #, %:");
+        foreach (var part in parts)
+        {
+            _output.WriteLine($"  Part: '{part}'");
+        }
+
+        // Assert - Document actual format
+        actualModuleUri.Should().StartWith("subterra:data-service:objects:");
+
+        // Log extracted values using PolarionUriParser
+        _output.WriteLine("\n=== PolarionUriParser Results ===");
+        _output.WriteLine($"Extracted ID: {PolarionUriParser.ExtractIdFromUri(actualModuleUri)}");
+        _output.WriteLine($"Extracted Revision: {PolarionUriParser.ExtractRevisionFromUri(actualModuleUri)}");
+    }
+
+    #endregion
 
 }
