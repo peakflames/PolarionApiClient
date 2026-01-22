@@ -31,7 +31,7 @@ public partial class PolarionClient : IPolarionClient
             if (revisionsResult is null)
             {
                 return Result.Fail($"No revisions found for module at location '{location}'");
-            } 
+            }
              ;
 
             var revisionIds = revisionsResult.getRevisionsReturn;
@@ -42,7 +42,8 @@ public partial class PolarionClient : IPolarionClient
             foreach (var i in Enumerable.Range(0, revisionIds.Length).Reverse())
             {
                 var revisionId = revisionIds[i];
-                var moduleRevisionUri = $"{module.uri}?revision={revisionId}";
+                // Use %revision format instead of ?revision= to get full metadata
+                var moduleRevisionUri = $"{module.uri}%{revisionId}";
                 var revisionResult = await _trackerClient.getModuleByUriAsync(new (moduleRevisionUri));
                 if (revisionResult is null)
                 {
