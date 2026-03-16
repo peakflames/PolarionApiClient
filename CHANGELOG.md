@@ -1,5 +1,9 @@
 # Polarion Changelog
 
+## 0.3.5
+
+- Add login with username and access token
+
 ## 0.3.3
 
 - Add new test configuration properties for Module/Revision API test data
