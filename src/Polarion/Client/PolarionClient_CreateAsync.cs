@@ -31,7 +31,15 @@ public partial class PolarionClient : IPolarionClient
         try
         {
             // Login using the Session service
-            var loginResponse = await sessionClient.logInAsync(config.Username, config.Password);
+            Object loginResponse;
+            if (config.Mechanism is not null && "AccessToken".Equals(config.Mechanism))
+            {
+                loginResponse = await sessionClient.logInWithTokenAsync(config.Mechanism, config.Username, config.Token);
+            }
+            else
+            {
+                loginResponse = await sessionClient.logInAsync(config.Username, config.Password);
+            }
             if (loginResponse is null)
             {
                 return Result.Fail<PolarionClient>("Login failed - invalid credentials");
