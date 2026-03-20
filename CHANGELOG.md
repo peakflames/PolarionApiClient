@@ -1,5 +1,9 @@
 # Polarion Changelog
 
+## 0.3.4
+
+- Fix: `SearchWorkitemInBaselineAsync` was calling `queryWorkItemsInRevisionAsync` instead of `queryWorkItemsInBaselineAsync`, causing some work items to be missing from historic baseline document results (#3)
+
 ## 0.3.3
 
 - Add new test configuration properties for Module/Revision API test data
