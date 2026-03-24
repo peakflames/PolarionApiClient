@@ -16,23 +16,23 @@ public partial class PolarionClient : IPolarionClient
         {
             var sqlQuery =
             "SELECT doc.C_PK FROM MODULE doc, PROJECT proj " +
-            $"WHERE proj.C_ID = '{_config.ProjectId}' " +
-            "AND doc.FK_URI_PROJECT = proj.C_URI ";
+            $"WHERE proj.C_ID = '{EscapeSqlLiteral(_config.ProjectId)}' " +
+            "AND doc.FK_PROJECT = proj.C_PK ";
 
             if (!string.IsNullOrWhiteSpace(excludeSpaceNameContains))
             {
-                sqlQuery += $"AND UPPER(doc.C_MODULEFOLDER) NOT LIKE '%{excludeSpaceNameContains.ToUpper()}%' ";
+                sqlQuery += $"AND UPPER(doc.C_MODULEFOLDER) NOT LIKE '%{EscapeSqlLiteral(excludeSpaceNameContains.ToUpperInvariant())}%' ";
             }
 
             if (!string.IsNullOrWhiteSpace(titleContains))
             {
-                sqlQuery += $"AND UPPER(doc.C_TITLE) LIKE '%{titleContains.ToUpper()}%' ";
+                sqlQuery += $"AND UPPER(doc.C_TITLE) LIKE '%{EscapeSqlLiteral(titleContains.ToUpperInvariant())}%' ";
             }
 
             var result = await _trackerClient.queryModulesBySQLAsync(
                 new(
                 sqlQuery: sqlQuery,
-                fields: ["id", "title", "type", "status", "moduleFolder", "moduleLocation"]));
+                fields: ["id", "moduleName", "title", "type", "status", "moduleFolder", "moduleLocation"]));
 
 
             if (result is null)
@@ -45,9 +45,31 @@ public partial class PolarionClient : IPolarionClient
                 return Result.Ok(Array.Empty<ModuleThin>());
             }
 
-            // only keep the modules whose id is not null
-            var modules = result.queryModulesBySQLReturn.Where(x => x.id != null)
-                                                    .Select(x => new ModuleThin(x.id, x.title, x.type.id, x.status.id, x.moduleFolder, x.moduleLocation, x.uri));
+            var modules = result.queryModulesBySQLReturn
+                .Where(x => x != null)
+                .Select(x =>
+                {
+                    var module = x!;
+
+                    var moduleId = !string.IsNullOrWhiteSpace(module.id)
+                        ? module.id
+                        : module.moduleName;
+
+                    if (string.IsNullOrWhiteSpace(moduleId))
+                    {
+                        return null;
+                    }
+
+                    return new ModuleThin(
+                        moduleId,
+                        module.title ?? string.Empty,
+                        module.type?.id ?? string.Empty,
+                        module.status?.id ?? string.Empty,
+                        module.moduleFolder ?? string.Empty,
+                        module.moduleLocation ?? string.Empty,
+                        module.uri ?? string.Empty);
+                })
+                    .OfType<ModuleThin>();
 
             // sort the list of documents by title
             modules = modules.OrderBy(x => x.Title).ToList();
@@ -58,5 +80,10 @@ public partial class PolarionClient : IPolarionClient
         {
             return Result.Fail($"Failed to get documents. {ex.Message}");
         }
+    }
+
+    private static string EscapeSqlLiteral(string value)
+    {
+        return value.Replace("'", "''", StringComparison.Ordinal);
     }
 }
