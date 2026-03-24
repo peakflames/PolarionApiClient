@@ -81,9 +81,4 @@ public partial class PolarionClient : IPolarionClient
             return Result.Fail($"Failed to get documents. {ex.Message}");
         }
     }
-
-    private static string EscapeSqlLiteral(string value)
-    {
-        return value.Replace("'", "''", StringComparison.Ordinal);
-    }
 }

@@ -52,17 +52,17 @@ public partial class PolarionClient : IPolarionClient
         var itemTypeFilter = string.Empty;
         if (itemTypes != null && itemTypes.Count > 0)
         {
-            var typeList = string.Join(", ", itemTypes.Select(t => $"'{t}'"));
+            var typeList = string.Join(", ", itemTypes.Select(t => $"'{EscapeSqlLiteral(t)}'"));
             itemTypeFilter = $"AND item.C_TYPE IN ({typeList})";
         }
 
         // Build SQL query against Polarion database schema
         var sqlQuery = $@"SQL:(
             SELECT item.* FROM POLARION.WORKITEM item, POLARION.MODULE doc, POLARION.PROJECT proj
-            WHERE proj.C_ID = '{_config.ProjectId}'
+            WHERE proj.C_ID = '{EscapeSqlLiteral(_config.ProjectId)}'
                 AND doc.FK_PROJECT = proj.C_PK
-                AND doc.C_MODULEFOLDER = '{moduleFolder}'
-                AND doc.C_ID = '{documentId}'
+                AND doc.C_MODULEFOLDER = '{EscapeSqlLiteral(moduleFolder)}'
+                AND doc.C_ID = '{EscapeSqlLiteral(documentId)}'
                 {itemTypeFilter}
                 AND EXISTS 
                 (
