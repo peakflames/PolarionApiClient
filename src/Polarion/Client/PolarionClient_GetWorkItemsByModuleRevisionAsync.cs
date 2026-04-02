@@ -18,9 +18,11 @@ public partial class PolarionClient : IPolarionClient
     /// 1. Get module by location to obtain its real URI
     /// 2. Append revision to URI and get work item URIs
     /// 3. Extract work item IDs and revisions from URIs
-    /// 4. Bulk fetch HEAD versions using Lucene query
+    /// 4. Bulk fetch work items at baseline revision using queryWorkItemsInBaselineAsync
     /// 5. Fetch historical versions where revisions differ from HEAD
-    /// 
+    ///
+    /// Note: Step 4 was changed from SearchWorkitemAsync (queries HEAD) to
+    /// SearchWorkitemInBaselineAsync (queries baseline) to fix missing items bug.
     /// Based on verified Python implementation in ple_systest_utils/polarion.py
     /// </remarks>
     /// <param name="moduleFolder">The module folder path (e.g., "L4_fcs")</param>
@@ -104,14 +106,14 @@ public partial class PolarionClient : IPolarionClient
             return Result.Fail<WorkItemWithRevisionInfo[]>("No valid work item IDs could be extracted from URIs");
         }
 
-        // Step 3: Bulk fetch HEAD versions using Lucene query
+        // Step 3: Bulk fetch work items at the specified revision using baseline query
         var ids = string.Join(" ", wiRevisionMap.Keys);
-        var query = $"id:({ids})"; // Note: SearchWorkitemAsync adds project.id filter automatically
-        var headWorkItemsResult = await SearchWorkitemAsync(query, "id", fieldList);
+        var query = $"id:({ids})"; // Note: SearchWorkitemInBaselineAsync adds project.id filter automatically
+        var headWorkItemsResult = await SearchWorkitemInBaselineAsync(revision, query, "id", fieldList);
 
         if (headWorkItemsResult.IsFailed)
         {
-            return Result.Fail<WorkItemWithRevisionInfo[]>($"Failed to bulk fetch HEAD work items: {headWorkItemsResult.Errors.First().Message}");
+            return Result.Fail<WorkItemWithRevisionInfo[]>($"Failed to bulk fetch work items at revision {revision}: {headWorkItemsResult.Errors.First().Message}");
         }
 
         // Step 4: Fetch historical versions where revisions differ from HEAD
