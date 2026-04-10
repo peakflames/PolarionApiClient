@@ -4,26 +4,32 @@ public partial class PolarionClient : IPolarionClient
 {
     /// <summary>
     /// Default fields to retrieve when querying work items.
+    /// Covers all fields consumed by the REST API WorkItemAttributes response model.
     /// </summary>
     private static readonly List<string> DefaultWorkItemFields =
     [
-        "id", "type", "title", "description", "status", "outlineNumber", "uri"
+        "id", "type", "title", "description", "status", "outlineNumber",
+        "author", "created", "updated"
     ];
 
     /// <summary>
-    /// Queries work items from a branched document using the 4-step revision-aware algorithm.
+    /// Queries work items from a module at a specific historical revision.
     /// </summary>
     /// <remarks>
     /// Algorithm:
-    /// 1. Get module by location to obtain its real URI
-    /// 2. Append revision to URI and get work item URIs
-    /// 3. Extract work item IDs and revisions from URIs
-    /// 4. Bulk fetch work items at baseline revision using queryWorkItemsInBaselineAsync
-    /// 5. Fetch historical versions where revisions differ from HEAD
+    ///   1. Get module by location to obtain its real URI
+    ///   2. Append revision to URI and get work item URIs; extract IDs from them
+    ///   3. Bulk fetch work item data at the specified baseline revision via SearchWorkitemInBaselineAsync
+    ///   4. Wrap results as WorkItemWithRevisionInfo (IsHistorical=true always, since this
+    ///      function is only called for historical document queries)
     ///
-    /// Note: Step 4 was changed from SearchWorkitemAsync (queries HEAD) to
-    /// SearchWorkitemInBaselineAsync (queries baseline) to fix missing items bug.
-    /// Based on verified Python implementation in ple_systest_utils/polarion.py
+    /// Step 3 uses SearchWorkitemInBaselineAsync rather than SearchWorkitemInRevisionAsync because
+    /// baseline correctly returns all items including cross-project references (Revision variant
+    /// omits 1 item per timing study on rev 643133).
+    ///
+    /// Step 4 does not call GetRevisionIdsAsync or GetWorkItemByUriAsync per item. Timing analysis
+    /// showed those calls account for ~99% of execution time (450s for 1395 items) while
+    /// IsHistorical=false occurred in only 0.14% of cases — not worth the cost.
     /// </remarks>
     /// <param name="moduleFolder">The module folder path (e.g., "L4_fcs")</param>
     /// <param name="documentId">The document ID (e.g., "FCS Memory Loader IDD")</param>
@@ -38,155 +44,78 @@ public partial class PolarionClient : IPolarionClient
         List<string>? fields = null)
     {
         if (string.IsNullOrWhiteSpace(moduleFolder))
-        {
             return Result.Fail("Module folder cannot be null or empty");
-        }
-
         if (string.IsNullOrWhiteSpace(documentId))
-        {
             return Result.Fail("Document ID cannot be null or empty");
-        }
-
         if (string.IsNullOrWhiteSpace(revision))
-        {
             return Result.Fail("Revision cannot be null or empty");
-        }
 
         var fieldList = fields ?? DefaultWorkItemFields;
-
         fieldList.Remove("uri");
 
         // Step 1: Get module by location to obtain its real URI
         var location = $"{moduleFolder}/{documentId}";
         var moduleResult = await GetModuleByLocationAsync(location);
-        
         if (moduleResult.IsFailed)
-        {
-            return Result.Fail<WorkItemWithRevisionInfo[]>($"Failed to get module at location '{location}': {moduleResult.Errors.First().Message}");
-        }
+            return Result.Fail<WorkItemWithRevisionInfo[]>(
+                $"Failed to get module at location '{location}': {moduleResult.Errors.First().Message}");
 
         var module = moduleResult.Value;
         if (string.IsNullOrEmpty(module?.uri))
-        {
-            return Result.Fail<WorkItemWithRevisionInfo[]>($"Module at location '{location}' has no URI");
-        }
+            return Result.Fail<WorkItemWithRevisionInfo[]>(
+                $"Module at location '{location}' has no URI");
 
-        // Step 2: Append revision to the module's URI and get work item URIs
-        // The module URI format: subterra:data-service:objects:/default/{Project}${Module}{moduleFolder}{Space}#{ModuleWorkItemId}
-        // We append %{revision} to query at that specific revision
+        // Step 2: Append revision to URI, get work item URIs, extract IDs and per-item revisions
         var moduleUriWithRevision = $"{module.uri}%{revision}";
         var urisResult = await GetModuleWorkItemUrisAsync(moduleUriWithRevision, null, true);
-
         if (urisResult.IsFailed)
-        {
-            return Result.Fail<WorkItemWithRevisionInfo[]>($"Failed to get work item URIs: {urisResult.Errors.First().Message}");
-        }
+            return Result.Fail<WorkItemWithRevisionInfo[]>(
+                $"Failed to get work item URIs: {urisResult.Errors.First().Message}");
 
         var workItemUris = urisResult.Value;
         if (workItemUris.Length == 0)
-        {
             return Result.Ok(Array.Empty<WorkItemWithRevisionInfo>());
-        }
 
-        // Step 2: Extract work item IDs and revisions from URIs
         var wiRevisionMap = new Dictionary<string, (string Revision, string Uri)>();
         foreach (var uri in workItemUris)
         {
             var wiId = PolarionUriParser.ExtractIdFromUri(uri);
             var wiRev = PolarionUriParser.ExtractRevisionFromUri(uri);
-
             if (!string.IsNullOrEmpty(wiId))
-            {
                 wiRevisionMap[wiId] = (wiRev, uri);
-            }
         }
 
         if (wiRevisionMap.Count == 0)
-        {
-            return Result.Fail<WorkItemWithRevisionInfo[]>("No valid work item IDs could be extracted from URIs");
-        }
+            return Result.Fail<WorkItemWithRevisionInfo[]>(
+                "No valid work item IDs could be extracted from URIs");
 
-        // Step 3: Bulk fetch work items at the specified revision using baseline query
+        // Step 3: Bulk fetch work item data at the specified baseline revision
         var ids = string.Join(" ", wiRevisionMap.Keys);
-        var query = $"id:({ids})"; // Note: SearchWorkitemInBaselineAsync adds project.id filter automatically
-        var headWorkItemsResult = await SearchWorkitemInBaselineAsync(revision, query, "id", fieldList);
+        var query = $"id:({ids})";
+        var workItemsResult = await SearchWorkitemInBaselineAsync(revision, query, "id", fieldList, includeAllProjects: true);
 
-        if (headWorkItemsResult.IsFailed)
-        {
-            return Result.Fail<WorkItemWithRevisionInfo[]>($"Failed to bulk fetch work items at revision {revision}: {headWorkItemsResult.Errors.First().Message}");
-        }
+        if (workItemsResult.IsFailed)
+            return Result.Fail<WorkItemWithRevisionInfo[]>(
+                $"Failed to bulk fetch work items at revision {revision}: {workItemsResult.Errors.First().Message}");
 
-        // Step 4: Fetch historical versions where revisions differ from HEAD
+        // Step 4: Wrap results — all items are historical by definition (revision query)
         var finalWorkItems = new List<WorkItemWithRevisionInfo>();
 
-        foreach (var headWi in headWorkItemsResult.Value)
+        foreach (var workItem in workItemsResult.Value)
         {
-            if (headWi?.id is null || !wiRevisionMap.TryGetValue(headWi.id, out var revisionInfo))
-            {
+            if (workItem?.id is null || !wiRevisionMap.TryGetValue(workItem.id, out var revisionInfo))
                 continue;
-            }
 
             var (targetRevision, wiUri) = revisionInfo;
 
-            // Get HEAD revision for comparison
-            var revisionsResult = await GetRevisionIdsAsync(wiUri);
-            if (revisionsResult.IsFailed || revisionsResult.Value.Length == 0)
+            finalWorkItems.Add(new WorkItemWithRevisionInfo
             {
-                // If we can't get revisions, use the HEAD work item
-                finalWorkItems.Add(new WorkItemWithRevisionInfo
-                {
-                    WorkItem = headWi,
-                    Revision = targetRevision,
-                    HeadRevision = targetRevision,
-                    IsHistorical = false,
-                    SourceUri = wiUri
-                });
-                continue;
-            }
-
-            var headRevision = revisionsResult.Value.Last();
-
-            if (headRevision != targetRevision)
-            {
-                // Revisions differ - fetch historical version
-                var historicalWiResult = await GetWorkItemByUriAsync(wiUri);
-
-                if (historicalWiResult.IsSuccess)
-                {
-                    finalWorkItems.Add(new WorkItemWithRevisionInfo
-                    {
-                        WorkItem = historicalWiResult.Value,
-                        Revision = targetRevision,
-                        HeadRevision = headRevision,
-                        IsHistorical = true,
-                        SourceUri = wiUri
-                    });
-                }
-                else
-                {
-                    // Fall back to HEAD if historical fetch fails
-                    finalWorkItems.Add(new WorkItemWithRevisionInfo
-                    {
-                        WorkItem = headWi,
-                        Revision = targetRevision,
-                        HeadRevision = headRevision,
-                        IsHistorical = false,
-                        SourceUri = wiUri
-                    });
-                }
-            }
-            else
-            {
-                // Same revision - use fast-fetched HEAD
-                finalWorkItems.Add(new WorkItemWithRevisionInfo
-                {
-                    WorkItem = headWi,
-                    Revision = targetRevision,
-                    HeadRevision = headRevision,
-                    IsHistorical = false,
-                    SourceUri = wiUri
-                });
-            }
+                WorkItem = workItem,
+                Revision = targetRevision,
+                HeadRevision = string.Empty,
+                IsHistorical = true,
+                SourceUri = wiUri
+            });
         }
 
         return Result.Ok(finalWorkItems.ToArray());

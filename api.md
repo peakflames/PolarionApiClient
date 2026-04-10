@@ -91,7 +91,8 @@ Retrieves a single work item by its ID, optionally at a specific revision.
 public async Task<Result<WorkItem[]>> SearchWorkitemAsync(
     string query, 
     string order = "Created", 
-    List<string>? field_list = null)
+    List<string>? field_list = null,
+    bool includeAllProjects = false)
 ```
 
 Queries for work items matching the specified criteria. Returns only the requested fields for each result.
@@ -100,10 +101,11 @@ Queries for work items matching the specified criteria. Returns only the request
 - `query` - The query string to use while searching
 - `order` - The field to order results by (default: "Created")
 - `field_list` - List of fields to retrieve for each search result. If null, defaults to ["id"]. Use syntax like `['customFields.FieldName']` for custom fields
+- `includeAllProjects` - When true, omits the automatic project.id filter so results span all projects. Default is false.
 
 **Returns:** A `Result<WorkItem[]>` containing matching work items or error details
 
-**Remarks:** Automatically appends the project ID to the query. For custom field retrieval, use the syntax: `field_list=['customFields.SomeField']`
+**Remarks:** By default, automatically appends the project ID to the query. Set `includeAllProjects: true` to search across projects (e.g. for cross-project document references). For custom field retrieval, use the syntax: `field_list=['customFields.SomeField']`
 
 ---
 
@@ -114,7 +116,8 @@ public async Task<Result<WorkItem[]>> SearchWorkitemInBaselineAsync(
     string baselineRevision, 
     string query, 
     string order = "Created", 
-    List<string>? field_list = null)
+    List<string>? field_list = null,
+    bool includeAllProjects = false)
 ```
 
 Queries for work items in a specific baseline revision. Returns only the requested fields for each result.
@@ -124,10 +127,13 @@ Queries for work items in a specific baseline revision. Returns only the request
 - `query` - The query string to use while searching
 - `order` - The field to order results by (default: "Created")
 - `field_list` - List of fields to retrieve for each search result. If null, defaults to ["id"]. Use syntax like `['customFields.FieldName']` for custom fields
+- `includeAllProjects` - When true, omits the automatic project.id filter so results span all projects. Default is false.
 
 **Returns:** A `Result<WorkItem[]>` containing matching work items or error details
 
 **Throws:** `PolarionClientException` if the operation fails
+
+**Remarks:** Set `includeAllProjects: true` when querying baseline revisions of documents that contain cross-project work item references.
 
 ---
 
