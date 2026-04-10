@@ -14,10 +14,11 @@ public partial class PolarionClient : IPolarionClient
     /// <param name="query">The query to use while searching</param>
     /// <param name="order">Order by</param>
     /// <param name="field_list">list of fields to retrieve for each search result</param>
+    /// <param name="includeAllProjects">When true, omits the project.id filter so results span all projects. Default is false.</param>
     /// <returns>Search results but only with the given fields set</returns>
     /// <exception cref="PolarionClientException"></exception>
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]
-    public async Task<Result<WorkItem[]>> SearchWorkitemInBaselineAsync(string baselineRevision, string query, string order = "Created", List<string>? field_list = null)
+    public async Task<Result<WorkItem[]>> SearchWorkitemInBaselineAsync(string baselineRevision, string query, string order = "Created", List<string>? field_list = null, bool includeAllProjects = false)
     {
         try
         {
@@ -31,7 +32,8 @@ public partial class PolarionClient : IPolarionClient
                 field_list = ["id"];
             }
 
-            query += $" AND project.id:{_config.ProjectId}";
+            if (!includeAllProjects)
+                query += $" AND project.id:{_config.ProjectId}";
 
             var result = await _trackerClient.queryWorkItemsInBaselineAsync(new(query, order, baselineRevision, field_list.ToArray()));
             return result.queryWorkItemsInBaselineReturn is null ? Result.Fail<WorkItem[]>("Query failed") : result.queryWorkItemsInBaselineReturn;
