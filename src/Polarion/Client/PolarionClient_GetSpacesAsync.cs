@@ -1,7 +1,7 @@
 namespace Polarion;
 
 public partial class PolarionClient : IPolarionClient
-{    
+{
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]
     public async Task<Result<List<string>>> GetSpacesAsync(string? excludeSpaceNameContains = null)
     {

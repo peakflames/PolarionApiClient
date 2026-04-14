@@ -173,7 +173,7 @@ public class PolarionUriParserTests
 
         // Assert
         result.Should().Contain("FCS Memory Loader IDD");
-        
+
         _output.WriteLine($"Built URI with spaces: {result}");
     }
 
@@ -194,7 +194,7 @@ public class PolarionUriParserTests
 
         // Assert
         result.Should().Be(expectedUri);
-        
+
         _output.WriteLine($"Expected: {expectedUri}");
         _output.WriteLine($"Actual:   {result}");
     }
@@ -231,18 +231,18 @@ public class PolarionUriParserTests
     public void DocumentUriFormatComponents()
     {
         // This test documents the expected URI format components for reference
-        
+
         // Standard work item URI format:
         // subterra:data-service:objects:/default/{Project}${WorkItem}{WorkItemId}%{Revision}
-        
+
         // Module URI format:
         // subterra:data-service:objects:/default/{ProjectName}${Module}{moduleFolder}{Folder}#{DocumentId}%{Revision}
-        
+
         // Note: ${Module}{moduleFolder} are literal placeholder strings in Polarion's internal URI format
-        
+
         var workItemUri = "subterra:data-service:objects:/default/Midnight${WorkItem}MD-12345%100";
         var moduleUri = "subterra:data-service:objects:/default/Midnight${Module}{moduleFolder}L4_fcs#FCS Memory Loader IDD%200000";
-        
+
         // Log for documentation purposes
         _output.WriteLine("=== Polarion URI Format Documentation ===");
         _output.WriteLine($"Work Item URI Example: {workItemUri}");
@@ -252,11 +252,11 @@ public class PolarionUriParserTests
         _output.WriteLine($"Module URI Example: {moduleUri}");
         _output.WriteLine($"  - Extracted ID: {PolarionUriParser.ExtractIdFromUri(moduleUri)}");
         _output.WriteLine($"  - Extracted Revision: {PolarionUriParser.ExtractRevisionFromUri(moduleUri)}");
-        
+
         // Work item URIs extract the ID correctly
         PolarionUriParser.ExtractIdFromUri(workItemUri).Should().Be("MD-12345");
         PolarionUriParser.ExtractRevisionFromUri(workItemUri).Should().Be("100");
-        
+
         // Module URIs - ExtractIdFromUri returns folder#documentId (includes # separator)
         // This is expected behavior as module URIs have different structure than work item URIs
         PolarionUriParser.ExtractIdFromUri(moduleUri).Should().Be("L4_fcs#FCS Memory Loader IDD");

@@ -30,10 +30,10 @@ public partial class PolarionClient : IPolarionClient
         }
 
         var moduleWorkItems = result.Value;
-        
+
         var workItemsGroupedByHeading = new SortedDictionary<string, List<WorkItem>>();
         var activeContent = new List<WorkItem>();
-        
+
 
         foreach ((var outlineNumber, var workItemsByOutlineNumber) in moduleWorkItems)
         {
@@ -73,7 +73,7 @@ public partial class PolarionClient : IPolarionClient
             {
                 if (contentGroupedByHeading.TryGetValue(key, out var markdownBuilder))
                 {
-                    StringBuilderAppendWorkItemMarkdown(workItem, workItemTypeToShortNameMap, includeWorkItemIdentifiers,markdownBuilder);
+                    StringBuilderAppendWorkItemMarkdown(workItem, workItemTypeToShortNameMap, includeWorkItemIdentifiers, markdownBuilder);
                 }
                 else
                 {
