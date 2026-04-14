@@ -33,7 +33,9 @@ public partial class PolarionClient : IPolarionClient
             }
 
             if (!includeAllProjects)
+            {
                 query += $" AND project.id:{_config.ProjectId}";
+            }
 
             var result = await _trackerClient.queryWorkItemsInBaselineAsync(new(query, order, baselineRevision, field_list.ToArray()));
             return result.queryWorkItemsInBaselineReturn is null ? Result.Fail<WorkItem[]>("Query failed") : result.queryWorkItemsInBaselineReturn;

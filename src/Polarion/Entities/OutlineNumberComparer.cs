@@ -24,7 +24,9 @@ public class OutlineNumberComparer : IComparer<string>
     public int Compare(string? x, string? y)
     {
         if (x == null || y == null)
+        {
             return string.Compare(x, y, StringComparison.Ordinal);
+        }
 
         string[] xParts = x.Split('.');
         string[] yParts = y.Split('.');
@@ -36,13 +38,17 @@ public class OutlineNumberComparer : IComparer<string>
             if (int.TryParse(xParts[i], out int xNum) && int.TryParse(yParts[i], out int yNum))
             {
                 if (xNum != yNum)
+                {
                     return xNum.CompareTo(yNum);
+                }
             }
             else
             {
                 int stringCompare = string.Compare(xParts[i], yParts[i], StringComparison.Ordinal);
                 if (stringCompare != 0)
+                {
                     return stringCompare;
+                }
             }
         }
 
