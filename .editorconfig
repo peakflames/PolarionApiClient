@@ -12,6 +12,7 @@ indent_size = 4
 
 # Braces — always require curly braces for control flow bodies
 csharp_prefer_braces = always:warning
+dotnet_diagnostic.IDE0011.severity = warning
 
 # Prefer 'var' when type is apparent; require explicit type otherwise
 csharp_style_var_for_built_in_types = false:suggestion

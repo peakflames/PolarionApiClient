@@ -40,7 +40,9 @@ public partial class PolarionClient : IPolarionClient
             }
 
             if (!includeAllProjects)
+            {
                 query += $" AND project.id:{_config.ProjectId}";
+            }
 
             var result = await _trackerClient.queryWorkItemsAsync(new(query, order, [.. fieldList]));
             return result.queryWorkItemsReturn is null ? Result.Fail<WorkItem[]>("Query failed") : result.queryWorkItemsReturn;
@@ -62,7 +64,9 @@ public partial class PolarionClient : IPolarionClient
             }
 
             if (!includeAllProjects)
+            {
                 query += $" AND project.id:{_config.ProjectId}";
+            }
 
             var result = await _trackerClient.queryWorkItemsAsync(new(query, order, [.. fieldList]));
             return result.queryWorkItemsReturn is null ? Result.Fail<WorkItem[]>("Query failed") : result.queryWorkItemsReturn;
