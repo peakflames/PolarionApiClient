@@ -12,7 +12,7 @@ public partial class PolarionClient : IPolarionClient
     /// <returns>A Result containing a hierarchical dictionary of WorkItems if successful.</returns>
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]
     public async Task<Result<SortedDictionary<string, SortedDictionary<string, WorkItem>>>> GetHierarchicalWorkItemsByModuleAsync(
-        string workItemPrefix, string moduleTitle, PolarionFilter filter, string? moduleRevision = null) 
+        string workItemPrefix, string moduleTitle, PolarionFilter filter, string? moduleRevision = null)
     {
         var result = await GetWorkItemsByModuleAsync(moduleTitle, filter, moduleRevision);
         if (result.IsFailed)

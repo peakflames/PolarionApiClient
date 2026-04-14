@@ -29,7 +29,7 @@ public partial class PolarionClient : IPolarionClient
             {
                 builder.AppendLine($"__WorkItem(id='{item.id}', type='{type}'):__");
             }
-            
+
             if (item.description is not null)
             {
                 var content = item.description.type is not null && item.description.type == "text/html"
@@ -46,7 +46,7 @@ public partial class PolarionClient : IPolarionClient
             {
                 builder.AppendLine($"__WorkItem(id='{item.id}', type='{type}'):__");
             }
-            
+
             var content = item.description.type == "text/html"
                             ? ConvertPolarionWorkItemHtmlToMarkdown(item.description.content)
                             : item.description.content;
