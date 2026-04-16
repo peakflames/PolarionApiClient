@@ -1,9 +1,5 @@
 # Polarion Changelog
 
-## 0.3.6
-
--
-
 ## 0.3.5
 
 - Fix: `SearchWorkitemInBaselineAsync` was calling `queryWorkItemsInRevisionAsync` instead of `queryWorkItemsInBaselineAsync`, causing some work items to be missing from historic baseline document results (#3)
