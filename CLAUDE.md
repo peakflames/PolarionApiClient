@@ -82,6 +82,12 @@ public async Task MethodName_Scenario_ExpectedBehavior()
 
 Version is in `src/Polarion/Polarion.csproj` → `<Version>`.
 
+## Releases
+
+Releases are performed via the **Release to NuGet** GitHub Actions workflow — see `CONTRIBUTING.md` for full instructions.
+
+**CRITICAL**: Never stage, commit, or touch `src/Polarion.Tests/appsettings.test.json` — it contains sensitive credentials.
+
 ## CHANGELOG.md Format
 
 ```markdown
