@@ -25,7 +25,7 @@ public partial class PolarionClient : IPolarionClient
             if (revisionsResult is null)
             {
                 return Result.Fail($"No revisions found for workitem '{workItemId}'");
-            } 
+            }
              ;
 
             var revisionIds = revisionsResult.getRevisionsReturn;
@@ -36,7 +36,7 @@ public partial class PolarionClient : IPolarionClient
             foreach (var i in Enumerable.Range(0, revisionIds.Length).Reverse())
             {
                 var revisionId = revisionIds[i];
-                var revisionResult = await _trackerClient.getWorkItemByUriInRevisionAsync(new (workItem.uri, revisionId));
+                var revisionResult = await _trackerClient.getWorkItemByUriInRevisionAsync(new(workItem.uri, revisionId));
                 if (revisionResult is null)
                 {
                     return Result.Fail($"Revision {revisionId} for workitem {workItemId} not found");
@@ -59,5 +59,5 @@ public partial class PolarionClient : IPolarionClient
         }
     }
 
-    
+
 }

@@ -109,7 +109,7 @@ public class Program
             throw;
         }
     }
-    
+
     [RequiresUnreferencedCode("Uses Polarion API & Markdown which requires reflection")]
     private static async Task TestExportModuleToMarkdownAsync(PolarionClientConfiguration config)
     {

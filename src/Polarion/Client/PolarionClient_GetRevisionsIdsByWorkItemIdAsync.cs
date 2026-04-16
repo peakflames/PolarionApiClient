@@ -28,5 +28,5 @@ public partial class PolarionClient : IPolarionClient
             throw new PolarionClientException($"Failed to get revisions for work item {workItemId}", ex);
         }
     }
-    
+
 }
