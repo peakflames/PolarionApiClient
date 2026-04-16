@@ -59,7 +59,8 @@ public partial class PolarionClient : IPolarionClient
         var processedHtml = System.Text.RegularExpressions.Regex.Replace(
             htmlContent,
             @"<span\s+(?:[^>]*?\s+)?data-source=""([^""]*?)""(?:\s+[^>]*?)?\s+class=""polarion-rte-formula""[^>]*>.*?</span>",
-            match => {
+            match =>
+            {
                 // Extract the data-source attribute value
                 var dataSource = match.Groups[1].Value;
                 // Replace with pre tag containing the data-source content
@@ -73,7 +74,8 @@ public partial class PolarionClient : IPolarionClient
         processedHtml = System.Text.RegularExpressions.Regex.Replace(
             processedHtml,
             @"<span\s+(?:[^>]*?\s+)?class=""polarion-rte-link""(?:\s+[^>]*?)?\s+data-type=""crossReference""(?:\s+[^>]*?)?\s+data-item-id=""([^""]*?)""[^>]*>.*?</span>",
-            match => {
+            match =>
+            {
                 // Extract the data-item-id attribute value
                 var itemId = match.Groups[1].Value;
                 // Replace with a markdown link to the referenced work item
