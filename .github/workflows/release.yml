@@ -47,9 +47,13 @@ jobs:
         NEW_VERSION: ${{ inputs.new_version }}
         CHANGELOG_ENTRY: ${{ inputs.changelog_entry }}
       run: |
-        TEMP=$(mktemp)
-        printf '## %s\n\n- %s\n\n' "$NEW_VERSION" "$CHANGELOG_ENTRY" | cat - CHANGELOG.md > "$TEMP"
-        mv "$TEMP" CHANGELOG.md
+        if grep -q "^## ${NEW_VERSION}$" CHANGELOG.md; then
+          echo "Changelog entry for ${NEW_VERSION} already exists, skipping."
+        else
+          TEMP=$(mktemp)
+          printf '## %s\n\n- %s\n\n' "$NEW_VERSION" "$CHANGELOG_ENTRY" | cat - CHANGELOG.md > "$TEMP"
+          mv "$TEMP" CHANGELOG.md
+        fi
 
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
@@ -68,7 +72,7 @@ jobs:
         CHANGELOG_ENTRY: ${{ inputs.changelog_entry }}
       run: |
         git add src/Polarion/Polarion.csproj CHANGELOG.md
-        git commit -m "Release v${NEW_VERSION}: ${CHANGELOG_ENTRY}"
+        git diff --cached --quiet || git commit -m "Release v${NEW_VERSION}: ${CHANGELOG_ENTRY}"
         git push origin develop
 
     - name: Merge develop to main and push
