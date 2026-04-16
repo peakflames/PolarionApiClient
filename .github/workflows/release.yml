@@ -1,0 +1,112 @@
+name: Release to NuGet
+
+on:
+  workflow_dispatch:
+    inputs:
+      new_version:
+        description: 'New release version (e.g., 0.4.0)'
+        required: true
+        type: string
+      changelog_entry:
+        description: 'Changelog entry text (e.g., "Feature: Added GetLinkedWorkItemsAsync")'
+        required: true
+        type: string
+      next_dev_version:
+        description: 'Next development version after release (e.g., 0.4.1)'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout develop
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        ref: develop
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Configure git identity
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+    - name: Update version in csproj
+      env:
+        NEW_VERSION: ${{ inputs.new_version }}
+      run: |
+        sed -i "s|<Version>.*</Version>|<Version>${NEW_VERSION}</Version>|" src/Polarion/Polarion.csproj
+
+    - name: Prepend changelog entry
+      env:
+        NEW_VERSION: ${{ inputs.new_version }}
+        CHANGELOG_ENTRY: ${{ inputs.changelog_entry }}
+      run: |
+        TEMP=$(mktemp)
+        printf '## %s\n\n- %s\n\n' "$NEW_VERSION" "$CHANGELOG_ENTRY" | cat - CHANGELOG.md > "$TEMP"
+        mv "$TEMP" CHANGELOG.md
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Create nuget-local directory
+      run: mkdir -p nuget-local
+
+    - name: Build validation
+      run: dotnet build src/PolarionApiClient.sln -c Release
+
+    - name: Commit release changes to develop
+      env:
+        NEW_VERSION: ${{ inputs.new_version }}
+        CHANGELOG_ENTRY: ${{ inputs.changelog_entry }}
+      run: |
+        git add src/Polarion/Polarion.csproj CHANGELOG.md
+        git commit -m "Release v${NEW_VERSION}: ${CHANGELOG_ENTRY}"
+        git push origin develop
+
+    - name: Merge develop to main and push
+      env:
+        NEW_VERSION: ${{ inputs.new_version }}
+        CHANGELOG_ENTRY: ${{ inputs.changelog_entry }}
+      run: |
+        git checkout main
+        git merge develop --no-ff -m "Release v${NEW_VERSION}: ${CHANGELOG_ENTRY}"
+        git push origin main
+
+    - name: Create and push release tag
+      env:
+        NEW_VERSION: ${{ inputs.new_version }}
+        CHANGELOG_ENTRY: ${{ inputs.changelog_entry }}
+      run: |
+        git tag -a "v${NEW_VERSION}" -m "Release v${NEW_VERSION}: ${CHANGELOG_ENTRY}"
+        git push origin "v${NEW_VERSION}"
+
+    - name: Bump develop to next dev version
+      env:
+        NEXT_DEV_VERSION: ${{ inputs.next_dev_version }}
+      run: |
+        git checkout develop
+        sed -i "s|<Version>.*</Version>|<Version>${NEXT_DEV_VERSION}</Version>|" src/Polarion/Polarion.csproj
+
+    - name: Prepend TBD changelog entry
+      env:
+        NEXT_DEV_VERSION: ${{ inputs.next_dev_version }}
+      run: |
+        TEMP=$(mktemp)
+        printf '## %s\n\n- TBD\n\n' "$NEXT_DEV_VERSION" | cat - CHANGELOG.md > "$TEMP"
+        mv "$TEMP" CHANGELOG.md
+
+    - name: Commit and push develop version bump
+      env:
+        NEXT_DEV_VERSION: ${{ inputs.next_dev_version }}
+      run: |
+        git add src/Polarion/Polarion.csproj CHANGELOG.md
+        git commit -m "(chore) bump version to v${NEXT_DEV_VERSION} (develop)"
+        git push origin develop
