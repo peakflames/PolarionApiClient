@@ -2,6 +2,10 @@
 
 - fix cross-project work item resolution in branched documents
 
+## 0.3.6
+
+- fix cross-project work item resolution in branched documents
+
 # Polarion Changelog
 
 ## 0.3.5
