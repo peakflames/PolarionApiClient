@@ -81,36 +81,85 @@ jobs:
         CHANGELOG_ENTRY: ${{ inputs.changelog_entry }}
       run: |
         git checkout main
-        git merge develop --no-ff -m "Release v${NEW_VERSION}: ${CHANGELOG_ENTRY}"
-        git push origin main
+        if git merge-base --is-ancestor develop main; then
+          echo "develop already merged into main, skipping."
+        else
+          git merge develop --no-ff -m "Release v${NEW_VERSION}: ${CHANGELOG_ENTRY}"
+          git push origin main
+        fi
 
     - name: Create and push release tag
       env:
         NEW_VERSION: ${{ inputs.new_version }}
         CHANGELOG_ENTRY: ${{ inputs.changelog_entry }}
       run: |
-        git tag -a "v${NEW_VERSION}" -m "Release v${NEW_VERSION}: ${CHANGELOG_ENTRY}"
-        git push origin "v${NEW_VERSION}"
+        if git rev-parse "v${NEW_VERSION}" >/dev/null 2>&1; then
+          echo "Tag v${NEW_VERSION} already exists, skipping."
+        else
+          git tag -a "v${NEW_VERSION}" -m "Release v${NEW_VERSION}: ${CHANGELOG_ENTRY}"
+          git push origin "v${NEW_VERSION}"
+        fi
 
     - name: Bump develop to next dev version
       env:
         NEXT_DEV_VERSION: ${{ inputs.next_dev_version }}
       run: |
         git checkout develop
-        sed -i "s|<Version>.*</Version>|<Version>${NEXT_DEV_VERSION}</Version>|" src/Polarion/Polarion.csproj
+        CURRENT=$(grep -o '<Version>[^<]*</Version>' src/Polarion/Polarion.csproj | sed 's|<[^>]*>||g')
+        if [ "$CURRENT" = "$NEXT_DEV_VERSION" ]; then
+          echo "Already at v${NEXT_DEV_VERSION}, skipping bump."
+        else
+          sed -i "s|<Version>.*</Version>|<Version>${NEXT_DEV_VERSION}</Version>|" src/Polarion/Polarion.csproj
+        fi
 
     - name: Prepend TBD changelog entry
       env:
         NEXT_DEV_VERSION: ${{ inputs.next_dev_version }}
       run: |
-        TEMP=$(mktemp)
-        printf '## %s\n\n- TBD\n\n' "$NEXT_DEV_VERSION" | cat - CHANGELOG.md > "$TEMP"
-        mv "$TEMP" CHANGELOG.md
+        if grep -q "^## ${NEXT_DEV_VERSION}$" CHANGELOG.md; then
+          echo "Changelog entry for ${NEXT_DEV_VERSION} already exists, skipping."
+        else
+          TEMP=$(mktemp)
+          printf '## %s\n\n- TBD\n\n' "$NEXT_DEV_VERSION" | cat - CHANGELOG.md > "$TEMP"
+          mv "$TEMP" CHANGELOG.md
+        fi
 
     - name: Commit and push develop version bump
       env:
         NEXT_DEV_VERSION: ${{ inputs.next_dev_version }}
       run: |
         git add src/Polarion/Polarion.csproj CHANGELOG.md
-        git commit -m "(chore) bump version to v${NEXT_DEV_VERSION} (develop)"
+        git diff --cached --quiet || git commit -m "(chore) bump version to v${NEXT_DEV_VERSION} (develop)"
         git push origin develop
+
+    - name: Pack NuGet package
+      env:
+        NEW_VERSION: ${{ inputs.new_version }}
+      run: |
+        dotnet pack src/Polarion/Polarion.csproj -c Release --no-build \
+          /p:Version=${NEW_VERSION} -o ./nuget-packages
+
+    - name: Publish to NuGet.org
+      run: |
+        dotnet nuget push ./nuget-packages/*.nupkg \
+          --source https://api.nuget.org/v3/index.json \
+          --api-key ${{ secrets.NUGET_API_KEY }} \
+          --skip-duplicate
+
+    - name: Create GitHub Release
+      uses: softprops/action-gh-release@v2
+      with:
+        tag_name: v${{ inputs.new_version }}
+        name: Release v${{ inputs.new_version }}
+        draft: false
+        prerelease: ${{ contains(inputs.new_version, '-alpha') || contains(inputs.new_version, '-beta') || contains(inputs.new_version, '-rc') }}
+        body: |
+          ## NuGet Package
+          This release has been published to NuGet.org
+
+          **Package:** Polarion v${{ inputs.new_version }}
+          **Install:** `dotnet add package Polarion --version ${{ inputs.new_version }}`
+
+          View on NuGet: https://www.nuget.org/packages/Polarion/${{ inputs.new_version }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

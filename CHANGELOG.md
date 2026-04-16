@@ -1,3 +1,7 @@
+## 0.3.7
+
+- TBD
+
 ## 0.3.6
 
 - fix cross-project work item resolution in branched documents
