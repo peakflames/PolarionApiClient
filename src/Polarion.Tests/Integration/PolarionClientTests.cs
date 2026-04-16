@@ -79,7 +79,7 @@ public class PolarionClientTests : IAsyncLifetime
         var workItem = result.Value;
         workItem.Should().NotBeNull();
         workItem.id.Should().Be(workItemId);
-        
+
         // Verify we can also get the latest version without revision parameter
         var latestResult = await _client.GetWorkItemByIdAsync(workItemId);
         latestResult.IsSuccess.Should().BeTrue("Latest work item retrieval should succeed");
@@ -522,10 +522,10 @@ public class PolarionClientTests : IAsyncLifetime
         var allRevisionObjects = result.Value;
         allRevisionObjects.Should().NotBeNull();
         allRevisionObjects.Should().NotBeEmpty("Should have at least one revision");
-        
+
         // Verify dictionary has revision IDs as keys
         allRevisionObjects.Keys.Should().AllSatisfy(key => key.Should().NotBeNullOrEmpty());
-        
+
         // Verify all values are valid WorkItems
         allRevisionObjects.Values.Should().AllSatisfy(wi => wi.Should().NotBeNull());
 
@@ -541,7 +541,7 @@ public class PolarionClientTests : IAsyncLifetime
         // Verify the first two revisions from full list match the limited list
         var allRevisionsList = allRevisionObjects.Values.ToList();
         var limitedRevisionsList = lastTwoRevisionObjects.Values.ToList();
-        
+
         allRevisionsList[0].Should().BeEquivalentTo(limitedRevisionsList[0]);
         allRevisionsList[1].Should().BeEquivalentTo(limitedRevisionsList[1]);
     }
@@ -671,7 +671,7 @@ public class PolarionClientTests : IAsyncLifetime
         var spaceName = _config.TestScenarioData.GetDocumentsInSpaceSpaceName;
         var modulesResult = await _client.GetModulesInSpaceThinAsync(spaceName);
         modulesResult.IsSuccess.Should().BeTrue();
-        var moduleUri = modulesResult.Value.First().Uri;       
+        var moduleUri = modulesResult.Value.First().Uri;
 
         _output.WriteLine($"Testing GetModuleWorkItemUrisAsync with module URI: {moduleUri}");
 

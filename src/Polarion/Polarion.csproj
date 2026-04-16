@@ -7,11 +7,11 @@
     <TrimMode>partial</TrimMode>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <NoWarn>CS8981,CS1591</NoWarn>
+
 
     <!-- Package Metadata -->
     <PackageId>Polarion</PackageId>
-    <Version>0.3.5</Version>
+    <Version>0.3.6</Version>
     <Authors>Todd Schavey</Authors>
     <Company>Peakflames</Company>
     <Description>A C# package to access the Polarion WSDL API. Complete API documentation available at: https://github.com/peakflames/PolarionApiClient/blob/main/api.md</Description>
@@ -20,14 +20,19 @@
     <PackageProjectUrl>https://github.com/peakflames/PolarionApiClient</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
 
-    <!-- Documentation -->
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    
     <!-- Source Link -->
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+
+    <!-- Workaround for IDE0005: removed unused directives, we must enable XML
+         documentation and ignore the warning it generates (CS1591) -->
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>CS8981,CS1591,IL2026,IL2104</NoWarn>
+    <AnalysisLevel>10.0</AnalysisLevel>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
 
   </PropertyGroup>
 
@@ -49,7 +54,7 @@
     <!-- <EmbeddedResource Include="TrimmerRoots.xml" /> -->
   </ItemGroup>
 
-  <ItemGroup>    
+  <ItemGroup>
     <TrimmerRootAssembly Include="ReverseMarkdown" />
     <TrimmerRootAssembly Include="HtmlAgilityPack" />
     <TrimmerRootAssembly Include="Polarion" />
