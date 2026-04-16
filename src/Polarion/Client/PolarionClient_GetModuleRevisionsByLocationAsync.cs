@@ -44,7 +44,7 @@ public partial class PolarionClient : IPolarionClient
                 var revisionId = revisionIds[i];
                 // Use %revision format instead of ?revision= to get full metadata
                 var moduleRevisionUri = $"{module.uri}%{revisionId}";
-                var revisionResult = await _trackerClient.getModuleByUriAsync(new (moduleRevisionUri));
+                var revisionResult = await _trackerClient.getModuleByUriAsync(new(moduleRevisionUri));
                 if (revisionResult is null)
                 {
                     return Result.Fail($"Revision {revisionId} for module locaiton {location} not found");
@@ -67,5 +67,5 @@ public partial class PolarionClient : IPolarionClient
         }
     }
 
-    
+
 }
