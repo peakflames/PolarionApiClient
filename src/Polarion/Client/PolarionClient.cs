@@ -6,5 +6,10 @@ public partial class PolarionClient(TrackerWebService trackerClient, PolarionCli
     private readonly PolarionClientConfiguration _config = config ?? throw new ArgumentNullException(nameof(config));
     private readonly ReverseMarkdown.Converter _markdownConverter = new ReverseMarkdown.Converter();
     public TrackerWebService TrackerService => _trackerClient;
+
+    protected static string EscapeSqlLiteral(string value)
+    {
+        return value.Replace("'", "''", StringComparison.Ordinal);
+    }
 }
 
