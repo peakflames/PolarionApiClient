@@ -54,19 +54,25 @@ public partial class PolarionClient : IPolarionClient
             var trackerEndpoint = new EndpointAddress($"{config.ServerUrl.TrimEnd('/')}/polarion/ws/services/TrackerWebService");
             var trackerClient = new TrackerWebServiceClient(binding, trackerEndpoint);
 
-            // Configure client to use the session ID
+            // Create project client with the same binding, alongside the tracker client
+            var projectEndpoint = new EndpointAddress($"{config.ServerUrl.TrimEnd('/')}/polarion/ws/services/ProjectWebService");
+            var projectClient = new Polarion.Generated.Project.ProjectWebServiceClient(binding, projectEndpoint);
+
+            // Configure clients to use the session ID
             var sessionHeaderValue = sessionHeader.Value;
             var sessionHeaderBehavior = new SessionHeaderBehavior(sessionHeaderValue);
             trackerClient.Endpoint.EndpointBehaviors.Add(sessionHeaderBehavior);
+            projectClient.Endpoint.EndpointBehaviors.Add(new SessionHeaderBehavior(sessionHeaderValue));
 
             // Share cookies between clients if available
             if (cookieContainer != null)
             {
                 var cookieBehavior = new CookieContainerBehavior(cookieContainer);
                 trackerClient.Endpoint.EndpointBehaviors.Add(cookieBehavior);
+                projectClient.Endpoint.EndpointBehaviors.Add(new CookieContainerBehavior(cookieContainer));
             }
 
-            return new PolarionClient(trackerClient, config);
+            return new PolarionClient(trackerClient, projectClient, config);
         }
         catch (Exception ex) when (ex is not PolarionClientException)
         {

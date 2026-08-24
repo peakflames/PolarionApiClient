@@ -639,6 +639,55 @@ public class PolarionClientTests : IAsyncLifetime
         moduleRevisions.Length.Should().Be(2);
     }
 
+    #region ProjectWebService Tests
+
+    [Fact]
+    public async Task GetProjectUsersAsync_ShouldReturnProjectMembers()
+    {
+        // Arrange
+        var projectId = _config.PolarionClient.ProjectId;
+
+        // Act
+        var result = await _client.GetProjectUsersAsync(projectId);
+
+        // Assert
+        result.IsSuccess.Should().BeTrue("Project users retrieval should succeed");
+        var users = result.Value;
+        users.Should().NotBeNull();
+        users.Should().NotBeEmpty();
+        users.Should().OnlyContain(u => !string.IsNullOrEmpty(u.id));
+    }
+
+    [Fact]
+    public async Task GetProjectUsersAsync_EmptyProjectId_ShouldFail()
+    {
+        // Arrange
+        var projectId = "";
+
+        // Act
+        var result = await _client.GetProjectUsersAsync(projectId);
+
+        // Assert
+        result.IsFailed.Should().BeTrue("Empty project ID should fail validation");
+        _output.WriteLine($"Expected failure message: {result.Errors.First().Message}");
+    }
+
+    [Fact]
+    public async Task GetUsersAsync_ShouldReturnAllUsers()
+    {
+        // Act
+        var result = await _client.GetUsersAsync();
+
+        // Assert
+        result.IsSuccess.Should().BeTrue("Users retrieval should succeed");
+        var users = result.Value;
+        users.Should().NotBeNull();
+        users.Should().NotBeEmpty();
+        users.Should().OnlyContain(u => !string.IsNullOrEmpty(u.id));
+    }
+
+    #endregion
+
     #region Module/Revision API Tests
 
     [Fact]
@@ -804,7 +853,9 @@ public class PolarionClientTests : IAsyncLifetime
         {
             wiInfo.WorkItem.Should().NotBeNull();
             wiInfo.Revision.Should().NotBeNullOrEmpty();
-            wiInfo.HeadRevision.Should().NotBeNullOrEmpty();
+            // HeadRevision is intentionally left empty for historical module-revision queries
+            // (see remarks on GetWorkItemsByModuleRevisionAsync) - not a per-item head lookup.
+            wiInfo.HeadRevision.Should().BeEmpty();
             wiInfo.SourceUri.Should().NotBeNullOrEmpty();
 
             _output.WriteLine($"WorkItem: {wiInfo.WorkItem.id}, Revision: {wiInfo.Revision}, HEAD: {wiInfo.HeadRevision}, IsHistorical: {wiInfo.IsHistorical}");
