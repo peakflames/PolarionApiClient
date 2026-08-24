@@ -113,5 +113,21 @@ public interface IPolarionClient
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]
     Task<Result<WorkItem[]>> QueryWorkItemsInModuleAsync(string moduleFolder, string documentId, List<string>? itemTypes = null, string sort = "outlineNumber", List<string>? fields = null);
 
+    /// <summary>
+    /// Gets the users explicitly assigned to a project (its member list).
+    /// </summary>
+    /// <param name="projectId">The Polarion project ID</param>
+    [RequiresUnreferencedCode("Uses WCF services which require reflection")]
+    Task<Result<Polarion.Generated.Project.User[]>> GetProjectUsersAsync(string projectId);
+
+    /// <summary>
+    /// Gets every user known to this Polarion instance. Takes no filter — callers resolving a
+    /// single user by email or id must filter the result themselves and should cache it.
+    /// </summary>
+    [RequiresUnreferencedCode("Uses WCF services which require reflection")]
+    Task<Result<Polarion.Generated.Project.User[]>> GetUsersAsync();
+
     TrackerWebService TrackerService { get; }
+
+    Polarion.Generated.Project.ProjectWebService ProjectService { get; }
 }

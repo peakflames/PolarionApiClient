@@ -25,6 +25,9 @@ The Polarion API Client is a .NET library for interacting with Polarion ALM (App
     - [GetModuleWorkItemUrisAsync](#getmoduleworkitemurisasync)
   - [Space Operations](#space-operations)
     - [GetSpacesAsync](#getspacesasync)
+  - [User Operations](#user-operations)
+    - [GetProjectUsersAsync](#getprojectusersasync)
+    - [GetUsersAsync](#getusersasync)
   - [Markdown Export Operations](#markdown-export-operations)
     - [ExportModuleToMarkdownAsync](#exportmoduletomarkdownasync)
     - [ExportModuleToMarkdownGroupedByHeadingAsync](#exportmoduletomarkdowngroupedbyheadingasync)
@@ -38,6 +41,7 @@ The Polarion API Client is a .NET library for interacting with Polarion ALM (App
     - [PolarionClientConfiguration](#polarionclientconfiguration)
   - [Properties](#properties)
     - [TrackerService](#trackerservice)
+    - [ProjectService](#projectservice)
   - [Notes](#notes)
 
 ---
@@ -296,6 +300,37 @@ Retrieves all document spaces in the project.
 
 ---
 
+## User Operations
+
+### GetProjectUsersAsync
+
+```csharp
+public async Task<Result<Polarion.Generated.Project.User[]>> GetProjectUsersAsync(string projectId)
+```
+
+Gets the users explicitly assigned to a project (its member list), via `ProjectWebService.getProjectUsers`.
+
+**Parameters:**
+- `projectId` - The Polarion project ID
+
+**Returns:** A `Result<Polarion.Generated.Project.User[]>` containing the project's assigned users or error details
+
+---
+
+### GetUsersAsync
+
+```csharp
+public async Task<Result<Polarion.Generated.Project.User[]>> GetUsersAsync()
+```
+
+Gets every user known to this Polarion instance, via `ProjectWebService.getUsers`.
+
+**Returns:** A `Result<Polarion.Generated.Project.User[]>` containing all users or error details
+
+**Remarks:** This SOAP operation takes no filter — callers needing to resolve a single user by email or id must filter the returned array themselves, and should cache the result rather than calling this per lookup.
+
+---
+
 ## Markdown Export Operations
 
 ### ExportModuleToMarkdownAsync
@@ -490,6 +525,16 @@ public TrackerWebService TrackerService { get; }
 ```
 
 Gets the underlying WCF TrackerWebService client used for communication with Polarion.
+
+---
+
+### ProjectService
+
+```csharp
+public Polarion.Generated.Project.ProjectWebService ProjectService { get; }
+```
+
+Gets the underlying WCF ProjectWebService client used for project membership and user lookups.
 
 ---
 
