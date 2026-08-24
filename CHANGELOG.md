@@ -1,12 +1,6 @@
 ## 0.3.7
 
-- TBD
-
-## 0.3.6
-
-- fix cross-project work item resolution in branched documents
-
-# Polarion Changelog
+- Feature: Add `ProjectWebService` proxy for project membership and user lookups
 
 ## 0.3.6
 
