@@ -26,6 +26,8 @@ Never commit directly to `main`. All changes flow through PRs into `develop`, th
 2. Open a PR targeting `develop`
 3. One approving review from team-sixseven is required to merge
 
+Feature PRs must not touch `<Version>` in `src/Polarion/Polarion.csproj` or `CHANGELOG.md` — the release workflow owns both, authoring the changelog entry from its `changelog_entry` input at release time. A PR that bumps the version or hand-edits the changelog collides with the placeholder the previous release left behind.
+
 ### Critical: Never Touch This File
 
 **`src/Polarion.Tests/appsettings.test.json`** contains sensitive credentials. Never stage, commit, or push this file.
@@ -40,8 +42,9 @@ Releases are self-service via GitHub Actions — no direct push access to `main`
 
 - [ ] All intended changes are merged to `develop`
 - [ ] `develop` builds cleanly locally: `dotnet build src/PolarionApiClient.sln`
-- [ ] You know the release version (`new_version`) and a one-line changelog summary
-- [ ] You know the next development version (`next_dev_version`, usually the next patch)
+- [ ] You know the release version (`new_version`) and the next development version (`next_dev_version`, usually the next patch)
+- [ ] You've composed the changelog entry: run `git log <last-tag>..develop --oneline` to see what actually landed since the last release, and write one `;`-delimited bullet per merged PR
+- [ ] The `## X.X.X` section already on `develop` reading `- TBD` is expected — it was left by the previous release's dev-version bump. `changelog_entry` fills it in; it is not dropped or skipped.
 
 ### Triggering a Release
 
@@ -53,7 +56,7 @@ Releases are self-service via GitHub Actions — no direct push access to `main`
 | Input | Description | Example |
 |---|---|---|
 | `new_version` | Version to release | `0.4.0` |
-| `changelog_entry` | One-line release summary | `Feature: Added GetLinkedWorkItemsAsync` |
+| `changelog_entry` | Release summary. Separate multiple bullets with `;` — one per merged PR | `Feature: Added GetLinkedWorkItemsAsync; Fix: Lift WCF MaxReceivedMessageSize cap to int.MaxValue (#8)` |
 | `next_dev_version` | Next development version | `0.4.1` |
 
 5. Click **Run workflow** and monitor the Actions tab
@@ -63,14 +66,16 @@ Releases are self-service via GitHub Actions — no direct push access to `main`
 The workflow mirrors the full manual release process end-to-end:
 
 1. Updates `<Version>` in `src/Polarion/Polarion.csproj` on `develop`
-2. Prepends a `## X.X.X` changelog entry to `CHANGELOG.md` on `develop`
-3. Runs `dotnet build` — aborts on failure
-4. Commits and pushes the release changes to `develop`
-5. Merges `develop → main` (no fast-forward)
-6. Creates and pushes tag `vX.X.X`
-7. Bumps `develop` to `next_dev_version` with a TBD changelog placeholder
-8. Packs and publishes the NuGet package to NuGet.org
-9. Creates a GitHub Release
+2. Writes the `changelog_entry` into the `## X.X.X` section of `CHANGELOG.md` on `develop` — filling in the `- TBD` placeholder left by the previous release, or prepending a new section if none exists
+3. Aborts if the `## X.X.X` section still reads `- TBD` after that (e.g. a blank `changelog_entry`), before anything is built, committed, or published
+4. Runs `dotnet build` — aborts on failure
+5. Commits and pushes the release changes to `develop`
+6. Merges `develop → main` (no fast-forward)
+7. Creates and pushes tag `vX.X.X`
+8. Merges `main` back into `develop` (normally a fast-forward, since `develop`'s tip is already a parent of the release merge commit) so `develop` never diverges from `main`
+9. Bumps `develop` to `next_dev_version` with a TBD changelog placeholder
+10. Packs and publishes the NuGet package to NuGet.org
+11. Creates a GitHub Release
 
 The workflow is idempotent — if it fails partway through and is re-run with the same inputs, it safely skips steps that were already completed.
 
@@ -80,6 +85,7 @@ After the workflow completes:
 
 - Tag `vX.X.X` is visible under [Releases](https://github.com/peakflames/PolarionApiClient/releases)
 - `develop` is bumped to `next_dev_version` with a `- TBD` placeholder in `CHANGELOG.md`
+- `develop` contains `main`: `git merge-base --is-ancestor main develop` exits `0`
 - Package appears on NuGet.org within a few minutes: `https://www.nuget.org/packages/Polarion/X.X.X`
 
 ---
