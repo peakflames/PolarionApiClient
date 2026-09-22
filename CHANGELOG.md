@@ -1,3 +1,7 @@
+## 0.3.8
+
+- TBD
+
 ## 0.3.7
 
 - Feature: Add `ProjectWebService` proxy for project membership and user lookups

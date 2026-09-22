@@ -27,9 +27,8 @@ Every public method change requires updates to all three:
 - [ ] Update implementation file
 - [ ] Update interface signature
 - [ ] Add/update tests in `src/Polarion.Tests/Integration/PolarionClientTests.cs`
-- [ ] Update `CHANGELOG.md` (add entry under current version)
 - [ ] Update `api.md`
-- [ ] Bump version in `src/Polarion/Polarion.csproj` if needed
+- [ ] Do **not** touch `CHANGELOG.md` or `<Version>` in `src/Polarion/Polarion.csproj` — the release workflow authors both from its `changelog_entry` input at release time (see `CONTRIBUTING.md`). A hand-edit on `develop` collides with the `## X.X.X / - TBD` placeholder the previous release left and has caused duplicate/incomplete changelog entries before.
 - [ ] Run `dotnet build src/PolarionApiClient.sln` to verify
 
 ## Coding Standards
@@ -76,11 +75,13 @@ public async Task MethodName_Scenario_ExpectedBehavior()
 
 ## Version Management
 
+Use these rules to choose the `new_version` value when triggering a release (see `CONTRIBUTING.md`):
+
 - **Patch (0.0.X)**: Bug fixes, minor improvements
 - **Minor (0.X.0)**: New features, backward compatible
 - **Major (X.0.0)**: Breaking changes
 
-Version is in `src/Polarion/Polarion.csproj` → `<Version>`.
+`<Version>` in `src/Polarion/Polarion.csproj` is edited by the release workflow, not by hand.
 
 ## Releases
 
@@ -89,6 +90,8 @@ Releases are performed via the **Release to NuGet** GitHub Actions workflow — 
 **CRITICAL**: Never stage, commit, or touch `src/Polarion.Tests/appsettings.test.json` — it contains sensitive credentials.
 
 ## CHANGELOG.md Format
+
+`CHANGELOG.md` is written by the release workflow from the `changelog_entry` input, never hand-edited on `develop`. When triggering a release, compose that input to follow this format — one `;`-delimited bullet per merged PR:
 
 ```markdown
 ## X.Y.Z
