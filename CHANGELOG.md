@@ -4,7 +4,7 @@
 
 ## 0.3.8
 
-- TBD
+- Fix: Lift WCF MaxReceivedMessageSize cap to int.MaxValue so large Polarion projects no longer fail at the transport layer (#8)
 
 ## 0.3.7
 
