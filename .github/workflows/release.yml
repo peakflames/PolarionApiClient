@@ -8,7 +8,7 @@ on:
         required: true
         type: string
       changelog_entry:
-        description: 'Changelog entry text (e.g., "Feature: Added GetLinkedWorkItemsAsync")'
+        description: 'Changelog entry text. Separate multiple bullets with ";" (e.g., "Feature: Added GetLinkedWorkItemsAsync; Fix: Lift WCF MaxReceivedMessageSize cap to int.MaxValue (#8)")'
         required: true
         type: string
       next_dev_version:
@@ -42,18 +42,85 @@ jobs:
       run: |
         sed -i "s|<Version>.*</Version>|<Version>${NEW_VERSION}</Version>|" src/Polarion/Polarion.csproj
 
-    - name: Prepend changelog entry
+    - name: Update changelog entry
       env:
         NEW_VERSION: ${{ inputs.new_version }}
         CHANGELOG_ENTRY: ${{ inputs.changelog_entry }}
       run: |
-        if grep -q "^## ${NEW_VERSION}$" CHANGELOG.md; then
-          echo "Changelog entry for ${NEW_VERSION} already exists, skipping."
-        else
-          TEMP=$(mktemp)
-          printf '## %s\n\n- %s\n\n' "$NEW_VERSION" "$CHANGELOG_ENTRY" | cat - CHANGELOG.md > "$TEMP"
-          mv "$TEMP" CHANGELOG.md
-        fi
+        python3 - <<'PY'
+        import os
+        import re
+
+        new_version = os.environ["NEW_VERSION"]
+        changelog_entry = os.environ.get("CHANGELOG_ENTRY", "")
+        bullets = [b.strip() for b in changelog_entry.split(";") if b.strip()]
+
+        with open("CHANGELOG.md", "r", encoding="utf-8") as f:
+            text = f.read()
+
+        header = f"## {new_version}"
+        match = re.search(rf"^{re.escape(header)}$", text, re.MULTILINE)
+
+        if match is None:
+            section = header + "\n\n" + "\n".join(f"- {b}" for b in bullets) + "\n\n"
+            text = section + text
+        else:
+            section_start = match.end()
+            rest = text[section_start:]
+            next_header = re.search(r"^## ", rest[1:], re.MULTILINE)
+            section_end = section_start + 1 + next_header.start() if next_header else len(text)
+            body = text[section_start:section_end]
+            existing_bullets = [line.strip() for line in body.splitlines() if line.strip().startswith("- ")]
+
+            if existing_bullets == ["- TBD"]:
+                if bullets:
+                    new_body = "\n\n" + "\n".join(f"- {b}" for b in bullets) + "\n\n"
+                    text = text[:section_start] + new_body + text[section_end:]
+                # else: leave the TBD placeholder in place; the next step aborts the release on it.
+            else:
+                missing = [b for b in bullets if f"- {b}" not in existing_bullets]
+                if missing:
+                    lines = body.splitlines(keepends=True)
+                    last_bullet_idx = max(i for i, l in enumerate(lines) if l.strip().startswith("- "))
+                    for offset, b in enumerate(missing, start=1):
+                        lines.insert(last_bullet_idx + offset, f"- {b}\n")
+                    text = text[:section_start] + "".join(lines) + text[section_end:]
+
+        with open("CHANGELOG.md", "w", encoding="utf-8") as f:
+            f.write(text)
+        PY
+
+    - name: Verify changelog entry is not a TBD placeholder
+      env:
+        NEW_VERSION: ${{ inputs.new_version }}
+      run: |
+        python3 - <<'PY'
+        import os
+        import re
+        import sys
+
+        new_version = os.environ["NEW_VERSION"]
+
+        with open("CHANGELOG.md", "r", encoding="utf-8") as f:
+            text = f.read()
+
+        header = f"## {new_version}"
+        match = re.search(rf"^{re.escape(header)}$", text, re.MULTILINE)
+        if match is None:
+            sys.exit(f"CHANGELOG.md is missing the '{header}' section.")
+
+        section_start = match.end()
+        rest = text[section_start:]
+        next_header = re.search(r"^## ", rest[1:], re.MULTILINE)
+        section_end = section_start + 1 + next_header.start() if next_header else len(text)
+        body = text[section_start:section_end]
+
+        if any(line.strip() == "- TBD" for line in body.splitlines()):
+            sys.exit(
+                f"CHANGELOG.md '{header}' section still contains '- TBD'. "
+                "Refusing to release with a placeholder changelog — check the changelog_entry input."
+            )
+        PY
 
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
@@ -81,7 +148,9 @@ jobs:
         CHANGELOG_ENTRY: ${{ inputs.changelog_entry }}
       run: |
         git checkout main
-        if git merge-base --is-ancestor develop main; then
+        if git rev-parse -q --verify "refs/tags/v${NEW_VERSION}" >/dev/null; then
+          echo "Tag v${NEW_VERSION} exists — release already merged, skipping."
+        elif git merge-base --is-ancestor develop main; then
           echo "develop already merged into main, skipping."
         else
           git merge develop --no-ff -m "Release v${NEW_VERSION}: ${CHANGELOG_ENTRY}"
@@ -98,6 +167,18 @@ jobs:
         else
           git tag -a "v${NEW_VERSION}" -m "Release v${NEW_VERSION}: ${CHANGELOG_ENTRY}"
           git push origin "v${NEW_VERSION}"
+        fi
+
+    - name: Merge main back to develop
+      env:
+        NEW_VERSION: ${{ inputs.new_version }}
+      run: |
+        git checkout develop
+        if git merge-base --is-ancestor main develop; then
+          echo "main already merged into develop, skipping."
+        else
+          git merge main --no-edit -m "Merge main back to develop after v${NEW_VERSION} release"
+          git push origin develop
         fi
 
     - name: Bump develop to next dev version
