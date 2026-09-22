@@ -12,7 +12,7 @@ public partial class PolarionClient : IPolarionClient
             binding.Security.Mode = BasicHttpSecurityMode.Transport;
         }
 
-        binding.MaxReceivedMessageSize = 10_000_000; // 10 MB
+        binding.MaxReceivedMessageSize = int.MaxValue; // no cap — large Polarion projects exceed 10 MB
         binding.OpenTimeout = TimeSpan.FromSeconds(config.TimeoutSeconds);
         binding.CloseTimeout = TimeSpan.FromSeconds(config.TimeoutSeconds);
         binding.SendTimeout = TimeSpan.FromSeconds(config.TimeoutSeconds);
