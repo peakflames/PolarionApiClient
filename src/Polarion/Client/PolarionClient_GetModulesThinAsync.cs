@@ -9,6 +9,10 @@ public partial class PolarionClient : IPolarionClient
     /// <param name="titleContains">Optional filter to include only modules whose title contains this string</param>
     /// <returns>Result containing an array of ModuleThin objects representing the filtered modules</returns>
     /// <exception cref="PolarionClientException">Thrown when there is an error communicating with the Polarion service</exception>
+    /// <remarks>
+    /// Both filters are matched as literal substrings (case-insensitive): quotes are escaped and
+    /// the LIKE wildcards <c>%</c> and <c>_</c> have no special meaning.
+    /// </remarks>
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]
     public async Task<Result<ModuleThin[]>> GetModulesThinAsync(string? excludeSpaceNameContains = null, string? titleContains = null)
     {
@@ -16,17 +20,17 @@ public partial class PolarionClient : IPolarionClient
         {
             var sqlQuery =
             "SELECT doc.C_PK FROM MODULE doc, PROJECT proj " +
-            $"WHERE proj.C_ID = '{_config.ProjectId}' " +
+            $"WHERE proj.C_ID = '{PolarionSql.EscapeLiteral(_config.ProjectId)}' " +
             "AND doc.FK_URI_PROJECT = proj.C_URI ";
 
             if (!string.IsNullOrWhiteSpace(excludeSpaceNameContains))
             {
-                sqlQuery += $"AND UPPER(doc.C_MODULEFOLDER) NOT LIKE '%{excludeSpaceNameContains.ToUpper()}%' ";
+                sqlQuery += $"AND UPPER(doc.C_MODULEFOLDER) NOT LIKE '%{PolarionSql.EscapeLikePattern(excludeSpaceNameContains.ToUpperInvariant())}%' {PolarionSql.LikeEscapeClause} ";
             }
 
             if (!string.IsNullOrWhiteSpace(titleContains))
             {
-                sqlQuery += $"AND UPPER(doc.C_TITLE) LIKE '%{titleContains.ToUpper()}%' ";
+                sqlQuery += $"AND UPPER(doc.C_TITLE) LIKE '%{PolarionSql.EscapeLikePattern(titleContains.ToUpperInvariant())}%' {PolarionSql.LikeEscapeClause} ";
             }
 
             var result = await _trackerClient.queryModulesBySQLAsync(
