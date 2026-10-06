@@ -67,6 +67,17 @@ public interface IPolarionClient
     Task<Result<string[]>> GetModuleWorkItemUrisAsync(string moduleUri, string? parentWorkItemUri = null, bool deep = true);
 
     /// <summary>
+    /// Gets the work items of a document (module) in document order, including referenced items.
+    /// </summary>
+    /// <param name="moduleUri">The module URI, optionally with a revision suffix (<c>moduleUri%revision</c>)</param>
+    /// <param name="parentWorkItemUri">Optional parent work item URI; when set, only its children are returned</param>
+    /// <param name="deep">When true (default), returns the whole tree; when false, only direct children</param>
+    /// <param name="fields">Optional list of fields to retrieve</param>
+    /// <returns>One row per document entry, in document order; pinned revisions and unresolvable rows are exposed</returns>
+    [RequiresUnreferencedCode("Uses WCF services which require reflection")]
+    Task<Result<ModuleWorkItem[]>> GetModuleWorkItemsAsync(string moduleUri, string? parentWorkItemUri = null, bool deep = true, List<string>? fields = null);
+
+    /// <summary>
     /// Gets a work item by its URI (the URI may include a revision specifier).
     /// </summary>
     /// <param name="uri">The Polarion work item URI</param>

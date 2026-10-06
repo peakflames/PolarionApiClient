@@ -23,6 +23,7 @@ The Polarion API Client is a .NET library for interacting with Polarion ALM (App
     - [GetModuleByLocationAsync](#getmodulebylocationasync)
     - [GetModuleByUriAsync](#getmodulebyuriasync)
     - [GetModuleWorkItemUrisAsync](#getmoduleworkitemurisasync)
+    - [GetModuleWorkItemsAsync](#getmoduleworkitemsasync)
   - [Space Operations](#space-operations)
     - [GetSpacesAsync](#getspacesasync)
   - [User Operations](#user-operations)
@@ -280,6 +281,42 @@ Gets URIs of all work items in a module at the specified revision.
 **Returns:** A `Result<string[]>` containing an array of work item URIs or error details
 
 **Remarks:** This is useful for retrieving work items from a module at a specific historical revision. The module URI can include a revision suffix (e.g., `%200000`) to get work items as they existed at that point in time.
+
+---
+
+### GetModuleWorkItemsAsync
+
+```csharp
+public async Task<Result<ModuleWorkItem[]>> GetModuleWorkItemsAsync(
+    string moduleUri,
+    string? parentWorkItemUri = null,
+    bool deep = true,
+    List<string>? fields = null)
+```
+
+Gets the work items of a document (module) in document order, including items referenced from other documents or projects. Wraps the Polarion SOAP `getModuleWorkItems` call.
+
+**Parameters:**
+- `moduleUri` - The module URI. Append `%revision` to read the document as it was at that revision (for a baseline, use the baseline's base revision)
+- `parentWorkItemUri` - Optional parent work item URI; when set, only its children are returned (default: null)
+- `deep` - When true, returns the whole tree below the parent (or the whole document); when false, only direct children (default: true)
+- `fields` - Optional list of fields to retrieve. Defaults to `id`, `type`, `title`, `description`, `status`, `outlineNumber`, `author`, `created`, `updated`
+
+**Returns:** A `Result<ModuleWorkItem[]>` with one entry per document row, in document order. An empty document returns a successful, empty array. A service error returns a failure with the server message.
+
+`ModuleWorkItem` properties:
+- `WorkItem` - The work item with the requested fields. For pinned references the values are those at the pinned revision
+- `Uri` - The work item URI as returned, including any `%revision` suffix
+- `Id` - The work item ID (from the data, or parsed from the URI)
+- `Revision` - The pinned revision parsed from the URI; empty when the row is not pinned
+- `IsPinned` - True when `Revision` is set
+- `IsUnresolvable` - True when Polarion marks the row unresolvable (e.g. a live reference to a deleted item). Such rows carry no field values
+
+**Remarks:**
+- Pinned references are returned with their pinned values, including items deleted after they were pinned. SQL/Lucene based queries return HEAD (or the document revision) values and miss deleted-but-pinned items.
+- Keep the returned order. Do not re-sort by `outlineNumber`: referenced items carry the outline number of their home document.
+- Unresolvable rows are returned so callers can report them; skip them if only resolvable content is wanted.
+- This is the only method that exposes unresolvable rows. `QueryWorkItemsInModuleAsync` and `GetWorkItemsByModuleRevisionAsync` are built on it and drop them.
 
 ---
 
