@@ -3,8 +3,7 @@ namespace Polarion;
 public partial class PolarionClient : IPolarionClient
 {
     /// <summary>
-    /// Default fields for SQL-based work item queries.
-    /// Note: "uri" is not a valid field key for SQL queries - it's available via C_URI in the query but not as a field.
+    /// Default fields for <see cref="QueryWorkItemsInModuleAsync"/>.
     /// </summary>
     private static readonly List<string> SqlQueryWorkItemFields =
     [
@@ -12,21 +11,29 @@ public partial class PolarionClient : IPolarionClient
     ];
 
     /// <summary>
-    /// Queries work items using SQL against POLARION.REL_MODULE_WORKITEM relationship.
+    /// Gets the work items of a document (module) at HEAD, in document order.
     /// </summary>
     /// <remarks>
-    /// Uses direct SQL query against Polarion database schema:
-    /// - POLARION.WORKITEM (item)
-    /// - POLARION.MODULE (doc)
-    /// - POLARION.PROJECT (proj)
-    /// - POLARION.REL_MODULE_WORKITEM (relationship)
+    /// Algorithm:
+    ///   1. Get the module by location (<c>moduleFolder/documentId</c>) to obtain its URI
+    ///   2. Call <see cref="GetModuleWorkItemsAsync"/> on that URI
+    ///   3. Drop unresolvable rows, then apply the optional <paramref name="itemTypes"/> filter client-side
+    ///
+    /// Pinned references are returned with the values at their pinned revision, and pinned references
+    /// to items deleted after pinning are included. Use <see cref="GetModuleWorkItemsAsync"/> directly
+    /// to see unresolvable rows or the per-item pinned revision.
+    ///
+    /// Behavior change (previously a SQL query on POLARION.REL_MODULE_WORKITEM): results are always in
+    /// document order and <paramref name="sort"/> is ignored; a document with no matching items returns
+    /// a successful, empty array instead of a failure.
     /// </remarks>
     /// <param name="moduleFolder">The module folder path</param>
     /// <param name="documentId">The document ID</param>
-    /// <param name="itemTypes">Optional list of work item types to filter</param>
-    /// <param name="sort">Sort field (default: outlineNumber)</param>
-    /// <param name="fields">Optional list of fields to retrieve</param>
-    /// <returns>Array of work items in the module</returns>
+    /// <param name="itemTypes">Optional list of work item type IDs to keep</param>
+    /// <param name="sort">Ignored. Kept for source compatibility; results are always in document order</param>
+    /// <param name="fields">Optional list of fields to retrieve. "type" is added automatically when
+    /// <paramref name="itemTypes"/> is set</param>
+    /// <returns>Array of work items in the module, in document order</returns>
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]
     public async Task<Result<WorkItem[]>> QueryWorkItemsInModuleAsync(
         string moduleFolder,
@@ -45,49 +52,57 @@ public partial class PolarionClient : IPolarionClient
             return Result.Fail("Document ID cannot be null or empty");
         }
 
-        // Use SQL-compatible fields (without "uri")
-        var fieldList = fields ?? SqlQueryWorkItemFields;
+        var filterTypes = itemTypes is { Count: > 0 } ? new HashSet<string>(itemTypes, StringComparer.Ordinal) : null;
 
-        // Build item type filter if provided
-        var itemTypeFilter = string.Empty;
-        if (itemTypes != null && itemTypes.Count > 0)
+        // Copy so the caller's list (or the shared default) is never mutated
+        var fieldList = new List<string>(fields ?? SqlQueryWorkItemFields);
+        if (filterTypes is not null && !fieldList.Contains("type"))
         {
-            var typeList = string.Join(", ", itemTypes.Select(t => $"'{t}'"));
-            itemTypeFilter = $"AND item.C_TYPE IN ({typeList})";
+            fieldList.Add("type");
         }
 
-        // Build SQL query against Polarion database schema
-        var sqlQuery = $@"SQL:(
-            SELECT item.* FROM POLARION.WORKITEM item, POLARION.MODULE doc, POLARION.PROJECT proj
-            WHERE proj.C_ID = '{_config.ProjectId}'
-                AND doc.FK_PROJECT = proj.C_PK
-                AND doc.C_MODULEFOLDER = '{moduleFolder}'
-                AND doc.C_ID = '{documentId}'
-                {itemTypeFilter}
-                AND EXISTS 
-                (
-                    SELECT rel1.* 
-                    FROM POLARION.REL_MODULE_WORKITEM rel1
-                    WHERE rel1.FK_URI_MODULE = doc.C_URI AND rel1.FK_URI_WORKITEM = item.C_URI
-                )
-        )";
-
-        try
+        var moduleUriResult = await GetModuleUriByLocationAsync(moduleFolder, documentId);
+        if (moduleUriResult.IsFailed)
         {
-            // Use the raw queryWorkItemsAsync directly to avoid the automatic project.id filter
-            // that SearchWorkitemAsync adds (since our SQL query handles project filtering)
-            var result = await _trackerClient.queryWorkItemsAsync(new(sqlQuery, sort, [.. fieldList]));
-
-            if (result?.queryWorkItemsReturn is null)
-            {
-                return Result.Fail<WorkItem[]>("SQL query returned no results");
-            }
-
-            return Result.Ok(result.queryWorkItemsReturn);
+            return Result.Fail<WorkItem[]>(moduleUriResult.Errors);
         }
-        catch (Exception ex)
+
+        var rowsResult = await GetModuleWorkItemsAsync(moduleUriResult.Value, null, true, fieldList);
+        if (rowsResult.IsFailed)
         {
-            return Result.Fail<WorkItem[]>($"Failed to execute SQL query for module work items. {ex.Message}");
+            return Result.Fail<WorkItem[]>(rowsResult.Errors);
         }
+
+        var workItems = rowsResult.Value
+            .Where(row => !row.IsUnresolvable)
+            .Select(row => row.WorkItem)
+            .Where(wi => filterTypes is null || (wi.type?.id is { } typeId && filterTypes.Contains(typeId)))
+            .ToArray();
+
+        return Result.Ok(workItems);
+    }
+
+    /// <summary>
+    /// Resolves <c>moduleFolder/documentId</c> to the module URI.
+    /// </summary>
+    [RequiresUnreferencedCode("Uses WCF services which require reflection")]
+    private async Task<Result<string>> GetModuleUriByLocationAsync(string moduleFolder, string documentId)
+    {
+        var location = $"{moduleFolder}/{documentId}";
+        var moduleResult = await GetModuleByLocationAsync(location);
+
+        if (moduleResult.IsFailed)
+        {
+            return Result.Fail<string>(
+                $"Failed to get module at location '{location}': {moduleResult.Errors.First().Message}");
+        }
+
+        var module = moduleResult.Value;
+        if (string.IsNullOrEmpty(module?.uri))
+        {
+            return Result.Fail<string>($"Module at location '{location}' has no URI");
+        }
+
+        return Result.Ok(module.uri);
     }
 }

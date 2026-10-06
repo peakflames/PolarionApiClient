@@ -95,16 +95,14 @@ public interface IPolarionClient
     Task<Result<WorkItem>> GetWorkItemByUriInRevisionAsync(string uri, string revision);
 
     /// <summary>
-    /// Queries work items from a branched document using the 4-step revision-aware algorithm.
+    /// Queries work items from a module at a specific historical revision, in document order.
     /// </summary>
     /// <remarks>
-    /// Algorithm:
-    /// 1. Get URIs for the specific revision document
-    /// 2. Extract work item IDs and revisions from URIs
-    /// 3. Bulk fetch HEAD versions using Lucene query
-    /// 4. Fetch historical versions where revisions differ from HEAD
+    /// Built on <see cref="GetModuleWorkItemsAsync"/> with <c>{moduleUri}%{revision}</c>. Pinned references
+    /// are returned at their pinned revision (reported in <see cref="WorkItemWithRevisionInfo.Revision"/>),
+    /// deleted-but-pinned items are included, and unresolvable rows are dropped.
     /// </remarks>
-    /// <param name="moduleFolder">The module folder path (e.g., "FCC_L4_Air8_1")</param>
+    /// <param name="moduleFolder">The module folder path</param>
     /// <param name="documentId">The document ID</param>
     /// <param name="revision">The revision number</param>
     /// <param name="fields">Optional list of fields to retrieve</param>
@@ -113,12 +111,16 @@ public interface IPolarionClient
     Task<Result<WorkItemWithRevisionInfo[]>> GetWorkItemsByModuleRevisionAsync(string moduleFolder, string documentId, string revision, List<string>? fields = null);
 
     /// <summary>
-    /// Queries work items using SQL against POLARION.REL_MODULE_WORKITEM relationship.
+    /// Gets the work items of a document (module) at HEAD, in document order.
     /// </summary>
+    /// <remarks>
+    /// Built on <see cref="GetModuleWorkItemsAsync"/>. Pinned references are returned at their pinned
+    /// revision, deleted-but-pinned items are included, and unresolvable rows are dropped.
+    /// </remarks>
     /// <param name="moduleFolder">The module folder path</param>
     /// <param name="documentId">The document ID</param>
-    /// <param name="itemTypes">Optional list of work item types to filter</param>
-    /// <param name="sort">Sort field (default: outlineNumber)</param>
+    /// <param name="itemTypes">Optional list of work item type IDs to keep</param>
+    /// <param name="sort">Ignored; results are always in document order</param>
     /// <param name="fields">Optional list of fields to retrieve</param>
     /// <returns>Array of work items in the module</returns>
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]

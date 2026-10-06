@@ -24,6 +24,8 @@ The Polarion API Client is a .NET library for interacting with Polarion ALM (App
     - [GetModuleByUriAsync](#getmodulebyuriasync)
     - [GetModuleWorkItemUrisAsync](#getmoduleworkitemurisasync)
     - [GetModuleWorkItemsAsync](#getmoduleworkitemsasync)
+    - [QueryWorkItemsInModuleAsync](#queryworkitemsinmoduleasync)
+    - [GetWorkItemsByModuleRevisionAsync](#getworkitemsbymodulerevisionasync)
   - [Space Operations](#space-operations)
     - [GetSpacesAsync](#getspacesasync)
   - [User Operations](#user-operations)
@@ -317,6 +319,65 @@ Gets the work items of a document (module) in document order, including items re
 - Keep the returned order. Do not re-sort by `outlineNumber`: referenced items carry the outline number of their home document.
 - Unresolvable rows are returned so callers can report them; skip them if only resolvable content is wanted.
 - This is the only method that exposes unresolvable rows. `QueryWorkItemsInModuleAsync` and `GetWorkItemsByModuleRevisionAsync` are built on it and drop them.
+
+---
+
+### QueryWorkItemsInModuleAsync
+
+```csharp
+public async Task<Result<WorkItem[]>> QueryWorkItemsInModuleAsync(
+    string moduleFolder,
+    string documentId,
+    List<string>? itemTypes = null,
+    string sort = "outlineNumber",
+    List<string>? fields = null)
+```
+
+Gets the work items of a document at HEAD, in document order.
+
+**Parameters:**
+- `moduleFolder` - The module folder (space) path
+- `documentId` - The document ID
+- `itemTypes` - Optional list of work item type IDs to keep (filtered client-side; `type` is added to `fields` automatically)
+- `sort` - Ignored. Kept for source compatibility; results are always in document order
+- `fields` - Optional list of fields to retrieve. Defaults to `id`, `type`, `title`, `description`, `status`, `outlineNumber`
+
+**Returns:** A `Result<WorkItem[]>` with the document's work items in document order. A document with no (matching) items returns a successful, empty array.
+
+**Remarks:** Resolves the document with `GetModuleByLocationAsync`, then calls `GetModuleWorkItemsAsync`. Pinned references are returned with their pinned values and deleted-but-pinned items are included. Unresolvable rows are dropped; use `GetModuleWorkItemsAsync` to see them.
+
+**Behavior change:** this method previously ran a SQL query against `POLARION.REL_MODULE_WORKITEM`. That returned HEAD values for pinned references, missed deleted-but-pinned items, honoured `sort`, and failed with "SQL query returned no results" for an empty document.
+
+---
+
+### GetWorkItemsByModuleRevisionAsync
+
+```csharp
+public async Task<Result<WorkItemWithRevisionInfo[]>> GetWorkItemsByModuleRevisionAsync(
+    string moduleFolder,
+    string documentId,
+    string revision,
+    List<string>? fields = null)
+```
+
+Gets the work items of a document as it was at a historical revision, in document order.
+
+**Parameters:**
+- `moduleFolder` - The module folder (space) path
+- `documentId` - The document ID
+- `revision` - The revision number. For a baseline, pass the baseline's base revision (see `QueryBaselinesAsync`)
+- `fields` - Optional list of fields to retrieve. Defaults to `id`, `type`, `title`, `description`, `status`, `outlineNumber`, `author`, `created`, `updated`
+
+**Returns:** A `Result<WorkItemWithRevisionInfo[]>` in document order:
+- `WorkItem` - The item with the values it had in the document at that revision
+- `Revision` - The item's pinned revision for pinned references, otherwise `revision`
+- `SourceUri` - The item URI as returned (with `%revision` for pinned references)
+- `IsHistorical` - Always true
+- `HeadRevision` - Not populated
+
+**Remarks:** Calls `GetModuleWorkItemsAsync` with `{moduleUri}%{revision}`. Unresolvable rows are dropped.
+
+**Behavior change:** this method previously re-fetched items at the document revision via a baseline query. That returned wrong values for pinned references, omitted deleted-but-pinned items, and ordered results by ID.
 
 ---
 
