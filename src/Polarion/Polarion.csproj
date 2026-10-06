@@ -49,6 +49,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <InternalsVisibleTo Include="Polarion.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="..\..\README.md" Pack="true" PackagePath="\" />
     <None Include="..\..\api.md" Pack="true" PackagePath="\" />
     <!-- <EmbeddedResource Include="TrimmerRoots.xml" /> -->

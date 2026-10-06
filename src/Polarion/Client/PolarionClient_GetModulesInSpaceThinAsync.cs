@@ -15,9 +15,9 @@ public partial class PolarionClient : IPolarionClient
         {
             var sqlQuery =
             "SELECT doc.C_PK FROM MODULE doc, PROJECT proj " +
-            $"WHERE proj.C_ID = '{_config.ProjectId}' " +
+            $"WHERE proj.C_ID = '{PolarionSql.EscapeLiteral(_config.ProjectId)}' " +
             "AND doc.FK_URI_PROJECT = proj.C_URI " +
-            $"AND doc.C_MODULEFOLDER = '{spaceName}' ";
+            $"AND doc.C_MODULEFOLDER = '{PolarionSql.EscapeLiteral(spaceName ?? string.Empty)}' ";
 
             var result = await _trackerClient.queryModulesBySQLAsync(
                 new(
