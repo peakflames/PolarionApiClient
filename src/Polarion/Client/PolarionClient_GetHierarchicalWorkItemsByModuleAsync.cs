@@ -14,7 +14,9 @@ public partial class PolarionClient : IPolarionClient
     public async Task<Result<SortedDictionary<string, SortedDictionary<string, WorkItem>>>> GetHierarchicalWorkItemsByModuleAsync(
         string workItemPrefix, string moduleTitle, PolarionFilter filter, string? moduleRevision = null)
     {
+#pragma warning disable CS0618 // Kept on the deprecated owned-items path until this method is reworked
         var result = await GetWorkItemsByModuleAsync(moduleTitle, filter, moduleRevision);
+#pragma warning restore CS0618
         if (result.IsFailed)
         {
             return Result.Fail<SortedDictionary<string, SortedDictionary<string, WorkItem>>>("Failed to fetch data: " + result.Errors.First());

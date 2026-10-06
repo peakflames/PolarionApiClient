@@ -167,6 +167,8 @@ Fetches work items from a specific module based on the specified criteria.
 
 **Remarks:** Filters out work items that don't have an outline number (i.e., not part of the module structure)
 
+**Deprecated:** marked `[Obsolete]`. The `document.title` query only matches items owned by the document, so referenced and pinned items are omitted and results are not in document order. Use `GetModuleWorkItemsAsync` or `QueryWorkItemsInModuleAsync` instead.
+
 ---
 
 ### GetHierarchicalWorkItemsByModuleAsync
