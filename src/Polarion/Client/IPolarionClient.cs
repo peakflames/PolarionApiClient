@@ -27,6 +27,7 @@ public interface IPolarionClient
     Task<Result<Module>> GetModuleByUriAsync(string uri);
 
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]
+    [Obsolete(PolarionClient.GetWorkItemsByModuleObsoleteMessage)]
     Task<Result<WorkItem[]>> GetWorkItemsByModuleAsync(string moduleTitle, PolarionFilter filter, string? moduleRevision = null);
 
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]

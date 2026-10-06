@@ -304,7 +304,9 @@ public class PolarionClientTests : IAsyncLifetime
         var moduleTitle = _config.TestScenarioData.GetWorktemsByModuleModuleTitle;
 
         // Act
+#pragma warning disable CS0618 // Exercises the deprecated method on purpose
         var result = await _client.GetWorkItemsByModuleAsync(moduleTitle, filter);
+#pragma warning restore CS0618
         result.Should().NotBeNull();
         var workItems = result.Value;
         workItems.Should().NotBeNull();
