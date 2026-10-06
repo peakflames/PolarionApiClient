@@ -54,4 +54,17 @@ public class TestScenarioData
     public string GetModuleWorkItemUrisRevision { get; set; } = null!;
     public string QueryWorkItemsInModuleFolder { get; set; } = null!;
     public string QueryWorkItemsInModuleDocumentId { get; set; } = null!;
+
+    // Module work items / baseline test data (all optional; the tests using them are skipped by default).
+    // Pick a document that contains a pinned reference, an unresolvable reference, and (ideally) a pinned
+    // reference to an item deleted after pinning; record expected values from the Polarion UI.
+    public string? ModuleWorkItemsModuleFolder { get; set; }
+    public string? ModuleWorkItemsDocumentId { get; set; }
+    public string? ModuleWorkItemsPinnedItemId { get; set; }
+    public string? ModuleWorkItemsPinnedRevision { get; set; }
+    public string? ModuleWorkItemsPinnedItemExpectedStatus { get; set; }
+    public int ModuleWorkItemsExpectedCountAtHead { get; set; }
+    public string? ModuleWorkItemsBaselineRevision { get; set; }
+    public int ModuleWorkItemsExpectedCountAtBaseline { get; set; }
+    public string? BaselineQuery { get; set; }
 }

@@ -1086,4 +1086,127 @@ public class PolarionClientTests : IAsyncLifetime
 
     #endregion
 
+    #region Module Work Items / Baselines (live server, manual)
+
+    // These tests need a live server and document-specific expectations. Fill in the
+    // ModuleWorkItems* / BaselineQuery values in appsettings.test.json, remove the Skip, and run:
+    //   dotnet test src/PolarionApiClient.sln --filter "Category=LiveServer"
+    private const string LiveServerSkip = "Requires a live Polarion server and ModuleWorkItems* test data; run manually";
+
+    private async Task<string> GetModuleWorkItemsModuleUriAsync()
+    {
+        var data = _config.TestScenarioData;
+        var moduleResult = await _client.GetModuleByLocationAsync($"{data.ModuleWorkItemsModuleFolder}/{data.ModuleWorkItemsDocumentId}");
+        moduleResult.IsSuccess.Should().BeTrue("the configured document should exist");
+        return moduleResult.Value.uri;
+    }
+
+    [Fact(Skip = LiveServerSkip)]
+    [Trait("Category", "LiveServer")]
+    public async Task GetModuleWorkItemsAsync_PinnedItem_ReturnsPinnedRevisionAndValues()
+    {
+        var data = _config.TestScenarioData;
+        var moduleUri = await GetModuleWorkItemsModuleUriAsync();
+
+        var result = await _client.GetModuleWorkItemsAsync(moduleUri);
+
+        result.IsSuccess.Should().BeTrue();
+        var pinned = result.Value.Single(r => r.Id == data.ModuleWorkItemsPinnedItemId);
+        pinned.Revision.Should().Be(data.ModuleWorkItemsPinnedRevision);
+        pinned.WorkItem.status.id.Should().Be(data.ModuleWorkItemsPinnedItemExpectedStatus);
+    }
+
+    [Fact(Skip = LiveServerSkip)]
+    [Trait("Category", "LiveServer")]
+    public async Task GetModuleWorkItemsAsync_ReportsUnresolvableRows_WithUri()
+    {
+        var moduleUri = await GetModuleWorkItemsModuleUriAsync();
+
+        var result = await _client.GetModuleWorkItemsAsync(moduleUri);
+
+        result.IsSuccess.Should().BeTrue();
+        var unresolvable = result.Value.Where(r => r.IsUnresolvable).ToArray();
+        unresolvable.Should().NotBeEmpty("the configured document should contain an unresolvable reference");
+        unresolvable.Should().OnlyContain(r => !string.IsNullOrEmpty(r.Uri));
+        foreach (var row in unresolvable)
+        {
+            _output.WriteLine($"Unresolvable: {row.Uri}");
+        }
+    }
+
+    [Fact(Skip = LiveServerSkip)]
+    [Trait("Category", "LiveServer")]
+    public async Task QueryWorkItemsInModuleAsync_AtHead_ReturnsAllResolvableItemsInDocumentOrder()
+    {
+        var data = _config.TestScenarioData;
+        var moduleUri = await GetModuleWorkItemsModuleUriAsync();
+        var rows = await _client.GetModuleWorkItemsAsync(moduleUri, fields: ["id"]);
+
+        var result = await _client.QueryWorkItemsInModuleAsync(data.ModuleWorkItemsModuleFolder!, data.ModuleWorkItemsDocumentId!);
+
+        result.IsSuccess.Should().BeTrue();
+        result.Value.Should().HaveCount(data.ModuleWorkItemsExpectedCountAtHead);
+        result.Value.Select(w => w.id).Should().Equal(rows.Value.Where(r => !r.IsUnresolvable).Select(r => r.Id),
+            "results must follow getModuleWorkItems document order");
+        result.Value.Single(w => w.id == data.ModuleWorkItemsPinnedItemId).status.id
+            .Should().Be(data.ModuleWorkItemsPinnedItemExpectedStatus);
+    }
+
+    [Fact(Skip = LiveServerSkip)]
+    [Trait("Category", "LiveServer")]
+    public async Task GetWorkItemsByModuleRevisionAsync_AtBaseline_ReturnsExpectedCountAndPinnedValues()
+    {
+        var data = _config.TestScenarioData;
+
+        var result = await _client.GetWorkItemsByModuleRevisionAsync(
+            data.ModuleWorkItemsModuleFolder!, data.ModuleWorkItemsDocumentId!, data.ModuleWorkItemsBaselineRevision!);
+
+        result.IsSuccess.Should().BeTrue();
+        result.Value.Should().HaveCount(data.ModuleWorkItemsExpectedCountAtBaseline);
+        var pinned = result.Value.Single(w => w.WorkItem.id == data.ModuleWorkItemsPinnedItemId);
+        pinned.Revision.Should().Be(data.ModuleWorkItemsPinnedRevision);
+        pinned.WorkItem.status.id.Should().Be(data.ModuleWorkItemsPinnedItemExpectedStatus);
+    }
+
+    [Fact(Skip = LiveServerSkip)]
+    [Trait("Category", "LiveServer")]
+    public async Task QueryBaselinesAsync_ReturnsBaselinesWithBaseRevision()
+    {
+        var result = await _client.QueryBaselinesAsync(_config.TestScenarioData.BaselineQuery!);
+
+        result.IsSuccess.Should().BeTrue();
+        result.Value.Should().NotBeEmpty();
+        result.Value.Should().OnlyContain(b => !string.IsNullOrEmpty(b.baseRevision));
+        foreach (var baseline in result.Value)
+        {
+            _output.WriteLine($"{baseline.id} | {baseline.name} | {baseline.baseRevision} | {baseline.baseObjectURI}");
+        }
+    }
+
+    [Fact(Skip = LiveServerSkip)]
+    [Trait("Category", "LiveServer")]
+    public async Task QueryModuleUrisInBaselineAsync_ContainsConfiguredDocument()
+    {
+        var data = _config.TestScenarioData;
+        var moduleUri = await GetModuleWorkItemsModuleUriAsync();
+
+        var result = await _client.QueryModuleUrisInBaselineAsync(
+            data.ModuleWorkItemsBaselineRevision!, $"project.id:{_config.PolarionClient.ProjectId}");
+
+        result.IsSuccess.Should().BeTrue();
+        result.Value.Should().Contain(uri => uri.StartsWith(moduleUri));
+    }
+
+    [Fact(Skip = LiveServerSkip)]
+    [Trait("Category", "LiveServer")]
+    public async Task SearchWorkitemAsync_ZeroRowQuery_ReturnsEmptySuccess()
+    {
+        var result = await _client.SearchWorkitemAsync("id:NO-SUCH-ITEM-000000");
+
+        result.IsSuccess.Should().BeTrue();
+        result.Value.Should().BeEmpty();
+    }
+
+    #endregion
+
 }
