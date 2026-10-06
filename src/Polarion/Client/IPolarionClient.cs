@@ -78,6 +78,26 @@ public interface IPolarionClient
     Task<Result<ModuleWorkItem[]>> GetModuleWorkItemsAsync(string moduleUri, string? parentWorkItemUri = null, bool deep = true, List<string>? fields = null);
 
     /// <summary>
+    /// Queries baselines (project and document baselines) with a Lucene query.
+    /// </summary>
+    /// <param name="query">Lucene query, passed unchanged (not scoped to the configured project)</param>
+    /// <param name="sort">Sort field (default: baseRevision)</param>
+    /// <returns>The matching baselines; empty when nothing matches</returns>
+    [RequiresUnreferencedCode("Uses WCF services which require reflection")]
+    Task<Result<Baseline[]>> QueryBaselinesAsync(string query, string sort = "baseRevision");
+
+    /// <summary>
+    /// Queries the URIs of documents (modules) as they existed at a baseline revision.
+    /// </summary>
+    /// <param name="baselineRevision">The baseline's base revision</param>
+    /// <param name="query">Lucene query over modules, passed unchanged</param>
+    /// <param name="sort">Sort field (default: uri)</param>
+    /// <param name="limit">Maximum number of results (-1 = all)</param>
+    /// <returns>The module URIs; empty when nothing matches</returns>
+    [RequiresUnreferencedCode("Uses WCF services which require reflection")]
+    Task<Result<string[]>> QueryModuleUrisInBaselineAsync(string baselineRevision, string query, string sort = "uri", int limit = -1);
+
+    /// <summary>
     /// Gets a work item by its URI (the URI may include a revision specifier).
     /// </summary>
     /// <param name="uri">The Polarion work item URI</param>
