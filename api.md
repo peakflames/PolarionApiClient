@@ -26,6 +26,9 @@ The Polarion API Client is a .NET library for interacting with Polarion ALM (App
     - [GetModuleWorkItemsAsync](#getmoduleworkitemsasync)
     - [QueryWorkItemsInModuleAsync](#queryworkitemsinmoduleasync)
     - [GetWorkItemsByModuleRevisionAsync](#getworkitemsbymodulerevisionasync)
+  - [Baseline Operations](#baseline-operations)
+    - [QueryBaselinesAsync](#querybaselinesasync)
+    - [QueryModuleUrisInBaselineAsync](#querymoduleurisinbaselineasync)
   - [Space Operations](#space-operations)
     - [GetSpacesAsync](#getspacesasync)
   - [User Operations](#user-operations)
@@ -378,6 +381,50 @@ Gets the work items of a document as it was at a historical revision, in documen
 **Remarks:** Calls `GetModuleWorkItemsAsync` with `{moduleUri}%{revision}`. Unresolvable rows are dropped.
 
 **Behavior change:** this method previously re-fetched items at the document revision via a baseline query. That returned wrong values for pinned references, omitted deleted-but-pinned items, and ordered results by ID.
+
+---
+
+## Baseline Operations
+
+### QueryBaselinesAsync
+
+```csharp
+public async Task<Result<Baseline[]>> QueryBaselinesAsync(
+    string query,
+    string sort = "baseRevision")
+```
+
+Queries baselines (project and document baselines) with a Lucene query. Wraps the Polarion SOAP `queryBaselines` call.
+
+**Parameters:**
+- `query` - Lucene query over baselines, passed to Polarion unchanged. It is **not** scoped to the configured project; include e.g. `project.id:MyProject` to scope it
+- `sort` - Sort field (default: `baseRevision`)
+
+**Returns:** A `Result<Baseline[]>` with the matching baselines (`id`, `name`, `baseRevision`, `baseObjectURI`, ...). A query that matches nothing returns a successful, empty array.
+
+**Remarks:** `baseObjectURI` is the project (project baseline) or the module (document baseline) the baseline was taken on. To read a document as it was at a baseline, call `GetModuleWorkItemsAsync($"{moduleUri}%{baseRevision}")` or `GetWorkItemsByModuleRevisionAsync(folder, docId, baseRevision)`.
+
+---
+
+### QueryModuleUrisInBaselineAsync
+
+```csharp
+public async Task<Result<string[]>> QueryModuleUrisInBaselineAsync(
+    string baselineRevision,
+    string query,
+    string sort = "uri",
+    int limit = -1)
+```
+
+Queries the URIs of documents (modules) as they existed at a baseline revision. Wraps the Polarion SOAP `queryModuleUrisInBaseline` call.
+
+**Parameters:**
+- `baselineRevision` - The baseline's base revision
+- `query` - Lucene query over modules, passed to Polarion unchanged (not scoped to the configured project)
+- `sort` - Sort field (default: `uri`)
+- `limit` - Maximum number of results (default: -1 = all)
+
+**Returns:** A `Result<string[]>` with the module URIs. A query that matches nothing returns a successful, empty array.
 
 ---
 
