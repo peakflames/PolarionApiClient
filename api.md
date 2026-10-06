@@ -107,7 +107,7 @@ Queries for work items matching the specified criteria. Returns only the request
 - `field_list` - List of fields to retrieve for each search result. If null, defaults to ["id"]. Use syntax like `['customFields.FieldName']` for custom fields
 - `includeAllProjects` - When true, omits the automatic project.id filter so results span all projects. Default is false.
 
-**Returns:** A `Result<WorkItem[]>` containing matching work items or error details
+**Returns:** A `Result<WorkItem[]>` containing matching work items or error details. A query that matches nothing returns a successful, empty array. A query Polarion rejects (SOAP fault, e.g. invalid SQL) returns a failure carrying the server message.
 
 **Remarks:** By default, automatically appends the project ID to the query. Set `includeAllProjects: true` to search across projects (e.g. for cross-project document references). For custom field retrieval, use the syntax: `field_list=['customFields.SomeField']`
 
@@ -133,7 +133,7 @@ Queries for work items in a specific baseline revision. Returns only the request
 - `field_list` - List of fields to retrieve for each search result. If null, defaults to ["id"]. Use syntax like `['customFields.FieldName']` for custom fields
 - `includeAllProjects` - When true, omits the automatic project.id filter so results span all projects. Default is false.
 
-**Returns:** A `Result<WorkItem[]>` containing matching work items or error details
+**Returns:** A `Result<WorkItem[]>` containing matching work items or error details. A query that matches nothing returns a successful, empty array. A query Polarion rejects (SOAP fault) returns a failure carrying the server message.
 
 **Throws:** `PolarionClientException` if the operation fails
 
