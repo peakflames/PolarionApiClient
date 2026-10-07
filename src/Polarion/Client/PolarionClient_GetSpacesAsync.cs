@@ -13,7 +13,7 @@ public partial class PolarionClient : IPolarionClient
                 return Result.Fail<List<string>>("Failed to get spaces");
             }
 
-            var names = result.getDocumentSpacesReturn;
+            var names = result.getDocumentSpacesReturn ?? [];
 
             // filter out spaces that contain the skipIfSpaceNameContain string
             if (excludeSpaceNameContains is not null)

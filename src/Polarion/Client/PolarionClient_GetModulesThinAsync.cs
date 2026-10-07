@@ -44,23 +44,22 @@ public partial class PolarionClient : IPolarionClient
                 return Result.Fail("Failed to get documents");
             }
 
-            if (result?.queryModulesBySQLReturn is null || result.queryModulesBySQLReturn.Length == 0)
-            {
-                return Result.Ok(Array.Empty<ModuleThin>());
-            }
-
-            // only keep the modules whose id is not null
-            var modules = result.queryModulesBySQLReturn.Where(x => x.id != null)
-                                                    .Select(x => new ModuleThin(x.id, x.title, x.type.id, x.status.id, x.moduleFolder, x.moduleLocation, x.uri));
-
-            // sort the list of documents by title
-            modules = modules.OrderBy(x => x.Title).ToList();
-
-            return Result.Ok(modules.ToArray());
+            return Result.Ok(ToModuleThins(result.queryModulesBySQLReturn));
         }
         catch (Exception ex)
         {
             return Result.Fail($"Failed to get documents. {ex.Message}");
         }
     }
+
+    /// <summary>
+    /// Maps queryModulesBySQL rows to <see cref="ModuleThin"/>, sorted by title. A null array (zero rows),
+    /// null rows and rows without an id are skipped; a missing type or status becomes an empty string.
+    /// </summary>
+    private static ModuleThin[] ToModuleThins(Module[]? rows) =>
+        (rows ?? [])
+            .Where(x => x?.id != null)
+            .Select(x => new ModuleThin(x.id, x.title, x.type?.id ?? string.Empty, x.status?.id ?? string.Empty, x.moduleFolder, x.moduleLocation, x.uri))
+            .OrderBy(x => x.Title)
+            .ToArray();
 }

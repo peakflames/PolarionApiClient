@@ -285,7 +285,7 @@ Gets URIs of all work items in a module at the specified revision.
 - `parentWorkItemUri` - Optional parent work item URI to filter children (default: null)
 - `deep` - Whether to include external/linked items (default: true)
 
-**Returns:** A `Result<string[]>` containing an array of work item URIs or error details
+**Returns:** A `Result<string[]>` containing an array of work item URIs or error details. An empty document returns a successful, empty array (previously a failure, "No work item URIs returned").
 
 **Remarks:** This is useful for retrieving work items from a module at a specific historical revision. The module URI can include a revision suffix (e.g., `%200000`) to get work items as they existed at that point in time.
 
