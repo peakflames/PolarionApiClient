@@ -62,7 +62,7 @@ public partial class PolarionClient : IPolarionClient
         }
 
         // Step 1: Get module by location to obtain its real URI
-        var moduleUriResult = await GetModuleUriByLocationAsync(moduleFolder, documentId);
+        var moduleUriResult = await GetModuleUriByLocationAsync(moduleFolder, documentId, allowUnresolvable: true);
         if (moduleUriResult.IsFailed)
         {
             return Result.Fail<WorkItemWithRevisionInfo[]>(moduleUriResult.Errors);

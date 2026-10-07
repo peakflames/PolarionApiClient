@@ -25,7 +25,8 @@ public partial class PolarionClient : IPolarionClient
     ///
     /// Behavior change (previously a SQL query on POLARION.REL_MODULE_WORKITEM): results are always in
     /// document order and <paramref name="sort"/> is ignored; a document with no matching items returns
-    /// a successful, empty array instead of a failure.
+    /// a successful, empty array instead of a failure. A location with no document at HEAD (Polarion
+    /// returns an unresolvable module) still fails.
     /// </remarks>
     /// <param name="moduleFolder">The module folder path</param>
     /// <param name="documentId">The document ID</param>
@@ -61,7 +62,7 @@ public partial class PolarionClient : IPolarionClient
             fieldList.Add("type");
         }
 
-        var moduleUriResult = await GetModuleUriByLocationAsync(moduleFolder, documentId);
+        var moduleUriResult = await GetModuleUriByLocationAsync(moduleFolder, documentId, allowUnresolvable: false);
         if (moduleUriResult.IsFailed)
         {
             return Result.Fail<WorkItem[]>(moduleUriResult.Errors);
@@ -85,8 +86,16 @@ public partial class PolarionClient : IPolarionClient
     /// <summary>
     /// Resolves <c>moduleFolder/documentId</c> to the module URI.
     /// </summary>
+    /// <param name="moduleFolder">The module folder path</param>
+    /// <param name="documentId">The document ID</param>
+    /// <param name="allowUnresolvable">
+    /// Polarion may answer a lookup for a location with no document at HEAD with an unresolvable module
+    /// that still carries a URI. Pass false for HEAD reads, so a missing document fails instead of
+    /// reading as empty. Pass true for historical reads, where a document deleted since can still be
+    /// read at an older revision through that URI.
+    /// </param>
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]
-    private async Task<Result<string>> GetModuleUriByLocationAsync(string moduleFolder, string documentId)
+    private async Task<Result<string>> GetModuleUriByLocationAsync(string moduleFolder, string documentId, bool allowUnresolvable)
     {
         var location = $"{moduleFolder}/{documentId}";
         var moduleResult = await GetModuleByLocationAsync(location);
@@ -101,6 +110,11 @@ public partial class PolarionClient : IPolarionClient
         if (string.IsNullOrEmpty(module?.uri))
         {
             return Result.Fail<string>($"Module at location '{location}' has no URI");
+        }
+
+        if (module.unresolvable && !allowUnresolvable)
+        {
+            return Result.Fail<string>($"Module at location '{location}' was not found (unresolvable)");
         }
 
         return Result.Ok(module.uri);
