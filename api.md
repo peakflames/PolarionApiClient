@@ -370,7 +370,7 @@ Gets the work items of a document as it was at a historical revision, in documen
 **Parameters:**
 - `moduleFolder` - The module folder (space) path
 - `documentId` - The document ID
-- `revision` - The revision number. For a baseline, pass the baseline's base revision (see `QueryBaselinesAsync`)
+- `revision` - The revision number. For a baseline, pass the baseline's base revision (see `QueryBaselinesAsync`). Surrounding whitespace is trimmed; any other non-digit character (e.g. `1%2`) returns a failure without calling the server
 - `fields` - Optional list of fields to retrieve. Defaults to `id`, `type`, `title`, `description`, `status`, `outlineNumber`, `author`, `created`, `updated`
 
 **Returns:** A `Result<WorkItemWithRevisionInfo[]>` in document order:
