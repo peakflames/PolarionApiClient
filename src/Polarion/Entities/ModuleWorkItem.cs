@@ -28,14 +28,30 @@ public class ModuleWorkItem
 
     /// <summary>
     /// The revision this row is pinned to, parsed from the <c>%revision</c> suffix of <see cref="Uri"/>.
-    /// Empty when the row is not pinned (it follows HEAD, or the document revision when the module
-    /// URI was given with a revision).
+    /// Empty when the row is not pinned: it follows HEAD, or, when the module URI was given with a
+    /// revision, the document at that revision. See <see cref="IsPinned"/> for how pins are detected.
     /// </summary>
     public string Revision { get; init; } = string.Empty;
 
     /// <summary>
     /// True when the row is a pinned reference (<see cref="Revision"/> is set).
     /// </summary>
+    /// <remarks>
+    /// <para>
+    /// HEAD read (module URI without <c>%revision</c>): Polarion suffixes only pinned rows, so any
+    /// <c>%revision</c> suffix on the row URI marks a pin.
+    /// </para>
+    /// <para>
+    /// Revision read (module URI with <c>%revision</c>): Polarion suffixes every row. Unpinned rows carry
+    /// the requested revision and pinned rows carry their pin revision, so a row counts as pinned only
+    /// when its suffix differs from the requested revision.
+    /// </para>
+    /// <para>
+    /// Limit: in a revision read, a reference pinned to exactly the requested revision has the same
+    /// suffix as an unpinned row and is reported as not pinned. Its field values are still correct,
+    /// since both describe the item at that revision. <see cref="Uri"/> keeps the suffix as returned.
+    /// </para>
+    /// </remarks>
     public bool IsPinned => !string.IsNullOrEmpty(Revision);
 
     /// <summary>

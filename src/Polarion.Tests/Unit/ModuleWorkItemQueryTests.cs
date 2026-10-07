@@ -170,6 +170,26 @@ public class ModuleWorkItemQueryTests
     }
 
     [Fact]
+    public async Task GetWorkItemsByModuleRevisionAsync_AllRowsSuffixed_RevisionIsRequestedUnlessPinned()
+    {
+        // Polarion's revision-read shape: every row suffixed, unpinned ones with the requested revision.
+        var (client, _) = CreateClient(
+            Row("WI-1", "1", revision: "5000"),
+            Row("WI-2", "2", revision: "4100", status: "approved"),
+            Row("WI-3", "3", revision: "5000"),
+            Row("WI-4", "4"));
+
+        var result = await client.GetWorkItemsByModuleRevisionAsync("Space", "Doc", "5000");
+
+        result.IsSuccess.Should().BeTrue();
+        result.Value.Select(w => w.Revision).Should().Equal("5000", "4100", "5000", "5000");
+        result.Value.Select(w => w.SourceUri).Should().Equal(
+            ItemUri("WI-1", "5000"), ItemUri("WI-2", "4100"), ItemUri("WI-3", "5000"), ItemUri("WI-4"));
+        result.Value[1].WorkItem.status.id.Should().Be("approved");
+        result.Value.Should().OnlyContain(w => w.IsHistorical);
+    }
+
+    [Fact]
     public async Task GetWorkItemsByModuleRevisionAsync_DropsUnresolvableRows()
     {
         var (client, _) = CreateClient(UnresolvableRow("WI-404"), Row("WI-1", "1"));

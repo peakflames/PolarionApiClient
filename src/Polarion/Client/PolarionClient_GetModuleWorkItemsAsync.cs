@@ -19,7 +19,8 @@ public partial class PolarionClient : IPolarionClient
     /// Wraps the Polarion SOAP <c>getModuleWorkItems</c> call. Compared with SQL or Lucene queries, it:
     /// <list type="bullet">
     /// <item>returns pinned references with the field values at their pinned revision, and exposes that
-    /// revision in <see cref="ModuleWorkItem.Revision"/>;</item>
+    /// revision in <see cref="ModuleWorkItem.Revision"/> (see <see cref="ModuleWorkItem.IsPinned"/> for how
+    /// pins are detected in a revision read);</item>
     /// <item>returns pinned references to items deleted after they were pinned;</item>
     /// <item>returns rows in document order (do not re-sort by <c>outlineNumber</c>: referenced items carry
     /// the outline number of their home document);</item>
@@ -53,9 +54,10 @@ public partial class PolarionClient : IPolarionClient
                 return Result.Ok(Array.Empty<ModuleWorkItem>());
             }
 
+            var requestedRevision = RevisionSuffix(moduleUri);
             var items = rows
                 .Where(row => row is not null)
-                .Select(ToModuleWorkItem)
+                .Select(row => ToModuleWorkItem(row, requestedRevision))
                 .ToArray();
 
             return Result.Ok(items);
@@ -66,19 +68,34 @@ public partial class PolarionClient : IPolarionClient
         }
     }
 
-    private static ModuleWorkItem ToModuleWorkItem(WorkItem row)
+    /// <summary>
+    /// Maps a getModuleWorkItems row. At HEAD (<paramref name="requestedRevision"/> empty) any <c>%rev</c>
+    /// suffix on the row URI marks a pinned reference. In a revision read Polarion suffixes every row,
+    /// unpinned rows with the requested revision, so only a suffix that differs from it marks a pin.
+    /// </summary>
+    private static ModuleWorkItem ToModuleWorkItem(WorkItem row, string requestedRevision)
     {
         var uri = row.uri ?? string.Empty;
         var id = !string.IsNullOrEmpty(row.id) ? row.id : PolarionUriParser.ExtractIdFromUri(uri);
-        var revision = uri.Contains('%') ? PolarionUriParser.ExtractRevisionFromUri(uri) : string.Empty;
+        var suffix = RevisionSuffix(uri);
+        var pinRevision = suffix.Length > 0 && !string.Equals(suffix, requestedRevision, StringComparison.Ordinal)
+            ? suffix
+            : string.Empty;
 
         return new ModuleWorkItem
         {
             WorkItem = row,
             Uri = uri,
             Id = id,
-            Revision = revision,
+            Revision = pinRevision,
             IsUnresolvable = row.unresolvable,
         };
+    }
+
+    /// <summary>The text after the last <c>%</c> in a URI, or empty when there is no revision suffix.</summary>
+    private static string RevisionSuffix(string uri)
+    {
+        var index = uri.LastIndexOf('%');
+        return index < 0 ? string.Empty : uri[(index + 1)..].Trim();
     }
 }

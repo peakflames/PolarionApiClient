@@ -75,6 +75,56 @@ public class GetModuleWorkItemsTests
     }
 
     [Fact]
+    public async Task GetModuleWorkItemsAsync_HeadRead_OnlySuffixedRowsArePinned()
+    {
+        var (client, _) = CreateClient(_ => new getModuleWorkItemsResponse([
+            Row("WI-1", "1"),
+            Row("WI-2", "2", revision: "4100"),
+            Row("WI-3", "3"),
+        ]));
+
+        var result = await client.GetModuleWorkItemsAsync(ModuleUri);
+
+        result.Value.Select(r => r.IsPinned).Should().Equal(false, true, false);
+        result.Value.Select(r => r.Revision).Should().Equal("", "4100", "");
+    }
+
+    [Fact]
+    public async Task GetModuleWorkItemsAsync_RevisionRead_OnlyRowsSuffixedWithAnotherRevisionArePinned()
+    {
+        // At a revision, Polarion suffixes every row: unpinned rows with the requested revision,
+        // pinned rows with their pin revision.
+        var (client, _) = CreateClient(_ => new getModuleWorkItemsResponse([
+            Row("WI-1", "1", revision: "5000"),
+            Row("WI-2", "2", revision: "5000"),
+            Row("WI-3", "3", revision: "4100", status: "approved"),
+            Row("WI-4", "4", revision: "5000"),
+        ]));
+
+        var result = await client.GetModuleWorkItemsAsync($"{ModuleUri}%5000");
+
+        result.IsSuccess.Should().BeTrue();
+        result.Value.Select(r => r.IsPinned).Should().Equal(false, false, true, false);
+        result.Value.Select(r => r.Revision).Should().Equal("", "", "4100", "");
+        result.Value[0].Uri.Should().Be(ItemUri("WI-1", "5000"), "the URI is returned exactly as Polarion sent it");
+        result.Value[2].WorkItem.status.id.Should().Be("approved");
+    }
+
+    [Fact]
+    public async Task GetModuleWorkItemsAsync_RevisionRead_UnsuffixedRowIsNotPinned()
+    {
+        var (client, _) = CreateClient(_ => new getModuleWorkItemsResponse([
+            Row("WI-1", "1"),
+            Row("WI-2", "2", revision: "6000"),
+        ]));
+
+        var result = await client.GetModuleWorkItemsAsync($"{ModuleUri}%5000");
+
+        result.Value.Select(r => r.IsPinned).Should().Equal(false, true);
+        result.Value.Select(r => r.Revision).Should().Equal("", "6000");
+    }
+
+    [Fact]
     public async Task GetModuleWorkItemsAsync_UnresolvableRow_IsReturnedAndFlagged()
     {
         var (client, _) = CreateClient(_ => new getModuleWorkItemsResponse([

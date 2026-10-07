@@ -316,7 +316,7 @@ Gets the work items of a document (module) in document order, including items re
 - `Uri` - The work item URI as returned, including any `%revision` suffix
 - `Id` - The work item ID (from the data, or parsed from the URI)
 - `Revision` - The pinned revision parsed from the URI; empty when the row is not pinned
-- `IsPinned` - True when `Revision` is set
+- `IsPinned` - True when `Revision` is set. At HEAD, Polarion suffixes only pinned rows, so any `%revision` suffix marks a pin. In a revision read (`moduleUri%revision`), Polarion suffixes every row, unpinned rows with the requested revision, so a row is pinned only when its suffix differs from the requested revision. Limit: in a revision read, a reference pinned to exactly the requested revision looks unpinned (its field values are still correct)
 - `IsUnresolvable` - True when Polarion marks the row unresolvable (e.g. a live reference to a deleted item). Such rows carry no field values
 
 **Remarks:**
@@ -376,7 +376,7 @@ Gets the work items of a document as it was at a historical revision, in documen
 **Returns:** A `Result<WorkItemWithRevisionInfo[]>` in document order:
 - `WorkItem` - The item with the values it had in the document at that revision
 - `Revision` - The item's pinned revision for pinned references, otherwise `revision`
-- `SourceUri` - The item URI as returned (with `%revision` for pinned references)
+- `SourceUri` - The item URI exactly as Polarion returned it. In a revision read every row carries a `%revision` suffix: the pin revision for pinned references, `revision` for the rest
 - `IsHistorical` - Always true
 - `HeadRevision` - Not populated
 
