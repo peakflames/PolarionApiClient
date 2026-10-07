@@ -11206,6 +11206,7 @@ namespace Polarion.Generated.Tracker
         public string moduleURI;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
         public string parentWorkItemURI;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.polarion.com/TrackerWebService-impl", Order=2)]
