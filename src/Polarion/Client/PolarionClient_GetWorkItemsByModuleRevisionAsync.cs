@@ -30,6 +30,11 @@ public partial class PolarionClient : IPolarionClient
     /// For a baseline, pass the baseline's base revision. Use <see cref="GetModuleWorkItemsAsync"/>
     /// directly to see unresolvable rows.
     ///
+    /// When no rows come back, the module is looked up at <c>{moduleUri}%{revision}</c>. If Polarion
+    /// reports it unresolvable (a mistyped document ID, or a revision before the document existed),
+    /// the result is a failure, "Document not found at revision N". An existing empty document returns
+    /// a successful, empty array.
+    ///
     /// Behavior change: previously items were re-fetched at the document revision via a baseline
     /// query, which returned wrong values for pinned references and omitted deleted-but-pinned items.
     /// Results are now in document order rather than ID order.
@@ -69,11 +74,23 @@ public partial class PolarionClient : IPolarionClient
         }
 
         // Step 2: Read the document rows at the requested revision
-        var rowsResult = await GetModuleWorkItemsAsync($"{moduleUriResult.Value}%{revision}", null, true, fields);
+        var revisionUri = $"{moduleUriResult.Value}%{revision}";
+        var rowsResult = await GetModuleWorkItemsAsync(revisionUri, null, true, fields);
         if (rowsResult.IsFailed)
         {
             return Result.Fail<WorkItemWithRevisionInfo[]>(
                 $"Failed to get work items at revision {revision}: {rowsResult.Errors.First().Message}");
+        }
+
+        // No rows: an empty document is a valid, empty result; no document at that revision is not.
+        if (rowsResult.Value.Length == 0)
+        {
+            var exists = await EnsureModuleResolvableAsync(
+                revisionUri, $"Document not found at revision {revision}: '{moduleFolder}/{documentId}'");
+            if (exists.IsFailed)
+            {
+                return Result.Fail<WorkItemWithRevisionInfo[]>(exists.Errors);
+            }
         }
 
         // Step 3: Wrap results — all items are historical by definition (revision query)

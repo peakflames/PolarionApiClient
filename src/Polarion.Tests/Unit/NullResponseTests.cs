@@ -116,6 +116,8 @@ public class NullResponseTests
         var (client, tracker) = FakeClient.Create();
         tracker.On<getModuleWorkItemUrisRequest, getModuleWorkItemUrisResponse>(
             "getModuleWorkItemUrisAsync", _ => new getModuleWorkItemUrisResponse(null!));
+        tracker.On<getModuleByUriRequest, getModuleByUriResponse>(
+            "getModuleByUriAsync", _ => new getModuleByUriResponse(new Module { uri = ModuleUri }));
 
         var result = await client.GetModuleWorkItemUrisAsync(ModuleUri);
 
