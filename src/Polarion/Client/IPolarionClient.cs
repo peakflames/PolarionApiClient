@@ -130,7 +130,7 @@ public interface IPolarionClient
     /// </remarks>
     /// <param name="moduleFolder">The module folder path</param>
     /// <param name="documentId">The document ID</param>
-    /// <param name="revision">The revision number</param>
+    /// <param name="revision">The revision number (digits only; surrounding whitespace is trimmed)</param>
     /// <param name="fields">Optional list of fields to retrieve</param>
     /// <returns>Array of work items with revision information</returns>
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]

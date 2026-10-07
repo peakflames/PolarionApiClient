@@ -258,5 +258,36 @@ public class ModuleWorkItemQueryTests
         tracker.Calls.Should().BeEmpty();
     }
 
+    [Theory]
+    [InlineData("1%2")]
+    [InlineData("5000a")]
+    [InlineData("-1")]
+    [InlineData("50 00")]
+    [InlineData("5000%")]
+    [InlineData("٥")] // non-ASCII digit
+    public async Task GetWorkItemsByModuleRevisionAsync_NonNumericRevision_FailsWithoutCallingServer(string revision)
+    {
+        var (client, tracker) = CreateClient(Row("WI-1", "1"));
+
+        var result = await client.GetWorkItemsByModuleRevisionAsync("Space", "Doc", revision);
+
+        result.IsFailed.Should().BeTrue();
+        result.Errors.Single().Message.Should().Contain("digits only");
+        tracker.Calls.Should().BeEmpty();
+    }
+
+    [Fact]
+    public async Task GetWorkItemsByModuleRevisionAsync_RevisionWithSurroundingWhitespace_IsTrimmed()
+    {
+        var (client, tracker) = CreateClient(Row("WI-1", "1"));
+
+        var result = await client.GetWorkItemsByModuleRevisionAsync("Space", "Doc", " 5000\t");
+
+        result.IsSuccess.Should().BeTrue();
+        result.Value.Single().Revision.Should().Be("5000");
+        tracker.RequestsFor<getModuleWorkItemsRequest>("getModuleWorkItemsAsync").Single().moduleURI
+            .Should().Be($"{ModuleUri}%5000");
+    }
+
     #endregion
 }

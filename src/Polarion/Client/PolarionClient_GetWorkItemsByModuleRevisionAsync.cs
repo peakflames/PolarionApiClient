@@ -41,7 +41,8 @@ public partial class PolarionClient : IPolarionClient
     /// </remarks>
     /// <param name="moduleFolder">The module folder path</param>
     /// <param name="documentId">The document ID</param>
-    /// <param name="revision">The revision number</param>
+    /// <param name="revision">The revision number. Surrounding whitespace is trimmed; anything other than
+    /// digits fails without calling the server</param>
     /// <param name="fields">Optional list of fields to retrieve</param>
     /// <returns>Array of work items with revision information, in document order</returns>
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]
@@ -64,6 +65,14 @@ public partial class PolarionClient : IPolarionClient
         if (string.IsNullOrWhiteSpace(revision))
         {
             return Result.Fail("Revision cannot be null or empty");
+        }
+
+        // The revision becomes part of the module URI (moduleUri%revision); anything but digits would
+        // change what is requested.
+        revision = revision.Trim();
+        if (!revision.All(char.IsAsciiDigit))
+        {
+            return Result.Fail($"Revision must be a revision number (digits only): '{revision}'");
         }
 
         // Step 1: Get module by location to obtain its real URI
