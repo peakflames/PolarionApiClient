@@ -393,18 +393,20 @@ Gets the work items of a document as it was at a historical revision, in documen
 ```csharp
 public async Task<Result<Baseline[]>> QueryBaselinesAsync(
     string query,
-    string sort = "baseRevision")
+    string sort = "baseRevision",
+    bool includeAllProjects = false)
 ```
 
-Queries baselines (project and document baselines) with a Lucene query. Wraps the Polarion SOAP `queryBaselines` call.
+Queries baselines (project and document baselines) with a Lucene query, scoped to the configured project by default. Wraps the Polarion SOAP `queryBaselines` call.
 
 **Parameters:**
-- `query` - Lucene query over baselines, passed to Polarion unchanged. It is **not** scoped to the configured project; include e.g. `project.id:MyProject` to scope it
+- `query` - Lucene query over baselines, passed to Polarion unchanged
 - `sort` - Sort field (default: `baseRevision`)
+- `includeAllProjects` - When `false` (default), only baselines taken on the configured project or one of its documents are returned. When `true`, baselines of every project are returned
 
 **Returns:** A `Result<Baseline[]>` with the matching baselines (`id`, `name`, `baseRevision`, `baseObjectURI`, ...). A query that matches nothing returns a successful, empty array.
 
-**Remarks:** `baseObjectURI` is the project (project baseline) or the module (document baseline) the baseline was taken on. To read a document as it was at a baseline, call `GetModuleWorkItemsAsync($"{moduleUri}%{baseRevision}")` or `GetWorkItemsByModuleRevisionAsync(folder, docId, baseRevision)`.
+**Remarks:** Baseline IDs and names are not unique across projects, so an unscoped query can match baselines in several projects. Scoping filters the results on `baseObjectURI` (it must start with `subterra:data-service:objects:/default/{ProjectId}$`); it does not change the Lucene query. `baseObjectURI` is the project (project baseline) or the module (document baseline) the baseline was taken on. To read a document as it was at a baseline, call `GetModuleWorkItemsAsync($"{moduleUri}%{baseRevision}")` or `GetWorkItemsByModuleRevisionAsync(folder, docId, baseRevision)`.
 
 ---
 
