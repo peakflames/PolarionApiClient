@@ -63,7 +63,8 @@ public interface IPolarionClient
     /// <param name="moduleUri">The module URI (may include revision specifier)</param>
     /// <param name="parentWorkItemUri">Optional parent work item URI to filter children</param>
     /// <param name="deep">Whether to include external/linked items</param>
-    /// <returns>Array of work item URIs</returns>
+    /// <returns>Array of work item URIs; empty for an empty document. A failure ("Document not found") when
+    /// no URIs come back and the module is unresolvable</returns>
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]
     Task<Result<string[]>> GetModuleWorkItemUrisAsync(string moduleUri, string? parentWorkItemUri = null, bool deep = true);
 
@@ -124,7 +125,8 @@ public interface IPolarionClient
     /// <remarks>
     /// Built on <see cref="GetModuleWorkItemsAsync"/> with <c>{moduleUri}%{revision}</c>. Pinned references
     /// are returned at their pinned revision (reported in <see cref="WorkItemWithRevisionInfo.Revision"/>),
-    /// deleted-but-pinned items are included, and unresolvable rows are dropped.
+    /// deleted-but-pinned items are included, and unresolvable rows are dropped. When no rows come back
+    /// and the module is unresolvable at that revision, the result is a failure ("Document not found").
     /// </remarks>
     /// <param name="moduleFolder">The module folder path</param>
     /// <param name="documentId">The document ID</param>
