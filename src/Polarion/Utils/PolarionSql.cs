@@ -6,6 +6,13 @@ namespace Polarion;
 /// <remarks>
 /// Polarion's SOAP SQL methods take a raw query string and offer no parameter binding,
 /// so every interpolated value must go through one of these helpers.
+/// <para>
+/// Assumes the database runs with <c>standard_conforming_strings=on</c> (the PostgreSQL default since
+/// 9.1): a backslash in an ordinary string literal is then a plain character, so doubling single quotes
+/// is enough to keep a value inside its literal, and <c>\</c> only acts as the escape character where
+/// <see cref="LikeEscapeClause"/> declares it. With the setting off, backslashes in a value would be
+/// read as escapes and this escaping would not be sufficient.
+/// </para>
 /// </remarks>
 internal static class PolarionSql
 {

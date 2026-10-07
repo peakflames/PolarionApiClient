@@ -10,6 +10,14 @@ public partial class PolarionClient : IPolarionClient
     /// <param name="filter">The filter criteria for work items.</param>
     /// <param name="moduleRevision">Optional revision identifier. If null, fetches from the latest revision.</param>
     /// <returns>A Result containing a hierarchical dictionary of WorkItems if successful.</returns>
+    /// <remarks>
+    /// Owned items only: this method is built on <see cref="GetWorkItemsByModuleAsync"/> (deprecated), whose
+    /// <c>document.title</c> query matches only work items owned by the document. Referenced and pinned
+    /// items are omitted, and pinned values are not used. <see cref="ExportModuleToMarkdownAsync"/> and
+    /// <see cref="ExportModuleToMarkdownGroupedByHeadingAsync"/> share this limit. For the complete
+    /// document content in document order, use <see cref="GetModuleWorkItemsAsync"/> or
+    /// <see cref="QueryWorkItemsInModuleAsync"/>.
+    /// </remarks>
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]
     public async Task<Result<SortedDictionary<string, SortedDictionary<string, WorkItem>>>> GetHierarchicalWorkItemsByModuleAsync(
         string workItemPrefix, string moduleTitle, PolarionFilter filter, string? moduleRevision = null)

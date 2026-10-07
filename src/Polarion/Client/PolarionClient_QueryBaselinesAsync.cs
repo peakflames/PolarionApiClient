@@ -19,7 +19,9 @@ public partial class PolarionClient : IPolarionClient
     /// <para>
     /// Scoping is applied to the results, not added to the Lucene query: a baseline is kept when its
     /// <c>baseObjectURI</c> (the project or module it was taken on) belongs to the configured project, i.e.
-    /// starts with <c>subterra:data-service:objects:/default/{ProjectId}$</c>.
+    /// starts with <c>subterra:data-service:objects:/default/{ProjectId}$</c>. The match is case-sensitive,
+    /// so the configured ProjectId must use the same case as the project ID in Polarion; otherwise every
+    /// baseline is filtered out and the result is an empty success.
     /// </para>
     /// Each <see cref="Baseline"/> carries its <c>id</c>, <c>name</c>, <c>baseRevision</c> and
     /// <c>baseObjectURI</c>. To read a document as it was at a baseline, pass
