@@ -21,11 +21,11 @@ public class PolarionUriParserTests
 
     [Theory]
     // Work item URIs - extracts ID correctly
-    [InlineData("subterra:data-service:objects:/default/Project${WorkItem}MD-67890%100", "MD-67890")]
+    [InlineData("subterra:data-service:objects:/default/Project${WorkItem}WI-67890%100", "WI-67890")]
     [InlineData("subterra:data-service:objects:/default/TestProject${WorkItem}TEST-123%1", "TEST-123")]
     // Module URIs - extracts everything after last '}' and before '%' (includes folder#docId for modules)
-    [InlineData("subterra:data-service:objects:/default/Project${Module}L4_fcs#MD-12345%200000", "L4_fcs#MD-12345")]
-    [InlineData("subterra:data-service:objects:/default/Midnight${Module}{moduleFolder}L4_fcs/Doc#WI-999%50000", "Doc#WI-999")]
+    [InlineData("subterra:data-service:objects:/default/Project${Module}MySpace#WI-12345%200000", "MySpace#WI-12345")]
+    [InlineData("subterra:data-service:objects:/default/TestProject${Module}{moduleFolder}MySpace/Doc#WI-999%50000", "Doc#WI-999")]
     // Edge cases
     [InlineData("", "")]
     [InlineData(null, "")]
@@ -56,13 +56,13 @@ public class PolarionUriParserTests
     public void ExtractIdFromUri_WithNoPercentSign_ShouldReturnFullLastSegment()
     {
         // Arrange - URI without revision (no %)
-        var uri = "subterra:data-service:objects:/default/Project${WorkItem}MD-12345";
+        var uri = "subterra:data-service:objects:/default/Project${WorkItem}WI-12345";
 
         // Act
         var result = PolarionUriParser.ExtractIdFromUri(uri);
 
         // Assert
-        result.Should().Be("MD-12345");
+        result.Should().Be("WI-12345");
     }
 
     #endregion
@@ -70,9 +70,9 @@ public class PolarionUriParserTests
     #region ExtractRevisionFromUri Tests
 
     [Theory]
-    [InlineData("subterra:data-service:objects:/default/Project${Module}L4_fcs#MD-12345%200000", "200000")]
-    [InlineData("subterra:data-service:objects:/default/Project${WorkItem}MD-67890%100", "100")]
-    [InlineData("subterra:data-service:objects:/default/Midnight${Module}{moduleFolder}L4_fcs/Doc#WI-999%50000", "50000")]
+    [InlineData("subterra:data-service:objects:/default/Project${Module}MySpace#WI-12345%200000", "200000")]
+    [InlineData("subterra:data-service:objects:/default/Project${WorkItem}WI-67890%100", "100")]
+    [InlineData("subterra:data-service:objects:/default/TestProject${Module}{moduleFolder}MySpace/Doc#WI-999%50000", "50000")]
     [InlineData("subterra:data-service:objects:/default/TestProject${WorkItem}TEST-123%1", "1")]
     [InlineData("", "")]
     [InlineData(null, "")]
@@ -121,9 +121,9 @@ public class PolarionUriParserTests
     public void BuildModuleUriWithRevision_ShouldConstructValidUri()
     {
         // Arrange
-        var projectName = "Midnight";
-        var moduleFolder = "L4_fcs";
-        var documentId = "FCS Memory Loader IDD";
+        var projectName = "TestProject";
+        var moduleFolder = "MySpace";
+        var documentId = "Example IDD";
         var revision = "200000";
 
         // Act
@@ -163,16 +163,16 @@ public class PolarionUriParserTests
     public void BuildModuleUriWithRevision_WithSpecialCharacters_ShouldPreserveCharacters()
     {
         // Arrange
-        var projectName = "Midnight";
-        var moduleFolder = "L4_fcs";
-        var documentId = "FCS Memory Loader IDD"; // Contains spaces
+        var projectName = "TestProject";
+        var moduleFolder = "MySpace";
+        var documentId = "Example IDD"; // Contains spaces
         var revision = "200000";
 
         // Act
         var result = PolarionUriParser.BuildModuleUriWithRevision(projectName, moduleFolder, documentId, revision);
 
         // Assert
-        result.Should().Contain("FCS Memory Loader IDD");
+        result.Should().Contain("Example IDD");
 
         _output.WriteLine($"Built URI with spaces: {result}");
     }
@@ -181,9 +181,9 @@ public class PolarionUriParserTests
     public void BuildModuleUriWithRevision_ShouldFollowExpectedFormat()
     {
         // Arrange
-        var projectName = "Midnight";
-        var moduleFolder = "L4_fcs";
-        var documentId = "FCS Memory Loader IDD";
+        var projectName = "TestProject";
+        var moduleFolder = "MySpace";
+        var documentId = "Example IDD";
         var revision = "200000";
 
         // Act
@@ -240,8 +240,8 @@ public class PolarionUriParserTests
 
         // Note: ${Module}{moduleFolder} are literal placeholder strings in Polarion's internal URI format
 
-        var workItemUri = "subterra:data-service:objects:/default/Midnight${WorkItem}MD-12345%100";
-        var moduleUri = "subterra:data-service:objects:/default/Midnight${Module}{moduleFolder}L4_fcs#FCS Memory Loader IDD%200000";
+        var workItemUri = "subterra:data-service:objects:/default/TestProject${WorkItem}WI-12345%100";
+        var moduleUri = "subterra:data-service:objects:/default/TestProject${Module}{moduleFolder}MySpace#Example IDD%200000";
 
         // Log for documentation purposes
         _output.WriteLine("=== Polarion URI Format Documentation ===");
@@ -254,12 +254,12 @@ public class PolarionUriParserTests
         _output.WriteLine($"  - Extracted Revision: {PolarionUriParser.ExtractRevisionFromUri(moduleUri)}");
 
         // Work item URIs extract the ID correctly
-        PolarionUriParser.ExtractIdFromUri(workItemUri).Should().Be("MD-12345");
+        PolarionUriParser.ExtractIdFromUri(workItemUri).Should().Be("WI-12345");
         PolarionUriParser.ExtractRevisionFromUri(workItemUri).Should().Be("100");
 
         // Module URIs - ExtractIdFromUri returns folder#documentId (includes # separator)
         // This is expected behavior as module URIs have different structure than work item URIs
-        PolarionUriParser.ExtractIdFromUri(moduleUri).Should().Be("L4_fcs#FCS Memory Loader IDD");
+        PolarionUriParser.ExtractIdFromUri(moduleUri).Should().Be("MySpace#Example IDD");
         PolarionUriParser.ExtractRevisionFromUri(moduleUri).Should().Be("200000");
     }
 
