@@ -661,6 +661,13 @@ Configuration record for initializing the Polarion client.
 - `ProjectId` - The ID of the Polarion project to work with
 - `TimeoutSeconds` - The timeout in seconds for WCF service calls (default: 30)
 
+**Optional properties (set with an object initializer or `with`):**
+- `MaxReceivedMessageSize` (`int?`, default `null`) - Cap, in bytes, on the size of a single SOAP response. `null` means no cap (`int.MaxValue`), which large projects need. Set a lower value to bound the memory one call can use; a larger response then fails with a quota-exceeded error. A value of zero or less makes `CreateAsync` return a failure.
+
+```csharp
+var capped = config with { MaxReceivedMessageSize = 50 * 1024 * 1024 }; // 50 MB
+```
+
 ---
 
 ## Properties

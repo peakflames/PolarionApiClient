@@ -5,19 +5,14 @@ public partial class PolarionClient : IPolarionClient
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]
     public static async Task<Result<PolarionClient>> CreateAsync(PolarionClientConfiguration config)
     {
-        // Create binding for Session service
-        var binding = new BasicHttpBinding();
-        if (config.ServerUrl.StartsWith("https://", StringComparison.OrdinalIgnoreCase))
+        // Create binding shared by the Session, Tracker and Project services
+        var bindingResult = CreateBinding(config);
+        if (bindingResult.IsFailed)
         {
-            binding.Security.Mode = BasicHttpSecurityMode.Transport;
+            return Result.Fail<PolarionClient>(bindingResult.Errors);
         }
 
-        binding.MaxReceivedMessageSize = int.MaxValue; // no cap — large Polarion projects exceed 10 MB
-        binding.OpenTimeout = TimeSpan.FromSeconds(config.TimeoutSeconds);
-        binding.CloseTimeout = TimeSpan.FromSeconds(config.TimeoutSeconds);
-        binding.SendTimeout = TimeSpan.FromSeconds(config.TimeoutSeconds);
-        binding.ReceiveTimeout = TimeSpan.FromSeconds(config.TimeoutSeconds);
-        binding.AllowCookies = true;
+        var binding = bindingResult.Value;
 
         // Create session endpoint and client
         var sessionEndpoint = new EndpointAddress($"{config.ServerUrl.TrimEnd('/')}/polarion/ws/services/SessionWebService");
@@ -78,6 +73,37 @@ public partial class PolarionClient : IPolarionClient
         {
             return Result.Fail<PolarionClient>($"Failed to initialize Polarion client: {ex.Message}");
         }
+    }
+
+    /// <summary>
+    /// Builds the HTTP binding used by all service clients from the configuration.
+    /// </summary>
+    /// <param name="config">The client configuration</param>
+    /// <returns>The binding, or a failure when <see cref="PolarionClientConfiguration.MaxReceivedMessageSize"/>
+    /// is set to zero or a negative value</returns>
+    internal static Result<BasicHttpBinding> CreateBinding(PolarionClientConfiguration config)
+    {
+        if (config.MaxReceivedMessageSize is <= 0)
+        {
+            return Result.Fail<BasicHttpBinding>(
+                $"MaxReceivedMessageSize must be greater than zero when set (was {config.MaxReceivedMessageSize}).");
+        }
+
+        var binding = new BasicHttpBinding();
+        if (config.ServerUrl.StartsWith("https://", StringComparison.OrdinalIgnoreCase))
+        {
+            binding.Security.Mode = BasicHttpSecurityMode.Transport;
+        }
+
+        // No cap by default — large Polarion projects exceed 10 MB. Callers may opt into a lower cap.
+        binding.MaxReceivedMessageSize = config.MaxReceivedMessageSize ?? int.MaxValue;
+        binding.OpenTimeout = TimeSpan.FromSeconds(config.TimeoutSeconds);
+        binding.CloseTimeout = TimeSpan.FromSeconds(config.TimeoutSeconds);
+        binding.SendTimeout = TimeSpan.FromSeconds(config.TimeoutSeconds);
+        binding.ReceiveTimeout = TimeSpan.FromSeconds(config.TimeoutSeconds);
+        binding.AllowCookies = true;
+
+        return Result.Ok(binding);
     }
 
 
