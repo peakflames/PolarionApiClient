@@ -194,6 +194,8 @@ Fetches work items from a module and organizes them into a hierarchical structur
 
 **Remarks:** Organizes items by parent heading and child items. Items with hyphens in their outline numbers are treated as children of the parent heading.
 
+**Owned items only:** built on `GetWorkItemsByModuleAsync` (deprecated), so referenced and pinned items are omitted and pinned values are not used. `ExportModuleToMarkdownAsync` and `ExportModuleToMarkdownGroupedByHeadingAsync` share this limit. It is not marked `[Obsolete]` because those export methods depend on it. For the complete document content in document order, use `GetModuleWorkItemsAsync` or `QueryWorkItemsInModuleAsync`.
+
 ---
 
 ## Module Operations
@@ -212,6 +214,8 @@ Retrieves all modules (documents) in a specific space.
 **Returns:** A `Result<ModuleThin[]>` containing the modules sorted by title or error details
 
 **Throws:** `PolarionClientException` if the operation fails
+
+**Remarks:** `spaceName` is escaped into a SQL string literal by doubling single quotes. This assumes the Polarion database runs with `standard_conforming_strings=on` (the PostgreSQL default).
 
 ---
 
@@ -232,6 +236,8 @@ Gets modules in the project that match the specified criteria.
 **Returns:** A `Result<ModuleThin[]>` containing the filtered modules sorted by title or error details
 
 **Throws:** `PolarionClientException` if the operation fails
+
+**Remarks:** Both filters match literally: `%`, `_` and `\` are escaped in the SQL `LIKE` pattern (`ESCAPE '\'`) and single quotes are doubled. This assumes the Polarion database runs with `standard_conforming_strings=on` (the PostgreSQL default).
 
 ---
 
@@ -406,7 +412,7 @@ Queries baselines (project and document baselines) with a Lucene query, scoped t
 
 **Returns:** A `Result<Baseline[]>` with the matching baselines (`id`, `name`, `baseRevision`, `baseObjectURI`, ...). A query that matches nothing returns a successful, empty array.
 
-**Remarks:** Baseline IDs and names are not unique across projects, so an unscoped query can match baselines in several projects. Scoping filters the results on `baseObjectURI` (it must start with `subterra:data-service:objects:/default/{ProjectId}$`); it does not change the Lucene query. `baseObjectURI` is the project (project baseline) or the module (document baseline) the baseline was taken on. To read a document as it was at a baseline, call `GetModuleWorkItemsAsync($"{moduleUri}%{baseRevision}")` or `GetWorkItemsByModuleRevisionAsync(folder, docId, baseRevision)`.
+**Remarks:** Baseline IDs and names are not unique across projects, so an unscoped query can match baselines in several projects. Scoping filters the results on `baseObjectURI` (it must start with `subterra:data-service:objects:/default/{ProjectId}$`); it does not change the Lucene query. The match is case-sensitive: if the configured `ProjectId` differs in case from the project ID in Polarion, every baseline is filtered out and the result is an empty success. `baseObjectURI` is the project (project baseline) or the module (document baseline) the baseline was taken on. To read a document as it was at a baseline, call `GetModuleWorkItemsAsync($"{moduleUri}%{baseRevision}")` or `GetWorkItemsByModuleRevisionAsync(folder, docId, baseRevision)`.
 
 ---
 
@@ -506,6 +512,8 @@ Exports Polarion work items from a module to Markdown format asynchronously.
 
 **Returns:** A `Result<StringBuilder>` containing the Markdown content or error details
 
+**Remarks:** Owned items only. Built on `GetHierarchicalWorkItemsByModuleAsync`, so referenced and pinned items are omitted from the export.
+
 ---
 
 ### ExportModuleToMarkdownGroupedByHeadingAsync
@@ -534,6 +542,8 @@ Exports Polarion work items grouped by heading level to Markdown format asynchro
 - `revision` - Optional revision identifier. If null, exports the latest revision
 
 **Returns:** A `Result<SortedDictionary<string, StringBuilder>>` containing heading-grouped Markdown content or error details
+
+**Remarks:** Owned items only. Built on `GetHierarchicalWorkItemsByModuleAsync`, so referenced and pinned items are omitted from the export.
 
 ---
 
