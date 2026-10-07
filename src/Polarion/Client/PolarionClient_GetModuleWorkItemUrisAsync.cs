@@ -22,12 +22,8 @@ public partial class PolarionClient : IPolarionClient
             var request = new getModuleWorkItemUrisRequest(moduleUri, parentWorkItemUri, deep);
             var response = await _trackerClient.getModuleWorkItemUrisAsync(request);
 
-            if (response?.getModuleWorkItemUrisReturn is null)
-            {
-                return Result.Fail($"No work item URIs returned for module '{moduleUri}'");
-            }
-
-            return Result.Ok(response.getModuleWorkItemUrisReturn);
+            // An empty document comes back with a null array; that is a valid, empty result.
+            return Result.Ok(response?.getModuleWorkItemUrisReturn ?? []);
         }
         catch (Exception ex)
         {
