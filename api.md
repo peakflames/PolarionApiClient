@@ -347,7 +347,7 @@ Gets the work items of a document at HEAD, in document order.
 - `sort` - Ignored. Kept for source compatibility; results are always in document order
 - `fields` - Optional list of fields to retrieve. Defaults to `id`, `type`, `title`, `description`, `status`, `outlineNumber`
 
-**Returns:** A `Result<WorkItem[]>` with the document's work items in document order. A document with no (matching) items returns a successful, empty array.
+**Returns:** A `Result<WorkItem[]>` with the document's work items in document order. A document with no (matching) items returns a successful, empty array. A location with no document (Polarion returns an unresolvable module) returns a failure.
 
 **Remarks:** Resolves the document with `GetModuleByLocationAsync`, then calls `GetModuleWorkItemsAsync`. Pinned references are returned with their pinned values and deleted-but-pinned items are included. Unresolvable rows are dropped; use `GetModuleWorkItemsAsync` to see them.
 

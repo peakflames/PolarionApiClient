@@ -120,6 +120,20 @@ public class ModuleWorkItemQueryTests
         result.Errors.Single().Message.Should().Contain("has no URI");
     }
 
+    [Fact]
+    public async Task QueryWorkItemsInModuleAsync_UnresolvableModule_FailsWithoutReadingRows()
+    {
+        var (client, tracker) = FakeClient.Create();
+        tracker.On<getModuleByLocationRequest, getModuleByLocationResponse>(
+            "getModuleByLocationAsync", _ => new getModuleByLocationResponse(new Module { uri = ModuleUri, unresolvable = true }));
+
+        var result = await client.QueryWorkItemsInModuleAsync("Space", "Doc");
+
+        result.IsFailed.Should().BeTrue();
+        result.Errors.Single().Message.Should().Contain("Space/Doc").And.Contain("not found");
+        tracker.Calls.Select(c => c.Method).Should().NotContain("getModuleWorkItemsAsync");
+    }
+
     #endregion
 
     #region GetWorkItemsByModuleRevisionAsync
@@ -163,6 +177,23 @@ public class ModuleWorkItemQueryTests
         var result = await client.GetWorkItemsByModuleRevisionAsync("Space", "Doc", "5000");
 
         result.Value.Select(w => w.WorkItem.id).Should().Equal("WI-1");
+    }
+
+    [Fact]
+    public async Task GetWorkItemsByModuleRevisionAsync_UnresolvableModuleAtHead_StillReadsRevision()
+    {
+        var (client, tracker) = FakeClient.Create();
+        tracker.On<getModuleByLocationRequest, getModuleByLocationResponse>(
+            "getModuleByLocationAsync", _ => new getModuleByLocationResponse(new Module { uri = ModuleUri, unresolvable = true }));
+        tracker.On<getModuleWorkItemsRequest, getModuleWorkItemsResponse>(
+            "getModuleWorkItemsAsync", _ => new getModuleWorkItemsResponse([Row("WI-1", "1")]));
+
+        var result = await client.GetWorkItemsByModuleRevisionAsync("Space", "Doc", "5000");
+
+        result.IsSuccess.Should().BeTrue();
+        result.Value.Select(w => w.WorkItem.id).Should().Equal("WI-1");
+        tracker.RequestsFor<getModuleWorkItemsRequest>("getModuleWorkItemsAsync").Single().moduleURI
+            .Should().Be($"{ModuleUri}%5000");
     }
 
     [Fact]
