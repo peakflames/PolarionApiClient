@@ -36,7 +36,7 @@ public partial class PolarionClient : IPolarionClient
         try
         {
             var response = await _trackerClient.queryModuleUrisInBaselineAsync(
-                new queryModuleUrisInBaselineRequest(query, sort, baselineRevision, limit));
+                new queryModuleUrisInBaselineRequest(query, string.IsNullOrWhiteSpace(sort) ? "uri" : sort, baselineRevision, limit));
             return Result.Ok(response?.queryModuleUrisInBaselineReturn ?? Array.Empty<string>());
         }
         catch (Exception ex)

@@ -79,13 +79,16 @@ public interface IPolarionClient
     Task<Result<ModuleWorkItem[]>> GetModuleWorkItemsAsync(string moduleUri, string? parentWorkItemUri = null, bool deep = true, List<string>? fields = null);
 
     /// <summary>
-    /// Queries baselines (project and document baselines) with a Lucene query.
+    /// Queries baselines (project and document baselines) with a Lucene query, scoped to the
+    /// configured project by default.
     /// </summary>
-    /// <param name="query">Lucene query, passed unchanged (not scoped to the configured project)</param>
+    /// <param name="query">Lucene query, passed unchanged</param>
     /// <param name="sort">Sort field (default: baseRevision)</param>
+    /// <param name="includeAllProjects">When false (default), only baselines whose baseObjectURI belongs to
+    /// the configured project are returned; when true, baselines of every project are returned</param>
     /// <returns>The matching baselines; empty when nothing matches</returns>
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]
-    Task<Result<Baseline[]>> QueryBaselinesAsync(string query, string sort = "baseRevision");
+    Task<Result<Baseline[]>> QueryBaselinesAsync(string query, string sort = "baseRevision", bool includeAllProjects = false);
 
     /// <summary>
     /// Queries the URIs of documents (modules) as they existed at a baseline revision.
