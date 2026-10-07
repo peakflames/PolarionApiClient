@@ -47,13 +47,12 @@ public static class PolarionUriParser
     /// </summary>
     /// <remarks>
     /// URI Format: subterra:data-service:objects:/default/{ProjectName}${Module}{moduleFolder}{Folder}#{DocumentId}%{Revision}
-    /// Example: subterra:data-service:objects:/default/Project${Module}{moduleFolder}Space_A#Example Module%200000
-    /// 
+    /// Example: subterra:data-service:objects:/default/TestProject${Module}{moduleFolder}MySpace#Example IDD%200000
+    ///
     /// Note: "${Module}{moduleFolder}" are literal placeholder strings in Polarion's internal URI format.
-    /// Based on verified Python implementation in a reference Python implementation
     /// </remarks>
     /// <param name="projectName">The Polarion project name</param>
-    /// <param name="moduleFolder">The module folder/space path (e.g., "Space_A")</param>
+    /// <param name="moduleFolder">The module folder/space path (e.g., "MySpace")</param>
     /// <param name="documentId">The document ID</param>
     /// <param name="revision">The revision number</param>
     /// <returns>A properly formatted module URI with revision</returns>
