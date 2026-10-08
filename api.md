@@ -291,7 +291,7 @@ Gets URIs of all work items in a module at the specified revision.
 - `parentWorkItemUri` - Optional parent work item URI to filter children (default: null)
 - `deep` - Whether to include external/linked items (default: true)
 
-**Returns:** A `Result<string[]>` containing an array of work item URIs or error details. An empty document returns a successful, empty array (previously a failure, "No work item URIs returned"). When no URIs come back, the module is looked up with `getModuleByUri` on the same URI; if Polarion reports it unresolvable (no document at that URI or revision), the result is a failure, "Document not found".
+**Returns:** A `Result<string[]>` containing an array of work item URIs or error details. An empty document returns a successful, empty array (previously a failure, "No work item URIs returned"). A URI with no document behind it fails, because Polarion raises an unresolvable-object error. As a fallback, if no URIs come back, the module is looked up with `getModuleByUri` on the same URI, and an unresolvable module gives the failure "Document not found".
 
 **Remarks:** This is useful for retrieving work items from a module at a specific historical revision. The module URI can include a revision suffix (e.g., `%200000`) to get work items as they existed at that point in time.
 
@@ -315,7 +315,7 @@ Gets the work items of a document (module) in document order, including items re
 - `deep` - When true, returns the whole tree below the parent (or the whole document); when false, only direct children (default: true)
 - `fields` - Optional list of fields to retrieve. Defaults to `id`, `type`, `title`, `description`, `status`, `outlineNumber`, `author`, `created`, `updated`
 
-**Returns:** A `Result<ModuleWorkItem[]>` with one entry per document row, in document order. An empty document returns a successful, empty array. A service error returns a failure with the server message.
+**Returns:** A `Result<ModuleWorkItem[]>` with one entry per document row, in document order. An empty document returns a successful, empty array. A service error returns a failure with the server message, and that includes a module URI with no document behind it (Polarion raises an unresolvable-object error).
 
 `ModuleWorkItem` properties:
 - `WorkItem` - The work item with the requested fields. For pinned references the values are those at the pinned revision
@@ -386,7 +386,7 @@ Gets the work items of a document as it was at a historical revision, in documen
 - `IsHistorical` - Always true
 - `HeadRevision` - Not populated
 
-**Remarks:** Calls `GetModuleWorkItemsAsync` with `{moduleUri}%{revision}`. Unresolvable rows are dropped. When no rows come back, the module is looked up at `{moduleUri}%{revision}`; if Polarion reports it unresolvable (a mistyped document ID, or a revision before the document existed), the result is a failure, "Document not found at revision N". An existing empty document returns a successful, empty array.
+**Remarks:** Calls `GetModuleWorkItemsAsync` with `{moduleUri}%{revision}`. Unresolvable rows are dropped. A location with no document at that revision fails, because Polarion raises an unresolvable-object error. That covers a mistyped document ID and a revision before the document existed. As a fallback, if no rows come back, the module is looked up at `{moduleUri}%{revision}`, and an unresolvable module gives the failure "Document not found at revision N". An existing empty document returns a successful, empty array.
 
 **Behavior change:** this method previously re-fetched items at the document revision via a baseline query. That returned wrong values for pinned references, omitted deleted-but-pinned items, and ordered results by ID.
 
