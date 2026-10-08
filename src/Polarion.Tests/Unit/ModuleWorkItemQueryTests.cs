@@ -101,7 +101,7 @@ public class ModuleWorkItemQueryTests
         var result = await client.QueryWorkItemsInModuleAsync("Space", "Doc");
 
         result.IsFailed.Should().BeTrue();
-        result.Errors.Single().Message.Should().Contain(ModuleUri).And.Contain("UnresolvableObjectException");
+        result.Errors.Single().Message.Should().Contain("'Space/Doc'").And.Contain(ModuleUri).And.Contain("UnresolvableObjectException");
     }
 
     [Fact]

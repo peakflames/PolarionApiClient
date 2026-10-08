@@ -199,6 +199,16 @@ public class PolarionUriParserTests
         _output.WriteLine($"Actual:   {result}");
     }
 
+    [Fact]
+    public void BuildModuleUri_ShouldFollowExpectedFormat_WithoutRevision()
+    {
+        var result = PolarionUriParser.BuildModuleUri("TestProject", "My Space", "Example IDD");
+
+        result.Should().Be("subterra:data-service:objects:/default/TestProject${Module}{moduleFolder}My Space#Example IDD");
+        PolarionUriParser.BuildModuleUriWithRevision("TestProject", "My Space", "Example IDD", "200000")
+            .Should().Be($"{result}%200000");
+    }
+
     #endregion
 
     #region URI Parsing Consistency Tests
