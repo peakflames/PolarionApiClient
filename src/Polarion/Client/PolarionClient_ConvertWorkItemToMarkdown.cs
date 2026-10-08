@@ -70,7 +70,7 @@ public partial class PolarionClient : IPolarionClient
         );
 
         // Process Polarion's cross-reference spans by replacing them with markdown links to the referenced work items
-        // Pattern matches: <span class="polarion-rte-link" data-type="crossReference" ... data-item-id="MD-145888" ...>...</span>
+        // Pattern matches: <span class="polarion-rte-link" data-type="crossReference" ... data-item-id="WI-123" ...>...</span>
         processedHtml = System.Text.RegularExpressions.Regex.Replace(
             processedHtml,
             @"<span\s+(?:[^>]*?\s+)?class=""polarion-rte-link""(?:\s+[^>]*?)?\s+data-type=""crossReference""(?:\s+[^>]*?)?\s+data-item-id=""([^""]*?)""[^>]*>.*?</span>",

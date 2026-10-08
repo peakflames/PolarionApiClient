@@ -41,7 +41,7 @@ public class PolarionClientTests : IAsyncLifetime
         var workItemId = _config.TestScenarioData.GetWorkItemByIdAsyncWorkItemId;
 
         // Act
-        var result = await _client.GetWorkItemByIdAsync("MD-149588");
+        var result = await _client.GetWorkItemByIdAsync(workItemId);
 
         // Assert
         result.IsSuccess.Should().BeTrue("Work item retrieval should succeed");
