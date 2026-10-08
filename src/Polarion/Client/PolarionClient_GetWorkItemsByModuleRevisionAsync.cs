@@ -30,10 +30,11 @@ public partial class PolarionClient : IPolarionClient
     /// For a baseline, pass the baseline's base revision. Use <see cref="GetModuleWorkItemsAsync"/>
     /// directly to see unresolvable rows.
     ///
-    /// When no rows come back, the module is looked up at <c>{moduleUri}%{revision}</c>. If Polarion
-    /// reports it unresolvable (a mistyped document ID, or a revision before the document existed),
-    /// the result is a failure, "Document not found at revision N". An existing empty document returns
-    /// a successful, empty array.
+    /// A location with no document at that revision (a mistyped document ID, or a revision before the
+    /// document existed) fails, because Polarion raises an unresolvable-object error. As a fallback, if no
+    /// rows come back, the module is looked up at <c>{moduleUri}%{revision}</c>, and an unresolvable
+    /// module gives the failure "Document not found at revision N". An existing empty document returns a
+    /// successful, empty array.
     ///
     /// Behavior change: previously items were re-fetched at the document revision via a baseline
     /// query, which returned wrong values for pinned references and omitted deleted-but-pinned items.

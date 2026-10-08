@@ -8,9 +8,10 @@ public partial class PolarionClient : IPolarionClient
     /// <param name="moduleUri">The module URI (may include revision specifier)</param>
     /// <param name="parentWorkItemUri">Optional parent work item URI to filter children</param>
     /// <param name="deep">Whether to include external/linked items</param>
-    /// <returns>Array of work item URIs. An empty document returns a successful, empty array. When no URIs
-    /// come back and Polarion reports the module as unresolvable (no document at that URI or revision),
-    /// the result is a failure, "Document not found"</returns>
+    /// <returns>Array of work item URIs. An empty document returns a successful, empty array. A URI with no
+    /// document behind it fails, because Polarion raises an unresolvable-object error. As a fallback, if no
+    /// URIs come back and Polarion reports the module as unresolvable, the failure is "Document not
+    /// found"</returns>
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]
     public async Task<Result<string[]>> GetModuleWorkItemUrisAsync(string moduleUri, string? parentWorkItemUri = null, bool deep = true)
     {
