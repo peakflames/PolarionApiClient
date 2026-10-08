@@ -65,7 +65,8 @@ public partial class PolarionClient : IPolarionClient
         var rowsResult = await GetModuleWorkItemsAsync(BuildModuleUri(moduleFolder, documentId), null, true, fieldList);
         if (rowsResult.IsFailed)
         {
-            return Result.Fail<WorkItem[]>(rowsResult.Errors);
+            return Result.Fail<WorkItem[]>(
+                $"Failed to get work items in document '{moduleFolder}/{documentId}': {rowsResult.Errors.First().Message}");
         }
 
         var workItems = rowsResult.Value
@@ -87,5 +88,5 @@ public partial class PolarionClient : IPolarionClient
     /// unresolvable-object error at HEAD and at a revision, so a missing document still fails.
     /// </remarks>
     private string BuildModuleUri(string moduleFolder, string documentId) =>
-        $"subterra:data-service:objects:/default/{_config.ProjectId}${{Module}}{{moduleFolder}}{moduleFolder}#{documentId}";
+        PolarionUriParser.BuildModuleUri(_config.ProjectId, moduleFolder, documentId);
 }
