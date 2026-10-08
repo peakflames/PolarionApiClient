@@ -18,8 +18,6 @@ public class ModuleWorkItemQueryTests
     private static (PolarionClient Client, FakeService Tracker) CreateClient(params WorkItem[] rows)
     {
         var (client, tracker) = FakeClient.Create();
-        tracker.On<getModuleByLocationRequest, getModuleByLocationResponse>(
-            "getModuleByLocationAsync", _ => new getModuleByLocationResponse(new Module { uri = ModuleUri }));
         tracker.On<getModuleWorkItemsRequest, getModuleWorkItemsResponse>(
             "getModuleWorkItemsAsync", _ => new getModuleWorkItemsResponse(rows));
         return (client, tracker);
@@ -42,7 +40,6 @@ public class ModuleWorkItemQueryTests
 
         result.IsSuccess.Should().BeTrue();
         result.Value.Select(w => w.id).Should().Equal("WI-3", "OTHER-1", "WI-1");
-        tracker.RequestsFor<getModuleByLocationRequest>("getModuleByLocationAsync").Single().location.Should().Be("Space/Doc");
         tracker.RequestsFor<getModuleWorkItemsRequest>("getModuleWorkItemsAsync").Single().moduleURI.Should().Be(ModuleUri);
     }
 
@@ -95,43 +92,28 @@ public class ModuleWorkItemQueryTests
     }
 
     [Fact]
-    public async Task QueryWorkItemsInModuleAsync_ModuleLookupFails_Fails()
+    public async Task QueryWorkItemsInModuleAsync_MissingDocument_Fails()
     {
         var (client, tracker) = FakeClient.Create();
-        tracker.On<getModuleByLocationRequest, getModuleByLocationResponse>(
-            "getModuleByLocationAsync", _ => throw new InvalidOperationException("no such document"));
+        tracker.On<getModuleWorkItemsRequest, getModuleWorkItemsResponse>(
+            "getModuleWorkItemsAsync", _ => throw new InvalidOperationException("UnresolvableObjectException"));
 
         var result = await client.QueryWorkItemsInModuleAsync("Space", "Doc");
 
         result.IsFailed.Should().BeTrue();
-        result.Errors.Single().Message.Should().Contain("Space/Doc");
+        result.Errors.Single().Message.Should().Contain(ModuleUri).And.Contain("UnresolvableObjectException");
     }
 
     [Fact]
-    public async Task QueryWorkItemsInModuleAsync_ModuleWithoutUri_Fails()
+    public async Task QueryWorkItemsInModuleAsync_BuildsModuleUriFromFolderAndId_WithoutLookup()
     {
-        var (client, tracker) = FakeClient.Create();
-        tracker.On<getModuleByLocationRequest, getModuleByLocationResponse>(
-            "getModuleByLocationAsync", _ => new getModuleByLocationResponse(new Module()));
+        var (client, tracker) = CreateClient(Row("WI-1", "1"));
 
-        var result = await client.QueryWorkItemsInModuleAsync("Space", "Doc");
+        await client.QueryWorkItemsInModuleAsync("Space Name", "Doc Id - 1");
 
-        result.IsFailed.Should().BeTrue();
-        result.Errors.Single().Message.Should().Contain("has no URI");
-    }
-
-    [Fact]
-    public async Task QueryWorkItemsInModuleAsync_UnresolvableModule_FailsWithoutReadingRows()
-    {
-        var (client, tracker) = FakeClient.Create();
-        tracker.On<getModuleByLocationRequest, getModuleByLocationResponse>(
-            "getModuleByLocationAsync", _ => new getModuleByLocationResponse(new Module { uri = ModuleUri, unresolvable = true }));
-
-        var result = await client.QueryWorkItemsInModuleAsync("Space", "Doc");
-
-        result.IsFailed.Should().BeTrue();
-        result.Errors.Single().Message.Should().Contain("Space/Doc").And.Contain("not found");
-        tracker.Calls.Select(c => c.Method).Should().NotContain("getModuleWorkItemsAsync");
+        tracker.RequestsFor<getModuleWorkItemsRequest>("getModuleWorkItemsAsync").Single().moduleURI
+            .Should().Be("subterra:data-service:objects:/default/TestProject${Module}{moduleFolder}Space Name#Doc Id - 1");
+        tracker.Calls.Select(c => c.Method).Should().NotContain("getModuleByLocationAsync");
     }
 
     #endregion
@@ -149,6 +131,7 @@ public class ModuleWorkItemQueryTests
         result.Value.Select(w => w.WorkItem.id).Should().Equal("WI-9", "WI-2");
         tracker.RequestsFor<getModuleWorkItemsRequest>("getModuleWorkItemsAsync").Single().moduleURI
             .Should().Be($"{ModuleUri}%5000");
+        tracker.Calls.Select(c => c.Method).Should().NotContain("getModuleByLocationAsync");
     }
 
     [Fact]
@@ -200,11 +183,9 @@ public class ModuleWorkItemQueryTests
     }
 
     [Fact]
-    public async Task GetWorkItemsByModuleRevisionAsync_UnresolvableModuleAtHead_StillReadsRevision()
+    public async Task GetWorkItemsByModuleRevisionAsync_BuildsModuleUri_WithoutLookup()
     {
         var (client, tracker) = FakeClient.Create();
-        tracker.On<getModuleByLocationRequest, getModuleByLocationResponse>(
-            "getModuleByLocationAsync", _ => new getModuleByLocationResponse(new Module { uri = ModuleUri, unresolvable = true }));
         tracker.On<getModuleWorkItemsRequest, getModuleWorkItemsResponse>(
             "getModuleWorkItemsAsync", _ => new getModuleWorkItemsResponse([Row("WI-1", "1")]));
 
@@ -214,6 +195,7 @@ public class ModuleWorkItemQueryTests
         result.Value.Select(w => w.WorkItem.id).Should().Equal("WI-1");
         tracker.RequestsFor<getModuleWorkItemsRequest>("getModuleWorkItemsAsync").Single().moduleURI
             .Should().Be($"{ModuleUri}%5000");
+        tracker.Calls.Select(c => c.Method).Should().NotContain("getModuleByLocationAsync");
     }
 
     [Fact]
@@ -233,8 +215,6 @@ public class ModuleWorkItemQueryTests
     public async Task GetWorkItemsByModuleRevisionAsync_ServiceFault_FailsWithMessage()
     {
         var (client, tracker) = FakeClient.Create();
-        tracker.On<getModuleByLocationRequest, getModuleByLocationResponse>(
-            "getModuleByLocationAsync", _ => new getModuleByLocationResponse(new Module { uri = ModuleUri }));
         tracker.On<getModuleWorkItemsRequest, getModuleWorkItemsResponse>(
             "getModuleWorkItemsAsync", _ => throw new InvalidOperationException("revision does not exist"));
 
@@ -287,6 +267,7 @@ public class ModuleWorkItemQueryTests
         result.Value.Single().Revision.Should().Be("5000");
         tracker.RequestsFor<getModuleWorkItemsRequest>("getModuleWorkItemsAsync").Single().moduleURI
             .Should().Be($"{ModuleUri}%5000");
+        tracker.Calls.Select(c => c.Method).Should().NotContain("getModuleByLocationAsync");
     }
 
     #endregion

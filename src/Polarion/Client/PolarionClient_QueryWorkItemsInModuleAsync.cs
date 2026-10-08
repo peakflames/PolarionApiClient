@@ -15,7 +15,7 @@ public partial class PolarionClient : IPolarionClient
     /// </summary>
     /// <remarks>
     /// Algorithm:
-    ///   1. Get the module by location (<c>moduleFolder/documentId</c>) to obtain its URI
+    ///   1. Build the module URI from <c>moduleFolder</c> and <c>documentId</c> (no server round trip)
     ///   2. Call <see cref="GetModuleWorkItemsAsync"/> on that URI
     ///   3. Drop unresolvable rows, then apply the optional <paramref name="itemTypes"/> filter client-side
     ///
@@ -25,8 +25,8 @@ public partial class PolarionClient : IPolarionClient
     ///
     /// Behavior change (previously a SQL query on POLARION.REL_MODULE_WORKITEM): results are always in
     /// document order and <paramref name="sort"/> is ignored; a document with no matching items returns
-    /// a successful, empty array instead of a failure. A location with no document at HEAD (Polarion
-    /// returns an unresolvable module) still fails.
+    /// a successful, empty array instead of a failure. A location with no document at HEAD still fails
+    /// (Polarion raises an unresolvable-object error for the module URI).
     /// </remarks>
     /// <param name="moduleFolder">The module folder path</param>
     /// <param name="documentId">The document ID</param>
@@ -62,13 +62,7 @@ public partial class PolarionClient : IPolarionClient
             fieldList.Add("type");
         }
 
-        var moduleUriResult = await GetModuleUriByLocationAsync(moduleFolder, documentId, allowUnresolvable: false);
-        if (moduleUriResult.IsFailed)
-        {
-            return Result.Fail<WorkItem[]>(moduleUriResult.Errors);
-        }
-
-        var rowsResult = await GetModuleWorkItemsAsync(moduleUriResult.Value, null, true, fieldList);
+        var rowsResult = await GetModuleWorkItemsAsync(BuildModuleUri(moduleFolder, documentId), null, true, fieldList);
         if (rowsResult.IsFailed)
         {
             return Result.Fail<WorkItem[]>(rowsResult.Errors);
@@ -84,39 +78,14 @@ public partial class PolarionClient : IPolarionClient
     }
 
     /// <summary>
-    /// Resolves <c>moduleFolder/documentId</c> to the module URI.
+    /// Builds the module URI for <c>moduleFolder/documentId</c> without a server round trip.
     /// </summary>
-    /// <param name="moduleFolder">The module folder path</param>
-    /// <param name="documentId">The document ID</param>
-    /// <param name="allowUnresolvable">
-    /// Polarion may answer a lookup for a location with no document at HEAD with an unresolvable module
-    /// that still carries a URI. Pass false for HEAD reads, so a missing document fails instead of
-    /// reading as empty. Pass true for historical reads, where a document deleted since can still be
-    /// read at an older revision through that URI.
-    /// </param>
-    [RequiresUnreferencedCode("Uses WCF services which require reflection")]
-    private async Task<Result<string>> GetModuleUriByLocationAsync(string moduleFolder, string documentId, bool allowUnresolvable)
-    {
-        var location = $"{moduleFolder}/{documentId}";
-        var moduleResult = await GetModuleByLocationAsync(location);
-
-        if (moduleResult.IsFailed)
-        {
-            return Result.Fail<string>(
-                $"Failed to get module at location '{location}': {moduleResult.Errors.First().Message}");
-        }
-
-        var module = moduleResult.Value;
-        if (string.IsNullOrEmpty(module?.uri))
-        {
-            return Result.Fail<string>($"Module at location '{location}' has no URI");
-        }
-
-        if (module.unresolvable && !allowUnresolvable)
-        {
-            return Result.Fail<string>($"Module at location '{location}' was not found (unresolvable)");
-        }
-
-        return Result.Ok(module.uri);
-    }
+    /// <remarks>
+    /// <c>getModuleByLocation</c> returns the whole <see cref="Module"/>, which for a branched document
+    /// embeds the parent document at the branch revision (megabytes). The URI has a fixed form, so it is
+    /// built here instead. A location with no document makes <c>getModuleWorkItems</c> fail with an
+    /// unresolvable-object error at HEAD and at a revision, so a missing document still fails.
+    /// </remarks>
+    private string BuildModuleUri(string moduleFolder, string documentId) =>
+        $"subterra:data-service:objects:/default/{_config.ProjectId}${{Module}}{{moduleFolder}}{moduleFolder}#{documentId}";
 }
