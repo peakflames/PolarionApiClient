@@ -353,9 +353,9 @@ Gets the work items of a document at HEAD, in document order.
 - `sort` - Ignored. Kept for source compatibility; results are always in document order
 - `fields` - Optional list of fields to retrieve. Defaults to `id`, `type`, `title`, `description`, `status`, `outlineNumber`
 
-**Returns:** A `Result<WorkItem[]>` with the document's work items in document order. A document with no (matching) items returns a successful, empty array. A location with no document (Polarion returns an unresolvable module) returns a failure.
+**Returns:** A `Result<WorkItem[]>` with the document's work items in document order. A document with no (matching) items returns a successful, empty array. A location with no document at HEAD returns a failure (Polarion raises an unresolvable-object error for the module URI).
 
-**Remarks:** Resolves the document with `GetModuleByLocationAsync`, then calls `GetModuleWorkItemsAsync`. Pinned references are returned with their pinned values and deleted-but-pinned items are included. Unresolvable rows are dropped; use `GetModuleWorkItemsAsync` to see them.
+**Remarks:** Builds the module URI from the folder and document ID (no `getModuleByLocation` call), then calls `GetModuleWorkItemsAsync`. Pinned references are returned with their pinned values and deleted-but-pinned items are included. Unresolvable rows are dropped; use `GetModuleWorkItemsAsync` to see them.
 
 **Behavior change:** this method previously ran a SQL query against `POLARION.REL_MODULE_WORKITEM`. That returned HEAD values for pinned references, missed deleted-but-pinned items, honoured `sort`, and failed with "SQL query returned no results" for an empty document.
 

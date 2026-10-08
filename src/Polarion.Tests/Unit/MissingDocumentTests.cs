@@ -21,11 +21,9 @@ public class MissingDocumentTests
             "getModuleByUriAsync", req => new getModuleByUriResponse(new Module { uri = req.uri, unresolvable = unresolvable }));
 
     private static (PolarionClient Client, FakeService Tracker) RevisionClient(
-        WorkItem[] rows, bool unresolvableAtHead, bool? unresolvableAtRevision)
+        WorkItem[] rows, bool? unresolvableAtRevision)
     {
         var (client, tracker) = FakeClient.Create();
-        tracker.On<getModuleByLocationRequest, getModuleByLocationResponse>(
-            "getModuleByLocationAsync", _ => new getModuleByLocationResponse(new Module { uri = ModuleUri, unresolvable = unresolvableAtHead }));
         tracker.On<getModuleWorkItemsRequest, getModuleWorkItemsResponse>(
             "getModuleWorkItemsAsync", _ => new getModuleWorkItemsResponse(rows));
         if (unresolvableAtRevision is { } flag)
@@ -55,7 +53,7 @@ public class MissingDocumentTests
     public async Task GetWorkItemsByModuleRevisionAsync_NoRows_UnresolvableModule_Fails()
     {
         // A mistyped document ID: unresolvable at HEAD and at the revision, and no rows.
-        var (client, tracker) = RevisionClient([], unresolvableAtHead: true, unresolvableAtRevision: true);
+        var (client, tracker) = RevisionClient([], unresolvableAtRevision: true);
 
         var result = await client.GetWorkItemsByModuleRevisionAsync("Space", "Doc", "5000");
 
@@ -68,7 +66,7 @@ public class MissingDocumentTests
     public async Task GetWorkItemsByModuleRevisionAsync_NoRows_RevisionBeforeDocumentExisted_Fails()
     {
         // The document exists at HEAD but not at the requested revision.
-        var (client, _) = RevisionClient([], unresolvableAtHead: false, unresolvableAtRevision: true);
+        var (client, _) = RevisionClient([], unresolvableAtRevision: true);
 
         var result = await client.GetWorkItemsByModuleRevisionAsync("Space", "Doc", "5000");
 
@@ -79,7 +77,7 @@ public class MissingDocumentTests
     [Fact]
     public async Task GetWorkItemsByModuleRevisionAsync_NoRows_ResolvableModule_ReturnsEmptySuccess()
     {
-        var (client, _) = RevisionClient([], unresolvableAtHead: false, unresolvableAtRevision: false);
+        var (client, _) = RevisionClient([], unresolvableAtRevision: false);
 
         var result = await client.GetWorkItemsByModuleRevisionAsync("Space", "Doc", "5000");
 
@@ -90,7 +88,7 @@ public class MissingDocumentTests
     [Fact]
     public async Task GetWorkItemsByModuleRevisionAsync_NoRows_LookupFails_Fails()
     {
-        var (client, tracker) = RevisionClient([], unresolvableAtHead: false, unresolvableAtRevision: null);
+        var (client, tracker) = RevisionClient([], unresolvableAtRevision: null);
         tracker.On<getModuleByUriRequest, getModuleByUriResponse>(
             "getModuleByUriAsync", _ => throw new InvalidOperationException("lookup rejected"));
 
@@ -103,7 +101,7 @@ public class MissingDocumentTests
     [Fact]
     public async Task GetWorkItemsByModuleRevisionAsync_WithRows_DoesNotLookUpModule()
     {
-        var (client, tracker) = RevisionClient([Row("WI-1", "1")], unresolvableAtHead: false, unresolvableAtRevision: null);
+        var (client, tracker) = RevisionClient([Row("WI-1", "1")], unresolvableAtRevision: null);
 
         var result = await client.GetWorkItemsByModuleRevisionAsync("Space", "Doc", "5000");
 

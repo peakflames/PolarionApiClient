@@ -17,7 +17,7 @@ public partial class PolarionClient : IPolarionClient
     /// </summary>
     /// <remarks>
     /// Algorithm:
-    ///   1. Get the module by location to obtain its URI
+    ///   1. Build the module URI from <c>moduleFolder</c> and <c>documentId</c> (no server round trip)
     ///   2. Call <see cref="GetModuleWorkItemsAsync"/> on <c>{moduleUri}%{revision}</c>
     ///   3. Drop unresolvable rows and wrap the rest as <see cref="WorkItemWithRevisionInfo"/>
     ///
@@ -75,15 +75,11 @@ public partial class PolarionClient : IPolarionClient
             return Result.Fail($"Revision must be a revision number (digits only): '{revision}'");
         }
 
-        // Step 1: Get module by location to obtain its real URI
-        var moduleUriResult = await GetModuleUriByLocationAsync(moduleFolder, documentId, allowUnresolvable: true);
-        if (moduleUriResult.IsFailed)
-        {
-            return Result.Fail<WorkItemWithRevisionInfo[]>(moduleUriResult.Errors);
-        }
+        // Step 1: Build the module URI
+        var moduleUri = BuildModuleUri(moduleFolder, documentId);
 
         // Step 2: Read the document rows at the requested revision
-        var revisionUri = $"{moduleUriResult.Value}%{revision}";
+        var revisionUri = $"{moduleUri}%{revision}";
         var rowsResult = await GetModuleWorkItemsAsync(revisionUri, null, true, fields);
         if (rowsResult.IsFailed)
         {
