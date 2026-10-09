@@ -1,6 +1,6 @@
 ## 0.4.1
 
-- TBD
+- Fix: GetWorkItemsByModuleAsync, GetHierarchicalWorkItemsByModuleAsync, and the Markdown export methods fail with "Document not found" again when no module matches the title or the module does not exist at the requested revision, instead of returning an empty success as 0.4.0 did (#14)
 
 ## 0.4.0
 
