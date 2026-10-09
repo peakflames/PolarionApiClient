@@ -23,6 +23,12 @@ The Polarion API Client is a .NET library for interacting with Polarion ALM (App
     - [GetModuleByLocationAsync](#getmodulebylocationasync)
     - [GetModuleByUriAsync](#getmodulebyuriasync)
     - [GetModuleWorkItemUrisAsync](#getmoduleworkitemurisasync)
+    - [GetModuleWorkItemsAsync](#getmoduleworkitemsasync)
+    - [QueryWorkItemsInModuleAsync](#queryworkitemsinmoduleasync)
+    - [GetWorkItemsByModuleRevisionAsync](#getworkitemsbymodulerevisionasync)
+  - [Baseline Operations](#baseline-operations)
+    - [QueryBaselinesAsync](#querybaselinesasync)
+    - [QueryModuleUrisInBaselineAsync](#querymoduleurisinbaselineasync)
   - [Space Operations](#space-operations)
     - [GetSpacesAsync](#getspacesasync)
   - [User Operations](#user-operations)
@@ -107,7 +113,7 @@ Queries for work items matching the specified criteria. Returns only the request
 - `field_list` - List of fields to retrieve for each search result. If null, defaults to ["id"]. Use syntax like `['customFields.FieldName']` for custom fields
 - `includeAllProjects` - When true, omits the automatic project.id filter so results span all projects. Default is false.
 
-**Returns:** A `Result<WorkItem[]>` containing matching work items or error details
+**Returns:** A `Result<WorkItem[]>` containing matching work items or error details. A query that matches nothing returns a successful, empty array. A query Polarion rejects (SOAP fault, e.g. invalid SQL) returns a failure carrying the server message.
 
 **Remarks:** By default, automatically appends the project ID to the query. Set `includeAllProjects: true` to search across projects (e.g. for cross-project document references). For custom field retrieval, use the syntax: `field_list=['customFields.SomeField']`
 
@@ -133,7 +139,7 @@ Queries for work items in a specific baseline revision. Returns only the request
 - `field_list` - List of fields to retrieve for each search result. If null, defaults to ["id"]. Use syntax like `['customFields.FieldName']` for custom fields
 - `includeAllProjects` - When true, omits the automatic project.id filter so results span all projects. Default is false.
 
-**Returns:** A `Result<WorkItem[]>` containing matching work items or error details
+**Returns:** A `Result<WorkItem[]>` containing matching work items or error details. A query that matches nothing returns a successful, empty array. A query Polarion rejects (SOAP fault) returns a failure carrying the server message.
 
 **Throws:** `PolarionClientException` if the operation fails
 
@@ -161,6 +167,8 @@ Fetches work items from a specific module based on the specified criteria.
 
 **Remarks:** Filters out work items that don't have an outline number (i.e., not part of the module structure)
 
+**Deprecated:** marked `[Obsolete]`. The `document.title` query only matches items owned by the document, so referenced and pinned items are omitted and results are not in document order. Use `GetModuleWorkItemsAsync` or `QueryWorkItemsInModuleAsync` instead.
+
 ---
 
 ### GetHierarchicalWorkItemsByModuleAsync
@@ -186,6 +194,8 @@ Fetches work items from a module and organizes them into a hierarchical structur
 
 **Remarks:** Organizes items by parent heading and child items. Items with hyphens in their outline numbers are treated as children of the parent heading.
 
+**Owned items only:** built on `GetWorkItemsByModuleAsync` (deprecated), so referenced and pinned items are omitted and pinned values are not used. `ExportModuleToMarkdownAsync` and `ExportModuleToMarkdownGroupedByHeadingAsync` share this limit. It is not marked `[Obsolete]` because those export methods depend on it. For the complete document content in document order, use `GetModuleWorkItemsAsync` or `QueryWorkItemsInModuleAsync`.
+
 ---
 
 ## Module Operations
@@ -204,6 +214,8 @@ Retrieves all modules (documents) in a specific space.
 **Returns:** A `Result<ModuleThin[]>` containing the modules sorted by title or error details
 
 **Throws:** `PolarionClientException` if the operation fails
+
+**Remarks:** `spaceName` is escaped into a SQL string literal by doubling single quotes. This assumes the Polarion database runs with `standard_conforming_strings=on` (the PostgreSQL default).
 
 ---
 
@@ -224,6 +236,8 @@ Gets modules in the project that match the specified criteria.
 **Returns:** A `Result<ModuleThin[]>` containing the filtered modules sorted by title or error details
 
 **Throws:** `PolarionClientException` if the operation fails
+
+**Remarks:** Both filters match literally: `%`, `_` and `\` are escaped in the SQL `LIKE` pattern (`ESCAPE '\'`) and single quotes are doubled. This assumes the Polarion database runs with `standard_conforming_strings=on` (the PostgreSQL default).
 
 ---
 
@@ -277,9 +291,150 @@ Gets URIs of all work items in a module at the specified revision.
 - `parentWorkItemUri` - Optional parent work item URI to filter children (default: null)
 - `deep` - Whether to include external/linked items (default: true)
 
-**Returns:** A `Result<string[]>` containing an array of work item URIs or error details
+**Returns:** A `Result<string[]>` containing an array of work item URIs or error details. An empty document returns a successful, empty array (previously a failure, "No work item URIs returned"). A URI with no document behind it fails, because Polarion raises an unresolvable-object error. As a fallback, if no URIs come back, the module is looked up with `getModuleByUri` on the same URI, and an unresolvable module gives the failure "Document not found".
 
 **Remarks:** This is useful for retrieving work items from a module at a specific historical revision. The module URI can include a revision suffix (e.g., `%200000`) to get work items as they existed at that point in time.
+
+---
+
+### GetModuleWorkItemsAsync
+
+```csharp
+public async Task<Result<ModuleWorkItem[]>> GetModuleWorkItemsAsync(
+    string moduleUri,
+    string? parentWorkItemUri = null,
+    bool deep = true,
+    List<string>? fields = null)
+```
+
+Gets the work items of a document (module) in document order, including items referenced from other documents or projects. Wraps the Polarion SOAP `getModuleWorkItems` call.
+
+**Parameters:**
+- `moduleUri` - The module URI. Append `%revision` to read the document as it was at that revision (for a baseline, use the baseline's base revision)
+- `parentWorkItemUri` - Optional parent work item URI; when set, only its children are returned (default: null)
+- `deep` - When true, returns the whole tree below the parent (or the whole document); when false, only direct children (default: true)
+- `fields` - Optional list of fields to retrieve. Defaults to `id`, `type`, `title`, `description`, `status`, `outlineNumber`, `author`, `created`, `updated`
+
+**Returns:** A `Result<ModuleWorkItem[]>` with one entry per document row, in document order. An empty document returns a successful, empty array. A service error returns a failure with the server message, and that includes a module URI with no document behind it (Polarion raises an unresolvable-object error).
+
+`ModuleWorkItem` properties:
+- `WorkItem` - The work item with the requested fields. For pinned references the values are those at the pinned revision
+- `Uri` - The work item URI as returned, including any `%revision` suffix
+- `Id` - The work item ID (from the data, or parsed from the URI)
+- `Revision` - The pinned revision parsed from the URI; empty when the row is not pinned
+- `IsPinned` - True when `Revision` is set. At HEAD, Polarion suffixes only pinned rows, so any `%revision` suffix marks a pin. In a revision read (`moduleUri%revision`), Polarion suffixes every row, unpinned rows with the requested revision, so a row is pinned only when its suffix differs from the requested revision. Limit: in a revision read, a reference pinned to exactly the requested revision looks unpinned (its field values are still correct)
+- `IsUnresolvable` - True when Polarion marks the row unresolvable (e.g. a live reference to a deleted item). Such rows carry no field values
+
+**Remarks:**
+- Pinned references are returned with their pinned values, including items deleted after they were pinned. SQL/Lucene based queries return HEAD (or the document revision) values and miss deleted-but-pinned items.
+- Keep the returned order. Do not re-sort by `outlineNumber`: referenced items carry the outline number of their home document.
+- Unresolvable rows are returned so callers can report them; skip them if only resolvable content is wanted.
+- This is the only method that exposes unresolvable rows. `QueryWorkItemsInModuleAsync` and `GetWorkItemsByModuleRevisionAsync` are built on it and drop them.
+
+---
+
+### QueryWorkItemsInModuleAsync
+
+```csharp
+public async Task<Result<WorkItem[]>> QueryWorkItemsInModuleAsync(
+    string moduleFolder,
+    string documentId,
+    List<string>? itemTypes = null,
+    string sort = "outlineNumber",
+    List<string>? fields = null)
+```
+
+Gets the work items of a document at HEAD, in document order.
+
+**Parameters:**
+- `moduleFolder` - The module folder (space) path
+- `documentId` - The document ID
+- `itemTypes` - Optional list of work item type IDs to keep (filtered client-side; `type` is added to `fields` automatically)
+- `sort` - Ignored. Kept for source compatibility; results are always in document order
+- `fields` - Optional list of fields to retrieve. Defaults to `id`, `type`, `title`, `description`, `status`, `outlineNumber`
+
+**Returns:** A `Result<WorkItem[]>` with the document's work items in document order. A document with no (matching) items returns a successful, empty array. A location with no document at HEAD returns a failure (Polarion raises an unresolvable-object error for the module URI).
+
+**Remarks:** Builds the module URI from the folder and document ID (no `getModuleByLocation` call), then calls `GetModuleWorkItemsAsync`. Pinned references are returned with their pinned values and deleted-but-pinned items are included. Unresolvable rows are dropped; use `GetModuleWorkItemsAsync` to see them.
+
+**Behavior change:** this method previously ran a SQL query against `POLARION.REL_MODULE_WORKITEM`. That returned HEAD values for pinned references, missed deleted-but-pinned items, honoured `sort`, and failed with "SQL query returned no results" for an empty document.
+
+---
+
+### GetWorkItemsByModuleRevisionAsync
+
+```csharp
+public async Task<Result<WorkItemWithRevisionInfo[]>> GetWorkItemsByModuleRevisionAsync(
+    string moduleFolder,
+    string documentId,
+    string revision,
+    List<string>? fields = null)
+```
+
+Gets the work items of a document as it was at a historical revision, in document order.
+
+**Parameters:**
+- `moduleFolder` - The module folder (space) path
+- `documentId` - The document ID
+- `revision` - The revision number. For a baseline, pass the baseline's base revision (see `QueryBaselinesAsync`). Surrounding whitespace is trimmed; any other non-digit character (e.g. `1%2`) returns a failure without calling the server
+- `fields` - Optional list of fields to retrieve. Defaults to `id`, `type`, `title`, `description`, `status`, `outlineNumber`, `author`, `created`, `updated`
+
+**Returns:** A `Result<WorkItemWithRevisionInfo[]>` in document order:
+- `WorkItem` - The item with the values it had in the document at that revision
+- `Revision` - The item's pinned revision for pinned references, otherwise `revision`
+- `SourceUri` - The item URI exactly as Polarion returned it. In a revision read every row carries a `%revision` suffix: the pin revision for pinned references, `revision` for the rest
+- `IsHistorical` - Always true
+- `HeadRevision` - Not populated
+
+**Remarks:** Calls `GetModuleWorkItemsAsync` with `{moduleUri}%{revision}`. Unresolvable rows are dropped. A location with no document at that revision fails, because Polarion raises an unresolvable-object error. That covers a mistyped document ID and a revision before the document existed. As a fallback, if no rows come back, the module is looked up at `{moduleUri}%{revision}`, and an unresolvable module gives the failure "Document not found at revision N". An existing empty document returns a successful, empty array.
+
+**Behavior change:** this method previously re-fetched items at the document revision via a baseline query. That returned wrong values for pinned references, omitted deleted-but-pinned items, and ordered results by ID.
+
+---
+
+## Baseline Operations
+
+### QueryBaselinesAsync
+
+```csharp
+public async Task<Result<Baseline[]>> QueryBaselinesAsync(
+    string query,
+    string sort = "baseRevision",
+    bool includeAllProjects = false)
+```
+
+Queries baselines (project and document baselines) with a Lucene query, scoped to the configured project by default. Wraps the Polarion SOAP `queryBaselines` call.
+
+**Parameters:**
+- `query` - Lucene query over baselines, passed to Polarion unchanged
+- `sort` - Sort field (default: `baseRevision`)
+- `includeAllProjects` - When `false` (default), only baselines taken on the configured project or one of its documents are returned. When `true`, baselines of every project are returned
+
+**Returns:** A `Result<Baseline[]>` with the matching baselines (`id`, `name`, `baseRevision`, `baseObjectURI`, ...). A query that matches nothing returns a successful, empty array.
+
+**Remarks:** Baseline IDs and names are not unique across projects, so an unscoped query can match baselines in several projects. Scoping filters the results on `baseObjectURI` (it must start with `subterra:data-service:objects:/default/{ProjectId}$`); it does not change the Lucene query. The match is case-sensitive: if the configured `ProjectId` differs in case from the project ID in Polarion, every baseline is filtered out and the result is an empty success. `baseObjectURI` is the project (project baseline) or the module (document baseline) the baseline was taken on. To read a document as it was at a baseline, call `GetModuleWorkItemsAsync($"{moduleUri}%{baseRevision}")` or `GetWorkItemsByModuleRevisionAsync(folder, docId, baseRevision)`.
+
+---
+
+### QueryModuleUrisInBaselineAsync
+
+```csharp
+public async Task<Result<string[]>> QueryModuleUrisInBaselineAsync(
+    string baselineRevision,
+    string query,
+    string sort = "uri",
+    int limit = -1)
+```
+
+Queries the URIs of documents (modules) as they existed at a baseline revision. Wraps the Polarion SOAP `queryModuleUrisInBaseline` call.
+
+**Parameters:**
+- `baselineRevision` - The baseline's base revision
+- `query` - Lucene query over modules, passed to Polarion unchanged (not scoped to the configured project)
+- `sort` - Sort field (default: `uri`)
+- `limit` - Maximum number of results (default: -1 = all)
+
+**Returns:** A `Result<string[]>` with the module URIs. A query that matches nothing returns a successful, empty array.
 
 ---
 
@@ -357,6 +512,8 @@ Exports Polarion work items from a module to Markdown format asynchronously.
 
 **Returns:** A `Result<StringBuilder>` containing the Markdown content or error details
 
+**Remarks:** Owned items only. Built on `GetHierarchicalWorkItemsByModuleAsync`, so referenced and pinned items are omitted from the export.
+
 ---
 
 ### ExportModuleToMarkdownGroupedByHeadingAsync
@@ -385,6 +542,8 @@ Exports Polarion work items grouped by heading level to Markdown format asynchro
 - `revision` - Optional revision identifier. If null, exports the latest revision
 
 **Returns:** A `Result<SortedDictionary<string, StringBuilder>>` containing heading-grouped Markdown content or error details
+
+**Remarks:** Owned items only. Built on `GetHierarchicalWorkItemsByModuleAsync`, so referenced and pinned items are omitted from the export.
 
 ---
 
@@ -513,6 +672,13 @@ Configuration record for initializing the Polarion client.
 - `Password` - The password for authentication
 - `ProjectId` - The ID of the Polarion project to work with
 - `TimeoutSeconds` - The timeout in seconds for WCF service calls (default: 30)
+
+**Optional properties (set with an object initializer or `with`):**
+- `MaxReceivedMessageSize` (`int?`, default `null`) - Cap, in bytes, on the size of a single SOAP response. `null` means no cap (`int.MaxValue`), which large projects need. Set a lower value to bound the memory one call can use; a larger response then fails with a quota-exceeded error. A value of zero or less makes `CreateAsync` return a failure.
+
+```csharp
+var capped = config with { MaxReceivedMessageSize = 50 * 1024 * 1024 }; // 50 MB
+```
 
 ---
 
