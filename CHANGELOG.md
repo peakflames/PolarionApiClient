@@ -1,3 +1,7 @@
+## 0.4.1
+
+- Fix: GetWorkItemsByModuleAsync, GetHierarchicalWorkItemsByModuleAsync, and the Markdown export methods fail with "Document not found" again when no module matches the title or the module does not exist at the requested revision, instead of returning an empty success as 0.4.0 did (#14)
+
 ## 0.4.0
 
 - **Breaking Change**: QueryWorkItemsInModuleAsync and GetWorkItemsByModuleRevisionAsync read via getModuleWorkItems (document order with sort ignored, pinned values, deleted-but-pinned items included, itemTypes filtered client-side, empty document returns an empty result, missing document fails), IPolarionClient gains new members, and GetWorkItemsByModuleAsync is [Obsolete] (#12)
