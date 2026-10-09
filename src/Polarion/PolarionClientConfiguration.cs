@@ -19,5 +19,16 @@ namespace Polarion
             ProjectId = projectId;
             TimeoutSeconds = timeoutSeconds;
         }
+
+        /// <summary>
+        /// Optional cap, in bytes, on the size of a single SOAP response.
+        /// </summary>
+        /// <remarks>
+        /// Null (the default) means no cap: the transport accepts responses up to <see cref="int.MaxValue"/>
+        /// bytes, which large projects need. Set a lower value to bound the memory a single call can use;
+        /// a response larger than the cap fails with a WCF quota-exceeded error. When set, the value must
+        /// be greater than zero, otherwise <see cref="PolarionClient.CreateAsync"/> returns a failure.
+        /// </remarks>
+        public int? MaxReceivedMessageSize { get; set; }
     }
 }

@@ -2,25 +2,24 @@ namespace Polarion;
 
 public partial class PolarionClient : IPolarionClient
 {
-    //
-    // Summary:
-    //     Fetches work items from Polarion based on specified criteria.
-    //
-    // Parameters:
-    //   polarionClient:
-    //     The client used to communicate with Polarion.
-    //
-    //   moduleTitle:
-    //     The title of the module to fetch data from.
-    //
-    //   filter:
-    //     The filter criteria for work items.
-    //
-    //   moduleRevision:
-    //     Optional revision identifier. If null, fetches from the latest revision.
-    //
-    // Returns:
-    //     A Result containing an array of WorkItems if successful.
+    internal const string GetWorkItemsByModuleObsoleteMessage =
+        "Returns only work items owned by the document; referenced and pinned items are omitted. " +
+        "Use GetModuleWorkItemsAsync or QueryWorkItemsInModuleAsync.";
+
+    /// <summary>
+    /// Fetches the work items owned by a module (document), found by title, using a Lucene query.
+    /// </summary>
+    /// <param name="moduleTitle">The title of the module to fetch data from</param>
+    /// <param name="filter">The filter criteria for work items</param>
+    /// <param name="moduleRevision">Optional baseline revision. If null, fetches from HEAD</param>
+    /// <returns>A Result containing the owned work items that have an outline number</returns>
+    /// <remarks>
+    /// Deprecated: the <c>document.title</c> Lucene query only matches items owned by the document, so
+    /// referenced and pinned items are omitted, and results follow <see cref="PolarionFilter.Order"/>
+    /// rather than document order. Use <see cref="GetModuleWorkItemsAsync"/> or
+    /// <see cref="QueryWorkItemsInModuleAsync"/> instead.
+    /// </remarks>
+    [Obsolete(GetWorkItemsByModuleObsoleteMessage)]
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]
     public async Task<Result<WorkItem[]>> GetWorkItemsByModuleAsync(string moduleTitle, PolarionFilter filter, string? moduleRevision = null)
     {

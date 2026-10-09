@@ -120,7 +120,7 @@ public class Program
             if (client.IsSuccess)
             {
                 var result = await client.Value.ExportModuleToMarkdownAsync(
-                    "MD", "TestModule", PolarionFilter.Create("type:requirement", true, true, [], true), []);
+                    "WI", "TestModule", PolarionFilter.Create("type:requirement", true, true, [], true), []);
                 Console.WriteLine($"ExportModuleToMarkdownAsync completed with status: {(result.IsSuccess ? "Success" : "Failure")}");
             }
         }

@@ -28,7 +28,7 @@ public partial class PolarionClient : IPolarionClient
             }
              ;
 
-            var revisionIds = revisionsResult.getRevisionsReturn;
+            var revisionIds = revisionsResult.getRevisionsReturn ?? [];
 
             var workItemRevisions = new Dictionary<string, WorkItem>();
 
