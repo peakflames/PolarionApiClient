@@ -167,6 +167,8 @@ Fetches work items from a specific module based on the specified criteria.
 
 **Remarks:** Filters out work items that don't have an outline number (i.e., not part of the module structure)
 
+**No matches:** a query that matches nothing is a successful, empty result when the module exists. When no module title contains `moduleTitle` (matched case-insensitively, as the query does), or the module does not exist at `moduleRevision`, the call fails with `Document not found`. `GetHierarchicalWorkItemsByModuleAsync` and the Markdown export methods inherit this.
+
 **Deprecated:** marked `[Obsolete]`. The `document.title` query only matches items owned by the document, so referenced and pinned items are omitted and results are not in document order. Use `GetModuleWorkItemsAsync` or `QueryWorkItemsInModuleAsync` instead.
 
 ---

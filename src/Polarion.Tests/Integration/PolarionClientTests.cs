@@ -314,6 +314,48 @@ public class PolarionClientTests : IAsyncLifetime
     }
 
     [Fact]
+    public async Task GetWorkItemsByModuleAsync_NonExistentModule_Fails()
+    {
+        // A zero-row query is an empty success only when the module exists; an unknown title fails.
+        var filter = PolarionFilter.Create(null, true, true, [], true);
+
+#pragma warning disable CS0618 // Exercises the deprecated method on purpose
+        var latest = await _client.GetWorkItemsByModuleAsync("No Such Module Title 7f3a9c", filter);
+        var atRevision = await _client.GetWorkItemsByModuleAsync("No Such Module Title 7f3a9c", filter, "1234");
+#pragma warning restore CS0618
+
+        latest.IsFailed.Should().BeTrue();
+        latest.Errors.First().Message.Should().Contain("Document not found");
+        atRevision.IsFailed.Should().BeTrue();
+        atRevision.Errors.First().Message.Should().Contain("Document not found");
+    }
+
+    [Fact]
+    public async Task GetWorkItemsByModuleAsync_ExistingModuleWithNoMatches_ReturnsEmptySuccess()
+    {
+        // A module that exists but whose filter matches nothing is an empty result, not a failure.
+        var filter = new PolarionFilter("type:NonExistentType", "id", ["id"]);
+        var moduleTitle = _config.TestScenarioData.GetWorktemsByModuleModuleTitle;
+
+#pragma warning disable CS0618 // Exercises the deprecated method on purpose
+        var result = await _client.GetWorkItemsByModuleAsync(moduleTitle, filter);
+#pragma warning restore CS0618
+
+        result.IsSuccess.Should().BeTrue();
+        result.Value.Should().BeEmpty();
+    }
+
+    [Fact]
+    public async Task ExportModuleToMarkdownAsync_NonExistentModule_Fails()
+    {
+        var filter = PolarionFilter.Create(null, true, true, [], true);
+
+        var result = await _client.ExportModuleToMarkdownAsync("MD", "No Such Module Title 7f3a9c", filter, []);
+
+        result.IsFailed.Should().BeTrue();
+    }
+
+    [Fact]
     public async Task GetHierarchicalWorkItemsByModuleAsync_ShouldReturnExpectedResults()
     {
         // Arrange
