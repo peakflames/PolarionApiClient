@@ -1,3 +1,7 @@
+## 0.4.1
+
+- TBD
+
 ## 0.4.0
 
 - **Breaking Change**: QueryWorkItemsInModuleAsync and GetWorkItemsByModuleRevisionAsync read via getModuleWorkItems (document order with sort ignored, pinned values, deleted-but-pinned items included, itemTypes filtered client-side, empty document returns an empty result, missing document fails), IPolarionClient gains new members, and GetWorkItemsByModuleAsync is [Obsolete] (#12)
