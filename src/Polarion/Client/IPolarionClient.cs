@@ -27,6 +27,7 @@ public interface IPolarionClient
     Task<Result<Module>> GetModuleByUriAsync(string uri);
 
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]
+    [Obsolete(PolarionClient.GetWorkItemsByModuleObsoleteMessage)]
     Task<Result<WorkItem[]>> GetWorkItemsByModuleAsync(string moduleTitle, PolarionFilter filter, string? moduleRevision = null);
 
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]
@@ -62,9 +63,45 @@ public interface IPolarionClient
     /// <param name="moduleUri">The module URI (may include revision specifier)</param>
     /// <param name="parentWorkItemUri">Optional parent work item URI to filter children</param>
     /// <param name="deep">Whether to include external/linked items</param>
-    /// <returns>Array of work item URIs</returns>
+    /// <returns>Array of work item URIs; empty for an empty document. A failure for a URI with no document
+    /// (Polarion raises an unresolvable-object error; as a fallback, "Document not found" when no URIs come
+    /// back and the module is unresolvable)</returns>
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]
     Task<Result<string[]>> GetModuleWorkItemUrisAsync(string moduleUri, string? parentWorkItemUri = null, bool deep = true);
+
+    /// <summary>
+    /// Gets the work items of a document (module) in document order, including referenced items.
+    /// </summary>
+    /// <param name="moduleUri">The module URI, optionally with a revision suffix (<c>moduleUri%revision</c>)</param>
+    /// <param name="parentWorkItemUri">Optional parent work item URI; when set, only its children are returned</param>
+    /// <param name="deep">When true (default), returns the whole tree; when false, only direct children</param>
+    /// <param name="fields">Optional list of fields to retrieve</param>
+    /// <returns>One row per document entry, in document order; pinned revisions and unresolvable rows are exposed</returns>
+    [RequiresUnreferencedCode("Uses WCF services which require reflection")]
+    Task<Result<ModuleWorkItem[]>> GetModuleWorkItemsAsync(string moduleUri, string? parentWorkItemUri = null, bool deep = true, List<string>? fields = null);
+
+    /// <summary>
+    /// Queries baselines (project and document baselines) with a Lucene query, scoped to the
+    /// configured project by default.
+    /// </summary>
+    /// <param name="query">Lucene query, passed unchanged</param>
+    /// <param name="sort">Sort field (default: baseRevision)</param>
+    /// <param name="includeAllProjects">When false (default), only baselines whose baseObjectURI belongs to
+    /// the configured project are returned; when true, baselines of every project are returned</param>
+    /// <returns>The matching baselines; empty when nothing matches</returns>
+    [RequiresUnreferencedCode("Uses WCF services which require reflection")]
+    Task<Result<Baseline[]>> QueryBaselinesAsync(string query, string sort = "baseRevision", bool includeAllProjects = false);
+
+    /// <summary>
+    /// Queries the URIs of documents (modules) as they existed at a baseline revision.
+    /// </summary>
+    /// <param name="baselineRevision">The baseline's base revision</param>
+    /// <param name="query">Lucene query over modules, passed unchanged</param>
+    /// <param name="sort">Sort field (default: uri)</param>
+    /// <param name="limit">Maximum number of results (-1 = all)</param>
+    /// <returns>The module URIs; empty when nothing matches</returns>
+    [RequiresUnreferencedCode("Uses WCF services which require reflection")]
+    Task<Result<string[]>> QueryModuleUrisInBaselineAsync(string baselineRevision, string query, string sort = "uri", int limit = -1);
 
     /// <summary>
     /// Gets a work item by its URI (the URI may include a revision specifier).
@@ -84,30 +121,34 @@ public interface IPolarionClient
     Task<Result<WorkItem>> GetWorkItemByUriInRevisionAsync(string uri, string revision);
 
     /// <summary>
-    /// Queries work items from a branched document using the 4-step revision-aware algorithm.
+    /// Queries work items from a module at a specific historical revision, in document order.
     /// </summary>
     /// <remarks>
-    /// Algorithm:
-    /// 1. Get URIs for the specific revision document
-    /// 2. Extract work item IDs and revisions from URIs
-    /// 3. Bulk fetch HEAD versions using Lucene query
-    /// 4. Fetch historical versions where revisions differ from HEAD
+    /// Built on <see cref="GetModuleWorkItemsAsync"/> with <c>{moduleUri}%{revision}</c>. Pinned references
+    /// are returned at their pinned revision (reported in <see cref="WorkItemWithRevisionInfo.Revision"/>),
+    /// deleted-but-pinned items are included, and unresolvable rows are dropped. A location with no
+    /// document at that revision fails (Polarion raises an unresolvable-object error; as a fallback,
+    /// "Document not found" when no rows come back and the module is unresolvable at that revision).
     /// </remarks>
-    /// <param name="moduleFolder">The module folder path (e.g., "FCC_L4_Air8_1")</param>
+    /// <param name="moduleFolder">The module folder path</param>
     /// <param name="documentId">The document ID</param>
-    /// <param name="revision">The revision number</param>
+    /// <param name="revision">The revision number (digits only; surrounding whitespace is trimmed)</param>
     /// <param name="fields">Optional list of fields to retrieve</param>
     /// <returns>Array of work items with revision information</returns>
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]
     Task<Result<WorkItemWithRevisionInfo[]>> GetWorkItemsByModuleRevisionAsync(string moduleFolder, string documentId, string revision, List<string>? fields = null);
 
     /// <summary>
-    /// Queries work items using SQL against POLARION.REL_MODULE_WORKITEM relationship.
+    /// Gets the work items of a document (module) at HEAD, in document order.
     /// </summary>
+    /// <remarks>
+    /// Built on <see cref="GetModuleWorkItemsAsync"/>. Pinned references are returned at their pinned
+    /// revision, deleted-but-pinned items are included, and unresolvable rows are dropped.
+    /// </remarks>
     /// <param name="moduleFolder">The module folder path</param>
     /// <param name="documentId">The document ID</param>
-    /// <param name="itemTypes">Optional list of work item types to filter</param>
-    /// <param name="sort">Sort field (default: outlineNumber)</param>
+    /// <param name="itemTypes">Optional list of work item type IDs to keep</param>
+    /// <param name="sort">Ignored; results are always in document order</param>
     /// <param name="fields">Optional list of fields to retrieve</param>
     /// <returns>Array of work items in the module</returns>
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]

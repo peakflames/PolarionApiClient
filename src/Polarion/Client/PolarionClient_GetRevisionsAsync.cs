@@ -16,7 +16,7 @@ public partial class PolarionClient : IPolarionClient
             var revisionsResult = await _trackerClient.getRevisionsAsync(new getRevisionsRequest(uri));
             return revisionsResult is null
                 ? Result.Fail($"No revisions found for workitem '{uri}'")
-                : revisionsResult.getRevisionsReturn;
+                : revisionsResult.getRevisionsReturn ?? [];
         }
         catch (Exception ex)
         {
