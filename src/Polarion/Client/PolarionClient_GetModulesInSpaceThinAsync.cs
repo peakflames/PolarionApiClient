@@ -15,9 +15,9 @@ public partial class PolarionClient : IPolarionClient
         {
             var sqlQuery =
             "SELECT doc.C_PK FROM MODULE doc, PROJECT proj " +
-            $"WHERE proj.C_ID = '{_config.ProjectId}' " +
+            $"WHERE proj.C_ID = '{PolarionSql.EscapeLiteral(_config.ProjectId)}' " +
             "AND doc.FK_URI_PROJECT = proj.C_URI " +
-            $"AND doc.C_MODULEFOLDER = '{spaceName}' ";
+            $"AND doc.C_MODULEFOLDER = '{PolarionSql.EscapeLiteral(spaceName ?? string.Empty)}' ";
 
             var result = await _trackerClient.queryModulesBySQLAsync(
                 new(
@@ -30,14 +30,8 @@ public partial class PolarionClient : IPolarionClient
                 return Result.Fail("Failed to get documents");
             }
 
-            // only keep the modules whose id is not null
-            var modules = result.queryModulesBySQLReturn.Where(x => x.id != null)
-                                                        .Select(x => new ModuleThin(x.id, x.title, x.type.id, x.status.id, x.moduleFolder, x.moduleLocation, x.uri));
-
-            // sort the list of documents by title
-            modules = modules.OrderBy(x => x.Title).ToList();
-
-            return Result.Ok(modules.ToArray());
+            // A query that matches nothing comes back with a null array; that is a valid, empty result.
+            return Result.Ok(ToModuleThins(result.queryModulesBySQLReturn));
         }
         catch (Exception ex)
         {

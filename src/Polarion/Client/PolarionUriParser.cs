@@ -47,21 +47,34 @@ public static class PolarionUriParser
     /// </summary>
     /// <remarks>
     /// URI Format: subterra:data-service:objects:/default/{ProjectName}${Module}{moduleFolder}{Folder}#{DocumentId}%{Revision}
-    /// Example: subterra:data-service:objects:/default/Midnight${Module}{moduleFolder}L4_fcs#FCS Memory Loader IDD%200000
-    /// 
+    /// Example: subterra:data-service:objects:/default/TestProject${Module}{moduleFolder}MySpace#Example IDD%200000
+    ///
     /// Note: "${Module}{moduleFolder}" are literal placeholder strings in Polarion's internal URI format.
-    /// Based on verified Python implementation in ple_systest_utils/polarion.py
     /// </remarks>
     /// <param name="projectName">The Polarion project name</param>
-    /// <param name="moduleFolder">The module folder/space path (e.g., "L4_fcs")</param>
+    /// <param name="moduleFolder">The module folder/space path (e.g., "MySpace")</param>
     /// <param name="documentId">The document ID</param>
     /// <param name="revision">The revision number</param>
     /// <returns>A properly formatted module URI with revision</returns>
     public static string BuildModuleUriWithRevision(string projectName, string moduleFolder, string documentId, string revision)
     {
-        // Module URIs in Polarion use the format: 
-        // subterra:data-service:objects:/default/{ProjectName}${Module}{moduleFolder}{Folder}#{DocumentId}%{Revision}
-        // Where ${Module}{moduleFolder} are literal placeholder strings
-        return $"subterra:data-service:objects:/default/{projectName}${{Module}}{{moduleFolder}}{moduleFolder}#{documentId}%{revision}";
+        return $"{BuildModuleUri(projectName, moduleFolder, documentId)}%{revision}";
+    }
+
+    /// <summary>
+    /// Builds the HEAD module URI for a document.
+    /// </summary>
+    /// <remarks>
+    /// URI Format: subterra:data-service:objects:/default/{ProjectName}${Module}{moduleFolder}{Folder}#{DocumentId}
+    /// where "${Module}{moduleFolder}" are literal placeholder strings. The folder and document ID are
+    /// used as given (spaces are kept).
+    /// </remarks>
+    /// <param name="projectName">The Polarion project name</param>
+    /// <param name="moduleFolder">The module folder/space path (e.g., "MySpace")</param>
+    /// <param name="documentId">The document ID</param>
+    /// <returns>The module URI, without a revision suffix</returns>
+    internal static string BuildModuleUri(string projectName, string moduleFolder, string documentId)
+    {
+        return $"subterra:data-service:objects:/default/{projectName}${{Module}}{{moduleFolder}}{moduleFolder}#{documentId}";
     }
 }

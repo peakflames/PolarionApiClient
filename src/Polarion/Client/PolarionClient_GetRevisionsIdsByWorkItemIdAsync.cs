@@ -21,7 +21,7 @@ public partial class PolarionClient : IPolarionClient
 
             var workItem = wiResult.Value;
             var result = await _trackerClient.getRevisionsAsync(new getRevisionsRequest(workItem.uri));
-            return result is null ? Result.Fail("Work item not found") : result.getRevisionsReturn;
+            return result is null ? Result.Fail("Work item not found") : result.getRevisionsReturn ?? [];
         }
         catch (Exception ex)
         {

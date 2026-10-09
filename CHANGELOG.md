@@ -1,6 +1,8 @@
-## 0.3.9
+## 0.4.0
 
-- TBD
+- **Breaking Change**: QueryWorkItemsInModuleAsync and GetWorkItemsByModuleRevisionAsync read via getModuleWorkItems (document order with sort ignored, pinned values, deleted-but-pinned items included, itemTypes filtered client-side, empty document returns an empty result, missing document fails), IPolarionClient gains new members, and GetWorkItemsByModuleAsync is [Obsolete] (#12)
+- Feature: Add GetModuleWorkItemsAsync, QueryBaselinesAsync, QueryModuleUrisInBaselineAsync, and an optional PolarionClientConfiguration.MaxReceivedMessageSize cap (#12)
+- Fix: Escape caller input in module SQL filters, return empty results for zero-row queries, and require a numeric revision in GetWorkItemsByModuleRevisionAsync (#12)
 
 ## 0.3.8
 

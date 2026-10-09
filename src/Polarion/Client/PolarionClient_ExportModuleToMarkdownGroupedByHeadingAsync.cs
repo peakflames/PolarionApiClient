@@ -13,6 +13,10 @@ public partial class PolarionClient : IPolarionClient
     /// <param name="includeWorkItemIdentifiers">Whether to include the work item identifiers in the Markdown output.</param>
     /// <param name="revision">Optional revision identifier. If null, exports the latest revision.</param>
     /// <returns>A Result containing a SortedDictionary of heading-grouped Markdown content if successful.</returns>
+    /// <remarks>
+    /// Owned items only: built on <see cref="GetHierarchicalWorkItemsByModuleAsync"/>, so referenced and
+    /// pinned items are omitted from the export.
+    /// </remarks>
     [RequiresUnreferencedCode("Uses WCF services which require reflection")]
     public async Task<Result<SortedDictionary<string, StringBuilder>>> ExportModuleToMarkdownGroupedByHeadingAsync(
         int headingLevel, string workItemPrefix, string moduleTitle, PolarionFilter filter,
