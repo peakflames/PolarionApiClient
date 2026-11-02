@@ -38,13 +38,7 @@
 
   <ItemGroup>
    <PackageReference Include="FluentResults" Version="3.13.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.2" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.2" />
-    <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.2" />
-    <PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.2" />
     <PackageReference Include="System.ServiceModel.Http" Version="8.1.2" />
-    <PackageReference Include="System.ServiceModel.Primitives" Version="8.1.2" />
-    <PackageReference Include="System.ServiceModel.Security" Version="6.0.0" />
     <PackageReference Include="ReverseMarkdown" Version="4.6.0" />
   </ItemGroup>
 
